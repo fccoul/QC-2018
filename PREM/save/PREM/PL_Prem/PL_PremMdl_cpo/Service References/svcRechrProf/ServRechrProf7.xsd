@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+  <xs:complexType name="Critere">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LimiteParPage" type="xs:int" />
+      <xs:element minOccurs="0" name="Page" type="xs:int" />
+      <xs:element minOccurs="0" name="Terme" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Critere" nillable="true" type="tns:Critere" />
+  <xs:complexType name="Resultat">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://COD1_V4OutilBase_cpo/2" base="q1:ParamSorti">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ListeResultat" nillable="true" type="q2:ArrayOfKeyValuePairOfNullableOflongstringRDHGY3MA" />
+          <xs:element minOccurs="0" name="TotalResultat" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Resultat" nillable="true" type="tns:Resultat" />
+</xs:schema>

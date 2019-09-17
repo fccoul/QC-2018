@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx?wsdl" docRef="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx" xmlns:q1="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul" binding="q1:InfoDispCnsulSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx" xmlns:q2="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul" binding="q2:InfoDispCnsulSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,85 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLA1CSS")
+}
+@{
+    ViewData["TitrePage"] = "Modifier un avis transmis";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div role="group" class="collection">
+
+        <!-- Div contenant le message informatif sur l'engagement actif -->
+        <div id="AlertAvis" class="alert alert-info cacher" role="alert">
+        </div>
+
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel")
+        @Html.Hidden("IdDDL")
+        @Html.Hidden("TextDDL")
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="SectionTerritoire">
+                    @Html.LabelFor(x => x.Territoire)
+                    <div id="NomTerritoire">
+                        <br /><br />
+                    </div>
+                    @Html.HiddenFor(x => x.Territoire)
+                    @Html.HiddenFor(x => x.IdTerritoireDDL)
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div id="SectionDateDebut">
+                    @Html.LabelFor(x => x.DateDebut)
+                    <div id="DateAvis">
+                        <br /><br />
+                    </div>
+                    @Html.HiddenFor(x => x.DateDebut)
+                </div>
+            </div>
+        </div>
+
+        <!-- Multiple Checkboxes -->
+        <div class="row">
+            <div class="col-md-12">
+                @Html.EditorFor(x => x.Decision, "RadioButton", new { data = Model.Decisions })
+            </div>
+        </div>
+
+        @Html.EditorFor(x => x.DatePrevue, "DatePicker", new { disabled = true, placeholder = "AAAA-MM-JJ" })
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.EditorFor(x => x.Confirmation, "Boolean", new { disabled = true, label = "Je confirme la décision." })
+            </div>
+        </div>
+        <!-- Button -->
+        <div class="row">
+            <div class="form-group col-md-12">
+                <button id="btnTransmettre" name="singlebutton" disabled="disabled" class="btn btn-primary btn-success">
+                    <i class="fa fa-check" aria-hidden="true"></i> Transmettre
+                </button>
+            </div>
+        </div>
+
+        @Html.DisplayFor(x => x.Message, "ModalConfirmation")
+
+        <input type="hidden" id="Continuer" name="Continuer" value="@Html.Raw(Model.Continuer)" />
+        <input type="hidden" id="QuestionPose" name="QuestionPose" value="@Html.Raw(Model.QuestionPose)" />
+        <input type="hidden" id="Guid" name="Guid" value="@Html.Raw(Model.Guid)" />
+        <input type="hidden" id="Valider" name="Valider" value="@Html.Raw(Model.Valider)" />
+    </div>
+}
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA1_Modifier")
+}
+

@@ -1,0 +1,51 @@
+﻿@using System.Collections
+@using RAMQ.PRE.PRE_Entites_cpo;
+
+@model Enumerations.TypeTraitementAvisConformite
+@{
+    List<SelectListItem> listeRecu = null;
+    string estCoche = "";
+    string labelText = "";
+
+    if ((ViewBag.data) != null)
+    {
+        listeRecu = (List<SelectListItem>)ViewBag.data;
+    }
+    if ((ViewBag.label) != null)
+    {
+        labelText = ViewBag.label;
+    }
+}
+<div class="form-group">
+    @if (String.IsNullOrWhiteSpace(labelText))
+    {
+        @Html.LabelFor(x => x, new {classe = "control-label"})
+    }else
+    {
+        @Html.LabelFor(x => x, labelText, new {classe = "control-label"})
+    }
+
+
+    @if (listeRecu != null && listeRecu.Any())
+    {        
+        foreach (SelectListItem listItem in listeRecu)
+        {
+            estCoche = "";
+            var radioId = ViewData.TemplateInfo.GetFullHtmlFieldId(listItem.Value);
+            if (listItem.Value == Model.ToString())
+            {
+                estCoche = @"checked = ""checked""";
+            }
+            
+            <div class="radio">
+                <label>
+                    @Html.RadioButton("", listItem.Value, listItem.Value == Model.ToString(), new {id = radioId })
+                    @Html.Raw(listItem.Text)
+                </label>
+            </div>
+        }
+    }
+
+    @Html.ValidationMessageFor(x => x, null, new {@class = "help-block"})
+</div>
+

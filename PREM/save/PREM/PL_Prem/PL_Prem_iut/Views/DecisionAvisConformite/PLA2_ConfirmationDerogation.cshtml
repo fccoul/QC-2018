@@ -1,0 +1,84 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation
+
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLA2CSS")
+}
+
+@{
+    if (Model.EstModeAnnulation)
+    {
+        ViewData["TitrePage"] = "Confirmation d’annulation – Dérogation";
+    }
+    else
+    {
+        ViewData["TitrePage"] = "Confirmation de transmission – Dérogation";
+    }
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "ConfirmationDerogationForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div role="group" class="collection">
+        <!-- Div contenant le message de confirmation -->
+        <div id="MsgConfr" class="alert alert-success" role="alert">
+            <i class="fa fa-check" aria-hidden="true"></i> @Html.Raw(Model.MessageConfirmation)
+        </div>
+
+        <!-- Informations sur la dérogation créée -->
+        <dl>
+            <dt>@Html.Label("Identification du médecin")</dt>
+            <dd>
+                @Html.Raw(Model.NomCompletNumeroPratique)
+                <br />
+                <br />
+            </dd>
+            <dt>@Html.Label("Type de dérogation")</dt>
+            <dd>
+                @Html.Raw(Model.DescriptionTypeDerogation)
+                <br />
+                <br />
+            </dd>
+            <dt>@Html.Label("Date de début")</dt>
+            <dd>
+                @Html.Raw(Model.DateDebutAffichage)
+                <br />
+                <br />
+            </dd>
+        </dl>
+
+        <!-- Div contenant le message informatif sur l'engagement fermé (s'il y a lieu) -->
+        <div id="ZoneMessageEngagementFermer" class="alert alert-info cacher" role="alert">
+            @Html.Raw(Model.MessageFermetureEngagement)
+        </div>
+
+
+        <!-- Bouton -->
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <button id="enregistrerPDF"
+                        name="enregistrerPDF"
+                        class="btn btn-default btn-block"
+                        type="submit">
+                    <i class="fa glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Enregistrer en PDF
+                </button>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <a id="annulerDerogation" href="@Url.Action("PLA2_AnnulerDerogation", "DecisionAvisConformite")" class="btn btn-primary btn-block cacher" role="button"> Annuler une autre dérogation</a>
+                <a id="transmettreDerogation" href="@Url.Action("PLA2_TransmettreDerogation", "DecisionAvisConformite")" class="btn btn-primary btn-block cacher" role="button">Transmettre une nouvelle dérogation</a>
+            </div>
+        </div>
+        @Html.HiddenFor(x => x.MessageConfirmation)
+        @Html.HiddenFor(x => x.NomCompletNumeroPratique)
+        @Html.HiddenFor(x => x.DescriptionTypeDerogation)
+        @Html.HiddenFor(x => x.DateDebut)
+        @Html.HiddenFor(x => x.EstModeAnnulation)
+        <input type="hidden" id="MessageFermetureEngagement" name="MessageFermetureEngagement" value="@Html.Raw(Model.MessageFermetureEngagement)" />
+    </div>
+}
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA2_ConfirmationDerogation")
+}

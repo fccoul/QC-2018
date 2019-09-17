@@ -1,0 +1,2186 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RAMQ.COM.COC1_V4DonneComne_cpo
+</name>
+</assembly>
+<members>
+<member name="T:RAMQ.AccesConcurrent.AccesDossier">
+ <summary> 
+ Définition de la classe permettant de gérer la table des accès concurrents (COM_ACCES_DOSS).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesDossier.IServAccesDossier,RAMQ.Message.IResolutionMessage,System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesDossier">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesDossier.IServAccesDossier" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_strAppelSvc">Indique si l'on doit appeller le service web en format String.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesDossier.IServAccesDossier,RAMQ.Message.IResolutionMessage,System.Boolean)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesAppli">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesAppli.IServAccesAppli" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_blnAppelSvc">Indique si l'on doit appeller le service web</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.AjouterAccesDossier(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'ajouter des dossiers dans la table des accès concurrents.
+     Si un des dossiers est déjà présent, alors retourner un message d'erreur
+     spécifiant qu'un dossier est déjà utilisé par un autre utilisateur.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_colctIdDoss">Collection d'ID de dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_strDesDoss">Description du dossier.</param>
+ <param name="_strDelaiExpiration">Temps avant que le dossier redevienne disponible.</param>
+ <exception cref="T:System.ApplicationException">Le dossier que vous tentez d'accéder est en cours d'utilisation.</exception>
+ <exception cref="T:System.ApplicationException">Un des dossiers que vous tentez d'insérer est en cours d'utilisation.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="AjouterAccesDossier" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="AjouterAccesDossier" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.SupprimerAccesDossier(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)">
+ <summary>
+     Cette méthode permet de supprimer des dossiers dans la table des accès concurrents.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_colctIdDoss">Collection d'ID de dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <exception cref="T:System.ApplicationException">Ce dossier n'existe pas.</exception>
+ <exception cref="T:System.ApplicationException">Un des dossiers que vous tentez de supprimer n'existe pas.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="SupprimerAccesDossier" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="SupprimerAccesDossier" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.SupprimerAccesDossierCodAppli(System.String,System.DateTime)">
+ <summary>
+     Cette méthode permet de supprimer tous les dossiers pour un code d'application.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_datDatEpure">Date d'épuration du dossier.</param>
+ <returns>Le nombre d'enregistrements supprimés.</returns>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="SupprimerAccesDossierCodAppli" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="SupprimerAccesDossierCodAppli" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.ObtenirUtilDossExistant(System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'obtenir le nom et le prénom de l'utilisateur en cours d'utilisation
+     d'un dossier spécifique.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_strIdDoss">ID du dossier.</param>
+ <returns>Instance de l'objet <see cref="T:RAMQ.AccesConcurrent.InfoUtilAccesCncur" />.</returns>
+ <exception cref="T:System.ApplicationException">Cet utilisateur n'existe pas.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="ObtenirUtilDossExistant" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="ObtenirUtilDossExistant" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.LireAccesDossier(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+     Cette méthode permet de lire un dossier dans la table des accès concurrents.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_strIdDoss">ID du dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_datDatCreat">Date de création du dossier.</param>
+ <param name="_strDesDoss">Description du dossier.</param>
+ <returns>Une collection d'instances de la classe <see cref="T:RAMQ.AccesConcurrent.InfoAccesDossier" />.</returns>
+ <exception cref="T:System.ApplicationException">Ce dossier n'existe pas.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="LireAccesDossier" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="LireAccesDossier" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.AccesDossier.IOracleOdp">
+ <summary>
+     Cette Propriété retourne l'objet IOracleOdp. La partie Set servant aux tests unitaires seulement.
+ </summary>
+ <value></value>
+ <returns>Objet qui implémente l'interface <see cref="P:RAMQ.AccesConcurrent.AccesDossier.IOracleOdp" /></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.ValiderCodAppli(System.String)">
+ <summary>
+     Cette méthode permet de valider le code d'application.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.AccesDossier.FermerConxnServAccesDossier">
+ <summary>
+     Cette méthode permet de fermer la connexion avec le service WCF.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AccesConcurrent.IAccesDossier">
+ <summary> 
+     Définition de l'interface permettant de gérer la table des accès concurents (COM_ACCES_DOSS).
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.IAccesDossier.AjouterAccesDossier(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'ajouter des dossiers dans la table des accès concurrents.
+     Si un des dossiers est déjà présent, alors retourner un message d'erreur
+     spécifiant qu'un dossier est déjà utilisé par un autre utilisateur.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_colctIdDoss">Collection d'ID de dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_strDesDoss">Description du dossier.</param>
+ <param name="_strDelaiExpiration">Temps avant que le dossier redevienne disponible.</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="AjouterAccesDossier" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="AjouterAccesDossier" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.IAccesDossier.SupprimerAccesDossier(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String)">
+ <summary>
+     Cette méthode permet de supprimer des dossiers dans la table des accès concurrents.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_colctIdDoss">Collection d'ID de dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="SupprimerAccesDossier" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="SupprimerAccesDossier" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.IAccesDossier.SupprimerAccesDossierCodAppli(System.String,System.DateTime)">
+ <summary>
+     Cette méthode permet de supprimer tous les dossiers pour un code d'application.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_datDatEpure">Date d'épuration du dossier.</param>
+ <returns>Le nombre d'enregistrements supprimés.</returns>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="SupprimerAccesDossierCodAppli" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="SupprimerAccesDossierCodAppli" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.IAccesDossier.ObtenirUtilDossExistant(System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'obtenir le nom et le prénom de l'utilisateur en cours d'utilisation
+     d'un dossier spécifique.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_strIdDoss">ID du dossier.</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="ObtenirUtilDossExistant" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="ObtenirUtilDossExistant" />
+ </code>
+ </example>
+ <returns>Instance de l'objet <see cref="T:RAMQ.AccesConcurrent.InfoUtilAccesCncur" />.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.IAccesDossier.LireAccesDossier(System.String,System.String,System.String,System.String,System.DateTime,System.String)">
+ <summary>
+     Cette méthode permet de lire un dossier dans la table des accès concurrents.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_strIdDoss">ID du dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_datDatCreat">Date de création du dossier.</param>
+ <param name="_strDesDoss">Description du dossier.</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.vb" region="LireAccesDossier" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDossier.cs" region="LireAccesDossier" />
+ </code>
+ </example>
+ <returns>Une collection d'instances de la classe <see cref="T:RAMQ.AccesConcurrent.InfoAccesDossier" />.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AccesConcurrent.InfoUtilAccesCncur">
+ <summary> 
+     Définition de la classe représentant l'information d'un utilisateur.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.InfoUtilAccesCncur.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.InfoUtilAccesCncur.#ctor(System.String,System.String)">
+ <summary>
+     Contructeur de type "amie" permettant la création d'un nouvel objet <see cref="T:RAMQ.AccesConcurrent.InfoUtilAccesCncur" />.
+ </summary>
+ <param name="_strNomUtil">Nom de l'utilisateur.</param>
+ <param name="_strPreUtil">Prénom de l'utilisateur.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoUtilAccesCncur.NomUtil">
+ <summary>
+     Propriété qui retourne le nom de l'utilisateur.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoUtilAccesCncur.PreUtil">
+ <summary>
+     Propriété qui retourne le prénom de l'utilisateur.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AccesConcurrent.IInfoUtilAccesCncur">
+ <summary> 
+     Définition de l'interface représentant l'information d'un utilisateur.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoUtilAccesCncur.NomUtil">
+ <summary>
+     Propriété qui retourne le nom de l'utilisateur.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoUtilAccesCncur.PreUtil">
+ <summary>
+     Propriété qui retourne le prénom de l'utilisateur.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AccesConcurrent.InfoAccesDossier">
+ <summary> 
+     Définition de la classe représentant l'information d'un dossier.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.InfoAccesDossier.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AccesConcurrent.InfoAccesDossier.#ctor(System.String,System.String,System.String,System.String,System.String,System.DateTime)">
+ <summary>
+     Contructeur de type "amie" permettant la création d'un nouvel objet <see cref="T:RAMQ.AccesConcurrent.InfoAccesDossier" />.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomTbl">Nom de la table.</param>
+ <param name="_strIdDoss">ID du dossier.</param>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_strDesDoss">Description du dossier.</param>
+ <param name="_datDatCreat">Date de création du dossier.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoAccesDossier.CodAppli">
+ <summary>
+     Propriété qui retourne le code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoAccesDossier.NomTbl">
+ <summary>
+     Propriété qui retourne le nom de la table.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoAccesDossier.IdDoss">
+ <summary>
+     Propriété qui retourne l'ID d'un dossier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoAccesDossier.IdUtil">
+ <summary>
+     Propriété qui retourne l'identifiant de l'utilisateur.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoAccesDossier.DatCreat">
+ <summary>
+     Propriété qui retourne la date de création.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.InfoAccesDossier.DesDoss">
+ <summary>
+     Propriété qui retourne la description d'un dossier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AccesConcurrent.IInfoAccesDossier">
+ <summary> 
+     Définition de l'interface représentant l'information d'un dossier.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoAccesDossier.CodAppli">
+ <summary>
+     Propriété qui retourne le code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoAccesDossier.NomTbl">
+ <summary>
+     Propriété qui retourne le nom de la table.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoAccesDossier.IdDoss">
+ <summary>
+     Propriété qui retourne l'ID d'un dossier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoAccesDossier.IdUtil">
+ <summary>
+     Propriété qui retourne l'identifiant de l'utilisateur.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoAccesDossier.DatCreat">
+ <summary>
+     Propriété qui retourne la date de création.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AccesConcurrent.IInfoAccesDossier.DesDoss">
+ <summary>
+     Propriété qui retourne la description d'un dossier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AccesConcurrent.NamespaceDoc">
+ <summary>
+ Espace de nom que l'on retrouve dans la composante <b>RAMQ.COM.COC1_V4DonneComne_cpo</b> offrant une manière de faire afin de gérer
+ des accès concurrent aux enregistrements de certaines tables des systèmes.
+ </summary>
+ <remarks>
+ <para>
+ Ce module commun propose une manière de réserver des enregistrements (ou des dossiers) dans la base de données. Cependant ce n'est 
+ pas automatique, il est de la responsabilité du PPP de mettre en place le mécanisme du côté applicatif. Le module commun ne fait 
+ qu'offrir une table générique permettant de conserver certains paramètres qui vous permettront d'implanter un mécanisme de gestion 
+ des accès concurrent au sein de votre PPP et la composante offre les facilités afin de lire et d'écrire dans cette table.
+ </para>
+ </remarks>
+</member>
+<member name="T:RAMQ.Application.AccesAppli">
+ <summary> 
+     Définition de la classe permettant de gérer les applications (COM_APPLI).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesAppli.IServAccesAppli,RAMQ.Message.IResolutionMessage,System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesAppli">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesAppli.IServAccesAppli" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_strAppelSvc">Indique si l'on doit appeller le service web en format String</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesAppli.IServAccesAppli,RAMQ.Message.IResolutionMessage,System.Boolean)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesAppli">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesAppli.IServAccesAppli" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_blnAppelSvc">Indique si l'on doit appeller le service web.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.ObtenirAppli(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir une ou toutes les applications.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Une collection d'instances de la classe <see cref="T:RAMQ.Application.Appli" />.</returns>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Aucun code d'application disponible.</exception>
+ <exception cref="T:System.ApplicationException">Code d'application absent.</exception>
+ <example>Obtenir toutes les applications.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.vb" region="ObtenirAppli"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.cs" region="ObtenirAppli"></code>
+ </example>
+ <example>Obtenir une application
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.vb" region="ObtenirAppliAvecCodAppli" ></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.cs" region="ObtenirAppliAvecCodAppli" ></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.AccesAppli.IOracleOdp">
+ <summary>
+     Cette propriété retourne l'objet IOracleOdp. La partie Set servant aux tests unitaires seulement.
+ </summary>
+ <value></value>
+ <returns>Objet qui implémente l'interface <see cref="P:RAMQ.Application.AccesAppli.IOracleOdp" /></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.ExecuterObtenirCodAppli">
+ <summary>
+     Cette méthode permet d'appeler la méthode "ObtenirCodAppli" du package oracle.
+ </summary>
+ <returns>Collection d'instances de la classe <see cref="T:RAMQ.Application.Appli" />.</returns>
+ <exception cref="T:System.ApplicationException">Aucun code d'application disponible.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.ExecuterObtenirCodAppli(System.String)">
+ <summary>
+     Cette méthode permet d'appeler la méthode "ObtenirCodAppli" du package oracle.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Collection d'instances de la classe <see cref="T:RAMQ.Application.Appli" />.</returns>
+ <exception cref="T:System.ApplicationException">Code d'application absent.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.AccesAppli.FermerConxnServAccesAppli">
+ <summary>
+     Cette méthode permet de fermer la connexion avec le service WCF.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Application.IAccesAppli">
+ <summary> 
+     Définition de l'interface permettant de gérer les applications (COM_APPLI).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Application.IAccesAppli.ObtenirAppli(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir une ou plusieurs applications.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <example>Obtenir toutes les applications.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.vb" region="ObtenirAppli"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.cs" region="ObtenirAppli"></code>
+ </example>
+ <example>Obtenir une application
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.vb" region="ObtenirAppliAvecCodAppli" ></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesAppli.cs" region="ObtenirAppliAvecCodAppli" ></code>
+ </example>
+ <returns>Une collection d'instances de la classe <see cref="T:RAMQ.Application.Appli" />.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Application.IAppli">
+ <summary> 
+     Définition de l'interface représentant les informations d'une application.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.Application.IAppli.CodAppli">
+ <summary>
+     Propriété qui retourne le code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.IAppli.DescAppli">
+ <summary>
+     Propriété qui retourne la description d'un code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.IAppli.TypAppli">
+ <summary>
+     Propriété qui retourne le type d'un code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.IAppli.NoSeqRespo">
+ <summary>
+     Propriété qui retourne le numéro séquentiel du responsable.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Application.Appli">
+ <summary> 
+     Définition de la classe représentant les informations d'une application.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Application.Appli.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Application.Appli.#ctor(System.String,System.String,System.Int32,System.String)">
+ <summary>
+     Contructeur de type "amie" permettant la création d'un nouvel objet <see cref="P:RAMQ.Application.Appli.CodAppli" />.
+ </summary>
+ <param name="_strCodAppli">Le code d'application.</param>
+ <param name="_strDescAppli">La description d'un code d'application.</param>
+ <param name="_intNoSeqRespo">Le numéro séquentiel du responsable.</param>
+ <param name="_strTypAppli">Le type d'un code d'application.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.Appli.CodAppli">
+ <summary>
+     Propriété qui retourne le code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.Appli.DescAppli">
+ <summary>
+     Propriété qui retourne la description d'un code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.Appli.TypAppli">
+ <summary>
+     Propriété qui retourne le type d'un code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Application.Appli.NoSeqRespo">
+ <summary>
+     Propriété qui retourne le numéro séquentiel du responsable.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Application.NamespaceDoc">
+ <summary>
+ Espace de nom que l'on retrouve dans la composante <b>RAMQ.COM.COC1_V4DonneComne_cpo</b> permettant d'obtenir l'information sur les applications
+ contenues dans la table com.com_appli.
+ </summary>
+</member>
+<member name="T:RAMQ.DomainesValeur.AccesDomVal">
+ <summary> 
+ Définition de la classe permettant la gestion des domaines de valeurs.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="T:RAMQ.DomainesValeur.AccesDomVal.InstanceBD">
+ <summary>
+ Énumération des instances de bases de données.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.#ctor">
+ <summary>
+ Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.#ctor(System.String)">
+ <summary>
+ Constructeur par défaut.
+ </summary>
+ <param name="_strNomInstanceBD">Nom de l'instance de BD courant.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesDomVal.IServAccesDomVal,RAMQ.Message.IResolutionMessage,System.String)">
+ <summary>
+ Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesDomVal">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesDomVal.IServAccesDomVal" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_strAppelSvc">Indique si l'on doit appeller le service web en format string</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.Message.IResolutionMessage)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires DSQ.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesDomVal.IServAccesDomVal,RAMQ.Message.IResolutionMessage,System.Boolean)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesAppli">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesAppli.IServAccesAppli" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_blnAppelSvc">Indique si l'on doit appeller le service web.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.AccesDomVal.IOracleOdp">
+ <summary>
+     Cette Propriété retourne l'objet IOracleOdp. La partie Set servant aux tests unitaires seulement.
+ </summary>
+ <value></value>
+ <returns>Objet qui implémente l'interface <see cref="P:RAMQ.DomainesValeur.AccesDomVal.IOracleOdp" /></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.ObtenirDomVal(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir un domaine de valeur.
+ </summary>
+ <param name="_strNomRvDomain">Nom du domaine de valeur.</param>
+ <returns>Instance de l'objet <see cref="T:RAMQ.DomainesValeur.DomVal" />.</returns>
+ <exception cref="T:System.ApplicationException">Le domaine n'existe pas.</exception>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDomVal.vb" region="ObtenirDomVal"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDomVal.cs" region="ObtenirDomVal"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.Initialiser(System.String)">
+ <summary>
+ Initialise la classe.
+ </summary>
+ <param name="_strNomInstanceBD">Nom de l'instance de BD courant.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.Initialiser(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesDomVal.IServAccesDomVal,RAMQ.Message.IResolutionMessage,System.String)">
+ <summary>
+ Initialise la classe.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesDomVal">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesDomVal.IServAccesDomVal" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_strAppelSvc">Indique si l'on doit appeller le service web en format string</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.InitialiserDSQ(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.Message.IResolutionMessage)">
+ <summary>
+ Initialise la classe pour le DSQ
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.FermerConxnServAccesDomVal">
+ <summary>
+     Cette méthode permet de fermer la connexion avec le service WCF.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.ObtenirDomValCache(System.String)">
+ <summary>
+ Cette méthode permet d'obtenir la cache avec le nom de domaine de valeur.
+ </summary>
+ <param name="_strNomRvDomain">Le nom du domaine de valeur.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.InitialiserCache">
+ <summary>
+ Méthode qui initialise l'objet de cache dépendamment de l'environnement de développement.
+ </summary>
+ <remarks>Si l'environnement est unitaire, la cache sera "locale", sinon ça se situera sur 
+ les serveurs AppFabric. </remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.ObtenirCleCache(System.String@)">
+ <summary>
+ Formatte une clé qui sera utilisée pour manipuler la cache avec le nom de domaine de valeur.
+ </summary>
+ <param name="_strNomRvDomain">Le nom du domaine de valeur.</param>
+ <returns>La clé à utiliser pour manipuler le domaine de valeur.</returns>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.EnregistrerDomValCache(System.String,System.String,RAMQ.DomainesValeur.DomVal)">
+ <summary>
+ Enregistre le domaine de valeur dans l'objet de cache.
+ </summary>
+ <param name="_strNomRvDomain">Le nom du domaine de valeur.</param>
+ <param name="_strNomInstanceBD">Le nom d'instance de la BD.</param>
+ <param name="_objDomVal">L'objet de domaine de valeur.</param>
+</member>
+<member name="M:RAMQ.DomainesValeur.AccesDomVal.SupprimerDomValCache(System.String)">
+ <summary>
+ Supprime le domaine de valeur de la cache.
+ </summary>
+ <param name="_strNomRvDomain">Le nom du domaine de valeur à supprimer.</param>
+</member>
+<member name="T:RAMQ.DomainesValeur.DomVal">
+ <summary> 
+     Définition de la classe représentant un domaine de valeurs.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.RemplirCtrlListeWeb(System.Web.UI.WebControls.DropDownList@)">
+ <summary>
+     Cette méthode permet de remplir un contrôle web de type <see cref="T:System.Web.UI.WebControls.DropDownList" />.
+     Par défaut, le texte des items de la liste est le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValDes" /> et la
+     valeur est fournie par le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_objListe">Objet représentant le contrôle de type <see cref="T:System.Web.UI.WebControls.DropDownList" /> à remplir.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWebDropDownList"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWebDropDownList"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.RemplirCtrlListeWeb(System.Web.UI.WebControls.DropDownList@,RAMQ.Enumeration.EnumDomVal,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet de remplir un contrôle web de type <see cref="T:System.Web.UI.WebControls.DropDownList" />.
+ </summary>
+ <param name="_objListe">Objet représentant le contrôle de type <see cref="T:System.Web.UI.WebControls.DropDownList" /> à remplir.</param>
+ <param name="_enuTxt">Le type de champ du domaine à utiliser pour la portion "Text" des items.</param>
+ <param name="_enuVal">Le type de champ du domaine à utiliser pour la portion "Value" des items.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWebDropDownListEnumDomValEnumDomVal"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWebDropDownListEnumDomValEnumDomVal"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.RemplirCtrlListeWin(System.Windows.Forms.ComboBox@)">
+ <summary>
+     Cette méthode permet de remplir un contrôle windows de type <see cref="T:System.Windows.Forms.ComboBox" />.
+     Par défaut, le texte des items de la liste est le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValDes" /> et la
+     valeur est fournie par le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_objListe">Objet représentant le contrôle de type <see cref="T:System.Windows.Forms.ComboBox" /> à remplir.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWinComboBox"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWinComboBox"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.RemplirCtrlListeWin(System.Windows.Forms.ComboBox@,RAMQ.Enumeration.EnumDomVal,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet de remplir un contrôle windows de type <see cref="T:System.Windows.Forms.ComboBox" />.
+ </summary>
+ <param name="_objListe">Objet représentant le contrôle de type <see cref="T:System.Windows.Forms.ComboBox" /> à remplir.</param>
+ <param name="_enuTxt">Le type de champ du domaine à utiliser pour la portion "Text" des items.</param>
+ <param name="_enuVal">Le type de champ du domaine à utiliser pour la portion "Value" des items.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWinComboBoxEnumDomValEnumDomVal"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWinComboBoxEnumDomValEnumDomVal"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ValAbr(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur <see cref="P:RAMQ.DomainesValeur.IValeur.ValAbr" /> selon la valeur reçue du champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <returns>La valeur du champ RV_ABBREVIATION.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValAbr"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValAbr"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ValHaute(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur <see cref="P:RAMQ.DomainesValeur.IValeur.ValHaute" /> selon la valeur reçue du champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <returns>La valeur du champ RV_HIGH_VALUE.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValHaute"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValHaute"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ValDes(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur <see cref="P:RAMQ.DomainesValeur.IValeur.ValDes" /> selon la valeur reçue du champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <returns>La valeur du champ RV_MEANING.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValDes"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValDes"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ValChamp(RAMQ.Enumeration.EnumDomVal,System.String,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur d'un champ du domaine selon un autre champ.
+ </summary>
+ <param name="_enuRechr">Type du champ utilisé pour la recherche.</param>
+ <param name="_strVal">Valeur du champ utilisé pour la recherche.</param>
+ <param name="_enuRetou">Type du champ pour lequel on veut le résultat.</param>
+ <returns>La valeur recherchée.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValChamp"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValChamp"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ObtenirValeur(System.String,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur correspondant à
+     la valeur basse et l'énumération passé en paramètre.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <param name="_enuDomVal">La valeur d'énumération à obtenir.</param>
+ <returns>La valeur recherchée.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ObtenirValeur(RAMQ.DomainesValeur.IValeur,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur correspondant à
+     l'instance de l'objet de type <see cref="T:RAMQ.DomainesValeur.Valeur" /> et la valeur de
+     l'énumération passé en paramètre.
+ </summary>
+ <param name="_objVal">Objet de type <see cref="T:RAMQ.DomainesValeur.Valeur" />.</param>
+ <param name="_enuVal">La valeur d'énumération à obtenir.</param>
+ <returns>La valeur recherchée.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.DomVal.ObtenirNomChamp(RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet d'obtenir le nom d'un champ à partir d'une valeur d'énumération.
+ </summary>
+ <param name="_enuVal">La valeur de l'énumération.</param>
+ <returns>Le nom du champ correspondant à l'énumération passé en paramèetre.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.DomainesValeur.IDomVal">
+ <summary> 
+     Définition de l'interface représentant un domaine de valeurs.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.RemplirCtrlListeWeb(System.Web.UI.WebControls.DropDownList@)">
+ <summary>
+     Cette méthode permet de remplir un contrôle web de type <see cref="T:System.Web.UI.WebControls.DropDownList" />.
+     Par défaut, le texte des items de la liste est le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValDes" /> et la
+     valeur est fournie par le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_cboListe">Objet représentant le contrôle de type <see cref="T:System.Web.UI.WebControls.DropDownList" /> à remplir.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWebDropDownList"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWebDropDownList"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.RemplirCtrlListeWeb(System.Web.UI.WebControls.DropDownList@,RAMQ.Enumeration.EnumDomVal,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet de remplir un contrôle web de type <see cref="T:System.Web.UI.WebControls.DropDownList" />.
+ </summary>
+ <param name="_cboListe">Objet représentant le contrôle de type <see cref="T:System.Web.UI.WebControls.DropDownList" /> à remplir.</param>
+ <param name="_enuTxt">Le type de champ du domaine à utiliser pour la portion "Text" des items.</param>
+ <param name="_enuVal">Le type de champ du domaine à utiliser pour la portion "Value" des items.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWebDropDownListEnumDomValEnumDomVal"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWebDropDownListEnumDomValEnumDomVal"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.RemplirCtrlListeWin(System.Windows.Forms.ComboBox@)">
+ <summary>
+     Cette méthode permet de remplir un contrôle windows de type <see cref="T:System.Windows.Forms.ComboBox" />.
+     Par défaut, le texte des items de la liste est le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValDes" /> et la
+     valeur est fournie par le champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_cboListe">Objet représentant le contrôle de type <see cref="T:System.Windows.Forms.ComboBox" /> à remplir.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWinComboBox"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWinComboBox"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.RemplirCtrlListeWin(System.Windows.Forms.ComboBox@,RAMQ.Enumeration.EnumDomVal,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet de remplir un contrôle windows de type <see cref="T:System.Windows.Forms.ComboBox" />.
+ </summary>
+ <param name="_cboListe">Objet représentant le contrôle de type <see cref="T:System.Windows.Forms.ComboBox" /> à remplir.</param>
+ <param name="_enuTxt">Le type de champ du domaine à utiliser pour la portion "Text" des items.</param>
+ <param name="_enuVal">Le type de champ du domaine à utiliser pour la portion "Value" des items.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="RemplirCtrlListeWinComboBoxEnumDomValEnumDomVal"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="RemplirCtrlListeWinComboBoxEnumDomValEnumDomVal"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.ValChamp(RAMQ.Enumeration.EnumDomVal,System.String,RAMQ.Enumeration.EnumDomVal)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur d'un champ du domaine selon un autre champ.
+ </summary>
+ <param name="_enuRechr">Type du champ utilisé pour la recherche.</param>
+ <param name="_strVal">Valeur du champ utilisé pour la recherche.</param>
+ <param name="_enuRetou">Type du champ pour lequel on veut le résultat.</param>
+ <returns>La valeur recherchée.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValChamp"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValChamp"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.ValHaute(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur <see cref="P:RAMQ.DomainesValeur.IValeur.ValHaute" /> selon la valeur reçue du champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <returns>La valeur du champ RV_HIGH_VALUE.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValHaute"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValHaute"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.ValAbr(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur <see cref="P:RAMQ.DomainesValeur.IValeur.ValAbr" /> selon la valeur reçue du champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <returns>La valeur du champ RV_ABBREVIATION.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValAbr"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValAbr"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IDomVal.ValDes(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir la valeur <see cref="P:RAMQ.DomainesValeur.IValeur.ValDes" /> selon la valeur reçue du champ <see cref="P:RAMQ.DomainesValeur.IValeur.ValBasse" />.
+ </summary>
+ <param name="_strValBasse">La valeur du champ RV_LOW_VALUE.</param>
+ <returns>La valeur du champ RV_MEANING.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.vb" region="ValDes"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\DomVal.cs" region="ValDes"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.DomainesValeur.IAccesDomVal">
+ <summary> 
+     Définition de l'interface permettant la gestion des domaines de valeurs.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.DomainesValeur.IAccesDomVal.ObtenirDomVal(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir un domaine de valeur.
+ </summary>
+ <param name="_strNomRvDomain">Nom du domaine de valeur.</param>
+ <returns>Instance de l'objet <see cref="T:RAMQ.DomainesValeur.DomVal" />.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDomVal.vb" region="ObtenirDomVal"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesDomVal.cs" region="ObtenirDomVal"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.DomainesValeur.NamespaceDoc">
+ <summary>
+ Espace de nom que l'on retrouve dans la composante <b>RAMQ.COM.COC1_V4DonneComne_cpo</b> permettant d'obtenir les domaines
+ de valeurs inscrits dans la table commune com.cg_ref_codes.
+ </summary>
+ <remarks>
+ <para>
+ De plus la classe <see cref="T:RAMQ.DomainesValeur.DomVal"/> offre des méthodes permettant de remplir directement des contrôles de liste,
+ autant Web (<see cref="T:System.Web.UI.WebControls.DropDownList"/>) que Windows (<see cref="T:System.Windows.Forms.ComboBox"/>).
+ </para>
+ </remarks>
+</member>
+<member name="T:RAMQ.DomainesValeur.Valeur">
+ <summary> 
+     Définition de la classe représentant l'information d'une valeur.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.Valeur.ValAbr">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_ABBREVIATION.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.Valeur.ValBasse">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_LOW_VALUE.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.Valeur.ValHaute">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_HIGH_VALUE.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.Valeur.ValDes">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_MEANING.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.DomainesValeur.IValeur">
+ <summary> 
+     Définition de l'interface représentant l'information d'une valeur.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.IValeur.ValAbr">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_ABBREVIATION.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.IValeur.ValBasse">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_LOW_VALUE.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.IValeur.ValHaute">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_HIGH_VALUE.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.DomainesValeur.IValeur.ValDes">
+ <summary>
+     Propriété qui retourne la valeur du champ RV_MEANING.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.ParamCacheDomVal">
+ <summary>
+ Class ParamCacheDomVal
+ </summary>
+</member>
+<member name="P:RAMQ.ParamCacheDomVal.NomDomVal">
+ <summary>
+ propriété  nom de domaine de valeur
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:RAMQ.ParamCacheDomVal.NomInstanceBD">
+ <summary>
+ propriété nom de l'instance BD
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:RAMQ.ParamCacheDomVal.DomaineValeur">
+ <summary>
+ propriété de la classe représentant un domaine de valeurs.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:RAMQ.EchangeFichier.AccesJournEchgFich">
+ <summary> 
+     Définition de la classe permettant de gérer la table des échanges de fichiers (COM_JOURN_ECHG_FICH).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesJournEchgFich.IServAccesJournEchgFich,RAMQ.Message.IResolutionMessage,System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesJournEchgFich">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesJournEchgFich.IServAccesJournEchgFich" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_strAppelSvc">Indique si l'on doit appeller le service web en format string</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesJournEchgFich.IServAccesJournEchgFich,RAMQ.Message.IResolutionMessage,System.Boolean)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesAppli">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesAppli.IServAccesAppli" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_blnAppelSvc">Indique si l'on doit appeller le service web.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.AjouterJournEchgFich(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+ <summary>
+     Cette méthode permet de journaliser un échange de fichier.
+ </summary>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomFich">Nom du fichier.</param>
+ <param name="_strTypEchg">Type de l'échange. ("T", "R")</param>
+ <param name="_strCodStaEchg">Code de statut de l'échange. ("A", "R")</param>
+ <param name="_colctMsgEchgFich">Collection de messages.</param>
+ <param name="_strTypEntEchgFich">Type de l'entité de l'échange de fichier. ("EH", "EQ", "EX", "HE", "OP")</param>
+ <param name="_strIdEntEchgFich">Identifiant de l'entité de l'échange de fichier.</param>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Le type d'échange est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Le type de l'entité de l'échange est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Le numéro du message est obligatoire si le délimiteur "@" est présent.</exception>
+ <exception cref="T:System.ApplicationException">Le texte du message est obligatoire si le délimiteur "@" est présent.</exception>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesJournEchgFich.vb" region="AjouterJournEchgFich"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesJournEchgFich.cs" region="AjouterJournEchgFich"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.EchangeFichier.AccesJournEchgFich.IOracleOdp">
+ <summary>
+     Cette Propriété retourne l'objet IOracleOdp. La partie Set servant aux tests unitaires seulement.
+ </summary>
+ <value></value>
+ <returns>Objet qui implémente l'interface <see cref="P:RAMQ.EchangeFichier.AccesJournEchgFich.IOracleOdp" /></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.ValiderCodAppli(System.String)">
+ <summary>
+     Cette méthode permet de valider le code d'application.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.ValiderTypEchg(System.String)">
+ <summary>
+     Cette méthode permet de valider le type de l'échange.
+ </summary>
+ <param name="_strTypEchg">Type de l'échange.</param>
+ <exception cref="T:System.ApplicationException">Le type de l'échange est invalide.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.ValiderCodStaEchg(System.String)">
+ <summary>
+     Cette méthode permet de valider le code de statut de l'échange.
+ </summary>
+ <param name="_strCodStaEchg">Code de statut de l'échange.</param>
+ <exception cref="T:System.ApplicationException">Le code de statut de l'échange est invalide.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.ValiderTypEntEchgFich(System.String)">
+ <summary>
+     Cette méthode permet de valider le type de l'entité de l'échange.
+ </summary>
+ <param name="_strTypEntEchgFich">Type de l'entité de l'échange de fichier.</param>
+ <exception cref="T:System.ApplicationException">Le type de l'entité de l'échange est invalide.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.AccesJournEchgFich.FermerConxnServAccesJournEchgFich">
+ <summary>
+     Cette méthode permet de fermer la connexion avec le service WCF.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.EchangeFichier.IAccesJournEchgFich">
+ <summary> 
+     Définition de l'interface permettant de gérer la table des échanges de fichiers (COM_JOURN_ECHG_FICH).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.EchangeFichier.IAccesJournEchgFich.AjouterJournEchgFich(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+ <summary>
+     Cette méthode permet de journaliser un échange de fichier.
+ </summary>
+ <param name="_strIdUtil">Identifiant de l'utilisateur.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomFich">Nom du fichier.</param>
+ <param name="_strTypEchg">Type de l'échange.</param>
+ <param name="_strCodStaEchg">Code de statut de l'échange.</param>
+ <param name="_colctMsgEchgFich">Collection de messages.</param>
+ <param name="_strTypEntEchgFich">Type de l'entité de l'échange de fichier.</param>
+ <param name="_strIdEntEchgFich">Identifiant de l'entité de l'échange de fichier.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesJournEchgFich.vb" region="AjouterJournEchgFich"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesJournEchgFich.cs" region="AjouterJournEchgFich"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.EchangeFichier.NamespaceDoc">
+ <summary>
+ Espace de nom que l'on retrouve dans la composante <b>RAMQ.COM.COC1_V4DonneComne_cpo</b> permettant de gérer l'information sur les échanges
+ de fichier provenant de la table com.com_journ_echg_fich.
+ </summary>
+</member>
+<member name="T:RAMQ.Message.IRecupMsg">
+ <summary> 
+     Définition de l'interface permettant d'obtenir le contenu d'un fichier de messages.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Message.IRecupMsg.ObtenirFichMsgXML(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir le contenu d'un fichier de message.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Le contenu du fichier de messages.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.vb" region="ObtenirFichMsgXml"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.cs" region="ObtenirFichMsgXml"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.IRecupMsg.ObtenirInfoFichMsgXML(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir des informations d'un fichier de message.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Les informations du fichier de messages.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.vb" region="ObtenirInfoFichMsgXML"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.cs" region="ObtenirInfoFichMsgXML"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Message.NamespaceDoc">
+ <summary>
+ Espace de nom que l'on retrouve dans la composante <b>RAMQ.COM.COC1_V4DonneComne_cpo</b> permettant d'obtenir le fichier XML contenant les messages
+ fonctionnels utilisés par le PPP.
+ </summary>
+ <remarks>
+ <para>
+ Contrairement aux autres classes utilisées dans cette composante, les classes de cet espace de nom ne vont pas chercher leurs données dans 
+ une table commune du schéma COM, mais plutôt dans un fichier XML (qui selon le processus normal est généré par l'utilitaire « Outils Communs Oracle ").
+ La composante est principalement destinée à être utilisée par son service web correspondant.
+ </para>
+ <para>
+ La composante permet de déterminer l'emplacement du fichier sur le serveur, la lire et de renvoyer le contenu brut de ce dernier, sous forme
+ de chaîne de caractère XML.
+ </para>
+ <para>
+ Nous vous encourageons à utiliser la composante <b>RAMQ.COM.COD1_V4OutilBase_cpo</b> afin d'exploiter les messages fonctionnels, cette dernière 
+ est optimisée pour éviter des allers-retours coûteux au fichier XML, et au service si vous utilisez le service web correspondant. De plus 
+ dans cette composante les messages sont conservés dans un dictionnaire en mémoire ce qui de plus rend plus l'obtention des messages 
+ fonctionnels demandés.
+ </para>
+ </remarks>
+</member>
+<member name="T:RAMQ.Message.RecupMsg">
+ <summary> 
+     Définition de la classe permettant d'obtenir le contenu d'un fichier de messages.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.#ctor(System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichMsgXml">Nom du répertoire et fichier XML de messages.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.#ctor(System.Web.HttpContextBase,System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires DSQ. 
+ </summary>
+ <param name="_strNomFichMsgXml">Nom du répertoire et fichier XML de messages.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.ObtenirFichMsgXML(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir le contenu d'un fichier de message.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Le contenu du fichier de messages.</returns>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Le fichier de message est invalide.</exception>
+ <exception cref="T:System.IO.FileNotFoundException">Le fichier de messages est inexistant.</exception>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.vb" region="ObtenirFichMsgXml"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.cs" region="ObtenirFichMsgXml"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.ObtenirInfoFichMsgXML(System.String)">
+ <summary>
+     Cette méthode permet d'obtenir des informations d'un fichier de message.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Les informations du fichier de messages.</returns>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Le fichier de message est invalide.</exception>
+ <exception cref="T:System.IO.FileNotFoundException">Le fichier de messages est inexistant.</exception>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.vb" region="ObtenirInfoFichMsgXML"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\RecupMsg.cs" region="ObtenirInfoFichMsgXML"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.Initialiser(System.String)">
+ <summary>
+     Initialise la classe.
+ </summary>
+ <param name="_strNomFichMsgXml">Nom du répertoire et fichier XML de messages.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.InitialiserDSQ(System.Web.HttpContextBase,System.String)">
+ <summary>
+     Initialise la classe pour le DSQ.
+ </summary>
+ <param name="_strNomFichMsgXml">Nom du répertoire et fichier XML de messages.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.ObtenirContFichMsgXml(System.String)">
+ <summary>
+     Cette méthode permet de retourner le contenu d'un document XML.
+ </summary>
+ <param name="_strNomFichMsgAppli">Nom du fichier XML.</param>
+ <returns>Contenu XML sous forme de chaîne de caractères.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.ObtenirFichMsgTraitStand">
+ <summary>
+     Cette méthode permet d'obtenir le fichier de messages de traitement (standard).
+ </summary>
+ <returns>Le fichier de messages de traitement.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.ObtenirFichMsgTraitSecon">
+ <summary>
+     Cette méthode permet d'obtenir le fichier de messages de traitement (secondaire).
+ </summary>
+ <returns>Le fichier de messages de traitement.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.EnvironnementDevl(System.String,System.String)">
+ <summary>
+     Méthode qui permet de déterminer si l'exécution se fait sur un poste de développement.
+ </summary>
+ <param name="_strEnvir">Environnement.</param>
+ <param name="_strNomServr">Nom du poste ou serveur.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Message.RecupMsg.ObtenirContxBase(System.Web.HttpContext)">
+ <summary>
+     Cette méthode permet de retourner une base de contexte HTTP.
+ </summary>
+ <param name="_objContx">Contexte HTTP.</param>
+ <returns>Base de contexte HTTP.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.ParamObtenirInfoFichMsgXMLSorti">
+ <summary> 
+     Classe représentant les paramètres de sorti de la fonction ObtenirInfoFichMsgXML.
+ </summary>
+ <remarks>
+  Auteur : John Jaraceski<br/>
+  Date   : 2016-07-19
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.ParamObtenirInfoFichMsgXMLSorti.Nom">
+ <summary>
+     Retourne le nom du fichier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParamObtenirInfoFichMsgXMLSorti.Rpert">
+ <summary>
+     Retourne le chemin d'accès complet du répertoire du fichier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParamObtenirInfoFichMsgXMLSorti.DatCreat">
+ <summary>
+     Retourne la date de la dernière modification du fichier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParamObtenirInfoFichMsgXMLSorti.DatDernModif">
+ <summary>
+     Retourne la date de la dernière modification du fichier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParamObtenirInfoFichMsgXMLSorti.Tail">
+ <summary>
+     Retourne la taille en octets du fichier.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleAbsntFichConfig">
+<summary>
+  Recherche une chaîne localisée semblable à La clé &apos;{0}&apos; est absente du fichier de configuration..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleAppelModComneSvcImpers">
+<summary>
+  Recherche une chaîne localisée semblable à AppelModComneSvcImpers.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleCodeVolet">
+<summary>
+  Recherche une chaîne localisée semblable à CleCodeVolet.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleCodeVoletDSQ">
+<summary>
+  Recherche une chaîne localisée semblable à DSQ.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleEnvir">
+<summary>
+  Recherche une chaîne localisée semblable à Envir.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleInvalide">
+<summary>
+  Recherche une chaîne localisée semblable à La clé &apos;{0}&apos; est inexistante dans le fichier de configuration..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleNomServr">
+<summary>
+  Recherche une chaîne localisée semblable à NomServeur.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleRpertAppli">
+<summary>
+  Recherche une chaîne localisée semblable à RpertAppli.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleRpertDepoAppli">
+<summary>
+  Recherche une chaîne localisée semblable à RpertDepoAppli.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleUrlServAccesAppli">
+<summary>
+  Recherche une chaîne localisée semblable à UrlServAccesAppli2.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleUrlServAccesDomVal">
+<summary>
+  Recherche une chaîne localisée semblable à UrlServAccesDomVal2.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleUrlServAccesDossier">
+<summary>
+  Recherche une chaîne localisée semblable à UrlServAccesDossier2.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleUrlServAccesJournEchgFich">
+<summary>
+  Recherche une chaîne localisée semblable à UrlServAccesJournEchgFich2.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleUrlServAccesParamExptn">
+<summary>
+  Recherche une chaîne localisée semblable à UrlServAccesParamExptn2.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CodAppli">
+<summary>
+  Recherche une chaîne localisée semblable à COM.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CodAppliInval">
+<summary>
+  Recherche une chaîne localisée semblable à Le code d&apos;application &apos;{0}&apos; est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CodStaEchgInval">
+<summary>
+  Recherche une chaîne localisée semblable à Le code de statut de l&apos;échange &apos;{0}&apos; est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ExpirCacheMsg">
+<summary>
+  Recherche une chaîne localisée semblable à 1440.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.FichierMsgInexistant">
+<summary>
+  Recherche une chaîne localisée semblable à Le fichier de messages est inexistant..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.FichierMsgInvalide">
+<summary>
+  Recherche une chaîne localisée semblable à Le fichier de message est invalide. ({0}).
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.NomFichMsgXml">
+<summary>
+  Recherche une chaîne localisée semblable à {1}_MsgTrait.xml.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.NomFichUdl">
+<summary>
+  Recherche une chaîne localisée semblable à com_ora.udl.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.NomFichUdlIMG">
+<summary>
+  Recherche une chaîne localisée semblable à com_ora11.udl.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.NomFichUdlRFP">
+<summary>
+  Recherche une chaîne localisée semblable à com_ora05.udl.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ParamAppelModComneSvcImpers">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre AppelModComneSvcImpers &apos;{0}&apos; est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ParamInvalide">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ParamObligatoire">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est obligatoire..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.RegexCodAppli">
+<summary>
+  Recherche une chaîne localisée semblable à ^[A-Z]{3}$.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.Succes">
+<summary>
+  Recherche une chaîne localisée semblable à 0.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.TypEchgInval">
+<summary>
+  Recherche une chaîne localisée semblable à Le type de l&apos;échange &apos;{0}&apos; est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.TypEntEchgFichInval">
+<summary>
+  Recherche une chaîne localisée semblable à Le type de l&apos;entité de l&apos;échange &apos;{0}&apos; est invalide..
+</summary>
+</member>
+<member name="T:RAMQ.ParametresExploitation.AccesParamExptn">
+ <summary> 
+     Définition de la classe permettant de gérer la table des paramètres d'exploitation (COM_PARAM_EXPTN).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesParamExptn.IServAccesParamExptn,RAMQ.Message.IResolutionMessage,System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesParamExptn">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesParamExptn.IServAccesParamExptn" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_strAppelSvc">Indique si l'on doit appeller le service web  en format String</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.#ctor(System.String,RAMQ.AccesDonnees.BDOracle.IProcOra,RAMQ.svcIServAccesParamExptn.IServAccesParamExptn,RAMQ.Message.IResolutionMessage,System.Boolean)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strNomFichUdl">Nom fichier UDL a utiliser</param>
+ <param name="_objIProcOra">Objet qui implémente l'interface <see cref="T:RAMQ.AccesDonnees.BDOracle.IProcOra" />.</param>
+ <param name="_objIServAccesAppli">Objet qui implémente l'interface <see cref="T:RAMQ.svcIServAccesAppli.IServAccesAppli" />.</param>
+ <param name="_objIResolMsg">Objet qui implémente l'interface <see cref="T:RAMQ.Message.IResolutionMessage" />.</param>
+ <param name="_blnAppelSvc">Indique si l'on doit appeller le service web.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.ObtenirParamExptn(System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'obtenir un ou plusieurs paramètres d'exploitation.
+ </summary>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strLibel">Libellé du paramètre.</param>
+ <returns>Une collection d'instances de la classe <see cref="T:RAMQ.ParametresExploitation.ParamExptn" />.</returns>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Aucun paramètre d'exploitation trouvé.</exception>
+ <example>Obtenir tous les paramètres d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ObtenirParamExptn"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ObtenirParamExptn"></code>
+ </example>
+ <example>Obtenir un paramètre d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ObtenirParamExptnAvecLibel"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ObtenirParamExptnAvecLibel"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.ModifierParamExptn(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet de modifier les valeurs des paramètres d'exploitation.
+ </summary>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strLibel1">Libellé du premier paramètre.</param>
+ <param name="_strVal1">Valeur du premier paramètre.</param>
+ <param name="_strLibel2">Libellé du deuxième paramètre.</param>
+ <param name="_strVal2">Valeur du deuxième paramètre.</param>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <exception cref="T:System.ApplicationException">Aucun paramètre d'exploitation trouvé.</exception>
+ <example>Modifier un paramètre d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ModifierParamExptnVal1"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ModifierParamExptnVal1"></code>
+ </example>
+ <example>Modifier deux paramètres d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ModifierParamExptnVal1Val2"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ModifierParamExptnVal1Val2"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.AccesParamExptn.IOracleOdp">
+ <summary>
+     Cette Propriété retourne l'objet IOracleOdp. La partie Set servant aux tests unitaires seulement.
+ </summary>
+ <value></value>
+ <returns>Objet qui implémente l'interface <see cref="P:RAMQ.ParametresExploitation.AccesParamExptn.IOracleOdp" /></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.ValiderCodAppli(System.String)">
+ <summary>
+     Cette méthode permet de valider le code d'application.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <exception cref="T:System.ApplicationException">Le code d'application est invalide.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.ExecuterObtnComParamExptnCur(System.String,System.String)">
+ <summary>
+     Cette méthode permet d'appeler la méthode "ObtnComParamExptnCur" du package oracle.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomModul">Nom du module.</param>
+ <returns>Collection d'instances de la classe <see cref="T:RAMQ.ParametresExploitation.ParamExptn" />.</returns>
+ <exception cref="T:System.ApplicationException">Aucun paramètre d'exploitation trouvé.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.ExecuterObtnComParamExptn(System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'appeler la méthode "ObtnComParamExptn" du package oracle.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strLibel">Libellé du premier paramètre.</param>
+ <returns>Collection d'instances de la classe <see cref="T:RAMQ.ParametresExploitation.ParamExptn" />.</returns>
+ <exception cref="T:System.ApplicationException">Aucun paramètre d'exploitation trouvé.</exception>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.ExecuterMajParamExptnPexVal(System.String,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+     Cette méthode permet d'appeler les méthodes "MajParamExptnPexVal_1" et
+     "MajParamExptnPexVal_2" du package oracle.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strLibel">Libellé du paramètre.</param>
+ <param name="_strVal">Valeur du paramètre.</param>
+ <param name="_blnMajVal">True : Valeur 1. False : Valeur 2.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.AccesParamExptn.FermerConxnServAccesParamExptn">
+ <summary>
+     Cette méthode permet de fermer la connexion avec le service WCF.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.ParametresExploitation.IAccesParamExptn">
+ <summary> 
+     Définition de l'interface permettant de gérer la table des paramètres d'exploitation (COM_PARAM_EXPTN).
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.IAccesParamExptn.ObtenirParamExptn(System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet d'obtenir un ou plusieurs paramètres d'exploitation.
+ </summary>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strLibel">Libellé du paramètre.</param>
+ <returns>Une collection d'instances de la classe <see cref="T:RAMQ.ParametresExploitation.ParamExptn" />.</returns>
+ <example>Obtenir tous les paramètres d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ObtenirParamExptn"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ObtenirParamExptn"></code>
+ </example>
+ <example>Obtenir un paramètre d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ObtenirParamExptnAvecLibel"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ObtenirParamExptnAvecLibel"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.IAccesParamExptn.ModifierParamExptn(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+     Cette méthode permet de modifier les valeurs des paramètres d'exploitation.
+ </summary>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strLibel1">Libellé du premier paramètre.</param>
+ <param name="_strVal1">Valeur du premier paramètre.</param>
+ <param name="_strLibel2">Libellé du deuxième paramètre.</param>
+ <param name="_strVal2">Valeur du deuxième paramètre.</param>
+ <example>Modifier un paramètre d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ModifierParamExptnVal1"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ModifierParamExptnVal1"></code>
+ </example>
+ <example>Modifier deux paramètres d'exploitation pour un module et un code d'application.
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.vb" region="ModifierParamExptnVal1Val2"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\AccesParamExptn.cs" region="ModifierParamExptnVal1Val2"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.ParametresExploitation.NamespaceDoc">
+ <summary>
+ Espace de nom que l'on retrouve dans la composante <b>RAMQ.COM.COC1_V4DonneComne_cpo</b> permettant d'obtenir les paramètres d'exploitation
+ d'un PPP.
+ </summary>
+ <remarks>
+ <para>
+ Les paramètres d'exploitations correspondent à une table générique du schéma de COM permettant de conserver différents paramètres pour un
+ PPP donné. Ainsi les PPP peuvent éviter l'ajout d'une table destinée à cette fin dans leur propre schéma de base de données.
+ </para>
+ </remarks>
+</member>
+<member name="T:RAMQ.ParametresExploitation.ParamExptn">
+ <summary> 
+     Définition de la classe représentant un paramètre d'exploitation.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.ParamExptn.#ctor">
+ <summary>
+     Constructeur par défaut.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.ParametresExploitation.ParamExptn.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime)">
+ <summary>
+     Contructeur de type "amie" permettant la création d'un nouvel objet <see cref="T:RAMQ.ParametresExploitation.ParamExptn" />.
+ </summary>
+ <param name="_intNoSeq">Numéro séquentiel.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strNomModul">Nom du module.</param>
+ <param name="_strLibel1">Libellé du premier paramètre.</param>
+ <param name="_strVal1">Valeur du premier paramètre.</param>
+ <param name="_strLibel2">Libellé du deuxième paramètre.</param>
+ <param name="_strVal2">Valeur du deuxième paramètre.</param>
+ <param name="_datDatModif">Date de modification.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.NoSeq">
+ <summary>
+     Propriété qui le numéro séquentiel.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.CodAppli">
+ <summary>
+     Propriété qui retourne le code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.NomModul">
+ <summary>
+     Propriété qui retourne le nom du module.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.Libel1">
+ <summary>
+     Propriété qui retourne le libellé du premier paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.Valeur1">
+ <summary>
+     Propriété qui retourne la valeur du premier paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.Libel2">
+ <summary>
+     Propriété qui retourne le libellé du deuxième paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.Valeur2">
+ <summary>
+     Propriété qui retourne la valeur du deuxième paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.ParamExptn.DatModif">
+ <summary>
+     Propriété qui retourne la date de modification.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.ParametresExploitation.IParamExptn">
+ <summary> 
+     Définition de l'interface représentant un paramètre d'exploitation.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2011-03-01
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.NoSeq">
+ <summary>
+     Propriété qui le numéro séquentiel.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.CodAppli">
+ <summary>
+     Propriété qui retourne le code d'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.NomModul">
+ <summary>
+     Propriété qui retourne le nom du module.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.Libel1">
+ <summary>
+     Propriété qui retourne le libellé du premier paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.Valeur1">
+ <summary>
+     Propriété qui retourne la valeur du premier paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.Libel2">
+ <summary>
+     Propriété qui retourne le libellé du deuxième paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.Valeur2">
+ <summary>
+     Propriété qui retourne la valeur du deuxième paramètre.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.ParametresExploitation.IParamExptn.DatModif">
+ <summary>
+     Propriété qui retourne la date de modification.
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

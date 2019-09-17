@@ -1,0 +1,227 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RAMQ.AGS.YRY3_FournCleChifm_cpo
+</name>
+</assembly>
+<members>
+<member name="T:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.CleRegisEncrpAES256">
+<summary>
+  Recherche une chaîne localisée semblable à Software\RAMQ\EncrVect\{0}.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.CleRegisEncrpTripleDES">
+<summary>
+  Recherche une chaîne localisée semblable à Software\RAMQ\Encr\{0}.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.CodAppliAGS">
+<summary>
+  Recherche une chaîne localisée semblable à AGS.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.NomChampRegisCle">
+<summary>
+  Recherche une chaîne localisée semblable à cle.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.NomChampRegisVectInit">
+<summary>
+  Recherche une chaîne localisée semblable à vecteur.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.NoMsgErrCleChifmInexist">
+<summary>
+  Recherche une chaîne localisée semblable à 24298.
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.ParamInvalide">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.ParamObligatoire">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est obligatoire..
+</summary>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.My.Resources.Resources.RegexCodAppli">
+<summary>
+  Recherche une chaîne localisée semblable à ^[A-Z]{3}$.
+</summary>
+</member>
+<member name="T:RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypCrypto">
+ <summary> 
+     Définition de l'énumération des types de cryptographie.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2013-11-27
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="T:RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypAlgo">
+ <summary> 
+     Définition de l'énumération des types d'algorithme d'encryption.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2013-11-27
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="T:RAMQ.AGS.YRY3_FournCleChifm_cpo.FournCleChifm">
+ <summary> 
+     Définition de la classe qui permet de fournir les clés de chiffrement.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2013-11-27
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.FournCleChifm.#ctor">
+ <summary>
+     Constructeur primaire.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.FournCleChifm.#ctor(RAMQ.Registre.IRegistre)">
+ <summary>
+     Constructeur secondaire pour les tests.
+ </summary>
+ <param name="_objIRegistre">Instance de la classe Registre.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.FournCleChifm.ObtenirCleChifm(System.String,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypCrypto,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypAlgo)">
+ <summary>
+     Méthode qui permet d'obtenir les clés de chiffrement.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_enuTypCrypto">Type de cryptographie.</param>
+ <param name="_enuTypAlgo">Type d'algorithme.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.FournCleChifm.ObtenirCleChifm(System.String,System.String,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypCrypto,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypAlgo)">
+ <summary>
+     Méthode qui permet d'obtenir les clés de chiffrement.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_enuTypCrypto">Type de cryptographie.</param>
+ <param name="_enuTypAlgo">Type d'algorithme.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.FournCleChifm.ConvertirCle(System.String)">
+ <summary>
+     Méthode qui permet de convertir une clé d'encryption sous forme de 
+     chaîne de caractères en tableau de bytes.
+ </summary>
+ <param name="_strCle">Clé d'encryption sous forme de chaîne de caractères.</param>
+ <returns>Clé d'encryption sous forme de tableau de bytes.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AGS.YRY3_FournCleChifm_cpo.IFournCleChifm">
+ <summary> 
+     Définition de l'interface qui permet de fournir les clés de chiffrement.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2013-11-27
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.IFournCleChifm.ObtenirCleChifm(System.String,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypCrypto,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypAlgo)">
+ <summary>
+     Méthode qui permet d'obtenir les clés de chiffrement.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_enuTypCrypto">Type de cryptographie.</param>
+ <param name="_enuTypAlgo">Type d'algorithme.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.AGS.YRY3_FournCleChifm_cpo.IFournCleChifm.ObtenirCleChifm(System.String,System.String,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypCrypto,RAMQ.AGS.YRY3_FournCleChifm_cpo.EnumTypAlgo)">
+ <summary>
+     Méthode qui permet d'obtenir les clés de chiffrement.
+ </summary>
+ <param name="_strCodAppli">Code d'application.</param>
+ <param name="_strZone">Zone de traitement</param>
+ <param name="_enuTypCrypto">Type de cryptographie.</param>
+ <param name="_enuTypAlgo">Type d'algorithme.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.AGS.YRY3_FournCleChifm_cpo.InfoCleChifm">
+ <summary> 
+     Définition de la classe qui contient la clé de chiffrement ainsi que le
+     vecteur d'initialisation.
+ </summary>
+ <remarks>
+  Auteur : Pierre Deblois <br/>
+  Date   : 2013-11-27
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.InfoCleChifm.Cle">
+ <summary>
+ Clé de chiffrement. 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.AGS.YRY3_FournCleChifm_cpo.InfoCleChifm.VecteurInit">
+ <summary>
+ Vecteur d'initialisation.
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tokens>
+  <Token Nom="$guid1$" Valeur="a2b3d4ae-d43e-420a-80d1-5eb710a5db1d" />
+  <Token Nom="$guid2$" Valeur="308b9ada-2a0c-40f9-9d0e-d55e2d042f86" />
+  <Token Nom="$guid3$" Valeur="68971eba-e024-42d9-846d-995036793a74" />
+  <Token Nom="$guid4$" Valeur="761b3e2b-a4b7-42a5-aab2-44c83d2e1427" />
+  <Token Nom="$guid5$" Valeur="cdd24fb1-2381-488b-9d6a-876fb35d78ba" />
+  <Token Nom="$guid6$" Valeur="dc53f034-9968-4412-9edc-68d23431384c" />
+  <Token Nom="$guid7$" Valeur="505f67dd-7038-4651-8b10-0d94c7b106d0" />
+  <Token Nom="$guid8$" Valeur="12155aa2-a797-4560-8fb1-f5c7b5341dec" />
+  <Token Nom="$guid9$" Valeur="096aecd5-b103-41b3-a226-6b66b3410d42" />
+  <Token Nom="$guid10$" Valeur="9c8fac84-cf38-4f8d-97a4-c51c68ee55da" />
+  <Token Nom="$time$" Valeur="12/12/2016 14:59:58" />
+  <Token Nom="$year$" Valeur="2016" />
+  <Token Nom="$username$" Valeur="u6755" />
+  <Token Nom="$userdomain$" Valeur="ADPROD" />
+  <Token Nom="$machinename$" Valeur="D675560V" />
+  <Token Nom="$clrversion$" Valeur="4.0.30319.42000" />
+  <Token Nom="$registeredorganization$" Valeur="RAMQ" />
+  <Token Nom="$runsilent$" Valeur="False" />
+  <Token Nom="$wizarddata$" Valeur="&lt;packages repository=&quot;registry&quot; keyName=&quot;RAMQ&quot; xmlns=&quot;http://schemas.microsoft.com/developer/vstemplate/2005&quot;&gt;&lt;package id=&quot;L2-Princ.RAMQ.COM.COD1_V4OutilBase&quot; version=&quot;2.0.0&quot; targetFramework=&quot;net452&quot; /&gt;&lt;/packages&gt;" />
+  <Token Nom="$targetframeworkversion$" Valeur="4.5.2" />
+  <Token Nom="$RAMQProjectName$" Valeur="RAMQ.$PPP$.$safeprojectname$" />
+  <Token Nom="$solutiondirectory$" Valeur="C:\Travail\TFS\PRE\Devl\NET45\PL\PLC2_CnsulProfiPremqProf" />
+  <Token Nom="$projectname$" Valeur="PLC2_CnsulProfiPremqProf_cpo" />
+  <Token Nom="$safeprojectname$" Valeur="PLC2_CnsulProfiPremqProf_cpo" />
+  <Token Nom="$currentuiculturename$" Valeur="fr-FR" />
+  <Token Nom="$installpath$" Valeur="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\" />
+  <Token Nom="$specifiedsolutionname$" Valeur="PLC2_CnsulProfiPremqProf" />
+  <Token Nom="$exclusiveproject$" Valeur="True" />
+  <Token Nom="$destinationdirectory$" Valeur="C:\Travail\TFS\PRE\Devl\NET45\PL\PLC2_CnsulProfiPremqProf\PLC2_CnsulProfiPremqProf_cpo" />
+  <Token Nom="$PPP$" Valeur="PRE" />
+  <Token Nom="$SS$" Valeur="PL" />
+  <Token Nom="$SSFU$" Valeur="PLC2" />
+  <Token Nom="$Description$" Valeur="Consulter le profil des PREM du professionnel" />
+  <Token Nom="$EstNuGet$" Valeur="True" />
+  <Token Nom="$nugetpackagesfolder$" Valeur="..\packages\" />
+  <Token Nom="$timestamp$" Valeur="20161212150013" />
+</Tokens>

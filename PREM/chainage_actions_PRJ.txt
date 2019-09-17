@@ -1,0 +1,29 @@
+Interface WEB 
+  -->service.SVC
+     -->CPO[a linterieur du sce web]
+          -->Logique Affaire
+                   (contient un mappeur Map un objet PlanRegnMdcal.Parametre.xxxx en 	            PRE_Entites_cpo.AvisConformite.Parametre.xxxx)
+                 -->AccesDonnes
+                         -->Package.SQL
+
+
+
+
+***Pacake oracle
+PRE_PREMQ_PLANREGNMDCALCNSUL (plus svr used pour PREM)
+------------------------------------------------------------------
+-----------------Call Web service...................
+>Solution consommantle service
+   >cpo
+      -->Interfcae d emethode
+      -->Classe impelemantant methode
+                -->call utiliataire de service
+      -->Reference deservice ajouté
+      -->Interface InomdemoninterfcaeFactory (nomdemoninterfcae est identique à celui present dans le CPO) 
+   
+   >Projet clt
+      -->private readonly InomdemonintterfaceFactory _moninterfaceFactory;
+      --> pour l'appel 
+          -->  _moninterfaceFactory.Instancier().nomdelamethoevoulu de L,interface dans le projet CPO;
+      
+      

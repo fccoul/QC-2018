@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PL_LogiqueAffaire_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.Admissibilite">
+            <summary> 
+             Classe des admissibilités
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.Admissibilite.#ctor(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.Admissibilite.VerifierAdmissibiliteProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Permet de vérifier les admissibilités d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>La vérification des admissibilités</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite">
+            <summary> 
+             Interface des admissibilités
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite.VerifierAdmissibiliteProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Permet d'obtenir les information sur l'admissibilité du professionnel à facturer
+            </summary>
+            <param name="intrant">Information du professionnel</param>
+            <returns>Les information sur l'admissibilité du professionnel à facturer</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite">
+            <summary> 
+             Classe des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ObtenirLesAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet d'obtenir une liste des avis de conformité et de leurs statuts
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierPeriodeAvis(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de modifier la période d'un avis de conformité et son statut
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de modification de l'avis de conformité</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.CreerStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre)">
+            <summary>
+            Permet de créer un statut de l'engagement
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de la création du statut de l'engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre)">
+            <summary>
+            Permet de modifier le statut d'un avis de conformité
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de modification du statut de l'avis de conformité</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite">
+            <summary> 
+             Interface des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ObtenirLesAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet d'obtenir une liste des avis de conformité et de leurs statuts
+            </summary>
+            <Parametre name="intrant">Parametreètre d'entré</Parametre>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierPeriodeAvis(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de modifier la période d'un avis de conformité et son statut
+            </summary>
+            <Parametre name="intrant">Parametreètre d'entré</Parametre>
+            <returns>Retourne les informations de modification de l'avis de conformité</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.CreerStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre)">
+            <summary>
+            Permet de créer un statut de l'engagement
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de la création du statut de l'engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre)">
+            <summary>
+            Permet de modifier le statut d'un avis de conformité
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de modification du statut de l'avis de conformité</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation">
+            <summary> 
+             Classe des dérogations
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.ObtenirDerogationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre)">
+            <summary>
+            Permet d'obtenir les dérogations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Liste des dérogations d'un professionnel de la santé</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.ModifierDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Permet de modifier une dérogation d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Information de la dérogation</param>
+            <returns>Le nouveau numéro de séquence de la dérogation</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.CreerDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre)">
+            <summary>
+            Permet de créer une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrées.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation">
+            <summary> 
+             Interface des dérogations
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation.ModifierDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Permet de modifier une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Information de la dérogation.</param>
+            <returns>Le nouveau numéro de séquence de la dérogation.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation.ObtenirDerogationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre)">
+            <summary>
+            Permet d'obtenir les dérogations d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrées.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation.CreerDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre)">
+            <summary>
+            Permet de créer une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrées.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel">
+            <summary> 
+             Interface pour la recherche de professionnels.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel.ObtenirInformationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+             Obtenir les informations sur la relation dispensateur individu.
+            </summary>
+            <param name="intrant">Les critètres de recherche.</param>
+            <returns>Une liste avec les informations des professionnels.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel">
+            <summary> 
+             Classe pour la recherche de professionnels.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel.#ctor(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul)">
+            <summary>
+            Constructeur.
+            </summary>
+            <param name="infoDispCnsul">Classe d'information d'un dispensateur en consultation.</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel.ObtenirInformationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+             Obtenir les informations sur la relation dispensateur individu.
+            </summary>
+            <param name="intrant">Les critètres de recherche.</param>
+            <returns>Une liste avec les informations des professionnels.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur">
+            <summary> 
+             Mappeur
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre en PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti en PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre
+             en PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierPeriodeAvisSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre en PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti en PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutAvisConformiteEntre en PlanRegnMdcal.Parametre.ModifierStatutAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre en ObtenirLesDerogationsProfessionnelSanteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteSorti,RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti@)">
+            <summary>
+             Map un objet ObtenirLesDerogationsProfessionnelSanteSorti en PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre
+             en ModifierDerogationEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationSorti,RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti@)">
+            <summary>
+             Map un objet ModifierDerogationSorti
+             en PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre
+             en ModifierDerogationEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationSorti)">
+            <summary>
+             Map un objet ModifierDerogationSorti
+             en PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+             Map un objet Professionnel.Parametre.ObtenirDispensateurIndividuEntre en FIP.EPZ3.Parametre.ObtnRelDispIndivEntre
+            </summary>
+            <Parametre name="parametreEntre">Objet source</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti)">
+            <summary>
+             Map un objet FIP.EPZ3.Parametre.ObtnRelDispIndivSorti en Professionnel.Parametre.ObtenirDispensateurIndividuSorti
+            </summary>
+            <Parametre name="parametreEntreEZP3">Objet source</Parametre>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

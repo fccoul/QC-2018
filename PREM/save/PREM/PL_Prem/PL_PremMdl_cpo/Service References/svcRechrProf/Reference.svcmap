@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c7eaa1ff-1512-46b2-8c29-dde6340d391a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="RAMQ.PRE.PRE_Entites_cpo" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServRechrProf.xsd" MetadataType="Schema" ID="52484573-82a5-4772-8377-ebff39b0ce15" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServRechrProf1.xsd" MetadataType="Schema" ID="751d4a26-8534-4942-a130-04d0865ac1d9" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServRechrProf2.xsd" MetadataType="Schema" ID="74d977b6-9abe-4c46-afb5-434e4e0979f2" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServRechrProf3.xsd" MetadataType="Schema" ID="721efa37-b6ea-469c-aaac-8b1bd7a73a22" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServRechrProf4.xsd" MetadataType="Schema" ID="a9be3f24-04a4-4b74-94af-e6837cc66ede" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServRechrProf5.xsd" MetadataType="Schema" ID="6c218f2b-aae3-495e-a57a-922b3bc1f506" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServRechrProf.wsdl" MetadataType="Wsdl" ID="3ec9dd8c-0ac6-4d5d-bdcc-f0b2f2c8a422" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?wsdl" />
+    <MetadataFile FileName="ServRechrProf.disco" MetadataType="Disco" ID="163dc7ca-ec0c-4404-afa1-c731bf3af343" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?disco" />
+    <MetadataFile FileName="ServRechrProf6.xsd" MetadataType="Schema" ID="f679edf4-3d02-4429-ad0f-2752e18b8433" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd8" />
+    <MetadataFile FileName="ServRechrProf7.xsd" MetadataType="Schema" ID="e5bfe630-a007-4497-b631-fda3a2b532f8" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServRechrProf8.xsd" MetadataType="Schema" ID="d494539a-dd1e-494a-b495-588c0b1e187b" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

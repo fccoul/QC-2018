@@ -1,0 +1,71 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite
+@using RAMQ.PRE.PRE_Entites_cpo;
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLA1CSS")
+}
+@{
+    ViewData["TitrePage"] = "Transmettre un avis";
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "AvisForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div role="group" class="collection">
+
+        <!-- Div contenant le message informatif sur l'engagement actif -->
+        <div id="AlertAvis" class="alert alert-info cacher" role="alert">
+        </div>
+
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel")
+        @Html.Hidden("IdDDL")
+        @Html.Hidden("TextDDL")
+        
+                  
+        @Html.EditorFor(x => x.DatePrevue, "DatePicker", new { disabled = true, placeholder = "AAAA-MM-JJ" })
+            
+        
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                @Html.Hidden("IdTerritoireDDL")
+                @Html.Hidden("TextTerritoireDDL")
+                @Html.EditorFor(x => x.Territoire, "DropDownList", new { disabled = true, classe = "select2dropdownlist" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.EditorFor(x => x.Confirmation, "Boolean", new { disabled = true, label = "Je confirme que les renseignements indiqués sont identiques à ceux qui sont inscrits sur le formulaire de demande d’avis de conformité du médecin." })
+            </div>
+        </div>
+        <br />
+
+        <!-- Button -->
+        <div class="row">
+            <div class="form-group col-md-12">
+                <button id="TransmettreAvis" name="TypeAction" class="btn btn-primary btn-success" disabled="disabled" type="submit" value="@Enumerations.TypeTraitementAvisConformite.Transmettre">
+                    <i class="fa fa-check" aria-hidden="true"></i> Transmettre
+                </button>
+                <button id="EnregistrerAvis" name="TypeAction" class="btn btn-default" disabled="disabled" type="submit" value="@Enumerations.TypeTraitementAvisConformite.Enregistrer">
+                    <i class="fa glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Enregistrer
+                </button>
+                <button id="SupprimerAvis" name="TypeAction" class="btn btn-danger" disabled="disabled" hidden="hidden" type="submit" value="@Enumerations.TypeTraitementAvisConformite.Supprimer">
+                    <i class="fa fa-trash" aria-hidden="true"></i> Supprimer
+                </button>
+            </div>
+        </div>
+
+        @Html.DisplayFor(x => x.Message, "ModalConfirmation")        
+
+        <input type="hidden" id="Continuer" name="Continuer" value="@Html.Raw(Model.Continuer)" />
+        <input type="hidden" id="TypeAction" name="TypeAction" value="@Html.Raw(Model.TypeAction)" />
+        <input type="hidden" id="QuestionPose" name="QuestionPose" value="@Html.Raw(Model.QuestionPose)" />
+        <input type="hidden" id="InfoRedirection" name="InfoRedirection" value="@Html.Raw(Model.InfoRedirection)" />
+        <input type="hidden" id="Guid" name="Guid" value="@Html.Raw(Model.Guid)" />
+        <input type="hidden" id="Valider" name="Valider" value="@Html.Raw(Model.Valider)" />
+    </div>
+
+}
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA1_Transmettre")
+}

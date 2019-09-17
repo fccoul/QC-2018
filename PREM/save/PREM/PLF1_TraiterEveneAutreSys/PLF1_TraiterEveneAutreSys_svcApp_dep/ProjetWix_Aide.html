@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Projet de déploiement WIX - Aide</title>
+    <style>
+        html {
+            background: #f1f1f1;
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+            color: #505050;
+            font: 14px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+            margin: 1%;
+            min-height: 95.5%;
+            border: 1px solid silver;
+            position: relative;
+        }
+
+        #header {
+            padding: 0;
+        }
+
+            #header h1 {
+                font-size: 44px;
+                font-weight: normal;
+                margin: 0;
+                padding: 10px 30px 10px 30px;
+            }
+
+            #header span {
+                margin: 0;
+                padding: 0 30px;
+                display: block;
+            }
+
+            #header p {
+                font-size: 20px;
+                color: #fff;
+                background: #007acc;
+                padding: 0 30px;
+                line-height: 50px;
+                margin-top: 25px;
+            }
+
+                #header p a {
+                    color: #fff;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    padding-right: 35px;
+                    background: no-repeat right bottom url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAWCAMAAAAcqPc3AAAANlBMVEUAAAAAeswfitI9mthXp91us+KCvuaTx+mjz+2x1u+83PLH4vTR5/ba7Pjj8Pns9fv1+v3////wy3dWAAAAAXRSTlMAQObYZgAAAHxJREFUeNp9kVcSwCAIRMHUYoH7XzaxOxJ9P8oyQ1uIqNPwh3s2aLmIM2YtqrLcQIeQEylhuCeUOlhgve5yoBCfWmlnlgkN4H8ykbpaE7gR03AbUHiwoOxUH9Xp+ubd41p1HF3mBPrfC87BHeTdaB3ceeKL9HGpcvX9zu6+DdMWT9KQPvYAAAAASUVORK5CYII=);
+                }
+
+        #main {
+            padding: 5px 30px;
+            clear: both;
+        }
+
+        .section {
+            width: 21.7%;
+            float: left;
+            margin: 0 0 0 4%;
+        }
+
+            .section h2 {
+                font-size: 13px;
+                text-transform: uppercase;
+                margin: 0;
+                border-bottom: 1px solid silver;
+                padding-bottom: 12px;
+                margin-bottom: 8px;
+            }
+
+            .section.first {
+                margin-left: 0;
+            }
+
+                .section.first h2 {
+                    font-size: 24px;
+                    text-transform: none;
+                    margin-bottom: 25px;
+                    border: none;
+                }
+
+                .section.first li {
+                    border-top: 1px solid silver;
+                    padding: 8px 0;
+                }
+
+            .section.last {
+                margin-right: 0;
+            }
+
+        a {
+            color: #267cb2;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        #footer {
+            clear: both;
+            padding-top: 50px;
+        }
+
+            #footer p {
+                position: absolute;
+                bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Projet de déploiement WIX - Aide</h1>
+        <span>
+        </span>
+    </div>
+
+    <div id="main">
+        <div>
+            <h2>Étapes de création d'un projet de déploiement WIX</h2>
+            <ul>
+                <li>S'assurer que la solution et les projets sont dans un répertoire de travail de TFS.</li>
+                <p></p>
+                <li>
+                    S'assurer d'ajouter les références aux projets à déployer.&nbsp; Pour chacune des
+                    références,&nbsp; modifier les propriétés :<ul>
+                        <li>Directory Id={Répertoire cible pour les fichiers}</li>
+                        <li>Harvest=true.&nbsp; </li>
+                    </ul>
+                </li>
+                <p></p>
+                <li>
+                    Dans les projets à déployer,&nbsp; modifier la propriété &quot;Build Action&quot; à &quot;Content&quot; pour les
+                    éléments qui doivent être déployer.&nbsp; Ces éléments seront déployés sous le
+                    répertoire défini selon le &quot;Directory Id&quot;.
+                </li>
+                <p></p>
+                <li>
+                    Fichier de variables Codes.wxi<ul>
+                        <li>Ce fichier permet de définir les idenfiants uniques pour chacune des livraisons.</li>
+                        <li>S'assurer d'avoir un identifiant unique pour les ProductsCodes et UpgradeCodes pour chacune des branches principales.</li>
+                    </ul>
+                </li>
+                <p></p>
+                <li>
+                    Fichier Product.wxs<ul>
+                        <li>Ce fichier permet de définir les sources et cibles de déploiement.</li>
+                        <li>
+                            Lors du PreBuild,&nbsp; des fichiers de variables sont générés et utilisés pour le déploiement. Ces variables
+                            peuvent être utilisées dans le fichier Product.wxs.<ul>
+                                <li>RAMQ.GCD.Var.wxi.</li>
+                                <li>
+                                    <table>
+                                        <tr><td>RpertConfg</td><td>Répertoire des fichiers de configuration</td></tr>
+                                        <tr><td>Nom</td><td>Nom de la branche</td></tr>
+                                        <tr><td>Livraison</td><td>No de la livraison (ex. L1)</td></tr>
+                                        <tr><td>ProductCode</td><td>Identifiant du produit. Obtenir la valeur de la variable contenu dans le fichier Codes.wxi</td></tr>
+                                        <tr><td>UpgradeCode</td><td>Identifiant de mise à jour. Obtenir la valeur de la variable contenu dans le fichier Codes.wxi</td></tr>
+                                        <tr><td>PrefixLivraison</td><td>Préfixe du no de livraison (Ex. L1.)</td></tr>
+                                    </table>
+                                </li>
+                                <li>{NomDuProjetEnReference}.var.wxi</li>
+                                <li>
+                                    <table>
+                                        <tr><td>[ComposanteRef].Version</td><td>Version complèete de la composante en référence</td></tr>
+                                        <tr><td>[ComposanteRef].Version.Majeur</td><td>Version majeure de la composante en référence</td></tr>
+                                        <tr><td>[ComposanteRef].Version.Mineur</td><td>Version mineure de la composante en référence</td></tr>
+                                        <tr><td>[ComposanteRef].Version.Revision</td><td>Version de révision de la composante en référence</td></tr>
+                                        <tr><td>[ComposanteRef].Version.PrereleaseInfo</td><td>Information de la version de la composante en référence</td></tr>
+                                        <tr><td>[NuGet].Version</td><td>Version complèete de la composante Nuget</td></tr>
+                                        <tr><td>[NuGet].Version.Majeur</td><td>Version majeure de la composante Nuget</td></tr>
+                                        <tr><td>[NuGet].Version.Mineur</td><td>Version mineure de la composante Nuget</td></tr>
+                                        <tr><td>[NuGet].Version.Revision</td><td>Version de révision de la composante Nuget</td></tr>
+                                        <tr><td>[NuGet].Version.PrereleaseInfo</td><td>Information de la version de la composante Nuget</td></tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>S&#39;assurer d&#39;inclure les fichiers de variables au début du fichier</li>
+                        <li>Définir les répertoires cibles (Section Directory)
+                        </li>
+                        <li>Définir les composantes à déployer (Section Component)
+                        <br />
+                            <ul>
+                                <li>Exemple d'une source CPO
+                                <p>
+                                    &lt;Component Id=&quot;BinCpo&quot; Directory=&quot;BinFolder&quot;&gt;
+                                    <br /> 
+                                         &lt;File Id=&quot;BinCpo.Output&quot; 
+                                    <br />
+                                                  Name=&quot;$(var.SSFU_NomSignificatif_cpo.TargetFileName)&quot; 
+                                    <br />
+                                                  Source=&quot;$(var.SSFU_NomSignificatif_cpo.TargetPath)&quot; /&gt; 
+                                    <br />
+                                         &lt;/Component&gt;
+                                </p>
+                                </li>
+                                <li>Exemple d'un web.config selon environnement
+                                    <p>
+                                        &lt;Component Id=&quot;ConfigFONCT&quot; Directory=&quot;SSFU&quot;&gt;
+                                        <br />
+                                        &lt;Condition&gt;ENVIR=FONCT&lt;/Condition&gt;
+                                        <br />
+                                        &lt;File Id=&quot;Fonct.Web.Output&quot;
+                                        <br />
+                                        Name=&quot;Web.config&quot;
+                                        <br />
+                                        Source=&quot;$(var.SSFU_NomSignificatif_iut.ProjectDir)\Config\FONCT.Web.Config&quot; /&gt;
+                                        <br />
+                                        &lt;/Component&gt;
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Définir les instruction d&#39;installation - fonctionnalités - (Section Feature)<ul>
+                                <li>Déploiement des composantes (Section Component)</li>
+                                <li>Déploiement des fichiers définis comme contenu (Content) pour chacun des projets</li>
+                                <li>Déploiement des fichiers en référence par des packages NuGet. Utiliser {NomDuProjetEnReference}.DllRefreNuget qui permet d'obtenir les fichiers en référence via les pacakges NuGet.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <p></p>
+                <li>Créer un fichier de commande pour l'installation du msi.</li>
+            </ul>
+        </div>
+
+
+        <div id="footer">
+            <p>
+                <a href="http://wixtoolset.org/documentation/" title="Documentation WIX">Documentation WIX</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

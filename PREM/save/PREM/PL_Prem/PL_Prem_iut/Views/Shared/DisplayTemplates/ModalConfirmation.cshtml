@@ -1,0 +1,15 @@
+﻿@model string
+<div id="ConfirmationModal" class="modal" role="dialog" aria-labelledby="ConfirmationLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                @Html.Raw(Model)
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-success" id="ButtonOui">Transmettre</button>
+                <button class="btn" id="ButtonNon" data-dismiss="modal" aria-hidden="true">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

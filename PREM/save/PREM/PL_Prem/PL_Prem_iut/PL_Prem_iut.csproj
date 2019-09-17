@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A964473F-00D6-4050-96C3-D0DDD06B9BE6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PL_Prem_iut</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PL_Prem_iut</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\RAMQ.PRE.PL_Prem_iut.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\RAMQ.PRE.PL_Prem_iut.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.Owin.4.0.1\lib\net45\Autofac.Integration.Mvc.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Owin.4.1.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.AGS.YRY3_FournCleChifm_cpo, Version=2.1.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.AGS.YRY3_FournCleChifm.2.1.1\lib\NET45\RAMQ.AGS.YRY3_FournCleChifm_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COA1_V4AfichMVC_cpo, Version=2.3.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COA1_V4AfichMVC.2.3.1\lib\NET45\RAMQ.COM.COA1_V4AfichMVC_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COA2_V4SiteMVCBaseVues_cpo, Version=2.4.26.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COA2_V4SiteMVCBaseVues.2.4.26\lib\NET45\RAMQ.COM.COA2_V4SiteMVCBaseVues_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COA2_V4SiteMVCBase_cpo, Version=2.3.4.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COA2_V4SiteMVCBase.2.3.4\lib\NET45\RAMQ.COM.COA2_V4SiteMVCBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC1_V4DonneComne_cpo, Version=2.2.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.2.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC2_V4FournAccesDonne_cpo, Version=2.3.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_JetonAuthn_cpo, Version=1.2.3.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.8.6.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.6\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD2_V4GestCache_cpo, Version=2.2.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.2.1\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_Entites_cpo, Version=1.0.152.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.152\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_OutilComun_cpo, Version=1.0.58.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_OutilComun.1.0.58\lib\NET45\RAMQ.PRE.PRE_OutilComun_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorGenerator.Mvc.2.4.2\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\Startup.Nonce.cs" />
+    <Compile Include="Attributs\AjaxRequestAttribute.cs" />
+    <Compile Include="Attributs\AjaxValidateAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Attributs\FichierJavascriptExterne.cs" />
+    <Compile Include="Attributs\NombreAvisNonTransmisAttribute.cs" />
+    <Compile Include="Attributs\RedirectionPageAccueilPLC2.cs" />
+    <Compile Include="Attributs\RedirectionPageAccueil.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="ControllersHelpers\ILieuGeographiqueHelpers.cs" />
+    <Compile Include="ControllersHelpers\IProfessionnelHelpers.cs" />
+    <Compile Include="ControllersHelpers\LieuGeographiqueHelpers.cs" />
+    <Compile Include="ControllersHelpers\ProfessionnelHelpers.cs" />
+    <Compile Include="Controllers\AutorisationController.cs" />
+    <Compile Include="Controllers\AvisConformiteController.cs" />
+    <Compile Include="Controllers\CommunController.cs" />
+    <Compile Include="Controllers\DecisionAvisConformiteController.cs" />
+    <Compile Include="Controllers\JavascriptController.cs" />
+    <Compile Include="Controllers\DemandeReevaluationController.cs" />
+    <Compile Include="Controllers\ProfilProfessionnelController.cs" />
+    <Compile Include="Controllers\RapportController.cs" />
+    <Compile Include="CustomValidationAttribute\RequiredTrueAttribute.cs" />
+    <Compile Include="Entite\AvisAModifier.cs" />
+    <Compile Include="Entite\AvisEnCours.cs" />
+    <Compile Include="Entite\CodeRSSUtilisateur.cs" />
+    <Compile Include="Entite\CritereRechercheJourneeFacturerTerritoire.cs" />
+    <Compile Include="Entite\CritereRechercheJourneeFacturerRSS.cs" />
+    <Compile Include="Entite\DroitExercice.cs" />
+    <Compile Include="Entite\HistoriqueEngagement.cs" />
+    <Compile Include="Entite\InformationMedecin.cs" />
+    <Compile Include="Entite\InformationTerritoire.cs" />
+    <Compile Include="Entite\PeriodeExercice.cs" />
+    <Compile Include="Entite\ProfessionnelPossedeClasse.cs" />
+    <Compile Include="Entite\RechercheProfessionnelReevaluation.cs" />
+    <Compile Include="Entite\RechercheProfessionnelInformation.cs" />
+    <Compile Include="Entite\RechercheProfessionnel.cs" />
+    <Compile Include="Entite\RechercheNumeroPratique.cs" />
+    <Compile Include="Entite\TableAvis.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="Helpers\NonceHelper.cs" />
+    <Compile Include="Models\PLA1_AvisConformite\PLA1_Modification.cs" />
+    <Compile Include="Models\PLA2_DecisionAvisConformite\PLA2_ConfirmationDerogation.cs" />
+    <Compile Include="Models\PLA2_DecisionAvisConformite\PLA2_ConfirmationSuspension.cs" />
+    <Compile Include="Models\PLA2_DecisionAvisConformite\PLA2_Derogation.cs" />
+    <Compile Include="Models\PLA2_DecisionAvisConformite\PLA2_Suspension.cs" />
+    <Compile Include="Models\PLA2_DecisionAvisConformite\SuspensionBase.cs" />
+    <Compile Include="Models\PLA1_AvisConformite\PLA1_Attente.cs" />
+    <Compile Include="Models\PLA1_AvisConformite\PLA1_AvisBase.cs" />
+    <Compile Include="Models\PLA1_AvisConformite\PLA1_AvisConformite.cs" />
+    <Compile Include="Models\PLA1_AvisConformite\PLA1_Confirmation.cs" />
+    <Compile Include="Models\PLA5_SaisirAutorActivMdcal\PLA5_SaisirAutorisation.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_AbsncAvisConf.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_AvisConfActifsParTerri.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_AvisConfTermines.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_DerogPratiExclu.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_NonRespAvisConf.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_ExerNonAutoRPPR.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_NouvMedSansAvisConf.cs" />
+    <Compile Include="Models\PLC1_ConsulterRappPrem\PLC1_RepartInterRegionPrati.cs" />
+    <Compile Include="Models\PLC2_ProfilProfessionnel\IPLC2_HistoriqueEngagement.cs" />
+    <Compile Include="Models\PLC2_ProfilProfessionnel\PLC2_InformationProfessionnel.cs" />
+    <Compile Include="Models\PLC2_ProfilProfessionnel\PLC2_HistoriqueEngagement.cs" />
+    <Compile Include="Models\PLC2_ProfilProfessionnel\PLC2_RegionPratiquePartielleRestreinte.cs" />
+    <Compile Include="Models\PLC2_ProfilProfessionnel\PLC2_PratiqueExclusive.cs" />
+    <Compile Include="Models\PLC2_ProfilProfessionnel\PLC2_RepartitionPratique.cs" />
+    <Compile Include="Models\PLE1_DemandeReevaluation\PLE1_InformationProfessionnel.cs" />
+    <Compile Include="Models\PLE1_DemandeReevaluation\PLE1_Reevaluation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Securite\ISecurite.cs" />
+    <Compile Include="Securite\Securite.cs" />
+    <Compile Include="Utilitaires\Configuration.cs" />
+    <Compile Include="Utilitaires\INomFichierGabaritPDFConfirmationBuilder.cs" />
+    <Compile Include="Utilitaires\IUtilitaire.cs" />
+    <Compile Include="Utilitaires\NomFichierGabaritPDFConfirmationBuilder.cs" />
+    <Compile Include="Utilitaires\SelectListItemComparer.cs" />
+    <Compile Include="Utilitaires\Utilitaire.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\Startup.Autofac.cs" />
+    <Compile Include="Controllers\AccueilController.cs" />
+    <Content Include="Contents\css\bootstrap-datepicker.css" />
+    <Content Include="Contents\css\dataTables.bootstrap.css" />
+    <Content Include="Contents\css\PLA.css" />
+    <Content Include="Contents\css\PLA2.css" />
+    <Content Include="Contents\css\PLA1.css" />
+    <Content Include="Contents\css\PLC1.css" />
+    <Content Include="Contents\css\PLE1.css" />
+    <Content Include="Contents\css\PLC2.css" />
+    <Content Include="Contents\css\PREM.css" />
+    <Content Include="Contents\css\select2.css" />
+    <Content Include="Contents\scripts\bootstrap-datepicker.fr.js" />
+    <Content Include="Contents\scripts\bootstrap-datepicker.js" />
+    <Content Include="Contents\scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Contents\scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Contents\scripts\jquery.mask.js" />
+    <Content Include="Contents\scripts\PLA1\PLA1_Attente.js" />
+    <Content Include="Contents\scripts\PLA1\PLA1_Confirmation.js" />
+    <Content Include="Contents\scripts\PLA1\PLA1_Modifier.js" />
+    <Content Include="Contents\scripts\PLA1\PLA1_Transmettre.js" />
+    <Content Include="Contents\scripts\PLA2\PLA2_ConfirmationDerogation.js" />
+    <Content Include="Contents\scripts\PLA2\PLA2_ConfirmationSuspension.js" />
+    <Content Include="Contents\scripts\PLA2\PLA2_TransmettreDerogation.js" />
+    <Content Include="Contents\scripts\PLA2\PLA2_AnnulerDerogation.js" />
+    <Content Include="Contents\scripts\PLA2\PLA2_AjouterModifierAnnulerSuspension.js" />
+    <Content Include="Contents\scripts\PLA2\PLA2_GererSuspension.js" />
+    <Content Include="Contents\scripts\PLA5\PLA5_Global.js" />
+    <Content Include="Contents\scripts\PLC1\PLC1.js" />
+    <Content Include="Contents\scripts\PLC2\PLC2.js" />
+    <Content Include="Contents\scripts\PLC2\PLC2_HistoriqueEngagement.js" />
+    <Content Include="Contents\scripts\PLC2\PLC2_RegionPratiquePartielleRestreinte.js" />
+    <Content Include="Contents\scripts\PLC2\PLC2_PratiqueExclusive.js" />
+    <Content Include="Contents\scripts\PLC2\PLC2_ReductionRemuneration.js" />
+    <Content Include="Contents\scripts\PLC2\PLC2_RepartitionPratique.js" />
+    <Content Include="Contents\scripts\PLE1\PLE1.js" />
+    <Content Include="Contents\scripts\PREM.js" />
+    <Content Include="Contents\scripts\select2\i18n\fr.js" />
+    <Content Include="Contents\scripts\select2\select2.full.min.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Accueil\PLA9_Accueil.cshtml" />
+    <Content Include="Views\Shared\HautDePage.cshtml" />
+    <Content Include="Views\Shared\MenuApplication.cshtml" />
+    <Content Include="Views\Shared\ScriptsBasDepage.cshtml" />
+    <Compile Include="Startup.cs" />
+    <Content Include="Global.asax" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Content Include="Views\DecisionAvisConformite\PLA2_AjouterModifierAnnulerSuspension.cshtml" />
+    <Content Include="Views\DecisionAvisConformite\PLA2_AnnulerDerogation.cshtml" />
+    <Content Include="Views\DecisionAvisConformite\PLA2_ConfirmationDerogation.cshtml" />
+    <Content Include="Views\DecisionAvisConformite\PLA2_ConfirmationSuspension.cshtml" />
+    <Content Include="Views\DecisionAvisConformite\PLA2_GererSuspension.cshtml" />
+    <Content Include="Views\DecisionAvisConformite\PLA2_TransmettreDerogation.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Label.cshtml" />
+    <Content Include="Views\ProfilProfessionnel\PLC2_Avis.cshtml" />
+    <Content Include="Views\ProfilProfessionnel\PLC2_HistoriqueEngagement.cshtml" />
+    <Content Include="Views\ProfilProfessionnel\PLC2_PratiqueExclusive.cshtml" />
+    <Content Include="Views\ProfilProfessionnel\PLC2_RegionPratiquePartielleRestreinte.cshtml" />
+    <Content Include="Views\ProfilProfessionnel\PLC2_ReductionRemuneration.cshtml" />
+    <Content Include="Views\ProfilProfessionnel\PLC2_RepartitionPratique.cshtml" />
+    <Content Include="Views\Javascript\Constantes.cshtml" />
+    <None Include="appSettings.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="appSettings.Debug.config">
+      <DependentUpon>appSettings.config</DependentUpon>
+    </None>
+    <None Include="appSettings.Release.config">
+      <DependentUpon>appSettings.config</DependentUpon>
+    </None>
+    <None Include="client.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="client.Debug.config">
+      <DependentUpon>client.config</DependentUpon>
+    </None>
+    <None Include="client.Release.config">
+      <DependentUpon>client.config</DependentUpon>
+    </None>
+    <None Include="Config\FONCT\FONCT.appSettings.config" />
+    <None Include="Config\FONCT\FONCT.appSettings.Debug.config">
+      <DependentUpon>FONCT.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\FONCT\FONCT.appSettings.Release.config">
+      <DependentUpon>FONCT.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\ACPTN\ACPTN.appSettings.config" />
+    <None Include="Config\ACPTN\ACPTN.appSettings.Debug.config">
+      <DependentUpon>ACPTN.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\ACPTN\ACPTN.appSettings.Release.config">
+      <DependentUpon>ACPTN.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\INTEG\INTEG.appSettings.config" />
+    <None Include="Config\INTEG\INTEG.appSettings.Debug.config">
+      <DependentUpon>INTEG.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\INTEG\INTEG.appSettings.Release.config">
+      <DependentUpon>INTEG.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\FORMA\FORMA.appSettings.config" />
+    <None Include="Config\FORMA\FORMA.appSettings.Debug.config">
+      <DependentUpon>FORMA.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\FORMA\FORMA.appSettings.Release.config">
+      <DependentUpon>FORMA.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\PARTE\PARTE.appSettings.config" />
+    <None Include="Config\PARTE\PARTE.appSettings.Debug.config">
+      <DependentUpon>PARTE.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\PARTE\PARTE.appSettings.Release.config">
+      <DependentUpon>PARTE.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\PROD\PROD.appSettings.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\PROD\PROD.appSettings.Debug.config">
+      <DependentUpon>PROD.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\PROD\PROD.appSettings.Release.config">
+      <DependentUpon>PROD.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\URG\URG.appSettings.config" />
+    <None Include="Config\URG\URG.appSettings.Debug.config">
+      <DependentUpon>URG.appSettings.config</DependentUpon>
+    </None>
+    <None Include="Config\URG\URG.appSettings.Release.config">
+      <DependentUpon>URG.appSettings.config</DependentUpon>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\AvisConformite\PLA1_Attente.cshtml" />
+    <Content Include="Views\AvisConformite\PLA1_Confirmation.cshtml" />
+    <Content Include="Views\AvisConformite\PLA1_Modifier.cshtml" />
+    <Content Include="Views\AvisConformite\PLA1_Transmettre.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AutoComplete.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DatePicker.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DropDownList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\RadioButton.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\LiensPolitiques.cshtml" />
+    <None Include="Config\FONCT\FONCT.client.config" />
+    <None Include="Config\FONCT\FONCT.client.Debug.config">
+      <DependentUpon>FONCT.client.config</DependentUpon>
+    </None>
+    <None Include="Config\FONCT\FONCT.client.Release.config">
+      <DependentUpon>FONCT.client.config</DependentUpon>
+    </None>
+    <None Include="Config\ACPTN\ACPTN.client.config" />
+    <None Include="Config\ACPTN\ACPTN.client.Debug.config">
+      <DependentUpon>ACPTN.client.config</DependentUpon>
+    </None>
+    <None Include="Config\ACPTN\ACPTN.client.Release.config">
+      <DependentUpon>ACPTN.client.config</DependentUpon>
+    </None>
+    <None Include="Config\FORMA\FORMA.client.config" />
+    <None Include="Config\FORMA\FORMA.client.Debug.config">
+      <DependentUpon>FORMA.client.config</DependentUpon>
+    </None>
+    <None Include="Config\FORMA\FORMA.client.Release.config">
+      <DependentUpon>FORMA.client.config</DependentUpon>
+    </None>
+    <None Include="Config\INTEG\INTEG.client.config" />
+    <None Include="Config\INTEG\INTEG.client.Debug.config">
+      <DependentUpon>INTEG.client.config</DependentUpon>
+    </None>
+    <None Include="Config\INTEG\INTEG.client.Release.config">
+      <DependentUpon>INTEG.client.config</DependentUpon>
+    </None>
+    <None Include="Config\PARTE\PARTE.client.config" />
+    <None Include="Config\PARTE\PARTE.client.Debug.config">
+      <DependentUpon>PARTE.client.config</DependentUpon>
+    </None>
+    <None Include="Config\PARTE\PARTE.client.Release.config">
+      <DependentUpon>PARTE.client.config</DependentUpon>
+    </None>
+    <None Include="Config\PROD\PROD.client.config" />
+    <None Include="Config\PROD\PROD.client.Debug.config">
+      <DependentUpon>PROD.client.config</DependentUpon>
+    </None>
+    <None Include="Config\PROD\PROD.client.Release.config">
+      <DependentUpon>PROD.client.config</DependentUpon>
+    </None>
+    <None Include="Config\URG\URG.client.config" />
+    <None Include="Config\URG\URG.client.Debug.config">
+      <DependentUpon>URG.client.config</DependentUpon>
+    </None>
+    <None Include="Config\URG\URG.client.Release.config">
+      <DependentUpon>URG.client.config</DependentUpon>
+    </None>
+    <Content Include="Views\Rapport\PLC1_NonRespectAvisConf.cshtml" />
+    <Content Include="Views\Rapport\PLC1_ExerNonAutoRPPR.cshtml" />
+    <Content Include="Views\Commun\MAJCache.cshtml" />
+    <Content Include="Views\Shared\MenuIdentification.cshtml" />
+    <Content Include="Views\Rapport\PLC1_DerogPratiExclu.cshtml" />
+    <Content Include="RAMQ.snk" />
+    <Content Include="Views\Shared\EditorTemplates\TextboxRechercheProfessionnel.cshtml" />
+    <Content Include="Views\Autorisation\PLA5_SaisirAutorisation.cshtml" />
+    <Content Include="Views\Shared\Chargement.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ModalConfirmation.cshtml" />
+    <Content Include="Views\Rapport\PLC1_RepartInterRegionPrati.cshtml" />
+    <Content Include="Views\DemandeReevaluation\PLE1_Reevaluation.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\App_Browsers\" />
+    <Folder Include="Contents\img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PL_PremMdl_cpo\PL_PremMdl_cpo.csproj">
+      <Project>{5046617c-9fce-4a5d-846d-2562d1933aaa}</Project>
+      <Name>PL_PremMdl_cpo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

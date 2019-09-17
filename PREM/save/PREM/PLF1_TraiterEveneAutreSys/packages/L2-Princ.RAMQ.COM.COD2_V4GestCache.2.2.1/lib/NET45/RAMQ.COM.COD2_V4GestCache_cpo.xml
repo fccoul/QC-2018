@@ -1,0 +1,1663 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RAMQ.COM.COD2_V4GestCache_cpo
+</name>
+</assembly>
+<members>
+<member name="T:RAMQ.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CacheExpiration">
+<summary>
+  Recherche une chaîne localisée semblable à 60.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CacheIntvlSec">
+<summary>
+  Recherche une chaîne localisée semblable à 1.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CacheNbrRepr">
+<summary>
+  Recherche une chaîne localisée semblable à 10.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleEnvir">
+<summary>
+  Recherche une chaîne localisée semblable à Envir.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CleNomServr">
+<summary>
+  Recherche une chaîne localisée semblable à NomServeur.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.CodAppliInval">
+<summary>
+  Recherche une chaîne localisée semblable à Le code d&apos;application &apos;{0}&apos; est invalide..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.MsgErrCleCache">
+<summary>
+  Recherche une chaîne localisée semblable à La clé de la cache n&apos;a pas la bonne nomenclature.  Elle doit commencer par PPP_ , SS_ , SSF_ ou SSFU_..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.MsgErrDecrp">
+<summary>
+  Recherche une chaîne localisée semblable à Impossible de décrypter l&apos;information contenue dans la cache..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.NomCacheAppFabric">
+<summary>
+  Recherche une chaîne localisée semblable à CacheRAMQ.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.ParamObligatoire">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est obligatoire..
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.RegexCleCache">
+<summary>
+  Recherche une chaîne localisée semblable à ^(?:{0}_|[a-z]{{2}}[a-z]?_|[a-z]{{3}}([a-z]{{1}}|\d{{1,2}})_).*$.
+</summary>
+</member>
+<member name="P:RAMQ.My.Resources.Resources.RegexCodAppli">
+<summary>
+  Recherche une chaîne localisée semblable à ^[A-Z]{3}$.
+</summary>
+</member>
+<member name="T:RAMQ.Etat.Cache">
+ <summary>
+     Définition de la classe qui permet la manipulation de la cache AppFabric.
+ </summary>
+ <remarks>
+  Auteur : ?? <br/>
+  Date   : ????-??-??
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : S. Gauthier<br/>
+  Date   : 2017-10-16
+  Description: Remplacement de l'utilisation du httpContext par la cache en mémoire (MemoryCache) lorsque la
+               cache est utilisée en unitaire. Ceci est nécessaire là où un httpContext n'est
+               pas disponible. Ex. Lot<br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.#ctor(System.String)">
+ <summary>
+     Constructeur par défaut. Expiration par défaut. (60 minutes)
+ </summary>
+ <param name="_strCodAppli">Code de l'application.</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="Constructeur" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="Constructeur" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.#ctor(System.String,System.TimeSpan)">
+ <summary>
+     Constructeur avec l'expiration décalée passé en paramètre.
+ </summary>
+ <param name="_strCodAppli">Code de l'application.</param>
+ <param name="_objExpir">Expiration.</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="ConstructeurAvecExpiration" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="ConstructeurAvecExpiration" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.#ctor(System.String,System.TimeSpan,System.Boolean)">
+ <summary>
+     Constructeur avec l'expiration passé en paramètre sans expiration décalée.
+ </summary>
+ <param name="_strCodAppli">Code de l'application.</param>
+ <param name="_objExpir">Expiration.</param>
+ <param name="_blnUtilExpirDecal">Indique si l'on veut utiliser l'expiration décalée (Sliding Expiration).</param>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="ConstructeurSansExpirationDecal" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.#ctor(RAMQ.IConfigurationCache)">
+ <summary>
+     Constructeur de cache avec objet de configuration
+ </summary>
+ <param name="_objConfiguration">Objet de configuration de la cache</param>
+</member>
+<member name="M:RAMQ.Etat.Cache.#ctor(RAMQ.Etat.IMemoryCache,RAMQ.Etat.IDataCache,RAMQ.Etat.IInfoCrypto,System.String,System.String,RAMQ.IConfigurationCache)">
+ <summary>
+     Constructeur servant aux tests unitaires.
+ </summary>
+ <param name="_objMemoryCache">Objet qui implémente l'interface <see cref="T:RAMQ.Etat.IMemoryCache"/>.</param>
+ <param name="_objIDataCache">Instance qui implémente IDataCache.</param>
+ <param name="_strEnvir">Environnement d'exécution.</param>
+ <param name="_strNomServr">Nom du serveur.</param>
+ <param name="_objConfiguration">Configuration de la cache</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.#ctor(RAMQ.Etat.IMemoryCache,RAMQ.Etat.IDataCache,RAMQ.Etat.IInfoCrypto,System.String,System.String,System.String,System.TimeSpan,System.Boolean)">
+ <summary>
+     Constructeur servant aux tests unitaires.
+ </summary>
+ <param name="_objMemoryCache">Objet qui implémente l'interface <see cref="T:RAMQ.Etat.IMemoryCache"/>.</param>
+ <param name="_objIDataCache">Instance qui implémente IDataCache.</param>
+ <param name="_strEnvir">Environnement d'exécution.</param>
+ <param name="_strNomServr">Nom du serveur.</param>
+ <param name="_strCodAppli">Code de l'application.</param>
+ <param name="_objExpir">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.CreerRegion(System.String)">
+ <summary>
+     Méthode qui permet de créer une région de la cache.
+ </summary>
+ <param name="_strRegion">Nom de la région à créer.</param>
+ <returns>Indique la réussite.</returns>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="CreerRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="CreerRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.Obtenir``1(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <returns>Valeur de la clé.</returns>
+ <exception cref="T:System.ArgumentNullException">La clé passé en paramètre est vide.</exception>
+ <exception cref="T:System.ApplicationException">Impossible de décrypter l'information contenue dans la cache.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="Obtenir" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="Obtenir" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.Obtenir``1(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Valeur de la clé.</returns>
+ <exception cref="T:System.ArgumentNullException">La clé passé en paramètre est vide.</exception>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <exception cref="T:System.ApplicationException">Impossible de décrypter l'information contenue dans la cache.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="ObtenirAvecRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="ObtenirAvecRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.ObtenirRegion(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir toutes les valeurs d'une région de la cache.
+ </summary>
+ <param name="_strRegion">Région dans laquelle se trouve les clés.</param>
+ <returns>Collection de clé/valeur.</returns>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <exception cref="T:System.ApplicationException">Impossible de décrypter l'information contenue dans la cache.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="ObtenirRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="ObtenirRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.Enregistrer``1(System.String,``0)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <exception cref="T:System.ArgumentNullException">La clé passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="Enregistrer" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="Enregistrer" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.Enregistrer``1(System.String,``0,System.String)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_strRegion">Région dans laquelle on veut ajouter ou modifier la clé.</param>
+ <exception cref="T:System.ArgumentNullException">La clé passé en paramètre est vide.</exception>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="EnregistrerAvecRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="EnregistrerAvecRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.Supprimer(System.String)">
+ <summary>
+     Méthode qui permet d'enlever un objet de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <exception cref="T:System.ArgumentNullException">La clé passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="Supprimer" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="Supprimer" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.Supprimer(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'enlever un objet dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Indique la réussite.</returns>
+ <exception cref="T:System.ArgumentNullException">La clé passé en paramètre est vide.</exception>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="SupprimerAvecRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="SupprimerAvecRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.SupprimerRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever une région ainsi que tous ses objets dans la cache.
+ </summary>
+ <param name="_strRegion">Région à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="SupprimerRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="SupprimerRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.ViderRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever tous les objets d'une région dans la cache.
+ </summary>
+ <param name="_strRegion">Région à vider.</param>
+ <exception cref="T:System.ArgumentNullException">La région passé en paramètre est vide.</exception>
+ <example>
+ <code lang="VB.NET">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.vb" region="ViderRegion" />
+ </code>
+ <code lang="C#">
+ <code source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\Cache.cs" region="ViderRegion" />
+ </code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.ValiderCle(System.String)">
+ <summary>
+     Méthode qui permet de valider la nomenclature du nom de la clé.
+ </summary>
+ <param name="_strCle">Nom de la clé.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.ValiderRegion(System.String)">
+ <summary>
+     Méthode qui permet de valider le nom de la région.
+ </summary>
+ <param name="_strRegion">Nom de la région.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.ObtenirValeur``1(System.String,System.Byte[],System.String)">
+ <summary>
+     Méthode qui permet de décrypter, décompresser et désérialiser la valeur contenu dans la cache.
+ </summary>
+ <param name="_strCle">Nom de la clé.</param>
+ <param name="_bytVal">Valeur encryptée.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.EncrypterValeur(System.Object)">
+ <summary>
+     Méthode qui permet de sérialiser, compresser et crypter la valeur avant l'écriture dans la cache.
+ </summary>
+ <param name="_objVal">Valeur décryptée.</param>
+ <returns>Valeur encryptée.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Cache.SupprimerRegionCacheEnMemoire(System.String)">
+ <summary>
+     Méthode qui permet de supprimer les variables correspondant à une région.
+ </summary>
+ <param name="_strRegion">Nom de la région.</param>
+ <returns>Indique la réussite de l'opération.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.DataCacheForwarderBase">
+ <summary> 
+     Définition de la classe abstraite des API d'AppFabric.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.#ctor(RAMQ.Etat.IDataCache)">
+ <summary>
+     Constructeur primaire.
+ </summary>
+ <param name="_objIDataCache">Instance de la classe IDataCache.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.CreateRegion(System.String)">
+ <summary>
+     Méthode qui permet de créer une région de la cache.
+ </summary>
+ <param name="_strRegion">Nom de la région à créer.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Add(System.String,System.Object,System.TimeSpan)">
+ <summary>
+     Méthode qui ajoute un élément dans la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter.</param>
+ <param name="_objVal">Valeur à ajouter.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Get(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Get(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Get(System.String,Microsoft.ApplicationServer.Caching.DataCacheItemVersion@)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache pour une version de clé.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objVersion">Version.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.GetAndLock(System.String,System.TimeSpan,Microsoft.ApplicationServer.Caching.DataCacheLockHandle@)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur et barrer la clé pour un certain temps.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.GetAndLock(System.String,System.TimeSpan,Microsoft.ApplicationServer.Caching.DataCacheLockHandle@,System.Boolean)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur et barrer la clé pour un certain temps.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_blnForceLock">Force la barrure.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.GetObjectsInRegion(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir toutes les valeurs d'une région de la cache.
+ </summary>
+ <param name="_strRegion">Région pour laquelle on veut obtenir toutes les clés.</param>
+ <returns>Collection de valeur.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Put(System.String,System.Object)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Put(System.String,System.Object,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Put(System.String,System.Object,System.TimeSpan,System.String)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_strRegion">Région dans laquelle on veut ajouter la clé.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Put(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheItemVersion,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une version spécifique d'une clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objAncVersion">Version</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.PutAndUnlock(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé et la débarre.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.PutAndUnlock(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheLockHandle,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé et la débarre.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Remove(System.String)">
+ <summary>
+     Méthode qui permet d'enlever un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Remove(System.String,Microsoft.ApplicationServer.Caching.DataCacheItemVersion)">
+ <summary>
+     Méthode qui permet d'enlever une version spécifique d'un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_objVersion">Version</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Remove(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'enlever un object dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Remove(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet d'enlever un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.ResetObjectTimeout(System.String,System.TimeSpan)">
+ <summary>
+     Méthode qui permet de réinitialiser le timeout d'une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à modifier.</param>
+ <param name="_objNouvTimeout">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.ResetObjectTimeout(System.String,System.TimeSpan,System.String)">
+ <summary>
+     Méthode qui permet de réinitialiser le timeout d'une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à modifier.</param>
+ <param name="_objNouvTimeout">Expiration.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Unlock(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet de débarrer une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à débarrer.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.Unlock(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle,System.TimeSpan)">
+ <summary>
+     Méthode qui permet de débarrer une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à débarrer.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.RemoveRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever une région ainsi que tous ses objects dans la cache.
+ </summary>
+ <param name="_strRegion">Région à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.ClearRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever tous les objects d'une région dans la cache.
+ </summary>
+ <param name="_strRegion">Région à vider.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.PerformCacheOperation``1(System.Func{``0})">
+ <summary>
+     Méthode qui invoke une fonction passé en paramètre.
+ </summary>
+ <typeparam name="TResult">Type de retour de la fonction</typeparam>
+ <param name="_fctAction">Fonction à exécuter.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.PerformCacheOperation(System.Action)">
+ <summary>
+     Méthode qui invoke une fonction passé en paramètre.
+ </summary>
+ <param name="_actAction">Fonction à invoquer.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.UnwrapEntryForRetrievalFromCache(System.Object)">
+ <summary>
+     Méthode qui "Unwrap" un objet.
+ </summary>
+ <param name="_objWrapped">Objet.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheForwarderBase.WrapEntryForInsertionIntoCache(System.Object)">
+ <summary>
+     Méthode qui "Wrap" un objet.
+ </summary>
+ <param name="_objUnwrapped">Objet.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.DataCacheRetryWrapper">
+ <summary> 
+     Définition de la classe utilitaire permettant la gestion des reprises lors
+     lors de l'appel à AppFabric.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheRetryWrapper.#ctor(RAMQ.Etat.IDataCache,System.Int32,System.TimeSpan,System.Boolean)">
+ <summary>
+     Constructure primaire.
+ </summary>
+ <param name="_objIDataCache">Instance de la classe IDataCache.</param>
+ <param name="_intNbrRepr">Nombre de reprise à faire en cas d'erreur.</param>
+ <param name="_objIntvlRepr">Interval en seconde entre les reprises.</param>
+ <param name="_blnLancerSiErr">Indique si l'on doit lancer une exception en cas d'erreur.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheRetryWrapper.PerformCacheOperation(System.Action)">
+ <summary>
+     Méthode qui englobe la fonction d'appel à AppFabric et effectue
+     la gestion des reprises.
+ </summary>
+ <param name="_objAction">Fonction d'appel à AppFabric.</param>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.DataCacheWrapper">
+ <summary> 
+     Définition de la classe gestion d'appel à l'API d'AppFabric.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.#ctor(Microsoft.ApplicationServer.Caching.DataCache)">
+ <summary>
+     Constructeur primaire.
+ </summary>
+ <param name="_objDataCache">Instance de la classe IDataCache.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.CreateRegion(System.String)">
+ <summary>
+     Méthode qui permet de créer une région de la cache.
+ </summary>
+ <param name="_strRegion">Nom de la région à créer.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Add(System.String,System.Object,System.TimeSpan)">
+ <summary>
+     Méthode qui ajoute un élément dans la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter.</param>
+ <param name="_objVal">Valeur à ajouter.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Get(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Get(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Get(System.String,Microsoft.ApplicationServer.Caching.DataCacheItemVersion@)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache pour une version de clé.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objVersion">Version.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.GetAndLock(System.String,System.TimeSpan,Microsoft.ApplicationServer.Caching.DataCacheLockHandle@)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur et barrer la clé pour un certain temps.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.GetAndLock(System.String,System.TimeSpan,Microsoft.ApplicationServer.Caching.DataCacheLockHandle@,System.Boolean)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur et barrer la clé pour un certain temps.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_blnForceLock">Force la barrure.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.GetObjectsInRegion(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir toutes les valeurs d'une région de la cache.
+ </summary>
+ <param name="_strRegion">Région pour laquelle on veut obtenir toutes les clés.</param>
+ <returns>Collection de valeur.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Put(System.String,System.Object)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Put(System.String,System.Object,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Put(System.String,System.Object,System.TimeSpan,System.String)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_strRegion">Région dans laquelle on veut ajouter la clé.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Put(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheItemVersion,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une version spécifique d'une clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objAncVersion">Version</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.PutAndUnlock(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé et la débarre.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.PutAndUnlock(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheLockHandle,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé et la débarre.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Remove(System.String)">
+ <summary>
+     Méthode qui permet d'enlever un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Remove(System.String,Microsoft.ApplicationServer.Caching.DataCacheItemVersion)">
+ <summary>
+     Méthode qui permet d'enlever une version spécifique d'un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_objVersion">Version</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Remove(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet d'enlever un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Remove(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'enlever un object dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.ResetObjectTimeout(System.String,System.TimeSpan)">
+ <summary>
+     Méthode qui permet de réinitialiser le timeout d'une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à modifier.</param>
+ <param name="_objNouvTimeout">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.ResetObjectTimeout(System.String,System.TimeSpan,System.String)">
+ <summary>
+     Méthode qui permet de réinitialiser le timeout d'une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à modifier.</param>
+ <param name="_objNouvTimeout">Expiration.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Unlock(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet de débarrer une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à débarrer.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.Unlock(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle,System.TimeSpan)">
+ <summary>
+     Méthode qui permet de débarrer une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à débarrer.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.RemoveRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever une région ainsi que tous ses objects dans la cache.
+ </summary>
+ <param name="_strRegion">Région à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.DataCacheWrapper.ClearRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever tous les objects d'une région dans la cache.
+ </summary>
+ <param name="_strRegion">Région à vider.</param>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.ICache">
+ <summary> 
+     Définition de l'interface qui permet la manipulation de la cache AppFabric.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.CreerRegion(System.String)">
+ <summary>
+     Méthode qui permet de créer une région de la cache.
+ </summary>
+ <param name="_strRegion">Nom de la région à créer.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.Obtenir``1(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.Obtenir``1(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.ObtenirRegion(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir toutes les valeurs d'une région de la cache.
+ </summary>
+ <param name="_strRegion">Région dans laquelle se trouve les clés.</param>
+ <returns>Collection de clé/valeur.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.Enregistrer``1(System.String,``0)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.Enregistrer``1(System.String,``0,System.String)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_strRegion">Région dans laquelle on veut ajouter ou modifier la clé.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.Supprimer(System.String)">
+ <summary>
+     Méthode qui permet d'enlever un objet de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.Supprimer(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'enlever un objet dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.SupprimerRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever une région ainsi que tous ses objets dans la cache.
+ </summary>
+ <param name="_strRegion">Région à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.ICache.ViderRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever tous les objets d'une région dans la cache.
+ </summary>
+ <param name="_strRegion">Région à vider.</param>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.IDataCache">
+ <summary> 
+     Définition de l'interface interne de l'API d'AppFabric.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.CreateRegion(System.String)">
+ <summary>
+     Méthode qui permet de créer une région de la cache.
+ </summary>
+ <param name="_strRegion">Nom de la région à créer.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Add(System.String,System.Object,System.TimeSpan)">
+ <summary>
+     Méthode qui ajoute un élément dans la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter.</param>
+ <param name="_objVal">Valeur à ajouter.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Get(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Get(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Get(System.String,Microsoft.ApplicationServer.Caching.DataCacheItemVersion@)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache pour une version de clé.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objVersion">Version.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.GetAndLock(System.String,System.TimeSpan,Microsoft.ApplicationServer.Caching.DataCacheLockHandle@)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur et barrer la clé pour un certain temps.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.GetAndLock(System.String,System.TimeSpan,Microsoft.ApplicationServer.Caching.DataCacheLockHandle@,System.Boolean)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur et barrer la clé pour un certain temps.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_blnForceLock">Force la barrure.</param>
+ <returns>Valeur de la clé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.GetObjectsInRegion(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir toutes les valeurs d'une région de la cache.
+ </summary>
+ <param name="_strRegion">Région pour laquelle on veut obtenir toutes les clés.</param>
+ <returns>Collection de valeur.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Put(System.String,System.Object)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Put(System.String,System.Object,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Put(System.String,System.Object,System.TimeSpan,System.String)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <param name="_strRegion">Région dans laquelle on veut ajouter la clé.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Put(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheItemVersion,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une version spécifique d'une clé.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objAncVersion">Version</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.PutAndUnlock(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé et la débarre.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.PutAndUnlock(System.String,System.Object,Microsoft.ApplicationServer.Caching.DataCacheLockHandle,System.TimeSpan)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'un clé et la débarre.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Remove(System.String)">
+ <summary>
+     Méthode qui permet d'enlever un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Remove(System.String,System.String)">
+ <summary>
+     Méthode qui permet d'enlever un object dans une région de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Remove(System.String,Microsoft.ApplicationServer.Caching.DataCacheItemVersion)">
+ <summary>
+     Méthode qui permet d'enlever une version spécifique d'un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_objVersion">Version</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Remove(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet d'enlever un object de la cache.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.ResetObjectTimeout(System.String,System.TimeSpan)">
+ <summary>
+     Méthode qui permet de réinitialiser le timeout d'une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à modifier.</param>
+ <param name="_objNouvTimeout">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.ResetObjectTimeout(System.String,System.TimeSpan,System.String)">
+ <summary>
+     Méthode qui permet de réinitialiser le timeout d'une valeur dans la cache.
+ </summary>
+ <param name="_strCle">Clé à modifier.</param>
+ <param name="_objNouvTimeout">Expiration.</param>
+ <param name="_strRegion">Région dans laquelle se trouve la clé.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Unlock(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle)">
+ <summary>
+     Méthode qui permet de débarrer une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à débarrer.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.Unlock(System.String,Microsoft.ApplicationServer.Caching.DataCacheLockHandle,System.TimeSpan)">
+ <summary>
+     Méthode qui permet de débarrer une clé dans la cache.
+ </summary>
+ <param name="_strCle">Clé à débarrer.</param>
+ <param name="_objLockHandle">Objet de barrure.</param>
+ <param name="_objTimeout">Expiration.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.RemoveRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever une région ainsi que tous ses objects dans la cache.
+ </summary>
+ <param name="_strRegion">Région à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IDataCache.ClearRegion(System.String)">
+ <summary>
+     Méthode qui permet d'enlever tous les objects d'une région dans la cache.
+ </summary>
+ <param name="_strRegion">Région à vider.</param>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.IInfoCrypto">
+ <summary> 
+     Définition de l'interface qui contient les informations servant à
+     l'encryption et la décryption.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:RAMQ.Etat.IMemoryCache">
+ <summary>
+ Définition de l'interface qui permet la manipulation de la cache mémoire.
+ Remarque: cette classe n'est pas disponible dans le framework 3.5
+ </summary>
+ <remarks>
+  Auteur : Hervé Simard <br/>
+  Date   : 2016-09-22
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : S. Gauthier<br/>
+  Date   : 2017-10-16
+  Description: Remplacement de l'utilisation du httpContext par la cache en mémoire (MemoryCache) lorsque la
+               cache est utilisée en unitaire. Ceci est nécessaire là où un httpContext n'est
+               pas disponible. Ex. Lot<br/>
+ </remarks> 
+</member>
+<member name="M:RAMQ.Etat.IMemoryCache.Obtenir``1(System.String)">
+ <summary>
+     Méthode qui permet d'obtenir une valeur dans la cache mémoire.
+ </summary>
+ <param name="_strCle">Clé à obtenir.</param>
+ <returns>Valeur de la clé.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.vb" region="Obtenir"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.cs" region="Obtenir"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IMemoryCache.Enregistrer``1(System.String,``0)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans la cache mémoire avec l'expiration par défaut (1 jour).
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.vb" region="Enregistrer"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.cs" region="Enregistrer"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IMemoryCache.Enregistrer``1(System.String,``0,System.DateTimeOffset)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans la cache mémoire en spécifiant l'expiration.
+ </summary>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.vb" region="Enregistrer"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.cs" region="Enregistrer"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.IMemoryCache.Enregistrer``1(System.String,``0,System.DateTimeOffset,System.Boolean)">
+ <summary>
+     Méthode qui permet d'ajouter ou modifier la valeur d'une clé dans la cache mémoire en spécifiant l'expiration. Cette méthode
+     permet également d'offrir la possibilté d'indiquer si l'expiration doit être décalée (slidding expiration) ou pas.
+ </summary>
+ <typeparam name="T">Type de la valeur.</typeparam>
+ <param name="_strCle">Clé à ajouter ou modifier.</param>
+ <param name="_objVal">Valeur.</param>
+ <param name="_objTempsExpi">Si <paramref name="_blnUtilExpirDecal"/> vaut false: _datTempsExpi est la date/heure de l'expiration absolue de la valeur en cache, peu importe si elle a été accédée ou pas;
+                             Si <paramref name="_blnUtilExpirDecal"/> vaut true: _datTempsExpi  est la date/heure originale de l'expiration de la valeur en cache. Si 
+                                                                                 la valeur est ultérieurement accédée avant son expiration, l'expiration sera alors reportée
+                                                                                 d'autant de temps que de la différence entre l'expiration originale et la mise en cache.
+ </param>
+ <param name="_blnUtilExpirDecal">Indicateur de l'utilisation de l'expiration décalée.
+                                  true:  L'expiration est décalée. Voir explications de <paramref name="_objTempsExpi"/> avec valeur à true.
+                                  false: L'expiration n'est pas décalée. La valeur en cache sera supprimée lorsque <paramref name="_objTempsExpi"/> sera atteint.
+ </param>
+</member>
+<member name="M:RAMQ.Etat.IMemoryCache.Supprimer(System.String)">
+ <summary>
+     Méthode qui permet d'enlever un objet de la cache mémoire.
+ </summary>
+ <param name="_strCle">Clé à enlever.</param>
+ <returns>Indique la réussite.</returns>
+ <example>
+ <code lang="VB.NET" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.vb" region="Supprimer"></code>
+ <code lang="C#" source="\\Corpoque\APPLI\Unit\COM\COM_LIV40\VbDotNet\Exemple\MemoryCache.cs" region="Supprimer"></code>
+ </example>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.InfoCrypto">
+ <summary> 
+     Définition de la classe qui contient les informations servant à
+     l'encryption et la décryption.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:RAMQ.Etat.MemoryCache">
+ <summary>
+ Définition de la classe qui permet de stocker des données en cache mémoire.
+ Remarque: cette classe n'est pas disponible dans le framework 3.5
+ </summary>
+ <remarks>
+  Auteur : Hervé Simard <br/>
+  Date   : 2016-09-22
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : S. Gauthier<br/>
+  Date   : 2017-10-16
+  Description: Remplacement de l'utilisation du httpContext par la cache en mémoire (MemoryCache) lorsque la
+               cache est utilisée en unitaire. Ceci est nécessaire là où un httpContext n'est
+               pas disponible. Ex. Lot<br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.#ctor">
+ <summary>
+ Constructeur par défaut.
+ </summary>
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.Enregistrer``1(System.String,``0)">
+ <inheritdoc />
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.Enregistrer``1(System.String,``0,System.DateTimeOffset)">
+ <inheritdoc />
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.Obtenir``1(System.String)">
+ <inheritdoc />
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.Supprimer(System.String)">
+ <inheritdoc />
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.KeyValueEnumerator``2">
+ <summary>
+ Retourne un énumérateur qui itère au sein de la collection.
+ </summary>
+ <typeparam name="TKey">Type de la clé.</typeparam>
+ <typeparam name="TValue">Type de la valeur.</typeparam>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Etat.MemoryCache.ValiderCle(System.String)">
+ <summary>
+     Méthode qui permet de valider la nomenclature du nom de la clé.
+ </summary>
+ <param name="_strCle">Nom de la clé.</param>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.Util">
+ <summary>
+     Contient les méthodes utilisataires reliées à la gestion de la cache.
+ </summary>
+ <remarks>
+  Auteur : ?? <br/>
+  Date   : ????-??-??
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : S. Gauthier<br/>
+  Date   : 2017-10-16
+  Description: Remplacement de l'utilisation du httpContext par la cache en mémoire (MemoryCache) lorsque la
+               cache est utilisée en unitaire. Ceci est nécessaire là où un httpContext n'est
+               pas disponible. Ex. Lot<br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.EnvironnementDevl(System.String,System.String)">
+ <summary>
+     Méthode qui permet de déterminer si l'exécution se fait sur un poste de développement.
+ </summary>
+ <param name="_strEnvir">Environnement.</param>
+ <param name="_strNomServr">Nom du poste ou serveur.</param>
+ <returns>Indique si l'exécution se fait sur un poste de développement.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.ObtenirMemoryCache">
+ <summary>
+     Méthode qui permet d'obtenir une instance de l'interface <see cref="T:RAMQ.Etat.IMemoryCache"/> si l'environnement
+     en un de développement, sinon nothing.
+ </summary>
+ <returns>Si l'environnement est un environnement de développement: Instance de l'interface <see cref="T:RAMQ.Etat.IMemoryCache"/>;
+          Si l'environnement n'est pas un environnement de développement: Nothing.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.ObtenirInfoCrypto(RAMQ.AGS.YRY3_FournCleChifm_cpo.IFournCleChifm,System.String)">
+ <summary>
+     Méthode qui permet d'obtenir les informations nécessaire à l'encryption et 
+     la décryption des données.
+ </summary>
+ <param name="_objIFournCleChifm">Instance qui implémente IFournCleChifm.</param>
+ <param name="_strCodAppli">Code d'application.</param>
+ <returns>Information nécessaire à l'encryption et la décryption des données.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.Serialiser(System.Object)">
+ <summary>
+     Version simplifiée de Microsoft.ApplicationServer.Caching.Utility.NetDataContractSerialize()
+ </summary>
+ <param name="_objGraph">Objet à sérialiser.</param>
+ <returns>Objet sérialisé sous forme de tableau de byte.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.Deserialiser(System.Byte[])">
+ <summary>
+     Version simplifiée de Microsoft.ApplicationServer.Caching.Utility.Deserialize
+ </summary>
+ <param name="_bytBuffer">Objet sérialisé en tableau de byte.</param>
+ <returns>Objet désérialisé.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.EncrypterAES(System.Byte[],System.Byte[],System.Byte[])">
+ <summary>
+     Méthode qui permet l'encryption utilisant AES (Rijndael).
+ </summary>
+ <param name="_bytBuffer">Données à encrypter.</param>
+ <param name="_bytCle">Clé d'encryption.</param>
+ <param name="_bytVI">Vecteur d'initialisation.</param>
+ <returns>Données encryptées.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.DecrypterAES(System.Byte[],System.Byte[],System.Byte[])">
+ <summary>
+     Méthode qui permet la décryption utilisant AES (Rijndael).
+ </summary>
+ <param name="_bytBuffer">Données encryptées.</param>
+ <param name="_bytCle">Clé d'encryption.</param>
+ <param name="_bytVI">Vecteur d'initialisation.</param>
+ <returns>Données decryptées.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.Compresser(System.Byte[])">
+ <summary>
+     Méthode qui permet la compression de données. (Deflate)
+ </summary>
+ <param name="_bytBuffer">Donnéés non compressées.</param>
+ <returns>Donnéés compressées.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.Decompresser(System.Byte[])">
+ <summary>
+     Méthode qui permet la décompression de données. (Deflate)
+ </summary>
+ <param name="_bytBuffer">Donnéés compressées.</param>
+ <returns>Donnéés non compressées.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.CopierStream(System.IO.Stream,System.IO.Stream@)">
+ <summary>
+     Méthode qui permet de copier un flux dans un autre.
+ </summary>
+ <param name="_strmSrce">Stream source.</param>
+ <param name="_strmDesti">Stream de destination.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.InlineAssignHelper``1(``0@,``0)">
+ <summary>
+      Méthode utilitaire qui palie à un manque du langage Visual Basic (Inline assignment)
+ </summary>
+ <typeparam name="T">Type de retour.</typeparam>
+ <param name="_objDesti">Objet récepteur.</param>
+ <param name="_objVal">Valeur de retour.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Etat.Util.ConvertirCle(System.String)">
+ <summary>
+     Méthode qui permet de convertir une clé d'encryption sous forme de 
+     chaîne de caractères en tableau de bytes.
+ </summary>
+ <param name="_strCle">Clé d'encryption sous forme de chaîne de caractères.</param>
+ <returns>Clé d'encryption sous forme de tableau de bytes.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Etat.UtilCache">
+ <summary> 
+     Définition de la classe utilitaire permettant l'instanciation de la cache AppFabric.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Etat.UtilCache.ObtenirCache(System.String)">
+ <summary>
+     Méthode permettant l'obtention de la cache d'AppFabric.
+ </summary>
+ <param name="_strNomCache">Nom de la cache.</param>
+ <returns>Instance de l'interface IDataCache.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.ConfigurationCache">
+ <summary> 
+ Classe de configuration utilisé par l'objet Cache
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.ConfigurationCache.#ctor">
+ <summary>
+ Constructeur
+ </summary>
+</member>
+<member name="M:RAMQ.ConfigurationCache.#ctor(RAMQ.IConfigurationCache)">
+ <summary>
+ Constructeur de copie
+ </summary>
+ <param name="_objConfiguration"></param>
+</member>
+<member name="P:RAMQ.ConfigurationCache.CodeAppli">
+ <summary>
+ Code de l'application
+ </summary>
+ <returns>le code de l'application</returns>
+</member>
+<member name="P:RAMQ.ConfigurationCache.Expiration">
+ <summary>
+ Expiration de la cache
+ </summary>
+ <returns>l'expiration de la cache</returns>
+</member>
+<member name="P:RAMQ.ConfigurationCache.UtiliseExpirationDecale">
+ <summary>
+ Utilise l'expiration décalée
+ </summary>
+ <returns>si oui ou non on doit utilisé l'expiration décalé</returns>
+</member>
+<member name="P:RAMQ.ConfigurationCache.UtiliseSerialiseurJson">
+ <summary>
+ Utilise le sérialiseur JSON
+ </summary>
+ <returns>si oui ou non on doit utiliser le sérialiseur JSON</returns>
+</member>
+<member name="P:RAMQ.ConfigurationCache.ParametresSerialisationJson">
+ <summary>
+ Paramètres de sérialisation JSON
+ </summary>
+ <returns>les paramètres de sérialisation JSON</returns>
+</member>
+<member name="T:RAMQ.DictionaryEnumerator`2">
+ <summary>
+  Classe qui implémente l'interface IDictionaryEnumerator
+ </summary>
+ <remarks>
+  Auteur : S. Gauthier <br/>
+  Date   : 2016-10-16
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur :<br/>
+  Date   :<br/>
+  Description: <br/>
+ </remarks>
+ <typeparam name="TKey">Type de la clé.</typeparam>
+ <typeparam name="TValue">Type de la valeur.</typeparam>
+</member>
+<member name="M:RAMQ.DictionaryEnumerator`2.#ctor(System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{`0,`1}})">
+ <summary>
+ Constructeur primaire.
+ </summary>
+ <param name="_objEnumr">Instance de la classe IEnumerator.</param>
+</member>
+<member name="P:RAMQ.DictionaryEnumerator`2.Key">
+ <summary>
+ Clé de l'élément à la position courante de l'énumérateur.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:RAMQ.DictionaryEnumerator`2.Value">
+ <summary>
+ Valeur de l'élément à la position courante de l'énumérateur.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:RAMQ.DictionaryEnumerator`2.Entry">
+ <summary>
+ Élément à la position courante de l'énumérateur en tant que DictionaryEntry.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:RAMQ.DictionaryEnumerator`2.Current">
+ <summary>
+ Élément à la position courante de l'énumérateur.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.DictionaryEnumerator`2.MoveNext">
+ <summary>
+ Avance l'énumérateur au prochain élément.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.DictionaryEnumerator`2.Reset">
+ <summary>
+ Place l'énumérateur à la position initiale, soit devant le premier élément.
+ </summary>
+</member>
+<member name="T:RAMQ.IConfigurationCache">
+ <summary>
+ Interface implémenté par la classe de configuration utilisé par l'objet Cache
+ </summary>
+</member>
+<member name="P:RAMQ.IConfigurationCache.CodeAppli">
+ <summary>
+ Code de l'application
+ </summary>
+ <returns>le code de l'application</returns>
+</member>
+<member name="P:RAMQ.IConfigurationCache.Expiration">
+ <summary>
+ Expiration de la cache
+ </summary>
+ <returns>l'expiration de la cache</returns>
+</member>
+<member name="P:RAMQ.IConfigurationCache.UtiliseExpirationDecale">
+ <summary>
+ Utilise l'expiration décalée
+ </summary>
+ <returns>si oui ou non on doit utilisé l'expiration décalé</returns>
+</member>
+<member name="P:RAMQ.IConfigurationCache.UtiliseSerialiseurJson">
+ <summary>
+ Utilise le sérialiseur JSON
+ </summary>
+ <returns>si oui ou non on doit utiliser le sérialiseur JSON</returns>
+</member>
+<member name="P:RAMQ.IConfigurationCache.ParametresSerialisationJson">
+ <summary>
+ Paramètres de sérialisation JSON
+ </summary>
+ <returns>les paramètres de sérialisation JSON</returns>
+</member>
+</members>
+</doc>

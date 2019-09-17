@@ -1,0 +1,1876 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PRE_AccesDonne_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.DroitAcquis">
+            <summary>
+            Classe regroupant les appels pour les droits acquis
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.DroitAcquis.#ctor(RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.DroitAcquis.ObtenirDroitsAcquisProfs(RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre)">
+            <summary>
+             Permet d'obtenir la liste des droits acquis actif et inactifs d'une liste de professionnels
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Liste des droits acquis actif et inactifs des professionnels</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif">
+            <summary> 
+             Droit Acquis Actif
+            </summary>
+            <remarks>
+             Auteur : Florent  Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.CodeRetour">
+            <summary>
+            Code de retour
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.MessageTraitement">
+            <summary>
+            Message de traitement        
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.NumeroSequentielProfessionnel">
+            <summary>
+            Numéro séquentiel du professionnel
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.DateDebut">
+            <summary>
+            Date de début du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.DateFin">
+            <summary>
+            Date de fin du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.CodeRegionSocioSanitaire">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisActif.NumeroSequentielRegrAdmn">
+            <summary>
+            Numéro séquentiel de regroupement administratif
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif">
+            <summary> 
+             Droit Acquis Inactif
+            </summary>
+            <remarks>
+             Auteur : Florent  Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.NumeroSequentielProfessionnel">
+            <summary>
+            Numéro séquentiel du professionnel
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.DateDebut">
+            <summary>
+            Date de début du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.DateFin">
+            <summary>
+            Date de fin du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.CodeRegionSocioSanitaire">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Entite.DroitAcquisInactif.NumeroSequentielRegrAdmn">
+            <summary>
+            Numéro séquentiel de regroupement administratif
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.IDroitAcquis">
+            <summary> 
+            Interface regroupant les appels pour les droits acquis d'un professionnel.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.IDroitAcquis.ObtenirDroitsAcquisProfs(RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre)">
+            <summary>
+            
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre">
+            <summary> 
+            Classe de paramètres d'entrées pour le service du noyau « Obtenir les droits acquis actifs et inactifs d'un professionnel ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre.NumerosSequentielsProfs">
+            <summary>
+            Liste des numéros séquentiels des professionnels
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti">
+            <summary> 
+            Classe de paramètres d'entrées pour le service du noyau « Obtenir les droits acquis actifs et inactifs d'un professionnel ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti.DroitsAcquisActifProfs">
+            <summary>
+            Liste des droits acquis actifs des professionnels
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti.DroitsAcquisInactifProfs">
+            <summary>
+            Liste des droits acquis inactifs des professionnels
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction">
+            <summary>
+            Paramètre de production
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.NumeroSequence">
+            <summary>
+            Numéro de séquence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.NomParametre">
+            <summary>
+            Nom du paramètre
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.Type">
+            <summary>
+            Type de paramètre
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.ValeurNumerique">
+            <summary>
+            Valeur numérique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.ValeurCaractere">
+            <summary>
+            Valeur en caractère
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.ValeurDate">
+            <summary>
+            Valeur en date
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.DateCreationOccurrence">
+            <summary>
+            Date heure occurrence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.IdentifiantCreation">
+            <summary>
+            Identifiant de création
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.DateModificationOccurrence">
+            <summary>
+            Date heure modification de l'occurrence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.ParametreProduction.IdentifiantMajOccurrence">
+            <summary>
+            Identifiant de mise-à-jour de l'occurrence
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire">
+            <summary> 
+             Pratique
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.NbJoursPremDpnag">
+            <summary>
+            Nombre de jours PREM/DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.NbJoursPrem">
+            <summary>
+            Nombre de jours PREM
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.NbJoursDpnag">
+            <summary>
+            Nombre de jours DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.NbJoursIvn">
+            <summary>
+            Nombre de jours IVN
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.CodeRSS">
+            <summary>
+            Le code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.NumeroSeqRegrAdmnLGEO">
+            <summary>
+            Numéro séquentiel de regroupement administratif d'un lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueTerritoire.DateService">
+            <summary>
+            Date de service
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion">
+            <summary> 
+             Pratique
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.NbJoursPremDpnag">
+            <summary>
+            Nombre de jours PREM/DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.NbJoursPrem">
+            <summary>
+            Nombre de jours PREM
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.NbJoursDpnag">
+            <summary>
+            Nombre de jours DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.NbJoursIvn">
+            <summary>
+            Nombre de jours IVN
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.DateService">
+            <summary>
+            Date de service
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.PratiqueRegion.CodeRSS">
+            <summary>
+            Le code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS">
+            <summary>
+            Classe regroupant StatutAvisConformite et AvisConformite
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.DateDebutEngagement">
+            <summary>
+            Date de début de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.DateFinEngagement">
+            <summary>
+            Date de fin de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutEngagementPratiqueRSS.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation">
+            <summary> 
+             Autorisation
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation.NumeroSequence">
+            <summary>
+            Numéro de séquence de l'autorisation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation.Type">
+            <summary>
+            Type d'autorisation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation.TypeLieuGeographique">
+            <summary>
+            Type lieu géographique
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation.CodeLieuGeographique">
+            <summary>
+            Code lieu géographique
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation.DateDebut">
+            <summary>
+            Date de début de l'autorisation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation.DateFin">
+            <summary>
+            Date de fin de l'autorisation
+            </summary>
+            <returns>Nullable</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite">
+            <summary> 
+             Refus
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.DateDebutEngagement">
+            <summary>
+            Date de début de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.DateFinEngagement">
+            <summary>
+            Date de fin de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.DateHeureOccurenceMAJ">
+            <summary>
+            Date et heure de la modification de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.DateHeureOccurenceInactive">
+            <summary>
+            Date et heure de l'inactivité de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.AvisConformite.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation">
+            <summary> 
+             Dérogation
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.NumeroSequentiel">
+            <summary>
+            Numéro séquentiel de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.Type">
+            <summary>
+             Type de dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.DateDebut">
+            <summary>
+            Date de début de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.DateRenouvellement">
+            <summary>
+            Date de renouvellement de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.Statut">
+            <summary>
+            Statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.DateFin">
+            <summary>
+            Date de fin de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de création de l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.IdentifiantCreationOccurence">
+            <summary>
+            Identifiant de l’utilisateur qui a créé l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.DateHeureInactivationOccurence">
+            <summary>
+            Date et heure d’inactivation de l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Derogation.IdentifiantInactivationOccurence">
+            <summary>
+            Identifiant de l’utilisateur qui a inactivé l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite">
+            <summary> 
+             Refus
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.StatutEngagement">
+            <summary>
+            Statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.IndicateurStatutEngagementAttente">
+            <summary>
+            Indicateur du statut de l'engagement en attente
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.DateDebutStatutEngagement">
+            <summary>
+            Date de début du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.CodeRaisonStatutEngagement">
+            <summary>
+            Code de raison du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.DateFinStatutEngagement">
+            <summary>
+            Date de fin du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.DateHeureOccurenceMAJ">
+            <summary>
+            Date et heure de la modification de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.StatutAvisConformite.DateHeureOccurenceInactive">
+            <summary>
+            Date et heure de l'inactivité de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal">
+            <summary> 
+            Interface regroupant les appels pour la facette Plans régionaux d'effectifs médicaux.
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.CreerAvisConformite(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre)">
+            <summary>
+            Permet la création des avis de conformités
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant le numéro séquentiel de l'engagement créé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ModifierAvisConformiteStatut(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre)">
+            <summary>
+            Permet la modification des avis de conformités et de ses statuts
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l’occurrence et des messages d'erreurs</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirLesAvisConformite(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet l'obtention des avis de conformités et de leur statuts
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des avis de conformité et de leurs statuts</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ModifierStatutEngagement(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre)">
+            <summary>
+            Permet de modifier un statut lié à un avis de conformité d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l'occurrence et des messages d'erreurs</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.CreerStatutAvisConformite(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre)">
+            <summary>
+            Permet de créer un statut pour un avis de conformité
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l'occurrence, des messages d'erreurs et le numéro séquentiel du statut créé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ModifierPeriodeAvis(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de modifier la période d'un avis de conformité
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l'occurrence et des messages d'erreurs</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ModifierDerogation(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Permet de modifier une dérogation d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Le nouveau numéro séquentiel de la dérogation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirDerogationsProfessionnelSante(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre)">
+            <summary>
+            Permet de faire l'obtention des dérogations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des dérogations d'un professionnel de la santé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.CreerDerogation(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre)">
+            <summary>
+            Permet de créer une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrée.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirAutorisationsProfessionnelSante(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsEntre)">
+            <summary>
+            Permet de faire l'obtention des autorisations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des autorisations d'un professionnel de la santé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirStatutsEngagementPratiqueRSS(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+            Permet de faire l'obtention de la liste des statuts engagement pratique RSS 
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des statuts engagement pratique RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirJoursFactPratiRegion(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre)">
+            <summary>
+            Permet de faire l'obtention des jours facturés de la pratique PREM par région
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste de journées facturées des professionnels de la santé par RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirJoursFactPratiTerri(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre)">
+            <summary>
+            Permet de faire l'obtention des jours facturés de la pratique PREM par territoire
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste de journées facturées des professionnels de la santé par RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal.ObtenirParametresProduction(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionEntre)">
+            <summary>
+            Permet de faire l'obtention paramètres de production
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste de paramètres de production</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Créer un avis de conformité ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.DateDebutEngagement">
+            <summary>
+            Date de début de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.DateFinEngagement">
+            <summary>
+            Date de fin de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.TypeLieuGeographique">
+            <summary>
+            CType de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.StatutEngagement">
+            <summary>
+            Statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.IndicateurStatutEngagementAttente">
+            <summary>
+            Indicateur de statut de l'engagement en attente
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre.CodeRaisonStatutEngagement">
+            <summary>
+            Code de raison du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionSorti">
+            <summary>
+            Classe de paramètres de sorties pour le service du noyau « Obtenir une liste de paramètres de production ».
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionSorti.Parametres">
+            <summary>
+            Liste des paramètres trouvé
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Créer un avis de conformité ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteSorti.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Modifier un avis de conformité selon son statut ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre.IndicateurInactivationOccurence">
+            <summary>
+            Indicateur d'inactivation d'occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Modifier un avis de conformité selon son statut ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Créer une dérogation ».
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre.Type">
+            <summary>
+            Type de la dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre.CodeRaisonStatutDerogation">
+            <summary>
+            Code de raison du statut de dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre.DateDebut">
+            <summary>
+            Date de début de la dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui crée l'occurence.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Modifier une dérogation d'un professionnel de la santé ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.NumeroSequentiel">
+            <summary>
+            Numéro séquentiel de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.Type">
+            <summary>
+            Type de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.DateRenouvellement">
+            <summary>
+            Date de renouvellement de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.DateDebut">
+            <summary>
+            Date de début de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.DateFin">
+            <summary>
+            Date de fin de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.Statut">
+            <summary>
+            Statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Créer une dérogation ».
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationSorti.NumeroSequentielDerogation">
+            <summary>
+            Numéro séquentiel de la dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationSorti.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de la création de l'occurence.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Modifier une dérogation d'un professionnel de la santé ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationSorti.NouveauNumeroSequentiel">
+            <summary>
+            Nouveau numéro séquentiel de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Modifier la période d'un avis de conformité ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.DateDebutActuelle">
+            <summary>
+            Date de début actuelle de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.DateFinActuelle">
+            <summary>
+            Date de fin actuelle de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.DateDebutNouvelle">
+            <summary>
+            Nouvelle date de début de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.DateFinNouvelle">
+            <summary>
+            Nouvelle date de fin de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Modifier la période d'un avis de conformité ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre">
+            <summary> 
+             Classe de paramètres d'entrée pour le service du noyau « Créer un statut de l’engagement ».
+            </summary>
+            <remarks>
+             Auteur : Mathys Leleu<br/>
+             Date   : Janvier 2017
+            </remarks>
+            
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre.StatutEngagement">
+            <summary>
+            Statut de l'engagement 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur créeant le statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre.DateDebutStatutEngagement">
+            <summary>
+            Date de début du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre.CodeRaisonStatutEngagement">
+            <summary>
+            Code de raison du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre.DateFinStatutEngagement">
+            <summary>
+            Date de fin du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre">
+            <summary> 
+             Classe de paramètres d'entrée pour le service du noyau « Modifier un statut de l'engagement   ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre.IndicateurStatutEngagementEnAttente">
+            <summary>
+            Indicateur de statut de l'engagement en attente
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre.DateFinStatutEngagement">
+            <summary>
+            Date de fin du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre.IndicateurInactivationStatut">
+            <summary>
+            Indicateur d'inactivation du statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Créer un statut de l’engagement ».
+            </summary>
+            <remarks>
+             Auteur : Mathys Leleu<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Modifier un statut de l'engagement ».
+            </summary>
+            <remarks>
+             Auteur : Mathys Leleu<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementSorti.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau 
+             « Obtenir les autorisations d'un professionnel de la santé ».
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier<br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Obtenir les autorisations d'un professionnel de la santé ».
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsSorti.Autorisations">
+            <summary>
+            Liste des avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre">
+            <summary> 
+             Classe de paramètres d'entré pour le service du noyau « Obtenir les jours facturés de la pratique PREM par territoire ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.NumerosSequentielsProfs">
+            <summary>
+            Liste de numéros séquentiels des professionnels de la santé 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.DateDebut">
+            <summary>
+            Date de début (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.DateFin">
+            <summary>
+            Date de fin (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.NumeroRegrLieuGeographique">
+            <summary>
+            Regroupement LGEO (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.TypeLieuGeographique">
+            <summary>
+            Type LGEO (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.CodeLieuGeographique">
+            <summary>
+            Code LGEO (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre.MontantparJournee">
+            <summary>
+            Montant par journée
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre">
+            <summary> 
+             Classe de paramètres d'entré pour le service du noyau « Obtenir les jours facturés de la pratique PREM par région ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre.NumerosSequentielsProfs">
+            <summary>
+            Liste de numéros séquentiels des professionnels de la santé 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre.IndicateurRegrMois">
+            <summary>
+            Indicateur de regroupement par mois
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre.DateDebut">
+            <summary>
+            Date de début (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre.DateFin">
+            <summary>
+            Date de fin (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre.CodeRSS">
+            <summary>
+            Code RSS (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre.MontantparJournee">
+            <summary>
+            Montant par journée
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Obtenir les jours facturés de la pratique PREM par territoire ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriSorti.ListeJourFactProfsRSS">
+            <summary>
+            Liste de journées facturées des professionnels de la santé par RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Obtenir les jours facturés de la pratique PREM par région ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionSorti.ListeJourFactProfsRSS">
+            <summary>
+            Liste de journées facturées des professionnels de la santé par RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Obtenir la liste des avis de conformité ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.IndicateurAttenteTransmission">
+            <summary>
+            Indicateur d'attente de transmission
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.DateRecherche">
+            <summary>
+            Date de recherche
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.IndicateurAvisInactive">
+            <summary>
+            Indicateur d'avis inactivé
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre.Tri">
+            <summary>
+            Tri
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Obtenir la liste des avis de conformité ».
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Septembre 2016
+            <br/>
+             Historique des modifications<br/>
+             ------------------------------------------------------------------------------<br/>
+             Auteur : [Auteur]<br/>
+             Date   : [aaaa-mm-jj]<br/>
+             Description:<br/>
+            <br/>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti.ListeAvisConformite">
+            <summary>
+            Liste des avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti.ListeStatutAvisConformite">
+            <summary>
+            Liste des statuts des avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre">
+            <summary> 
+             Classe de paramètres d'entré pour le service du noyau « Obtenir la liste des dérogations d’un professionnel de la santé ».
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier<br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquantiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre.DateRecherche">
+            <summary>
+            Date de recherche
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre.IndicateurDerogationInactive">
+            <summary>
+            Indicateur d'une dérogation inactivé
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre.Tri">
+            <summary>
+            Tri
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Obtenir la liste des dérogations d’un professionnel de la santé ».
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier<br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteSorti.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteSorti.Derogations">
+            <summary>
+            Liste de dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionEntre">
+            <summary>
+            Classe de paramètres d'entrées pour le service du noyau « Obtenir une liste de paramètres de production ».
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionEntre.NomsParametres">
+            <summary>
+            Liste de nom de paramètres
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre">
+            <summary> 
+             Classe de paramètres d'entrées pour le service du noyau « Obtenir la liste des statuts engagement pratique RSS  ».
+            </summary>
+            <remarks>
+             Auteur : Mathys Leleu<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre.CodeRaisonEngagement">
+            <summary>
+            Code de raison de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre.StatutEngagementTerritoire">
+            <summary>
+            Statue engagement territoire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre.DateDebutStatutEngagementTerritoire">
+            <summary>
+            Date de début du statut de l'engagement territoire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre.DateFinStatutEngagementTerritoire">
+            <summary>
+            Date de fin du statut de l'engagement territoire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSSorti">
+            <summary> 
+             Classe de paramètres de sortie pour le service du noyau « Obtenir la liste des statuts engagement pratique RSS  ».
+            </summary>
+            <remarks>
+             Auteur : Mathys Leleu<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSSorti.ListeStatutEngagementPratiqueRSS">
+            <summary>
+            Liste des avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal">
+            <summary> 
+            Classe regroupant les appels pour la facette Plans régionaux d'effectifs médicaux.
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.#ctor(RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.CreerAvisConformite(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteEntre)">
+            <summary>
+            Permet la création des avis de conformités
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant le numéro séquentiel de l'engagement créé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ModifierAvisConformiteStatut(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre)">
+            <summary>
+            Permet la modification des avis de conformités et de ses statuts
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l'occurrence et des messages d'erreurs</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirLesAvisConformite(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet l'obtention des avis de conformités et de leur statuts
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des avis de conformité et de leurs statuts</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ModifierStatutEngagement(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre)">
+            <summary>
+            Permet de modifier un statut lié à un avis de conformité d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l'occurrence et des messages d'erreurs</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.CreerStatutAvisConformite(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre)">
+            <summary>
+            Permet de créer un statut pour un avis de conformité
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l'occurrence, des messages d'erreurs et le numéro séquentiel du statut créé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ModifierPeriodeAvis(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de modifier la période d'un avis de conformité
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Un objet contenant la date et heure de l’occurrence et des messages d'erreurs</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ModifierDerogation(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Permet de modifier une dérogation d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Le nouveau numéro séquentiel de la dérogation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirDerogationsProfessionnelSante(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre)">
+            <summary>
+            Permet de faire l'obtention des dérogations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des dérogations d'un professionnel de la santé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.CreerDerogation(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationEntre)">
+            <summary>
+            Permet de créer une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrée.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirAutorisationsProfessionnelSante(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsEntre)">
+            <summary>
+            Permet de faire l'obtention des autorisations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des autorisations d'un professionnel de la santé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirStatutsEngagementPratiqueRSS(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+            Permet de faire l'obtention de la liste des statuts engagement pratique RSS 
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des statuts engagement pratique RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirJoursFactPratiRegion(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiRegionEntre)">
+            <summary>
+            Permet de faire l'obtention des jours facturés de la pratique PREM par région
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste de journées facturées des professionnels de la santé par RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirJoursFactPratiTerri(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirJoursFactPratiTerriEntre)">
+            <summary>
+            Permet de faire l'obtention des jours facturés de la pratique PREM par territoire
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste de journées facturées des professionnels de la santé par RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.PlanRegnMdcal.ObtenirParametresProduction(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirParametresProductionEntre)">
+            <summary>
+            Permet de faire l'obtention paramètres de production
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste de paramètres de production</returns>
+        </member>
+    </members>
+</doc>

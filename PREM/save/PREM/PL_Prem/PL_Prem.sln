@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL_Prem_iut", "PL_Prem_iut\PL_Prem_iut.csproj", "{A964473F-00D6-4050-96C3-D0DDD06B9BE6}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PL_Prem_iutWeb_dep", "PL_Prem_iutWeb_dep\PL_Prem_iutWeb_dep.wixproj", "{F50882CF-61A7-4738-87CA-A8756A4E86CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7569237C-FC81-4A77-A720-EB4FECFF2062}"
+	ProjectSection(SolutionItems) = preProject
+		.tfignore = .tfignore
+		PL_Prem_iutWeb_dep.cmd = PL_Prem_iutWeb_dep.cmd
+		PL_Prem_iutWebi_dep.cmd = PL_Prem_iutWebi_dep.cmd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL_PremMdl_cpo", "PL_PremMdl_cpo\PL_PremMdl_cpo.csproj", "{5046617C-9FCE-4A5D-846D-2562D1933AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL_PremMdl_cpo.Test", "PL_PremMdl_cpo.Test\PL_PremMdl_cpo.Test.csproj", "{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL_Prem_iut.Test", "PL_Prem_iut.Test\PL_Prem_iut.Test.csproj", "{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PL_Prem_iutWebi_dep", "PL_Prem_iutWebi_dep\PL_Prem_iutWebi_dep.wixproj", "{84694C25-5811-4E2A-A68C-ACDF3FC6616A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Debug|x86.Build.0 = Debug|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Release|x86.ActiveCfg = Release|Any CPU
+		{A964473F-00D6-4050-96C3-D0DDD06B9BE6}.Release|x86.Build.0 = Release|Any CPU
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Debug|x86.ActiveCfg = Debug|x86
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Debug|x86.Build.0 = Debug|x86
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Release|Any CPU.ActiveCfg = Release|x86
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Release|Any CPU.Build.0 = Release|x86
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Release|x86.ActiveCfg = Release|x86
+		{F50882CF-61A7-4738-87CA-A8756A4E86CE}.Release|x86.Build.0 = Release|x86
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Debug|x86.Build.0 = Debug|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Release|x86.ActiveCfg = Release|Any CPU
+		{5046617C-9FCE-4A5D-846D-2562D1933AAA}.Release|x86.Build.0 = Release|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Debug|x86.Build.0 = Debug|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Release|x86.ActiveCfg = Release|Any CPU
+		{93AF3E1B-2CC1-4673-8F81-6B9BC2316D13}.Release|x86.Build.0 = Release|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{C6C8DD42-2CD1-4591-9AAA-3A3556A9C0C8}.Release|x86.Build.0 = Release|Any CPU
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Debug|x86.ActiveCfg = Debug|x86
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Debug|x86.Build.0 = Debug|x86
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Release|Any CPU.ActiveCfg = Release|x86
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Release|Any CPU.Build.0 = Release|x86
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Release|x86.ActiveCfg = Release|x86
+		{84694C25-5811-4E2A-A68C-ACDF3FC6616A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://srv-tfs-appli.adprod.ramq.gov/tfs/ramq
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PL_Prem_iut\\PL_Prem_iut.csproj
+		SccProjectName1 = PL_Prem_iut
+		SccLocalPath1 = PL_Prem_iut
+		SccProjectUniqueName2 = PL_Prem_iutWeb_dep\\PL_Prem_iutWeb_dep.wixproj
+		SccProjectName2 = PL_Prem_iutWeb_dep
+		SccLocalPath2 = PL_Prem_iutWeb_dep
+		SccProjectUniqueName3 = PL_PremMdl_cpo\\PL_PremMdl_cpo.csproj
+		SccProjectName3 = PL_PremMdl_cpo
+		SccLocalPath3 = PL_PremMdl_cpo
+		SccProjectUniqueName4 = PL_PremMdl_cpo.Test\\PL_PremMdl_cpo.Test.csproj
+		SccProjectName4 = PL_PremMdl_cpo.Test
+		SccLocalPath4 = PL_PremMdl_cpo.Test
+		SccProjectUniqueName5 = PL_Prem_iut.Test\\PL_Prem_iut.Test.csproj
+		SccProjectName5 = PL_Prem_iut.Test
+		SccLocalPath5 = PL_Prem_iut.Test
+		SccProjectUniqueName6 = PL_Prem_iutWebi_dep\\PL_Prem_iutWebi_dep.wixproj
+		SccProjectName6 = PL_Prem_iutWebi_dep
+		SccLocalPath6 = PL_Prem_iutWebi_dep
+	EndGlobalSection
+EndGlobal

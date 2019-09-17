@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="PLF1_TraiterEveneAutreSys_cpo.DllRefreNuget">
+      <ComponentRef Id="cmp3a6a52e9508a4e2cbc0f9fb51c56e936" />
+    </ComponentGroup>
+    <DirectoryRef Id="BinFolder">
+      <Component Id="cmp3a6a52e9508a4e2cbc0f9fb51c56e936" Guid="3a6a52e9-508a-4e2c-bc0f-9fb51c56e936">
+        <File Id="fila00ab19aee1646a0a2a1406d78140d08" Name="RAMQ.COM.COC1_V4DonneComne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.2.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll" />
+        <File Id="fil032a4cbf4bdf406ab84e4610cb61a1ff" Name="RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll" />
+        <File Id="filc45fd66940ff45a3b94df43393f17776" Name="RAMQ.COM.COD1_V4OutilBase_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.6\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll" />
+        <File Id="fil78c95ce27770426e90396edcfa3630aa" Name="RAMQ.COM.COD2_V4GestCache_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.2.1\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll" />
+        <File Id="fil89cd6182a9d341ebacb82432f4327be8" Name="RAMQ.COM.COE1_V4Documents_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COE1_V4Documents.2.0.22\lib\NET45\RAMQ.COM.COE1_V4Documents_cpo.dll" />
+        <File Id="fil52c64de43ce74eafa79cee6569aaf839" Name="Newtonsoft.Json.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll" />
+        <File Id="fil0b84dd414af24e268fc87323fa203159" Name="RAMQ.AGS.YRY3_FournCleChifm_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.AGS.YRY3_FournCleChifm.2.1.1\lib\NET45\RAMQ.AGS.YRY3_FournCleChifm_cpo.dll" />
+        <File Id="filedff76f840e54fd08b36ab93d9acf6bc" Name="RAMQ.COM.COD1_JetonAuthn_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll" />
+        <File Id="fil92709e5fbecf48c38b9f40ee89dd3770" Name="RAMQ.PRE.PL_LogiqueAffaire_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PL_LogiqueAffaire.1.0.66\lib\NET45\RAMQ.PRE.PL_LogiqueAffaire_cpo.dll" />
+        <File Id="file32b0dc368e84bf7b6e239f94405bf1e" Name="RAMQ.PRE.PRE_AccesDonne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_AccesDonne.1.0.136\lib\NET45\RAMQ.PRE.PRE_AccesDonne_cpo.dll" />
+        <File Id="fildf18c04bb95c4917af84f3dff3b2225f" Name="RAMQ.PRE.PRE_Entites_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.152\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll" />
+        <File Id="fila9e9a2ac5dc94911b7a0fbf4842b0a9d" Name="RAMQ.PRE.PRE_FournAccesDonne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_FournAccesDonne.1.0.12\lib\NET45\RAMQ.PRE.PRE_FournAccesDonne_cpo.dll" />
+        <File Id="fild7d0a2aa5c4b42e1aaabb6fb5928200d" Name="RAMQ.PRE.PRE_OutilComun_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_OutilComun.1.0.58\lib\NET45\RAMQ.PRE.PRE_OutilComun_cpo.dll" />
+        <File Id="fil1217d94c44754cdfa906c50c033fbf54" Name="RAMQ.PRE.PRE_SysExt_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_SysExt.1.0.37\lib\NET45\RAMQ.PRE.PRE_SysExt_cpo.dll" />
+        <File Id="fil601a3d5b8bdb4ce2967d8a9fc67cb0ff" Name="System.IdentityModel.Tokens.Jwt.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.DllRefreNuget">
+      <ComponentRef Id="cmpa731b2953a6d4ea5a0f1a71f679969e1" />
+    </ComponentGroup>
+    <DirectoryRef Id="BinFolder">
+      <Component Id="cmpa731b2953a6d4ea5a0f1a71f679969e1" Guid="a731b295-3a6d-4ea5-a0f1-a71f679969e1">
+        <File Id="fil7a03fa6bbe224a2380ae7a17b119b3a3" Name="Autofac.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Autofac.3.5.2\lib\net40\Autofac.dll" />
+        <File Id="fil0a961a122f7447749c1ba020fa892361" Name="Autofac.Integration.Wcf.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Autofac.Wcf.4.0.0\lib\net45\Autofac.Integration.Wcf.dll" />
+        <File Id="fila91d12d09a424b578a9a1795e87697fb" Name="RAMQ.COM.COC1_V4DonneComne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.2.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll" />
+        <File Id="fil847914a577a140aebd5885f5e4cd3355" Name="RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll" />
+        <File Id="filfb6cf0ccc2ba430596468fce5db3e35b" Name="RAMQ.COM.COD1_V4OutilBase_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.6\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll" />
+        <File Id="fil1a2b89f9006e40d580bc432cadfa28d9" Name="RAMQ.COM.COD2_V4GestCache_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.2.1\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll" />
+        <File Id="fild28dcc982b0844ffbb06334aae4bf018" Name="RAMQ.COM.COE1_V4Documents_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\L2-Princ.RAMQ.COM.COE1_V4Documents.2.0.22\lib\NET45\RAMQ.COM.COE1_V4Documents_cpo.dll" />
+        <File Id="fildb64e8f3435c4d8d87baadb93ec729dc" Name="Newtonsoft.Json.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll" />
+        <File Id="fil97c2a91715084ef38192e1194f1a0f1c" Name="RAMQ.AGS.YRY3_FournCleChifm_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.AGS.YRY3_FournCleChifm.2.1.1\lib\NET45\RAMQ.AGS.YRY3_FournCleChifm_cpo.dll" />
+        <File Id="filbb719997fb9244c687f25185da864819" Name="RAMQ.COM.COD1_JetonAuthn_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll" />
+        <File Id="fil2e03c69177734eab8e50e0ae832b7344" Name="RAMQ.PRE.PL_LogiqueAffaire_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PL_LogiqueAffaire.1.0.66\lib\NET45\RAMQ.PRE.PL_LogiqueAffaire_cpo.dll" />
+        <File Id="fila9a35efddc8a482ab513e18dea99c782" Name="RAMQ.PRE.PRE_AccesDonne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_AccesDonne.1.0.136\lib\NET45\RAMQ.PRE.PRE_AccesDonne_cpo.dll" />
+        <File Id="fil687a4f56005f426c8eb138b7800ec4ba" Name="RAMQ.PRE.PRE_Entites_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.152\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll" />
+        <File Id="fil7769dddfe7cc42c187d4fc709089d429" Name="RAMQ.PRE.PRE_FournAccesDonne_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_FournAccesDonne.1.0.12\lib\NET45\RAMQ.PRE.PRE_FournAccesDonne_cpo.dll" />
+        <File Id="filf791bf0c93bc498ba5fb53eaa02dc9e4" Name="RAMQ.PRE.PRE_OutilComun_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_OutilComun.1.0.58\lib\NET45\RAMQ.PRE.PRE_OutilComun_cpo.dll" />
+        <File Id="filb4a9d4e6cf0046478b6ecc377ff515da" Name="RAMQ.PRE.PRE_SysExt_cpo.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\Princ.RAMQ.PRE.PRE_SysExt.1.0.37\lib\NET45\RAMQ.PRE.PRE_SysExt_cpo.dll" />
+        <File Id="fileddfc9b823ea4ed6bd6278bb121cfd15" Name="System.IdentityModel.Tokens.Jwt.dll" Source="C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

@@ -1,0 +1,813 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RAMQ.COM.COA1_V4AfichMVC_cpo
+</name>
+</assembly>
+<members>
+<member name="T:RAMQ.Web.MVC.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleAuthAzMan">
+<summary>
+  Recherche une chaîne localisée semblable à AzManConfig.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.EnteteContentSecurityPolicyDefaut">
+<summary>
+  Recherche une chaîne localisée semblable à default-src &apos;none&apos;; base-uri &apos;self&apos;; block-all-mixed-content; connect-src &apos;self&apos; *.ramq.gouv.qc.ca *.ramq.gov; child-src &apos;none&apos;; font-src &apos;self&apos;; form-action &apos;self&apos;; frame-ancestors &apos;none&apos;; img-src &apos;self&apos;; media-src &apos;none&apos;; object-src &apos;none&apos;; script-src &apos;self&apos; &apos;nonce-{cle-nonce}&apos;; style-src &apos;self&apos;;.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.ParamObligatoire">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est obligatoire..
+</summary>
+</member>
+<member name="T:RAMQ.Web.MVC.Attributs.AutorAttribute">
+ <summary> 
+  Permet de s’assurer que les appelants ont les droits nécessaires pour exécuter l’opération (controllers/action).
+  En plus de permettre la validation selon l'utilisateur courant (Users) et les groupes (Roles) auquels l'utilisation appartient,
+  cette classe permet de vérifier si l'utilisation possède les droits d'accès spécifié pour une opération en particulier.
+  Les droits d'accès pour les opérations sont spécifié dans le fichier web.config.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.#ctor">
+ <summary>
+ Constructeur principal
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.#ctor(System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strUpn">Le nom d'un upn.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.AutorAttribute.Operation">
+ <summary>
+ Contient un nom d’opération. 
+ On obtient la liste des groupes d’utilisateurs qui ont les droits d’accès à l’opération à partir de la clé de configuration du site correspondant à ce nom de d’opération.  
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.AuthorizeCore(System.Web.HttpContextBase)">
+ <summary>
+ Fournit un point d'entrée aux contrôles des autorisations personnalisés.
+ Cette méthode permet de vérifier que l’usager courant possède les droits d’utilisation nécessaire.
+ On appelle la méthode de la classe de base pour vérifier que l’usager courant possède les droits d’accès selon la valeur des propriétés : 
+ Users : Contient une liste d’usagers qui ont les droits d’accès.
+ Roles : Contient une liste de groupes de sécurité qui ont les droits d’accès.
+ Operation : Contient un nom d’opération.  On obtient la liste des groupes d’utilisateurs qui ont les droits d’accès à l’opération à partir de la clé de configuration du site correspondant à ce nom de d’opération.
+             On utilise la méthode d’extension HttpContext.current.UsagerDansGroupe pour valider si l’usager est dans un groupe spécifié pour l’opération. 
+ </summary>
+ <param name="_objContxHttp">Contexte HTTP qui encapsule toutes les informations spécifiques à HTTP concernant une requête HTTP individuelle.</param>
+ <returns>
+ true si l'utilisateur est autorisé ; sinon, false.
+ </returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.GroupesOperation(System.String)">
+ <summary>
+ Permet d'extraire les groupes de sécurité associé à l'opération passé en paramètre dans le fichier de configuration.
+ </summary>
+ <param name="_strOperation">Liste de nom d'opération à chercher dans le fichier de configuration séparée par un point virgule</param>
+ <returns>Les groupes de sécurité sont retourné dans une chaîne séparée par un point virgule</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.VerifOperations(System.Web.HttpContextBase,System.String)">
+ <summary>
+ Vérifier que l’usager courant possède les droits d’accès selon la liste de nom d'opération.
+ </summary>
+ <param name="_objHttpContext">Contexte HTTP qui encapsule toutes les informations spécifiques à HTTP concernant une requête HTTP individuelle.</param>
+ <param name="_strGrpOperation">Une liste de groupes de sécurité qui ont les droits d’accès.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.VerifOperAnonyme(System.String)">
+ <summary>
+ Vérifier que l’usager courant possède les droits d’accès selon la liste de nom d'opération.
+ </summary>
+ <param name="_strGrpOperation">Une liste de groupes de sécurité qui ont les droits d’accès</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.AutorAttribute.AuthorizationDSQ(System.Web.HttpContextBase)">
+ <summary>
+ Cette méthode permet de vérifier que l'usager courant possède les droits d’utilisation nécessaire pour le DSQ.
+ </summary>
+</member>
+<member name="T:RAMQ.Web.MVC.Attributs.GereErrAttribute">
+ <summary> 
+  Permet la journalisation des erreurs techniques et l’affichage d’une vue personnalisée pour les erreurs techniques. 
+  Deux vues sont utilisées pour l'affichage des informations :
+  1.  Vue utilisée lorsque le mode de débogage est activé.  
+      Affiche l'information supplémentaire pour le développeur.
+  2.  Vue utilisée lorsque le mode de débogage est désactivé.
+      Affiche l'information de base pour l'utilisateur.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.ConfigurationManager">
+ <summary>
+ Fournit l'accès aux fichiers de configuration tels qu'ils s'appliquent aux applications Web.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.JournaliseErrTech">
+ <summary>
+ Obtient ou définit l'instance de classe pour Journaliser les erreurs techniques.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.CodAppli">
+ <summary>
+ Code d'application utilisé pour la journalisation
+ Si le code d'application n'est pas initilialisé,  on recherche une clé
+ CodAppli dans la configuration courante.  
+ Si aucun code d'application,  on journalise dans COM.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.MessageErr">
+ <summary>
+ Obtient ou définit l'affichage de la dernière information présente dans la page d'erreur.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.Vue">
+ <summary>
+ Obtient ou définit l'affichage de la page pour l'affichage des informations sur l'exception.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.TypeResMsgErr">
+ <summary>
+ Obtient ou définit le type de ressource à utiliser pour afficher la dernière information présente
+ dans la page d'erreur.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Attributs.GereErrAttribute.NomResMsgErr">
+ <summary>
+ Obtient ou définit le type de ressource à utiliser pour afficher la dernière information présente
+ dans la page d'erreur.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.#ctor">
+ <summary>
+ Constructeur principal
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.#ctor(System.String)">
+ <summary>
+ Constructeur qui reçoit le code d'application pour la journalisation
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.#ctor(System.String,System.String)">
+ <summary>
+ Constructeur qui reçoit le code d'application pour la journalisation et la vue d
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.#ctor(System.String,RAMQ.Journalisation.IJournErrTech,RAMQ.Web.MVC.IConfigurationManager)">
+ <summary>
+ Constructeur pour les essais unitaires
+ </summary>
+ <param name="_objJournalErrTech"></param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.OnException(System.Web.Mvc.ExceptionContext)">
+ <summary>
+ Appelée lorsqu'une exception se produit.  
+ On journalise l'exception et on affiche une vue selon le mode débogage actif.
+ </summary>
+ <param name="_objContexteFiltre">Contexte du filtre d'action.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.ErreurSurvenue(System.Web.Mvc.ExceptionContext)">
+ <summary>
+ Permet la journalisation des erreurs technique.
+ </summary>
+ <param name="_exFilterContext">Contexte du filtre d'action.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.ExceptionExpire(System.Exception)">
+ <summary>
+ Vérifier si le type de l'exception indique qu'il s'agit de l'expiration d'une session
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.ObtenirCodAppli">
+ <summary>
+ On obtient le code d'application dans la configuration web courante.
+ Si aucun code d'application trouvé,  on journalise dans COM
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Attributs.GereErrAttribute.ObtnRessource(System.Type,System.String)">
+ <summary>
+ Obtenir la valeur des ressources
+ </summary>
+</member>
+<member name="T:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware">
+ <summary>
+ Ajoute au contexte Owin une clé à usage unique (nonce) qui peut être utilisée dans une balise 'script' avec l'attribut 'nonce' à l'aide du HtmlHelper ScriptNonce.
+ <script type = "text/javascript" nonce="@Html.RAMQ().ScriptNonce()"></script>
+ </summary>
+</member>
+<member name="F:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.CleScriptNonce">
+ <summary>
+ La clé utilisée dans le contexte Owin pour déposer la clé à usage unique (nonce).
+ </summary>
+</member>
+<member name="F:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.NomEntete">
+ <summary>
+ Le nom de l'en-tête à ajouter à la réponse.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.TokenCleNonce">
+ <summary>
+ Le token à être remplacé par la clé de nonce dans la propriété <see cref="P:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.EnteteContentSecurityPolicy"/>.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.EnteteContentSecurityPolicy">
+ <summary>
+ L'en-tête de réponse Content-Security-Policy.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.#ctor(Microsoft.Owin.OwinMiddleware)">
+ <summary>
+ Constructeur qui utilise une valeur défaut pour l'en-tête Security-Content-Policy.
+ <para>Pour savoir la valeur défaut voir <see cref="P:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.EnteteContentSecurityPolicy"/>.</para>
+ </summary>
+ <remarks>
+ Si vous voulez une autre valeur que le défaut, utilisez le constructeur qui accepte un en-tête personnalisé pour le Security-Content-Policy.
+ </remarks>
+ <param name="_next">Le prochain middleware dans la chaîne.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,System.String)">
+ <summary>
+ Constructeur qui permet de spécifier une valeur personnalisée pour l'en-tête Security-Content-Policy.
+ </summary>
+ <param name="_next">Le prochain middleware dans la chaîne.</param>
+ <param name="_enteteContentSecurityPolicy">La valeur personnalisée pour l'en-tête Security-Content-Policy.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Owin.ContentSecurityPolicyMiddleware.Invoke(Microsoft.Owin.IOwinContext)">
+ <summary>
+ Ajout d'une clé à usage unique dans le contexte Owin.
+ </summary>
+ <param name="_context"></param>
+ <returns></returns>
+</member>
+<member name="T:RAMQ.Web.MVC.Owin.CspMiddlewareAppBuilderExtension">
+ <summary>
+ Définition du module qui ajoute la méthode d'extension UseContentSecurityPolicyMiddleware à IAppBuilder.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Owin.CspMiddlewareAppBuilderExtension.UseContentSecurityPolicyMiddleware(Owin.IAppBuilder)">
+ <summary>
+ Méthode d'extension pour simplifier l'utilisation du ContentSecurityPolicyMiddleware.
+ Ainsi, sa utilisation se fera tout simplement comme 'app.UseContentSecurityPolicyMiddleware()'.
+ </summary>
+ <param name="_objAppBuilder"></param>
+</member>
+<member name="M:RAMQ.Web.MVC.Owin.CspMiddlewareAppBuilderExtension.UseContentSecurityPolicyMiddleware(Owin.IAppBuilder,System.String)">
+ <summary>
+ Méthode d'extension pour simplifier l'utilisation du ContentSecurityPolicyMiddleware.
+ Ainsi, sa utilisation se fera tout simplement comme 'app.UseContentSecurityPolicyMiddleware("default-src 'none';...")'.
+ Cette méthode permet l'utilisation d'un en-tête Content-Security-Policy autre que le défaut.
+ </summary>
+ <param name="_objAppBuilder"></param>
+ <param name="_strEnteteContentSecurityPolicy">En-tête Content-Security-Policy personnalisé.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.Filtres.FiltreAutorisation">
+ <summary>
+ Classe qui permet de vérifier que les controllers ou les actions utilisent un attribut d'autorisation RAMQ (AutorAttribute)
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Filtres.FiltreAutorisation.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+ <summary>
+ Retourne une erreur d'accès (401) lors le controller ou l'action ne possède pas d'attribut de type AutorAttribute
+ </summary>
+ <param name="_objFilterContext"></param>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Web.MVC.Filtres.FiltreSecurite">
+ <summary> 
+ Classe Filtre de Securite
+ </summary>
+ <remarks>
+  Auteur : u5169 <br/>
+  Date   : 2015-11-16
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Filtres.FiltreSecurite.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+ <summary>
+ Appelée avant l'exécution d'une méthode d'action.
+ </summary>
+ <param name="objFiltreCtx">Le contexte de la méthode ActionExecuting de la classe.</param>
+ <exception cref="T:RAMQ.Web.Erreur.ExceptionRamqExpire">
+ </exception>
+</member>
+<member name="M:RAMQ.Web.MVC.Filtres.FiltreSecurite.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+ <summary>
+ Appelé après l'exécution de la méthode d'action.
+ </summary>
+ <param name="objFiltreCtx">The object filtre CTX.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.IConfigurationManager">
+ <summary>
+ Fournit l'accès aux fichiers de configuration tels qu'ils s'appliquent aux applications Web.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:RAMQ.Web.MVC.ConfigurationManager">
+ <summary>
+ Fournit l'accès aux fichiers de configuration tels qu'ils s'appliquent aux applications Web.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.ConfigurationManager.AppSettings">
+ <summary>
+ Obtient les données System.Configuration.AppSettingsSection pour la configuration par défaut de l'application actuelle.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.ConfigurationManager.GetSection(System.String)">
+ <summary>
+ Récupère la section de configuration spécifiée à partir du fichier de configuration de l'application Web en cours.
+ </summary>
+</member>
+<member name="T:RAMQ.Web.MVC.Html.AutorActionLink">
+ <summary> 
+  Permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_colctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_colctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_colctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.Object,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_strProtocole">Protocole de l'URL.</param>
+ <param name="_strUrlNomHote">The _STR URL nom hote.</param>
+ <param name="_strFragment">Nom du fragment d'URL.</param>
+ <param name="_colctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.#ctor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.String,System.String,System.Object,System.Object)">
+ <summary>
+ Consctructeurs de la classe.
+ </summary>
+ <param name="_objHtmlHelper">Instance du programme d'assistance HTML étendue par cette méthode</param>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_strProtocole">Protocole de l'URL.</param>
+ <param name="_strUrlNomHote">The _STR URL nom hote.</param>
+ <param name="_strFragment">Nom du fragment d'URL.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.Texte(System.String)">
+ <summary>
+ Texte interne de l'élément d'ancrage
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.Action(System.String)">
+ <summary>
+ Donner le nom de l'action.
+ </summary>
+ <param name="_strAction">Nom de l'action.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.Controleur(System.String)">
+ <summary>
+ Donner le nom du contrôleur.
+ </summary>
+ <param name="_strControleur">Nom du contrôleur.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.RouteValeurs(System.Web.Routing.RouteValueDictionary)">
+ <summary>
+  Donner la collection qui contient les paramètres d'un itinéraire.
+ </summary>
+ <param name="_objColctRouteValeurs"> Objet qui contient les paramètres d'un itinéraire.Les paramètres sont récupérés par réflexion en examinant les propriétés de l'objet</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.RouteValeurs(System.Object)">
+ <summary>
+  Donner l'objet qui contient les paramètres d'un itinéraire.
+ </summary>
+ <param name="_objRouteValeurs"> Objet qui contient les paramètres d'un itinéraire.Les paramètres sont récupérés par réflexion en examinant les propriétés de l'objet</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.HtmlAttributes(System.Object)">
+ <summary>
+ Donner l'objet qui contient les attributs HTML de l'élément.
+ </summary>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.Protocole(System.String)">
+ <summary>
+ Protocole de l'URL.
+ </summary>
+ <param name="_strProtocole">Protocole de l'URL, par exemple « http » ou « https ».</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.UrlNomHote(System.String)">
+ <summary>
+ Nom d'hôte de l'URL.
+ </summary>
+ <param name="_strUrlNomHote">Nom d'hôte de l'URL</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.Fragment(System.String)">
+ <summary>
+ Nom du fragment d'URL.
+ </summary>
+ <param name="_strFragment">Nom du fragment d'URL (nom de l'ancre).</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.EstMenu(System.Boolean,System.Boolean)">
+ <summary>
+ Permet de afficher la classe css menu "Active" si le hyperlien est menu.
+ </summary>
+ <param name="_blnEstMenu">Le lien est menu.</param>
+ <param name="_blnVerifAct">Par défaut, attribut «Active » est ajouté en considérant du contrôleur et l’action. 
+ Si on met _blnVerifAct = false, seulement le contrôleur est considéré.
+ </param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.EstSousMenu(System.Boolean)">
+ <summary>
+ Permet de identifier si c'est un sous menu.
+ </summary>
+ <param name="_blnEstSousMenu">Le lien est un sous menu.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.CssIcone(System.String)">
+ <summary>
+ Permet de afficher le icone à l'interieur de lien.
+ </summary>
+ <param name="_strCssIcone">les classes css de icone.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.AutorActionLink.ToHtmlString">
+ <summary>
+ Retourne une chaîne encodée au format HTML.
+ </summary>
+ <returns>
+ Chaîne encodée au format HTML.
+ </returns>
+</member>
+<member name="T:RAMQ.Web.MVC.Html.RAMQHelper">
+ <summary> 
+  Les Helpers RAMQ
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.#ctor(System.Web.Mvc.HtmlHelper)">
+ <summary>
+ Initialier la classe helper RAMQ<see cref="T:RAMQ.Web.MVC.Html.RAMQHelper"/>.
+ </summary>
+ <param name="_objHtmlHelper">html helper</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.String)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.Web.Routing.RouteValueDictionary)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_objColctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_objColctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.Object,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_objColctRouteValeurs">Dictionnaire qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.String,System.Object,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_objRouteValeurs">Dictionnaire qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.String,System.String,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_strProtocole">Protocole de l'URL.</param>
+ <param name="_strUrlNomHote">The _STR URL nom hote.</param>
+ <param name="_strFragment">Nom du fragment d'URL.</param>
+ <param name="_objColctRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.AutorActionLink(System.String,System.String,System.String,System.String,System.String,System.String,System.Object,System.Object)">
+ <summary>
+ Helper qui permet l’affichage des éléments HTML selon les restrictions d’accès définies pour une action.
+ </summary>
+ <param name="_strTexte">Texte interne de l'élément d'ancrage</param>
+ <param name="_strAction">Nom de l'action.</param>
+ <param name="_strControleur">Nom du contrôleur.</param>
+ <param name="_strProtocole">Protocole de l'URL.</param>
+ <param name="_strUrlNomHote">The _STR URL nom hote.</param>
+ <param name="_strFragment">Nom du fragment d'URL.</param>
+ <param name="_objRouteValeurs">Objet qui contient les paramètres d'un itinéraire.</param>
+ <param name="_objHtmlAttributes">Objet qui contient les attributs HTML de l'élément.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.EstAccessiblePourUsagCourn(System.String,System.String)">
+ <summary>
+ Vérifie si l'action du contrôleur est accessible pour l'usager courant.
+ </summary>
+ <param name="_strAction">Nom de l'action</param>
+ <param name="_strControleur">Nom du contrôleur</param>
+ <returns>
+ Retourne True si l'action du contrôleur est accessible.
+ </returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.RAMQHelper.ScriptNonce">
+ <summary>
+ Helper qui retourne le nonce du contexte Owin afin de l'ajouter à la balise script,
+ pour pouvoir respecter la directive «script-src» de l'en-tête de réponse Content-Security-Policy.
+ La configuration du contexte Owin se fait dans le Startup à l'aide de la classe ContentSecurityPolicyMiddleware.
+ </summary>
+ <returns>
+ Retourne une clé pour être utilisée comme valeur de l'attribut nonce de la balise script.
+ </returns>
+</member>
+<member name="T:RAMQ.Web.MVC.Html.HtmlHelperExtension">
+ <summary>
+ Définition du module qui ajoute des méthodes d'extensions RAMQ.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.HtmlHelperExtension.RAMQ(System.Web.Mvc.HtmlHelper)">
+ <summary>
+ Définition d'extensions RAMQ.
+ </summary>
+</member>
+<member name="T:RAMQ.Web.MVC.Html.HelperBase">
+ <summary> 
+    Classe de base pour les Helpers RAMQ.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.HelperBase.ToHtmlString">
+ <summary>
+ Retourne une chaîne encodée au format HTML.
+ </summary>
+ <returns>
+ Chaîne encodée au format HTML.
+ </returns>
+</member>
+<member name="T:RAMQ.Web.MVC.Html.Utilitaires">
+ <summary>
+ Classe utilitaire exposant des fonctionnalités qui étendent le framework MVC d'ASP.NET.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Html.Utilitaires.EstAccessible(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+ <summary>
+ Vérifie si l'action du contrôleur est accessible pour l'usager courant.
+ </summary>
+ <returns>
+ Retourne True si l'action du contrôleur est accessible.
+ </returns>
+</member>
+<member name="T:RAMQ.Web.MVC.Securite.AuthorisationAzman">
+ <summary> 
+  Permet de vérifier si l'utilisation possède les droits d'accès spécifié pour une opération en particulier.
+ </summary>
+ <remarks>
+  Auteur : Hernan Botache<br/>
+  Date   : 2016-09-26
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.#ctor">
+ <summary>
+ Constructeur principal
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.#ctor(System.String)">
+ <summary>
+     Constructeur secondaire servant aux tests unitaires.
+ </summary>
+ <param name="_strUpn">Le nom d'un upn.</param>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.Securite.AuthorisationAzman.Operation">
+ <summary>
+ Contient un nom d’opération. 
+ On obtient la liste des groupes d’utilisateurs qui ont les droits d’accès à l’opération à partir de la clé de configuration du site correspondant à ce nom de d’opération.  
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.ObtnOperationsAzMan(System.String)">
+ <summary>
+ Permet d'extraire les opération AzMan associé à l'opération passé en paramètre dans le fichier de configuration.
+ </summary>
+ <param name="_strOperation">Liste de nom d'opération à chercher dans le fichier de configuration séparée par un point virgule</param>
+ <returns>Les opérations AzMan sont retourné dans une chaîne séparée par un point virgule</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.VerifOperations(System.Web.HttpContextBase,System.String)">
+ <summary>
+ Vérifier que l’usager courant possède les droits d’accès selon la liste de nom d'opération.
+ </summary>
+ <param name="_objHttpContext">Contexte HTTP qui encapsule toutes les informations spécifiques à HTTP concernant une requête HTTP individuelle.</param>
+ <param name="_strOpersAzMan">Une liste d'opération AzMan qui ont les droits d’accès.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.VerifOperAnonyme(System.Web.HttpContextBase,System.String)">
+ <summary>
+ Vérifier que l’usager courant possède les droits d’accès selon la liste de nom d'opération.
+ </summary>
+ <param name="_objHttpContext">Contexte HTTP qui encapsule toutes les informations spécifiques à HTTP concernant une requête HTTP individuelle.</param>
+ <param name="_strOperAzMan">Une liste d'opération AzMan qui ont les droits d’accès</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.ObtenirAuthAzMan(System.Web.HttpContextBase)">
+ <summary>
+ Obtient l'instance unique de la classe Authorisation.
+ Validation de certificat client par PSR.
+ </summary>
+ <returns>L'instance unique de la classe Authorisation.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Securite.AuthorisationAzman.obtnUpn(System.Web.HttpContextBase)">
+ <summary>
+ Obtenir le nom d'un upn.
+ </summary>
+</member>
+</members>
+</doc>

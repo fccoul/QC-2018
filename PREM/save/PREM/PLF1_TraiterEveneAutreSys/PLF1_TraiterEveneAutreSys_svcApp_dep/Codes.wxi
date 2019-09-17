@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Include>
+  <?define ProductCodes.Princ="c3e118ac-477c-4f09-abc0-fb0c427e9e52"?>
+  <?define UpgradeCodes.Princ="fc88ad8d-0d31-440f-ac01-6c0a89e9eae8"?>
+</Include>

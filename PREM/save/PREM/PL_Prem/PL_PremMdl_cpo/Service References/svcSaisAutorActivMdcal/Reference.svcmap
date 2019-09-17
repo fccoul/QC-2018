@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ef69016-c662-4fec-b3d5-55377b155abf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServSaisAutorActivMdcal.wsdl" MetadataType="Wsdl" ID="5e0e785d-df1e-4f55-a202-815528a7504b" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?wsdl" />
+    <MetadataFile FileName="ServSaisAutorActivMdcal.disco" MetadataType="Disco" ID="798f0fdd-ee55-4ab9-b095-1476c8cfcede" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?disco" />
+    <MetadataFile FileName="ServSaisAutorActivMdcal.xsd" MetadataType="Schema" ID="79710346-afd8-40a2-8dc2-33b0e66a8b88" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServSaisAutorActivMdcal1.xsd" MetadataType="Schema" ID="22199f01-7ed9-4559-bde0-c2b6c5274cf4" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServSaisAutorActivMdcal2.xsd" MetadataType="Schema" ID="11da5159-5946-45b6-af51-845afbf2bff4" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServSaisAutorActivMdcal3.xsd" MetadataType="Schema" ID="242c8d73-1c8d-4522-bf4f-c612085e55ab" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServSaisAutorActivMdcal4.xsd" MetadataType="Schema" ID="d926cabf-abd7-4f06-b6bd-35837634c372" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

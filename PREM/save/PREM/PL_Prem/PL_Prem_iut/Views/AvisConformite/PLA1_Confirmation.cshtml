@@ -1,0 +1,48 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation
+
+@using (Html.BeginForm("PLA1_Confirmation", "AvisConformite", FormMethod.Post))
+{
+<div role="group" class="collection">
+
+    <div class="alert alert-success" role="alert">
+        <i class="fa fa-check" aria-hidden="true"></i> @Html.Raw(Model.MessageConfirmation)
+    </div>
+    <dl>
+        <dt>@Html.Label("Identification du médecin")</dt>
+        <dd>
+            @Html.Raw(Model.NumeroPratique)
+            <br />
+            <br />
+        </dd>
+        <dt>@Html.Label("Territoire")</dt>
+        <dd>
+            @Html.Raw(Model.Territoire)
+            <br />
+            <br />
+        </dd>
+        <dt>@Html.Label("Date prévue du début de l'avis")</dt>
+        <dd>
+            @Html.Raw(Model.DatePrevueAffichage)
+            <br />
+            <br />
+        </dd>
+    </dl>
+    <button id="enregistrerPDF"
+            name="enregistrerPDF"
+            class="btn btn-default"
+            type="submit">
+        <i class="fa glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Enregistrer en PDF
+    </button>
+
+    @Html.HiddenFor(m => m.DateCreation)
+    @Html.HiddenFor(m => m.Territoire)
+    @Html.HiddenFor(m => m.NumeroPratique)
+    @Html.HiddenFor(m => m.DatePrevue)
+    @Html.HiddenFor(m => m.TypeAction)
+    @Html.HiddenFor(m => m.MessageConfirmation)
+</div>
+}
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA1_Confirmation")
+}

@@ -1,0 +1,2963 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PL_Prem_iut</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Startup">
+            <summary>
+            
+            </summary>
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Startup.ConfigureNonce(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Startup.ConfigureAuth(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Startup.ConfigureAutofac(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Startup.Configuration(Owin.IAppBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Attributs.AjaxRequestAttribute">
+            <summary> 
+             Permet de limiter l'accès a une action seulement si elle est appelé depuis une requête Ajax
+            </summary>
+            <remarks>
+             Auteur : Kévin Follier <br/>
+             Date   : 2015-09-16
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.AjaxRequestAttribute.IsValidForRequest(System.Web.Mvc.ControllerContext,System.Reflection.MethodInfo)">
+            <summary>
+            Permet de savoir si l'action concernée est valide pour la requête courante
+            </summary>
+            <param name="controllerContext"></param>
+            <param name="methodInfo"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Attributs.AjaxValidateAntiForgeryTokenAttribute">
+            <summary> 
+             Attribut permettant de faire fonctionner la validation AntiForgeryToken en contexte AJAX avec IE 8/9
+            </summary>
+            <remarks>
+             Auteur : Kévin Follier <br/>
+             Date   : 2015-09-24
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.AjaxValidateAntiForgeryTokenAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)">
+            <summary>
+            implémentation de IAuthorizationFilter.OnAuthorization
+            </summary>
+            <param name="filterContext"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.AjaxValidateAntiForgeryTokenAttribute.ValidateRequestHeader(System.Web.HttpRequestBase)">
+            <summary>
+            Permet de valider les tokens via le header de la requete Http (Fix pour faire fonctionner ValidateAntiForgeryToken sur IE9 car ne supporte pas FormData)
+            </summary>
+            <param name="request"></param>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Attributs.FichierJavascriptExterne">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.FichierJavascriptExterne.OnResultExecuted(System.Web.Mvc.ResultExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Attributs.NombreAvisNonTransmisAttribute">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.NombreAvisNonTransmisAttribute.#ctor(RAMQ.PRE.PL_PremMdl_cpo.AvisConformite.IAvisConformiteFactory,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="avisConformiteFactory"></param>
+            <param name="securite"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.NombreAvisNonTransmisAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+             Permet d'exécuté du code lors de chaque action
+            </summary>
+            <param name="filterContext"></param>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueilPLC2">
+            <summary>
+            Classe permettant la redirection à la page d'accueil à partir de PLC2 selon les droits
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueilPLC2.#ctor(RAMQ.PRE.PL_Prem_iut.Securite.ISecurite)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="securite"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueilPLC2.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+             Permet d'exécuté du code lors de chaque action
+            </summary>
+            <param name="filterContext"></param>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueil">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueil.UtilitaireInjecte">
+            <summary>
+            Propriété utilisé pour les tests unitaires.
+            Permet d'injecter une interface IUtilitaire sans ajouter un constructeur, ce qui amènerait un refactoring important.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueil.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+             Permet d'exécuté du code lors de chaque action
+            </summary>
+            <param name="filterContext"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueil.RedirigePLA5">
+            <summary>
+            Fonction permettant de déterminer si on doit rediriger l'utilisateur sur la page d'accueil, s'il n'a 
+            pas les droits nécessairent pour accéder les pages en lien à PLA5 (Autorisation PREMQ).
+            </summary>
+            <returns>True si on doit rediriger, false sinon.</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Attributs.RedirectionPageAccueil.EstDansGroupeSupport(System.Boolean)">
+            <summary>
+            Fonction permettant de déterminer si l'usager en cours est dans le groupe de support et 
+            à le bon type de profil.
+            </summary>
+            <param name="estDansGroupeSupport"></param>
+            <returns>True si est dans le groupe de support, false sinon.</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Constantes">
+            <summary> 
+             Classe de constantes
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.NomColonneTableauEngagementPratique">
+            <summary>
+            Nom des colonne du tableau des engagements de pratique
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.NomRangeeTableauPratiqueExclusive">
+            <summary>
+            Nom des rangées du tableau de pratique exclusive
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.CleNombreAvisAttente">
+            <summary>
+            Clé pour le nombre d'avis en attente
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.CleMessagesErreur">
+            <summary>
+            Clé pour les messages d'erreur de la page d'erreur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Constantes.TypeProfil">
+            <summary>
+            Classe listant les constantes en lien au Type de profil
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.TypeProfil.DRMG">
+            <summary>
+            Type DRMG
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.TypeProfil.ComiteParitaire">
+            <summary>
+            Type Comité paritaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Constantes.ZoneExec">
+            <summary>
+            Classe listant les constantes en lien au Type de profil
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.ZoneExec.CleZoneExec">
+            <summary>
+            Clée du machine.config contenant la zone d'exécution
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.ZoneExec.ZoneExecPrsenXtrnt">
+            <summary>
+            Valeur de la zone d'exécution de présentation externe
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Constantes.ZoneExec.ZoneExecPrsenNtrnt">
+            <summary>
+            Valeur de la zone d'exécution de présentation interne
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.ILieuGeographiqueHelpers">
+            <summary>
+            Interface de la classe LieuGeographiqueHelpers
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.ILieuGeographiqueHelpers.ObtenirNomTerritoireRSSUtilisateurCourant">
+            <summary>
+            Fonction permettant d'obtenir le territoire RSS de l'utilisateur courant.
+            </summary>
+            <returns>Territoire RSS</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.IProfessionnelHelpers">
+            <summary>
+            Interface de la classe ProfesionnelHelpers.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.IProfessionnelHelpers.ObtenirProfessionnelRecherche(RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnel)">
+            <summary>
+            Fonction permettant de rechercher les information d'un professionnel.
+            </summary>
+            <param name="intrant">Paramètres d'appel de la fonction </param>
+            <returns>Zone de retour.</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.LieuGeographiqueHelpers">
+            <summary>
+            Classe utilitaire en lien au lieu géographique.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.LieuGeographiqueHelpers.#ctor(RAMQ.PRE.PL_PremMdl_cpo.LieuGeographique.ILieuGeographiqueFactory,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite)">
+            <summary>
+            Constructeur de la classe.
+            </summary>
+            <param name="lieuGeographiqueFactory">Injection du factory LieuGeographique</param>
+            <param name="securite">Injection de l'objet de sécurité</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.LieuGeographiqueHelpers.ObtenirNomTerritoireRSSUtilisateurCourant">
+            <summary>
+            Fonction permettant d'obtenir le territoire RSS de l'utilisateur courant.
+            </summary>
+            <returns>Territoire RSS</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.ProfessionnelHelpers">
+            <summary>
+            Classe utilitaire en lien au professionnel.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.ProfessionnelHelpers.#ctor(RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnelFactory)">
+            <summary>
+            Constructeur de la classe.
+            </summary>
+            <param name="professionnelFactory">Injection du factory du professionnel.</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.ControllersHelpers.ProfessionnelHelpers.ObtenirProfessionnelRecherche(RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnel)">
+            <summary>
+            Fonction permettant d'obtenir les informations d'un professionnel.
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.AutorisationController">
+            <summary>
+            Contrôleur des autorisations de PREMQ.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AutorisationController.AjouterAutorisation">
+            <summary>
+            Action permettant d'ajouter une autorisation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController">
+            <summary>
+            
+            </summary>    
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.#ctor(RAMQ.PRE.PL_PremMdl_cpo.AvisConformite.IAvisConformiteFactory,RAMQ.PRE.PL_PremMdl_cpo.LieuGeographique.ILieuGeographiqueFactory,RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnelFactory,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement,RAMQ.PRE.PL_PremMdl_cpo.GabaritPDFConfirmation.IGabaritPDFConfirmation,RAMQ.PRE.PL_Prem_iut.Utilitaires.INomFichierGabaritPDFConfirmationBuilder)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="avisConformiteFactory"></param>
+            <param name="lieuGeographiqueFactory"></param>
+            <param name="professionnelFactory"></param>
+            <param name="securite"></param>
+            <param name="messageTraitement"></param>
+            <param name="gabaritPDFConfirmation">Gabarit de PDF de confirmation</param>
+            <param name="nomFichierGabaritPDFConfirmationBuilder">Builder pour le nom du fichier PDF de confirmation</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.TransmettreGet">
+            <summary>
+            Action GET pour la vue PLA1_Transmettre
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.TransmettrePost(RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite)">
+            <summary>
+            Action POST pour la vue PLA1_Transmettre
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ConfirmationGet(RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ConfirmationPost(RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation)">
+            <summary>
+            Obtenir le fichier PDF de confirmation suite à une action sur un
+            avis de conformité
+            </summary>
+            <param name="model">Modèle</param>
+            <returns>Retourne le fichier PDF de confirmation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ModifierGet">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ModifierPost(RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.AttentePost(RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.AttenteGet">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ValidationAvisDerogationEnCours(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursEntre,System.String)">
+            <summary>
+            Action permettant de voir s'il y a déjà un avis actif pour le professionnel sélectionné
+            </summary>
+            <param name="intrant"></param>
+            <param name="guid"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ObtenirAvisAModifier(System.Int64,System.String)">
+            <summary>
+            Fonction utiliser avec AJAX pour retourner les informations d'un avis de conformité à modifier
+            </summary>
+            <param name="numeroProfessionnel">numéro du professionnel à rechercher</param>
+            <param name="guid">guid permettant d'identifier la page utilisé pour les onglets</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ObtenirTerritoiresPermis(System.DateTime)">
+            <summary>
+            Fonction utiliser avec AJAX pour retourner la liste des territoires permis
+            </summary>
+            <param name="dateDebutPratique">date de début de pratique</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AvisConformiteController.ObtenirCodeRSS">
+            <summary>
+            Obtient le code RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.#ctor(RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnelFactory,RAMQ.PRE.PL_PremMdl_cpo.LieuGeographique.ILieuGeographiqueFactory,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite,RAMQ.PRE.PL_PremMdl_cpo.AvisConformite.IAvisConformiteFactory,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement,RAMQ.PRE.PL_Prem_iut.ControllersHelpers.IProfessionnelHelpers,RAMQ.PRE.PL_Prem_iut.ControllersHelpers.ILieuGeographiqueHelpers)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="professionnelFactory"></param>
+            <param name="lieuGeographiqueFactory"></param>
+            <param name="securite"></param>
+            <param name="avisConformite"></param>
+            <param name="messageTraitement"></param>
+            <param name="utilitaireProfessionnel">Injection de l'utilitaire des professionnels.</param>
+            <param name="utilitaireLieuGeographique">Injection de l'utilitaire des lieux géographique.</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ObtenirNumerosPratiqueJson(RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique)">
+            <summary>
+            Fonction utiliser avec AJAX pour retourner la liste des professionnels filtrer avec les caractères saisis
+            </summary>
+            <param name="intrant">Paramètres d'entré pour la recherche</param>
+            <returns>Les résultat de la recherche</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ObtenirProfessionnelRecherche(RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnel)">
+            <summary>
+            Fonction utiliser avec AJAX pour retourner les informations d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entré pour la recherche</param>
+            <returns>Les résultat de la recherche</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ProfessionnelPossedeClasseUn(RAMQ.PRE.PL_Prem_iut.Entite.ProfessionnelPossedeClasse)">
+            <summary>
+            Fonction utiliser avec AJAX pour savoir si le professionnel possède une classe 1
+            </summary>
+            <param name="intrant">Paramètres d'entré pour la recherche</param>
+            <returns>Retourne vrai ou faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ObtenirNomTerritoire(RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire)">
+            <summary>
+            Fonction utiliser avec AJAX pour retourner le nom du territoire en paramètre
+            </summary>
+            <param name="information">information du territoire</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ObtenirNomTerritoireSelonAvisConformite(RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire)">
+            <summary>
+            Fonction utiliser avec AJAX pour retourner le nom du territoire en paramètre
+            </summary>
+            <param name="information">information du territoire</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ObtenirNomTerritoireRSSUtilisateurCourant">
+            <summary>
+            Fonction pour obtenir le nom de la région socio-sanitaire lié au DRMG connecté
+            </summary>
+            <returns>Nom de la région socio-sanitaire</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ObtenirAvisConformite(System.Int64)">
+            <summary>
+            Permet d'obtenir les avis de conformités
+            </summary>
+            <param name="numeroProfessionnel">Numéro de pratique du professionnel</param>
+            <returns>Les avis de conformité du professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.ErreurTechnique(System.String)">
+            <summary>
+            Permet de faire un throw d'une erreur. Principalement lors d'une exception dans un appel AJAX.
+            </summary>
+            <param name="message">Message de l'erreur</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.RetourneMessageTraitement(System.String,System.String[])">
+            <summary>
+            Permet de retourner un message de traitement en Razor dans le front-end
+            </summary>
+            <param name="numeroMessage">Numéro du message de traitement</param>
+            <param name="parametres">Paramètres pour le message</param>
+            <returns>Le message de traitement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.FormaterDateLong(System.Nullable{System.DateTime})">
+            <summary>
+            Permet de formater une date passé en paramètre en un date de format "1 janvier 2017"
+            </summary>
+            <param name="date">Date à formater</param>
+            <returns>Date formater</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.MAJCacheGet">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.CommunController.MAJCachePost">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController">
+            <summary>
+            Contrôleur des décision des avis de conformités
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.#ctor(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur,RAMQ.PRE.PL_PremMdl_cpo.AvisConformite.IAvisConformiteFactory,RAMQ.PRE.PL_PremMdl_cpo.LieuGeographique.ILieuGeographiqueFactory,RAMQ.PRE.PL_PremMdl_cpo.DecisionAvisConformite.IDecisionAvisConformiteFactory,RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnelFactory,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement,RAMQ.PRE.PL_PremMdl_cpo.GabaritPDFConfirmation.IGabaritPDFConfirmation,RAMQ.PRE.PL_Prem_iut.Utilitaires.INomFichierGabaritPDFConfirmationBuilder)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="domaineValeur"></param>
+            <param name="avisConformiteFactory"></param>
+            <param name="lieuGeographiqueFactory"></param>
+            <param name="decisionAvisConformiteFactory"></param>
+            <param name="professionnelFactory"></param>
+            <param name="messageTraitement"></param>
+            <param name="gabaritPDFConfirmation">Gabarit PDF de confirmation</param>
+            <param name="nomFichierGabaritPDFConfirmationBuilder">Builder pour le nom du fichier PDF de confirmation</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.TransmettreDerogation">
+            <summary>
+            Traitement lors de l'ouverture de la page de transmission des dérogations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.AnnulerDerogationGet">
+            <summary>
+            Traitement lors de l'ouverture de la page de l'annulation des dérogations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ConfirmationDerogation">
+            <summary>
+            Traitement lors de l'ouverture de la page de confirmation des dérogations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.GererSuspensionGet">
+            <summary>
+            Traitement lors de l'ouverture de la page de gestion des suspensions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.AjouterModifierAnnulerSuspensionGet">
+            <summary>
+            Traitement lors de l'ouverture de la page de l'ajout, la modification et l'annulation des suspensions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ConfirmationSuspensionGet">
+            <summary>
+            Traitement lors de l'ouverture de la page de confirmation des suspensions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.AnnulerDerogationPost(RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation)">
+            <summary>
+            Traitement lors de l'envoie de la page de l'annulation des dérogations
+            </summary>
+            <param name="modele">Modèle de données</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.TransmettreDerogation(RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation)">
+            <summary>
+            Traitement lors de l'envoie de la page de la transmission des dérogations
+            </summary>
+            <param name="modele">Modèle de données</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.GererSuspensionPost(RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension)">
+            <summary>
+            Traitement lors de l'envoie de la page de la gestion des suspensions
+            </summary>
+            <param name="modele">Modèle de données</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.TransmettreSuspension(RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension)">
+            <summary>
+            Traitement lors de l'envoie de la page de la transmission des suspensions
+            </summary>
+            <param name="modele">Modèle de données</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ConfirmationSuspensionPost(RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension)">
+            <summary>
+            Obtenir le fichier PDF de confirmation suite à une action sur une
+            suspension
+            </summary>
+            <param name="modele">Modèle</param>
+            <returns>Retourne le fichier PDF de confirmation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ConfirmationDerogationPost(RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation)">
+            <summary>
+            Obtenir le fichier PDF de confirmation suite à une action sur une
+            dérogation
+            </summary>
+            <param name="modele">Modèle</param>
+            <returns>Retourne le fichier PDF de confirmation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ObtenirDerogation(System.Int64)">
+            <summary>
+            Permet d'obtenir la dérogation d'un professionnel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ValidationEngagementActif(System.Int64)">
+            <summary>
+            Action permettant de voir s'il y a déjà un avis actif pour le professionnel sélectionné
+            </summary>
+            <param name="numeroProfessionnel"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ObtenirTextMessageErreur(System.String)">
+            <summary>
+            Permet d'obtenir le texte des messages d'erreurs
+            </summary>
+            <param name="idMessage">Identifiant du message recherché</param>
+            <returns>Texte du message trouvé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ObtenirDescriptionCodeRaisonStatutEngagementJSon(System.String)">
+            <summary>
+            Permet d'obtenir la description du code de raison de statut
+            </summary>
+            <param name="codeRaisonStatutEngagement">Code de raison du statut</param>
+            <returns>Description du code de raison de statut</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ObtenirDescriptionTypeDerogationJson(System.String)">
+            <summary>
+            Permet d'obtenir la description du type de dérogation
+            </summary>
+            <param name="typeDerogation">Type de dérogation</param>
+            <returns>Description du type de dérogation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DecisionAvisConformiteController.ObtenirAvisConformiteSansAnnulerRevoquer(System.Int64)">
+            <summary>
+            Permet d'obtenir les avis de conformités sans statut annuler ou révoqué
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de pratique du professionnel</param>
+            <returns>Les avis de conformité du professionnel</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.JavascriptController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.JavascriptController.Constantes">
+            <summary>
+            Action permettant de retourner la vue de constantes comme un fichier .js
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController">
+            <summary>
+            Contrôleur pour la réévaluation du profil d'un professionnel
+            </summary>
+            <remarks>Maxime Comtois
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.#ctor(RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnelFactory,RAMQ.PRE.PL_PremMdl_cpo.DemandeReevaluation.IDemandeReevaluationFactory,RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="professionnelFactory">Interface IProfessionnelFactory</param>
+            <param name="demandeReevaluationFactory">Interface IDemandeReevaluationFactory</param>
+            <param name="domaineValeur">Interface IDomaineValeur</param>
+            <param name="securite">Interface ISecurite</param>
+            <param name="messageTraitement">Interface IMessageTraitement</param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.ModelePartage">
+            <summary>
+            Modèle partagé dans le processus
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.PLE1_Reevaluation">
+            <summary>
+            Réévaluation
+            </summary>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.ObtenirInformationMedecin(System.String)">
+            <summary>
+            Permet d'obtenir les information du médecin
+            </summary>
+            <param name="numeroProfessionnel">Numéro du professionnel</param>
+            <returns>Information d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.ObtenirDemandeReevaluation">
+            <summary>
+            Permet d'obtenir des demandes de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.AnnulerDemandeReevaluation(System.String)">
+            <summary>
+            Permet d'annuler une demandes de réévaluation
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.CreerDemandeReevaluation(System.String,RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Periode)">
+            <summary>
+            Permet de créer une demande de réévaluation
+            </summary>
+            <returns>Liste de demandes de réévaluation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.DemandeReevaluationController.ObtenirCodeRSSUtilisateurCourant">
+            <summary>
+            Permet d'obtenir le code RSS de l'utilisateur courant
+            </summary>
+            <returns>Code RSS</returns>
+            <remarks>La méthode est public pour est utiliser dans la view</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController">
+            <summary>
+            Contrôleur pour la consultation du profil d'un professionnel
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.#ctor(RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnelFactory,RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite,RAMQ.PRE.PL_PremMdl_cpo.LieuGeographique.ILieuGeographiqueFactory,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="professionnelFactory">Interface IProfessionnelFactory</param>
+            <param name="domaineValeur">Interface IDomaineValeur</param>
+            <param name="securite">Interface ISecurite</param>
+            <param name="lieuGeographique">Interface ILieuGeographiqueFactory</param>
+            <param name="messageTraitement">Interface IMessageTraitement</param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ModelePartage">
+            <summary>
+            Modèle partagé dans le processus
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.CreerNombreAleatoire">
+            <summary>
+            Permet de créer un nombre aléatoire
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_Avis">
+            <summary>
+            Avis
+            </summary>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_HistoriqueEngagement(RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement)">
+            <summary>
+            Engagement de pratique
+            </summary>
+            <param name="modele">Modèle de donnée</param>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_RepartitionPratique(RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique)">
+            <summary>
+            Répartition interrégionale
+            </summary>
+            <param name="modele">Modèle de donnée</param>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_PratiqueExclusive(RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive)">
+            <summary>
+            Profil de pratique exclusive
+            </summary>
+            <param name="modele">Modèle de donnée</param>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_RegionPratiquePartielleRestreinte(RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte)">
+            <summary>
+            Région à pratique partielle restreinte
+            </summary>
+            <param name="modele">Modèle de donnée</param>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_ReductionRemuneration(RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement)">
+            <summary>
+            
+            </summary>
+            <param name="modele">Modèle de donnée</param>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.PLC2_Avis(RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement)">
+            <summary>
+            Avis
+            </summary>
+            <param name="modele">Modèle de donnée</param>
+            <returns>Vue</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirInformationMedecin(System.String)">
+            <summary>
+            Permet d'obtenir les information du médecin
+            </summary>
+            <param name="numeroProfessionnel">Numéro du professionnel</param>
+            <returns>Information d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirEngagementSelonAnnee(System.String)">
+            <summary>
+            Permet d'obtenir les engagements selon l'année.
+            </summary>
+            <param name="annee">Année</param>
+            <returns>Engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirRepartitionPratique(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Periode,System.String)">
+            <summary>
+            Permet d'obtenir les répartitions de la pratique
+            </summary>
+            <param name="periode">Période</param>
+            <param name="codeRSS">Code RSS</param>
+            <returns>Liste de répartition de pratique</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirPratiqueExclusive(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Periode,System.Int32)">
+            <summary>
+            Permet d'obtenir la pratique exclusive
+            </summary>
+            <param name="periode">Période</param>
+            <param name="anneeSelectionner">Année</param>
+            <returns>Liste de pratique exclusive</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirValeurListeJourneesFacturerRSS(RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerRSS)">
+            <summary>
+            Permet d'obtenir la valeur précise dans la liste des journées facturé par RSS
+            </summary>
+            <param name="critereRecherche">Critères de recherche</param>
+            <returns>Valeur trouvé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirValeurListeJourneesFacturerTerritoire(RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire)">
+            <summary>
+            Permet d'obtenir la valeur précise dans la liste des journées facturé par territoire
+            </summary>
+            <param name="critereRecherche">Critères de recherche</param>
+            <returns>Valeur trouvé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirInformationEngagement(System.Nullable{System.Int64})">
+            <summary>
+            Permet d'obtenir l'information d'un engagement
+            </summary>
+            <param name="numeroSequenceEngagement">Numéro de séquence de l'engagement</param>
+            <returns>Engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirNomRSS(System.String)">
+            <summary>
+            Permet d'obtenir le nom du RSS selon le code RSS passé en paramètre
+            </summary>
+            <param name="codeRSS">Code RSS</param>
+            <returns>Nom du RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ValiderDroitDRMG">
+            <summary>
+            Permet de valider si l'utilisateur est un DRMG
+            </summary>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController.ObtenirCodeRSSUtilisateurCourant">
+            <summary>
+            Permet d'obtenir le code RSS de l'utilisateur courant
+            </summary>
+            <returns>Code RSS</returns>
+            <remarks>La méthode est public pour est utiliser dans la view</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.#ctor(RAMQ.PRE.PL_PremMdl_cpo.Rapport.IRapportFactory,RAMQ.PRE.PL_PremMdl_cpo.LieuGeographique.ILieuGeographiqueFactory,RAMQ.PRE.PL_Prem_iut.Securite.ISecurite,RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="rapportFactory"></param>
+            <param name="lieuGeographiqueFactory"></param>
+            <param name="securite"></param>
+            <param name="domaineValeur"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportDerogPratiExclu(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.FiltrerRapportDerogPratiExclu(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportDerogPratiExcluPdf(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportDerogPratiExcluXml(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ObtenirRapportDerogPratiExcluFichier(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu,RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport)">
+            <summary>
+            
+            </summary>
+            <param name="modelRapport"></param>
+            <param name="typeFichier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportNonRespectAvisConf(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.FiltrerRapportNonRespAvisConf(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportNonRespAvisConfPdf(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportNonRespAvisConfXml(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ObtenirRapportNonRespAvisConfFichier(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf,RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport)">
+            <summary>
+            
+            </summary>
+            <param name="modelRapport"></param>
+            <param name="typeFichier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportExerNonAutoRPPR(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.FiltrerRapportNonRespPourcMaxReconRPPR(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportNonRespPourcMaxReconRPPRPdf(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportNonRespPourcMaxReconRPPRXml(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ObtenirRapportExerNonAutoRPPRFichier(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR,RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport)">
+            <summary>
+            
+            </summary>
+            <param name="modelRapport"></param>
+            <param name="typeFichier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportRepartInterRegionPrati(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.FiltrerRapportRepartInterRegionPrati(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportRepartInterRegionPratiPdf(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ConsulterRapportRepartInterRegionPratiXml(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ObtenirRapportRepartInterRegionPratiFichier(RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati,RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport)">
+            <summary>
+            
+            </summary>
+            <param name="modelRapport"></param>
+            <param name="typeFichier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.RapportController.ObtenirTerritoires(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="codeRSS"></param>
+            <param name="anneePrem"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Controllers.AccueilController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Controllers.AccueilController.PLA9_Accueil">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.CustomValidationAttribute.RequiredTrueAttribute">
+            <summary>
+            Classe personnalisé de type DataAnnotation permettant de valider qu'un champ boolean est présent et à la valeur true.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.CustomValidationAttribute.RequiredTrueAttribute.IsValid(System.Object)">
+            <summary>
+            Fonction permettant de valider la valeur du champ.
+            On vérifie que le champ est présent et qu'il a la valeur true. 
+            </summary>
+            <param name="value">Valeur du champ à valider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.CustomValidationAttribute.RequiredTrueAttribute.FormatErrorMessage(System.String)">
+            <summary>
+            Fonction permettant de retourner un message d'erreur formaté.
+            </summary>
+            <param name="name">Nom du champ</param>
+            <returns>Message d'erreur formaté</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier">
+            <summary>
+            Classe pour l'avis a modifier
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier.DateDebutEngagement">
+            <summary>
+            Date de début de l'engagement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier.MessageAvertissement">
+            <summary>
+            Message d'avertissement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisAModifier.Statut">
+            <summary>
+            Statut
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.AvisEnCours">
+            <summary>
+            Classe pour les avis en cours
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisEnCours.DateDebutPratique">
+            <summary>
+            Date de début de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisEnCours.TerritoireId">
+            <summary>
+            Id du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisEnCours.TerritoireText">
+            <summary>
+            Texte du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.AvisEnCours.MessageAvertissement">
+            <summary>
+            Message d'avertissement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.CodeRSSUtilisateur">
+            <summary>
+            Classe pour le code RSS d'un utilisateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CodeRSSUtilisateur.CodeRSS">
+            <summary>
+            Code RSS
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire">
+            <summary>
+            Critère de recherche pour la liste des journées facturé par territoire
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire.NumeroSequenceRegroupementLieuGeo">
+            <summary>
+            Numéro de séquence du regroupement du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire.TypeLieuGeo">
+            <summary>
+            Type de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire.CodeLieuGeo">
+            <summary>
+            Code du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire.TypeJour">
+            <summary>
+            Type de jour
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire.Annee">
+            <summary>
+            Année
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerTerritoire.Mois">
+            <summary>
+            Mois
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerRSS">
+            <summary>
+            Critère de recherche pour la liste des journées facturé par RSS
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerRSS.RSS">
+            <summary>
+            Code RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerRSS.TypeJour">
+            <summary>
+            Type de jour
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerRSS.Annee">
+            <summary>
+            Année
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.CritereRechercheJourneeFacturerRSS.Mois">
+            <summary>
+            Mois
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.DroitExercice">
+            <summary>
+            Droit acquis
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.DroitExercice.Region">
+            <summary>
+            Région
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.DroitExercice.Territoire">
+            <summary>
+            Territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.DroitExercice.DateDebutPeriode">
+            <summary>
+            Date debut de la Période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.DroitExercice.DateFinPeriode">
+            <summary>
+            Date Fin de la Période
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.HistoriqueEngagement">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "P:RAMQ.PRE.PL_Prem_iut.Entite.HistoriqueEngagement.PeriodeEngagementsAbsence" -->
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.HistoriqueEngagement.PeriodePratiqueProfessionnel">
+            <summary>
+            informations sur les periode de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.HistoriqueEngagement.InformationProfessionnel">
+            <summary>
+            information sur le professionel
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.Nom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.Prenom">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.NumeroPratique">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.NombreAnneePratique">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.DateObtentionPermis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.NombrePeriode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.NombreEntreeVigueur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationMedecin.DatePremiereFacturation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire">
+            <summary>
+            Classe pour les information sur le territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire.DateDebutPratique">
+            <summary>
+            Date de début de la pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire.NumeroSequentiel">
+            <summary>
+            Numéro séquentiel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.InformationTerritoire.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.PeriodeExercice">
+            <summary>
+            Période d'exercice
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.PeriodeExercice.Periode">
+            <summary>
+            Période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.PeriodeExercice.EngagementActif">
+            <summary>
+            Engagement actif pour la période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.PeriodeExercice.NombreJourPratique">
+            <summary>
+            Nombre de jours en pratique partielle restreinte sans y être autorisé
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.PeriodeExercice.PourcentageEffectuer">
+            <summary>
+            Pourcentage effectué
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.PeriodeExercice.Region">
+            <summary>
+            Région du droit d'exercie
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.ProfessionnelPossedeClasse">
+            <summary>
+            Entité pour la validation de classe d'un professionnel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.ProfessionnelPossedeClasse.NumeroIndividu">
+            <summary>
+            Numéro d'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.ProfessionnelPossedeClasse.Classe">
+            <summary>
+            Classe de professionnel à vérifier
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelReevaluation">
+            <summary>
+            Entité pour l'obtention des information d'un professionnel pour les demandes de réévaluation
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelReevaluation.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelReevaluation.DemandesReevaluation">
+            <summary>
+            Demandes de réévaluation
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation">
+            <summary>
+            Entité pour l'obtention des information d'un professionnel en entré
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.NomAffichage">
+            <summary>
+            Nom à l'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.NumeroSequentielIndividu">
+            <summary>
+            Numéro séquentiel d'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.MessageErreurs">
+            <summary>
+            Message d'erreur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.DateDeces">
+            <summary>
+            Date de décès
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.DateSpecialite">
+            <summary>
+            Date de spécialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnelInformation.DateObtentionPermis">
+            <summary>
+            Date d'obtention de permis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnel">
+            <summary>
+            Entité pour l'obtention des information d'un professionnel en entré
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnel.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheProfessionnel.ClassesPossible">
+            <summary>
+            Classes de professionnel possible
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique">
+            <summary>
+            Entité pour les paramètres de recherches en entré
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique.Terme">
+            <summary>
+            Le terme recherché
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique.LimiteParPage">
+            <summary>
+            Limite de résultat par page
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique.ClassesProfessionnelUtilise">
+            <summary>
+            Classes de professionnel utilisées
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique.Page">
+            <summary>
+            Page à retourner
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.RechercheNumeroPratique.FiltreSpecialPourCreationAvis">
+            <summary>
+            Utilisation du filtre pour la création d'avis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.Periode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.Statut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.RaisonStatut">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.NombreJourEngag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.TotalJourFacturer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.PourcentageEffectuer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.NombreAnnee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Entite.TableAvis.NombreJour">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Extension">
+            <summary>
+            Classe d'extension 
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Extension.Obtenir``1(System.Web.Mvc.TempDataDictionary,System.String)">
+            <summary>
+            Permet d'obtenir un résultat typé
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="tempData">Object tempData</param>
+            <param name="cle">Clé</param>
+            <returns>Object typé</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Helpers.NonceHelper">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification">
+            <summary>
+            Modèle pour la modification d'un avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Territoire">
+            <summary>
+            Territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Decision">
+            <summary>
+            Décision
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Decisions">
+            <summary>
+            Liste de décision
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Confirmation">
+            <summary>
+            Confirmation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.DatePrevue">
+            <summary>
+            Date prévue
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Valider">
+            <summary>
+            Valider
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Continuer">
+            <summary>
+            Continuer après une question
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.QuestionPose">
+            <summary>
+            Question posé
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.IdTerritoireDDL">
+            <summary>
+            Id d'une liste déroulante de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.IdDDL">
+            <summary>
+            Id d'une liste déroulante
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.TextDDL">
+            <summary>
+            Texte d'une liste déroulante
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Modification.Guid">
+            <summary>
+            Guid pour la gestion des tabs multiple
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente">
+            <summary>
+            Modèle pour les avis en attente
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente.NumeroAvis">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente.NumerosAvis">
+            <summary>
+            Liste de numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente.NumerosNomsPratique">
+            <summary>
+            Liste de numéro de pratique avec le nom du professionnel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente.Territoires">
+            <summary>
+            Liste des noms de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente.DatesPrevues">
+            <summary>
+            Liste des dates prévues
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente.MessageAvertissement">
+            <summary>
+            Message d'avertissement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase">
+            <summary>
+            Modèle de base pour les avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase.DatePrevue">
+            <summary>
+            Date prévue
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase.Continuer">
+            <summary>
+            Continuer après une question
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase.QuestionPose">
+            <summary>
+            Question posé
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase.IdDDL">
+            <summary>
+            Id d'une liste déroulante
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisBase.TextDDL">
+            <summary>
+            Texte d'une liste déroulante
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite">
+            <summary>
+            Modèle de base pour les avis de conformité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.Territoire">
+            <summary>
+            Territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.Confirmation">
+            <summary>
+            Confirmation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.TypeAction">
+            <summary>
+            Type d'action
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.Valider">
+            <summary>
+            Valider
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.IdTerritoireDDL">
+            <summary>
+            Id d'une liste déroulante de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.TextTerritoireDDL">
+            <summary>
+            Texte d'une liste déroulante de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.InfoRedirection">
+            <summary>
+            Permet de savoir si l'information vient d'une redirection
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_AvisConformite.Guid">
+            <summary>
+            Guid pour la gestion des tabs multiple
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation">
+            <summary>
+            Modèle pour la confirmation d'un avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.DateCreation">
+            <summary>
+            Date de création
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.Territoire">
+            <summary>
+            Territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.DatePrevue">
+            <summary>
+            Date prévue
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.DatePrevueAffichage">
+            <summary>
+            Date summary formatée pour l'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.TypeAction">
+            <summary>
+            Type d'action
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Confirmation.MessageConfirmation">
+            <summary>
+            Message de confirmation
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation">
+            <summary>
+            Modèle de la confirmation de la dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.MessageConfirmation">
+            <summary>
+            Message de confirmation de transmission ou d'annulation de haut de page.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.NomCompletNumeroPratique">
+            <summary>
+            Nom complet avec numéro de pratique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.DescriptionTypeDerogation">
+            <summary>
+            Description type de dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.DateDebutAffichage">
+            <summary>
+            Date de début formatée pour l'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.MessageFermetureEngagement">
+            <summary>
+            Message d'engagement fermé s'il y a lieu (soit Dérogation ou Avis de conformité).
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationDerogation.EstModeAnnulation">
+            <summary>
+            Permet de déterminer si c'est un mode annulation (True) ou pas (False).
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension">
+            <summary>
+            Modèle de la confirmation de la suspension
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.DateTransmission">
+            <summary>
+            Date de transmission
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.TypeSuspension">
+            <summary>
+            Type de suspension
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.DateDebutAffichage">
+            <summary>
+            Date de début formatée pour l'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.DateFinAffichage">
+            <summary>
+            Date de début formatée pour l'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.NouvelleDateFin">
+            <summary>
+            Nouvelle date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.NouvelleDateFinAffichage">
+            <summary>
+            Nouvelle date de fin formatée pour l'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension.MessageConfirmation">
+            <summary>
+            Message de confirmation
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation">
+            <summary>
+            Modèle de dérogation
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.NumeroSequentielDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.Type">
+            <summary>
+            Type de dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.EstRenseignementConfirmer">
+            <summary>
+            Indicateur de renseignement confirmer
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.Types">
+            <summary>
+            Types de dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.IdTypeDDL">
+            <summary>
+            Id de la liste déroulante (Type de dérogation)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.TextTypeDDL">
+            <summary>
+            Texte de la liste déroulante (Type de dérogation)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.QuestionPose">
+            <summary>
+            Question posé.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.Valider">
+            <summary>
+            Valider
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.Continuer">
+            <summary>
+            Continuer après une question.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.NumeroSequentiel">
+            <summary>
+            Numéro de séquence de la dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.IdentiteMedecin">
+            <summary>
+            Identité du médecin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation.MessageInformation">
+            <summary>
+            Message d'information
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension">
+            <summary>
+            Modèle de suspension
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension.NumeroSequentiel">
+            <summary>
+            Numéro séquentiel de la suspension
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension.EstRenseignementConfirmer">
+            <summary>
+            Indicateur de renseignement confirmer
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension.Types">
+            <summary>
+            Liste de type de suspensions
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.SuspensionBase">
+            <summary>
+            Modèle de base pour les suspensions
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.SuspensionBase.ModeAffichage">
+            <summary>
+            Mode d'affichage
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.SuspensionBase.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.SuspensionBase.IdentiteMedecin">
+            <summary>
+            Identité du médecin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.SuspensionBase.AvisConformite">
+            <summary>
+            Avis de conformité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.SuspensionBase.DescriptionAvisConformite">
+            <summary>
+            Description de l'avis de conformité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLA5_SaisirAutorActivMdcal.PLA5_SaisirAutorisation">
+            <summary>
+            Modèle pour l'inscription d'autorisation.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA5_SaisirAutorActivMdcal.PLA5_SaisirAutorisation.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA5_SaisirAutorActivMdcal.PLA5_SaisirAutorisation.DateDebutAutorisation">
+            <summary>
+            Date de début de l'autorisation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA5_SaisirAutorActivMdcal.PLA5_SaisirAutorisation.DateFinAutorisation">
+            <summary>
+            Date de fin de l'autorisation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLA5_SaisirAutorActivMdcal.PLA5_SaisirAutorisation.EstRenseignementConfirmer">
+            <summary>
+            Indicateur que les renseignements ont été confirmés.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.Annee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.ListAnnees">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.Trimestre">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.ListTrimestres">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.ListRegions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.ListSousTerritoires">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.DateDebutTrimestre">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.DateFinTrimestre">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AbsncAvisConf.LignesRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AvisConfActifsParTerri">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_AvisConfTermines">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.Annee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.ListAnnees">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.TypePratique">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.ListTypesPratique">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.DateDebutRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.DateFinRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.NombreDispensateursRetournes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu.LignesRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.Annee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.ListAnnees">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.ListRegions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.ListSousTerritoires">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.DateDebutRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.DateFinRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.EstDRMG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.NombreDispensateursRetournes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NonRespAvisConf.LignesRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.Annee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.ListAnnees">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.ListRegions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.DateDebutRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.DateFinRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.EstDRMG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR.LignesRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_NouvMedSansAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.Annee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.ListAnnees">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.ListRegions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.ListSousTerritoires">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.EstDRMG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.DateDebutRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.DateFinRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.NombreDispensateursRetournes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_RepartInterRegionPrati.LignesRapport">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.IPLC2_HistoriqueEngagement">
+            <summary>
+            Interface - Modèle de données pour la consultation du profil d'un professionnel 
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.IPLC2_HistoriqueEngagement.ObtenirRaisStatusAvisConf(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Liste des raisons des statuts d'avis de conformité d'un médecin omnipraticien
+            </summary>
+            <returns>Dictionnaire de domaine de valeurs ayant pour clé la valeur basse </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.IPLC2_HistoriqueEngagement.ObtenirRaisStatusAUTOR_PREMQ(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Liste des raisons des statuts de la modification, de l'annulation ou de la restitution de l'autorisation PREM d'un médecin omnipraticien.
+            </summary>
+            <returns>Dictionnaire de domaine de valeurs ayant pour clé la valeur basse </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.IPLC2_HistoriqueEngagement.ObtenirRaisStatusDerogation(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Liste des raisons des statuts de la derogation d'un médecin omnipraticien.
+            </summary>
+            <returns>Dictionnaire de domaine de valeurs ayant pour clé la valeur basse </returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_InformationProfessionnel">
+            <summary>
+            Modèle d'information du professionnel
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_InformationProfessionnel.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement">
+            <summary>
+            Modèle de données pour la consultation du profil d'un professionnel
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.#ctor(RAMQ.PRE.PL_PremMdl_cpo.Professionnel.IProfessionnel)">
+            <summary>
+            constructeur avac paraamètre
+            </summary>
+            <param name="professionel"></param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.IdentiteMedecin">
+            <summary>
+            Identité du médecin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.PratiqueExclusiveAnnee">
+            <summary>
+            Pratique année exclusive
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.EngagementPratiques">
+            <summary>
+            Liste d'engagement de pratiques
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.PratiqueExclusiveAnnees">
+            <summary>
+            Liste des pratique exclusive par années
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.EnteteTableHistoriqueAvis">
+            <summary>
+            Liste des noms d'entête pour la/les table(s) des historiques des avis
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.EstTableauHistoriqueVisible">
+            <summary>
+            Permet de savoir si le tableau des historique est visible ou non
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.EstMedecinOmnipraticien">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.MedecinResponsabiliteDRMG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.MessageErreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.ObtenirRaisStatusAvisConf(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Liste des raisons des statuts d'avis de conformité d'un médecin omnipraticien
+            </summary>
+            <returns>Dictionnaire de domaine de valeurs ayant pour clé la valeur basse </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.ObtenirRaisStatusAUTOR_PREMQ(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Liste des raisons des statuts d'avis de'autorisation d'un médecin omnipraticien
+            </summary>
+            <param name="domaineValeur"></param>
+            <returns>Dictionnaire de domaine de valeurs ayant pour clé la valeur basse</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.ObtenirRaisStatusDerogation(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Liste des raisons des statuts d'avis de derogation d'un médecin omnipraticien
+            </summary>
+            <param name="domaineValeur"></param>
+            <returns>Dictionnaire de domaine de valeurs ayant pour clé la valeur basse</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte">
+            <summary>
+            Modèle pour les droits acquis
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.HistoriqueDroitExercice">
+            <summary>
+            Droits d'exercices
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.DroitsExercices">
+            <summary>
+            Droits d'exercices
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.HistoriquesDroitExercice">
+            <summary>
+            Historique des droits d'exercices
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.PeriodesExercices">
+            <summary>
+            Périodes d'exercices
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.DepassementPeriodesExercices">
+            <summary>
+            Dépassement du maximum autorisé par un droit d'exercice
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte.PourcentageMaximum">
+            <summary>
+            Pourcentage maximum
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive">
+            <summary>
+            Modèle pour la pratique exclusive
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive.AnneesPratique">
+            <summary>
+            Liste d'années
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive.AnneePratique">
+            <summary>
+            Année
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive.EngagementsPratiqueExclusive">
+            <summary>
+            Liste des engagements de pratiques
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive.EngagementPratiqueExclusive">
+            <summary>
+            Engagement de pratiques
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive.EstPratiqueDepannage">
+            <summary>
+            Indicateur pour savoir si la pratique est en dépannage ou non
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive.RangeeTablePratiqueExclusive">
+            <summary>
+            Liste des noms de rangée pour la table des pratiques exclusive
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique">
+            <summary>
+            Modèle pour la répartition de la pratique
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique.AnneesRepartition">
+            <summary>
+            Liste d'années
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique.AnneeRepartition">
+            <summary>
+            Année
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique.EngagementPratiques">
+            <summary>
+            Liste d'engagement de pratiques
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique.EngagementPratiqueRepartition">
+            <summary>
+            Engagement Pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique.Pratiques">
+            <summary>
+            Liste des pratiques
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique.Pratique">
+            <summary>
+            Pratique sélectionné
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_InformationProfessionnel">
+            <summary>
+            Modèle d'information du professionnel
+            </summary>
+            <remarks>
+            Auteur: Maxime Comtois
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_InformationProfessionnel.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation">
+            <summary>
+            Modèle de données pour la consultation du profil d'un professionnel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.IdentiteMedecin">
+            <summary>
+            Identité du médecin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.DateFin">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.TypeDemande">
+            <summary>
+            Type de demande
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.TypesDemandes">
+            <summary>
+            Liste des pratiques
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.MessageConfirmation">
+            <summary>
+            Message de confirmation de transmission ou d'annulation de haut de page.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.MedecinResponsabiliteDRMG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.MessageErreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation.DemandesReevaluation">
+            <summary>
+            Liste de demandes de réévaluation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.LienExterne">
+            <summary>
+              Recherche une chaîne localisée semblable à Cet hyperlien s’ouvrira dans une nouvelle fenêtre..
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_Accueil">
+            <summary>
+              Recherche une chaîne localisée semblable à Accueil.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_Aide">
+            <summary>
+              Recherche une chaîne localisée semblable à Aide.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_Dconx">
+            <summary>
+              Recherche une chaîne localisée semblable à Déconnexion.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_Deconnexion">
+            <summary>
+              Recherche une chaîne localisée semblable à Déconnexion.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_NousJoindre">
+            <summary>
+              Recherche une chaîne localisée semblable à Nous joindre.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_Param">
+            <summary>
+              Recherche une chaîne localisée semblable à Paramètres.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Properties.Resources.Menu_Parametres">
+            <summary>
+              Recherche une chaîne localisée semblable à Paramètres.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Securite.ISecurite">
+            <summary>
+            Classe en lien avec la sécurité
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Securite.ISecurite.ObtenirCodeRSSUtilisateurCourant">
+            <summary>
+            Obtient la région de la personne connecté
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Securite.ISecurite.ObtenirCodeRSSUtilisateurCookie">
+            <summary>
+            Obtient la région de la personne connecté par la méthode du cookie
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Securite.Securite">
+            <summary>
+            Classe en lien avec la sécurité
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Securite.Securite.#ctor(RAMQ.PRE.PRE_OutilComun_cpo.ISecurite,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="securiteFactory"></param>
+            <param name="messageTraitement"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Securite.Securite.ObtenirCodeRSSUtilisateurCourant">
+            <summary>
+            Obtient la région de la personne connecté
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Securite.Securite.ObtenirCodeRSSUtilisateurAGS">
+            <summary>
+            Va chercher le code RSS de l'utilisateur à partir d'AGS
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Securite.Securite.ObtenirCodeRSSUtilisateurCookie">
+            <summary>
+            Va chercher le code RSS de l'utilisateur à partir du cookie
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration">
+            <summary>
+            Classe pour les configurations dans le web.config
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.GroupeSupport">
+            <summary>
+            Groupe de support
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.GroupeDRMG">
+            <summary>
+            Groupe pour les DRMG
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.GroupeComiteParitaire">
+            <summary>
+            Groupe pour le comité paritaire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.GroupeConsultationProfilPrem">
+            <summary>
+            Groupe pour la consultation du profil PREM
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.AfficherPLA1">
+            <summary>
+            Indicateur d'affichage du menu PLA1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.AfficherPLA2">
+            <summary>
+            Indicateur d'affichage du menu PLA2
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.AfficherPLC1">
+            <summary>
+            Indicateur d'affichage du menu PLC1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.AfficherPLC2">
+            <summary>
+            Indicateur d'affichage du menu PLC2
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.AfficherOngletRPPR">
+            <summary>
+            Indicateur d'affichage de l'onglet RPPR
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_Prem_iut.Utilitaires.Configuration.AfficherPLC1RPPR">
+            <summary>
+            Indicateur d'affichage de du menu PLC1 RPPR
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Utilitaires.INomFichierGabaritPDFConfirmationBuilder">
+            <summary>
+            Interface du builder pour la création du nom du fichier PDF de confirmation
+            </summary>
+            <remarks>
+            Auteur : Alexis Garon-Michaud
+            Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.INomFichierGabaritPDFConfirmationBuilder.Construire(System.String,System.DateTime)">
+            <summary>
+            Construire le nom du fichier pour la confirmation PDF
+            </summary>
+            <param name="numeroPratiqueDispensateur">Texte contenant le numéro de pratique du dispensateur</param>
+            <param name="dateHeureCourante">Date heure courante</param>
+            <returns>Le nom du fichier PDF de confirmation</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Utilitaires.IUtilitaire">
+            <summary>
+            Interface de la classe Utilitaire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.IUtilitaire.EstDansGroupe(System.String)">
+            <summary>
+            Fonction exposé pour des fins de unit testing.
+            </summary>
+            <param name="nomGroupe">Nom du groupe à vérifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.IUtilitaire.ObtenirCookie(System.String)">
+            <summary>
+            Fonction exposé pour des fins de unit testing.
+            </summary>
+            <param name="nomCookie"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Utilitaires.NomFichierGabaritPDFConfirmationBuilder">
+            <summary>
+            Builder pour la création du nom du fichier PDF de confirmation
+            </summary>
+            <remarks>
+            Auteur : Alexis Garon-Michaud
+            Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PL_Prem_iut.Utilitaires.NomFichierGabaritPDFConfirmationBuilder.LongueurNumeroDispensateur">
+            <summary>
+            Longueur nécessaire pour un numéro de dispensateur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.NomFichierGabaritPDFConfirmationBuilder.Construire(System.String,System.DateTime)">
+            <summary>
+            Construire le nom du fichier pour la confirmation PDF
+            </summary>
+            <param name="numeroPratiqueDispensateur">Texte contenant le numéro de pratique du dispensateur</param>
+            <param name="dateHeureCourante">Date heure courante</param>
+            <returns>Le nom du fichier PDF de confirmation</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire">
+            <summary>
+            Classe utilitaire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.GenereNomAffichage(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti)">
+            <summary>
+            Fonction retournant le nom à afficher comme identifiant du professionnel
+            </summary>
+            <param name="professionnel">Objet avec les informations du professionnel</param>
+            <returns>Le numéro de pratique avec le nom et prénom concaténés</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.EstDansZoneIntranet">
+            <summary>
+            Permet de savoir si l'usager est connecté dans la zone Intranet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.EstDansGroupe(System.String)">
+            <summary>
+            Permet de savoir si l'usager connecté est dans le groupe recherché
+            </summary>
+            <param name="nomGroupe">Nom du groupe recherché</param>
+            <returns>Vrai si l'usager est dans le groupe sinon faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.RAMQ#PRE#PL_Prem_iut#Utilitaires#IUtilitaire#EstDansGroupe(System.String)">
+            <summary>
+            Permet d'exposer cette fonction pour les tests unitaires.
+            Au final on appel tout de même la fonction static.
+            </summary>
+            <param name="nomGroupe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.ObtenirCookie(System.String)">
+            <summary>
+            Permet de retourner ce qui est inscrit dans le cookie spécifié
+            </summary>
+            <param name="nomCookie">nom du cookie</param>
+            <returns>Information du cookie</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.RAMQ#PRE#PL_Prem_iut#Utilitaires#IUtilitaire#ObtenirCookie(System.String)">
+            <summary>
+            Permet d'exposer cette fonction pour les tests unitaires.
+            Au final on appel tout de même la fonction static.
+            </summary>
+            <param name="nomCookie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.ConvertirStringEnBoolean(System.String)">
+            <summary>
+            Permet de convertir un valeur string en boolean
+            </summary>
+            <param name="valeurConvertir">Valeur à convertir</param>
+            <returns>Vrai ou faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.Utilitaires.Utilitaire.ObtenirListeAnneesDepuisAnnee(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.BundleConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.FilterConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.RouteConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_Prem_iut.MvcApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.MvcApplication.Application_Start">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_Prem_iut.MvcApplication.ObtenirMsg(System.String)">
+            <summary>
+             Permet de résoudre des messages d'erreurs dont les numéros sont passés 
+            </summary>
+            <param name="strNoMsg"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

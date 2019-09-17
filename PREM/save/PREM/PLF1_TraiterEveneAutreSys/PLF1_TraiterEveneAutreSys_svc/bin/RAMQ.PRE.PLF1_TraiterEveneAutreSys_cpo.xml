@@ -1,0 +1,2246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo</name>
+    </assembly>
+    <members>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterAvisConformite.AccesDonneesPRE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterAvisConformite.AccesSysExt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterAvisConformite.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal,RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul,RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite)">
+            <summary>
+            Constructeur de la cpo
+            </summary>
+            <param name="accesDonneesPRE"></param>
+            <param name="servDispCnsul"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterAvisConformite.ObtenirIDAvisConformiteAModifier(System.Collections.Generic.List{System.Int64})">
+            <summary>
+            Prend une liste de num_no_seq_disp, obtient ses avis de conformité et détermine ceux à modifier
+            Les avis à corriger doivent être actifs, posséder un statut "AUT" pour autorisé et être en attente de transmission
+            </summary>
+            <param name="listeNumNoSeqMedResidents"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterAvisConformite.ModifierAvisConformiteACorriger(System.Int64,System.Collections.Generic.List{System.Int64})">
+            <summary>
+            Met à jour les avis de conformité corrigés dans la base
+            </summary>
+            <param name="noSequentielDispensateur"></param>
+            <param name="listeIdAvisACorriger"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.TypeEvenementNonparticipation">
+            <summary>
+            Le sujet du courriel est fonction de l’événement traité Non-Participation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.TypeEvenementPremiereSpecialite">
+            <summary>
+            Le sujet du courriel est fonction de l’événement traité Première spécialité 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.TypeEvenemenDeces">
+            <summary>
+            Le sujet du courriel est fonction de l’événement traité Décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.MessageSpecialiste">
+            <summary>
+            Message pour Médecin devenu spécialiste
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.MessageDerogation">
+            <summary>
+            Message pour une presence derogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.MessageDerogationPlusieurStatuts">
+            <summary>
+            Message pour une presence derogationayant plusieurs statuts
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.MessageAutorisation">
+            <summary>
+            Message pour une presence autorisation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.MessageAvisConformite">
+            <summary>
+            Message pour une presence d'avis de conformite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.MessageDeces">
+            <summary>
+            Message pour un Décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtModif_CodeRaiStaAvisDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de l'avis de conformite dans le cas d'une modification de la periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtSpec_CodeRaiStaAvisDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de l'avis de conformite dans le cas d'une modification de la periode de specialite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtDec_CodeRaiStaAvisDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de l'avis de conformite dans le cas d'une modification de la periode de décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtModif_CodeRaiStaDerogationDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de la derogation dans le cas d'une modification de la periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtSpec_CodeRaiStaDerogationDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de la derogation dans le cas d'une modification de la periode de specialite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtDec_CodeRaiStaDerogationDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de la derogation dans le cas d'une modification de la periode de décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtModif_CodeRaiStaAutorisationDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de l'autorisation dans le cas d'une modification de la periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtSpec_CodeRaiStaAutorisationDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de l'autorisation dans le cas d'une modification de la periode de specialite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.EvtDec_CodeRaiStaAutorisationDatNPartPosterieur">
+            <summary>
+            Code raison statut suite à la reactivation de l'autorisation  dans le cas d'une modification de la periode de décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAvisConf_DateNonPartn">
+            <summary>
+            Code raison statut pour l'avis de non conformité  - periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAvisConf_DateSpec">
+            <summary>
+            Code raison statut pour l'avis de non conformité  - date de premère spécialité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAvisConf_DateDec">
+            <summary>
+            Code raison statut pour l'avis de non conformité  - date décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutDerogation_DateNonPartn">
+            <summary>
+            Code raison statut pour Derogation(Fermeture)  - periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutDerogation_DateSpec">
+            <summary>
+            Code raison statut pour Derogation(Fermeture)  - date de premère spcialité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutDerogation_DateDec">
+            <summary>
+            Code raison statut pour Derogation(Fermeture)  - date de premère spcialité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAutorisationFerm_DateNonPartn">
+            <summary>
+            Code raison statut pour Autorisation Fermeture  - periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAutorisationAnn_DateNonPartn">
+            <summary>
+            Code raison statut pour Autorisation Annulation  - periode de non admissibilite
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAutorisationFerm_DateSpec">
+            <summary>
+            Code raison statut pour Autorisation Fermeture  - date de premère spcialité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAutorisationAnn_DateSpec">
+            <summary>
+            Code raison statut pour Autorisation Annulation  - date de premère spcialité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAutorisationFerm_DateDec">
+            <summary>
+            Code raison statut pour Autorisation Fermeture  - date décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Constante.Constante.CodeRaisonStatutAutorisationAnn_DateDec">
+            <summary>
+            Code raison statut pour Autorisation Annulation  - date  décès
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur">
+            <summary>
+             Informations sur le dispensateur.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.NoSeq">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.Classe">
+            <summary>
+             Le code de la classe du dispensateur permet en partie d'identifier la 
+             profession d'un dispensateur et le territoire (Québec ou Hors Québec) du 
+             permis de pratique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.Numero">
+            <summary>
+             Numéro identifiant un DISPENSATEUR de façon unique dans sa PROFESSION.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.NoSeqIndiv">
+            <summary>
+             Numéro séquentiel de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.TerritoirePermis">
+            <summary>
+             Territoire où un dispensateur peut pratiquer selon son permis soit au Québec 
+             ou hors Québec.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.ChiffrePreuve">
+            <summary>
+             Valeur utilisée pour s'assurer de l'exactitude du numéro du dispensateur 
+             inscrit ou saisi, et pour toutes correspondances destinées ou concernant les 
+             dispensateurs, avec le numéro et la classe du dispensateur sous le format 
+             9-99999-C où "C" est le chiffre preuve.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.Profession">
+            <summary>
+             Code identifiant une profession.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.DateObtentionPermis">
+            <summary>
+             Date à laquelle un DISPENSATEUR obtient son premier permis de pratique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.DateInscriptionRAMQ">
+            <summary>
+             Date à laquelle l'inscription du DISPENSATEUR à la RAMQ est effective.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.AnneeGraduation">
+            <summary>
+             Année à laquelle le dispensateur a obtenu son diplôme d'étude.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.NoSeqUniversite">
+            <summary>
+             Numéro séquentiel identifiant un INTERVENANT SECONDAIRE, de type 
+             "université". Sert à déterminer l'université de graduation du 
+             dispensateur.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.IndEnvoiCourrier">
+            <summary>
+             Ce champ indique si le DISPENSATEUR a contacté la RAMQ afin de demander :
+             l'arrêt de l'envoi de son courrier.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.IndFacturationRecente">
+            <summary>
+             L'indicateur de facturation récente indique si le DISPENSATEUR a facturé la 
+             Régie depuis 1 an, ou plus précisément, s'il a reçu paiement pour sa 
+             facturation dans la dernière année.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.DdSpecialite">
+            <summary>
+             Date à laquelle un médecin omnipraticien devient spécialiste c'est-à-dire 
+             obtient sa première SPÉCIALITÉ.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.NombreAnPratiqueHq">
+            <summary>
+             Nombre d'années d'expérience reconnues pour la pratique hors Québec des 
+             généralistes, médecin omnipraticien, dentiste ou optométriste.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.DdPratique">
+            <summary>
+             Ce champ représente la date de début de pratique continue, évaluée pour le 
+             calcul des années de pratique, servant à déterminer l'échelle salariale (en 
+             considérant aussi le nombre d'année de pratique hors Québec (NBR AN HQ)).
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.Dc">
+            <summary>
+             Date de création de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Dispensateur.IdUtilCreat">
+            <summary>
+             Identifiant de l'utilisateur ayant créer l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.NoSeq">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.Classe">
+            <summary>
+             Le code de la classe du dispensateur permet en partie d'identifier la 
+             profession d'un dispensateur et le territoire (Québec ou Hors Québec) du 
+             permis de pratique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.Numero">
+            <summary>
+             Numéro identifiant un DISPENSATEUR de façon unique dans sa PROFESSION.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.NoSeqIndiv">
+            <summary>
+             Numéro séquentiel de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.TerritoirePermis">
+            <summary>
+             Territoire où un dispensateur peut pratiquer selon son permis soit au Québec 
+             ou hors Québec.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.ChiffrePreuve">
+            <summary>
+             Valeur utilisée pour s'assurer de l'exactitude du numéro du dispensateur 
+             inscrit ou saisi, et pour toutes correspondances destinées ou concernant les 
+             dispensateurs, avec le numéro et la classe du dispensateur sous le format 
+             9-99999-C où "C" est le chiffre preuve.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.Profession">
+            <summary>
+             Code identifiant une profession.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.DateObtentionPermis">
+            <summary>
+             Date à laquelle un DISPENSATEUR obtient son premier permis de pratique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.DateInscriptionRAMQ">
+            <summary>
+             Date à laquelle l'inscription du DISPENSATEUR à la RAMQ est effective.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.AnneeGraduation">
+            <summary>
+             Année à laquelle le dispensateur a obtenu son diplôme d'étude.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.NoSeqUniversite">
+            <summary>
+             Numéro séquentiel identifiant un INTERVENANT SECONDAIRE, de type 
+             "université". Sert à déterminer l'université de graduation du 
+             dispensateur.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.IndEnvoiCourrier">
+            <summary>
+             Ce champ indique si le DISPENSATEUR a contacté la RAMQ afin de demander :
+             l'arrêt de l'envoi de son courrier.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.IndFacturationRecente">
+            <summary>
+             L'indicateur de facturation récente indique si le DISPENSATEUR a facturé la 
+             Régie depuis 1 an, ou plus précisément, s'il a reçu paiement pour sa 
+             facturation dans la dernière année.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.DdSpecialite">
+            <summary>
+             Date à laquelle un médecin omnipraticien devient spécialiste c'est-à-dire 
+             obtient sa première SPÉCIALITÉ.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.NombreAnPratiqueHq">
+            <summary>
+             Nombre d'années d'expérience reconnues pour la pratique hors Québec des 
+             généralistes, médecin omnipraticien, dentiste ou optométriste.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.DdPratique">
+            <summary>
+             Ce champ représente la date de début de pratique continue, évaluée pour le 
+             calcul des années de pratique, servant à déterminer l'échelle salariale (en 
+             considérant aussi le nombre d'année de pratique hors Québec (NBR AN HQ)).
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.Dc">
+            <summary>
+             Date de création de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.DispensateurBizTalk.IdUtilCreat">
+            <summary>
+             Identifiant de l'utilisateur ayant créer l'occurence
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu">
+            <summary>
+             Individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.NoSeq">
+            <summary>
+             Numéro interne identifiant de façon unique un individu.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.Langue">
+            <summary>
+             Code identifiant dans quelle langue l'INDIVIDU désire recevoir toutes 
+             CORRESPONDANCES et communications.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.TitreCivilite">
+            <summary>
+             Code identifiant le titre à donner à l'INDIVIDU lors des CORRESPONDANCES et 
+             communications avec celle-ci.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.Sexe">
+            <summary>
+             Code identifiant le sexe de l'INDIVIDU.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.StatutCivil">
+            <summary>
+             État ou statut civil de l'individu pour des besoins reliés à l'assurance.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.DateDeces">
+            <summary>
+             Date à laquelle l'INDIVIDU est décédé.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.IdUtilCreat">
+            <summary>
+             Identification de l'utilisateur qui a créé l'occurrence.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.Dc">
+            <summary>
+             Date à laquelle l'occurrence est créée.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.IdUtilMaj">
+            <summary>
+             Identification de l'utilisateur qui a fait la dernière modification sur 
+             l'occurrence.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.Individu.Dm">
+            <summary>
+             Date de la dernière modification de l'occurrence.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.NoSeq">
+            <summary>
+             Numéro interne identifiant de façon unique un individu.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.Langue">
+            <summary>
+             Code identifiant dans quelle langue l'INDIVIDU désire recevoir toutes 
+             CORRESPONDANCES et communications.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.TitreCivilite">
+            <summary>
+             Code identifiant le titre à donner à l'INDIVIDU lors des CORRESPONDANCES et 
+             communications avec celle-ci.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.Sexe">
+            <summary>
+             Code identifiant le sexe de l'INDIVIDU.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.StatutCivil">
+            <summary>
+             État ou statut civil de l'individu pour des besoins reliés à l'assurance.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.DateDeces">
+            <summary>
+             Date à laquelle l'INDIVIDU est décédé.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.IdUtilCreat">
+            <summary>
+             Identification de l'utilisateur qui a créé l'occurrence.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.Dc">
+            <summary>
+             Date à laquelle l'occurrence est créée.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.IdUtilMaj">
+            <summary>
+             Identification de l'utilisateur qui a fait la dernière modification sur 
+             l'occurrence.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.IndividuBizTalk.Dm">
+            <summary>
+             Date de la dernière modification de l'occurrence.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmis">
+            <summary>
+             Période d'admisibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmis.Statut">
+            <summary>
+             Statut de la période d'admisibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmis.Dd">
+            <summary>
+             Date de début de la période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmis.Df">
+            <summary>
+             Date de fin de la période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmis.CodRaisNonAdmis">
+            <summary>
+             Code de raison de non admisibilité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmisBizTalk">
+            <summary>
+             Période d'admisibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmisBizTalk.Statut">
+            <summary>
+             Statut de la période d'admisibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmisBizTalk.Dd">
+            <summary>
+             Date de début de la période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmisBizTalk.Df">
+            <summary>
+             Date de fin de la période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite.PerAdmisBizTalk.CodRaisNonAdmis">
+            <summary>
+             Code de raison de non admisibilité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre">
+            <summary>
+             Paramètres d'entrée de la méthode AjusterEngagAnnuNonPartnEntre
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre.PerAdmisAnnu">
+            <summary>
+             Période d'admisibilité annulée
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre.NoSeqPerAdmis">
+            <summary>
+             Numéro séquentiel de la période d'admisibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre.TypeIntervenant">
+            <summary>
+             Type d'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre.NoSeqIntervenant">
+            <summary>
+             Numéro séquentiel de l'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre.DmAdmis">
+            <summary>
+             Date de modification
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk.PerAdmisAnnu">
+            <summary>
+             Période d'admisibilité annulée
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk.NoSeqPerAdmis">
+            <summary>
+             Numéro séquentiel de la période d'admisibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk.TypeIntervenant">
+            <summary>
+             Type d'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk.NoSeqIntervenant">
+            <summary>
+             Numéro séquentiel de l'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk.DmAdmis">
+            <summary>
+             Date de modification
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnSorti">
+            <summary>
+             Paramètres de sortie de la méthode AjusterEngagAnnuNonPartn
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre">
+            <summary>
+             Paramètres d'entrée de la méthode AjusterEngagDdSpecInscr.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre.InfoDispOrign">
+            <summary>
+             Informations original du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre.InfoDispModif">
+            <summary>
+             Informations modifiées du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntreBizTalk.InfoDispOrign">
+            <summary>
+             Informations original du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntreBizTalk.InfoDispModif">
+            <summary>
+             Informations modifiées du dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrSorti">
+            <summary>
+             Paramètres de sortie de la méthode AjusterEngagDdSpecInscr.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre">
+            <summary>
+             Paramètres d'entrée de la méthode AjusterEngageDeces
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre.InfoOrignIndiv">
+            <summary>
+             Informations originale de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre.InfoModifIndiv">
+            <summary>
+             Informations modifiées de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntreBizTalk.InfoOrignIndiv">
+            <summary>
+             Informations originale de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntreBizTalk.InfoModifIndiv">
+            <summary>
+             Informations modifiées de l'individu
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesSorti">
+            <summary>
+             Paramètres de sortie de la méthode AjusterEngagDeces.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre">
+            <summary>
+             Paramètres d'entrée de la méthode AjusterEngagModifNonPartn
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre.PerAdmisOrign">
+            <summary>
+             Période d'admisibilité original
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre.PerAdmisModif">
+            <summary>
+             Période d'admisibilité modifiée
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre.NoSeqPerAdmis">
+            <summary>
+             Numéro séquentiel de la période d'admisibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre.TypeIntervenant">
+            <summary>
+             Type d'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre.NoSeqIntervenant">
+            <summary>
+             Numéro séquentiel de l'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre.DmAdmis">
+            <summary>
+             Date de modification
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk.PerAdmisOrign">
+            <summary>
+             Période d'admisibilité original
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk.PerAdmisModif">
+            <summary>
+             Période d'admisibilité modifiée
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk.NoSeqPerAdmis">
+            <summary>
+             Numéro séquentiel de la période d'admisibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk.TypeIntervenant">
+            <summary>
+             Type d'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk.NoSeqIntervenant">
+            <summary>
+             Numéro séquentiel de l'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk.DmAdmis">
+            <summary>
+             Date de modification
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre">
+            <summary>
+             Paramètres d'entrée de la méthode AjusterEngagAjouNonPartn
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre.NouvPerAdmis">
+            <summary>
+             Nouvelle période d'admisibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre.NoSeqPerAdmis">
+            <summary>
+             Numéro séquentiel de la période d'admisibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre.TypeIntervenant">
+            <summary>
+             Type d'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre.NoSeqIntervenant">
+            <summary>
+             Numéro séquentiel de l'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre.DmAdmis">
+            <summary>
+             Date de modification
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk">
+            <summary>
+             Paramètres d'entrée de la méthode AjusterEngagAjouNonPartn
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk.NouvPerAdmis">
+            <summary>
+             Nouvelle période d'admisibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk.NoSeqPerAdmis">
+            <summary>
+             Numéro séquentiel de la période d'admisibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk.TypeIntervenant">
+            <summary>
+             Type d'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk.NoSeqIntervenant">
+            <summary>
+             Numéro séquentiel de l'intervenant
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk.DmAdmis">
+            <summary>
+             Date de modification
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnSorti">
+            <summary>
+             Paramètres de sorti de la méthode AjusterEngagModifNonPartnSorti
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnSorti">
+            <summary>
+             Paramètres de sorti de la méthode AjusterEngagAjouNonPartnSorti
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre">
+            <summary>
+            Class de paramètres des codes de raison de statuts
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre.CodeRaisonStatutAvisConf">
+            <summary>
+            Code raison statut pour l'avis de non conformité  - periode de non admissibilite / date de premère spcialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre.CodeRaisonStatutReactivationAvisConf">
+            <summary>
+            Code raison statut - Reactivation pour l'avis de non conformité  - periode de non admissibilite / date de premère spcialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre.CodeRaisonStatutDerogation">
+            <summary>
+            Code raison statut pour Derogation(Fermeture)  - periode de non admissibilite / date de premère spcialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre.CodeRaisonStatutAutorisation">
+            <summary>
+            Code raison statut pour Autorisation      
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodeRaisonStatutAutorisation">
+            <summary>
+            Code raison statut pour Autorisation      
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodeRaisonStatutAutorisation.Fermeture">
+            <summary>
+            Code raison statut pour Autorisation Fermeture  - periode de non admissibilite / date de premère spcialité      
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodeRaisonStatutAutorisation.Annulation">
+            <summary>
+            Code raison statut pour Autorisation Annulation  - periode de non admissibilite / date de premère spcialité        
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt">
+            <summary>
+            type d'operation de l'evenement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre">
+            <summary>
+            Paramètres d'entrée de la méthode d'envoi de courriel
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.NumeroDispensateur">
+            <summary>
+            Numéro du dispensateur 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.DatDebNonPartn">
+            <summary>
+            Date de début de la non-participation 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.DateDebPremSpec">
+            <summary>
+            Date de début de première spécialité 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.DateDeces">
+            <summary>
+            Date de décès 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.Nom">
+            <summary>
+            Nom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.Prenom">
+            <summary>
+            Prenom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.NumeroSequentielIndividu">
+            <summary>
+            Numéro séquentiel de l’individu 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.PlusieurStatutDerogation">
+            <summary>
+            le statuts de la derogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre.Evt">
+            <summary>
+            type de l'evenement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre">
+            <summary>
+            Classe de paramètres d'entrée pour l'envoi de courriel
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.Sujet">
+            <summary>
+            Sujet du message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.Message">
+            <summary>
+            contenu du message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.Expediteur">
+            <summary>
+            Expediteur du message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.Destinataire">
+            <summary>
+            Destinataire du message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.CCDestinataire">
+            <summary>
+            Destinataire CC
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.CCIDestinataire">
+            <summary>
+            Destinataire CCI
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.Importance">
+            <summary>
+            Importance du message
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.Format">
+            <summary>
+            Format du message (Texte ou HTML)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre.EncodageMsg">
+            <summary>
+            Encodage du message
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnumRaisonCourriel">
+            <summary>
+            Enumeration des raison pour lesquelles un evenment n'a pas été traité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.TraiterEngagementSorti">
+            <summary>
+            Parametre de sortie de la methode TraiterDerogationDateNonParticipation
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.TraiterEngagementSorti.#ctor">
+            <summary>
+            constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.TraiterEngagementSorti.EstTraite">
+            <summary>
+            permet de verifier si le traitement a eu lieu ou pas
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite,RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation,RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.IAutorisation,RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel)">
+            <summary>
+            Constructeur par defaut
+            </summary>
+            <param name="avisconformite"></param>
+            <param name="derogation"></param>
+            <param name="autorisation"></param>
+            <param name="professionnel"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterEngagementInscriptionDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter/Ajuster un engagement du medecin omnipraticiem à une date de non participation inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterEngagementAnnuDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permete de Traiter un engament de medecin omnipraticien pour lequel une periode de non participation est annulée
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterEngagementModifDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permete de Traiter un engament de medecin omnipraticien pour lequel une periode de non participation est modifiée
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterEngagementPremiereSpecialiteDeces(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter un engagement du medecin omnipraticien pour lequel une date de debut de spécialité ou date de décès a été inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterEngagementDeces(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter un engagement du medecin omnipraticien pour lequel une date de decès été inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesEngagementsPratiquesProfessionnel(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet d'obtenir les avis de conformités du professionnel
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ModifierPeriodeLesAvisConformites(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de Modifier la période d'un avis de conformité à la date de non participation
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ModifierRaisonFermetureStatEngag(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagEntre)">
+            <summary>
+            Permet de Modifier la raison de fermeture du statut de l'engagement
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterEngagDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter/Ajuster un engagement du medecin omnipraticiem à une date de non participation inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.SaisirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationEntre)">
+            <summary>
+            Permet de saisir une demande de réévaluation pour un professionnel de la santé
+            </summary>
+            <param name="intrant">Information de la demande</param>
+            <returns>Les dates réelles de la demande</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesAvisConfPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'obtenir les avis de conformites  du medecin omnipraticien anterieures ou posterieurs à la date de debut de non participation
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les avis de conformites posterieurs sont retournés sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.FermerAvisConfProfessionel(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},System.DateTime,System.String)">
+            <summary>
+            Ferme l'avis de conformité actif à la periode de non-participation -1 jour
+            </summary>
+            <param name="lstObjParamEntree"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="codeRaisonStatutAvisConf"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.AnnulerAvisConf(System.Int64,System.DateTime,System.String)">
+            <summary>
+            Annulation des avis de conformités postérieurs à la date dde debut de non participation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param> 
+            <param name="codeRaisonStatutAvisConf"></param> 
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterAvisConfDateNonParticipation(System.Int64,System.DateTime,System.String)">
+            <summary>
+            Traitement de Avis de conformite(s) d'un medecin omnipraticien qui devient non-participant
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="codeRaisonStatutAvisConf"></param>        
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesAvisConfFermeesAnnulees(System.Int64,System.DateTime,System.Boolean)" -->
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.InactiverAvisConformiteTermine(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite)">
+            <summary>
+            permet d'inactiver l'avis de conformité terminé ayant code 21
+            </summary>
+            <param name="avisTermine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactiverAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,System.DateTime,System.Boolean,System.String)">
+            <summary>
+            permet de reactiver -creer un avis de conformité fermé suite à une annulation de non participation
+            </summary>
+            <param name="avisInactif"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="avisferme"></param>
+            <param name="codRaisonStatut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ModifierStatutEngagement(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti,System.Int64,System.Int64)">
+            <summary>
+            permet de modifier le statut de l'engagement
+            </summary>
+            <param name="nouvAvisConf"></param>
+            <param name="numSeqStatEngag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.InactivationCreationStatuts(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti,System.Int64,System.Boolean)">
+            <summary>
+            permet d'inactiver et creer à nouveau les differents status de l'avis de conformité
+            </summary>
+            <param name="avis"></param>
+            <param name="nouvAvisConf"></param>
+            <param name="numSeqStatEngag"></param>
+            <param name="ferme"></param>
+            si ferme est vraie, les avis conformites fermés sont traités sinon les avis annulés
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirStatutsEngagementPratiqueRSS(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+            Permet de faire l'obtention de la liste des statuts engagement pratique RSS 
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des statuts engagement pratique RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesDerogationsActivPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'otenir les derogations actives du medecin omnipraticien anterieures ou posterieurs à la adate de debu de non participation
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les derogations posterieurs sont retournées sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesDerogModifActivPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'otenir les derogations actives(TER ou ANN) du medecin omnipraticien anterieures ou posterieurs à la date de debut de non participation avant modification
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les derogations posterieurs sont retournées sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.FermerDerogationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre,System.DateTime)">
+            <summary>
+            Ferme la derogation à la periode de non-participation -1 jour
+            </summary>
+            <param name="objParamEntree"></param>
+            <param name="datDebNonPartn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.AnnulationDerogationPosterieurDateNonPartipation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Annule la derogation posterieure à la date de non de participation dumedecin omnipraticien
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterDerogationDateNonParticipation(System.Int64,System.DateTime,System.String,System.Boolean)">
+            <summary>
+            Traitement de derogation(s) d'un medecin omnipraticien qui devient non-participant
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param>      
+            <param name="codRaisonStatut"></param>      
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesDerogationsProfessionnelFermeesAnnulees(System.Int64,System.DateTime,System.Boolean,System.String)">
+            <summary>
+            permet d'obtenir les derogations Fermées ou annulées  du medecin omnipraticien 
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="ferme"></param>
+            <param name="codRaisonStatutEntre"></param>
+            <returns>
+            Non-Participation :si ferme est vraie, les derogations fermées à la date de non participation ayant avec Statut=TER,sinon 
+                       retourne les derogations annulées  et statut=ANN pour raison de non participation   
+            </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactivationDerogationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Reactive la derogation suite à une annulation de periode de non admissibilité
+            </summary>
+            <param name="objParamEntree"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirDerogationFermePourNonParticipation(System.Int64,System.DateTime)">
+            <summary>
+            retoune la liste des derogation fermées pour non participation
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="ancDateNonParticipation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.FermerAutorisationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre,System.DateTime)">
+            <summary>
+            Ferme l'autorisation à la periode de non-participation -1 jour
+            </summary>
+            <param name="objParamEntree"></param>
+            <param name="datDebNonPartn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.AnnulationAutorisationPosterieurDateNonPartipation(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre)">
+            <summary>
+            Annule l'autorisation posterieure à la date de non de participation du medecin omnipraticien
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterAutorisationDateNonParticipation(System.Int64,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodeRaisonStatutAutorisation,System.Boolean)">
+            <summary>
+            Traitement de(s) autorisation(s) d'un medecin omnipraticien qui devient non-participant
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="codeRaisonStatutAutorisation"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesAutorisationsProfessionnelFermeesAnnulees(System.Int64,System.DateTime,System.Boolean,System.String)">
+            <summary>
+            permet d'obtenir les Autorisations Fermées ou annulées du medecin omnipraticien 
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="ferme"></param>
+            <param name="codRaisonStatutEntre"></param>
+            <returns>
+            Date Non participation : si ferme est vraie, les autorisations fermées à la date de non participation  avec Statut=TER,sinon 
+                       retourne les autorisations annulées -  statut=ANN pour raison en paramètre        
+            </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactivationAutorisationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre)">
+            <summary>
+            Reactive l'autorisation suite à une Fermeture /annulation de periode de non admissibilité
+            </summary>
+            <param name="objParamEntree"></param>       
+            <returns></returns>   
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.CreerParametreCodeRaisonStatutEntre(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            creation des code de raison statut selon l'evenement
+            </summary>
+            <param name="operation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.AppelPLE1(System.Int64,System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            appel du service PLE1 - Saisir une demande de réevaluation pour un professionnel de la santé
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateDebutReeva"></param>
+            <param name="dateFinReeva"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.FermetureAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre,System.DateTime,System.String,System.String)">
+            <summary>
+            Fermeture d'un avis de conformité
+            </summary>
+            <param name="periodeAvisEntre"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="statutEngagement"></param>        
+            <param name="codeRaisonStatutAvisConf"></param>        
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirNumSeqStatutEngagementPratique(System.Int64,System.DateTime,System.String)">
+            <summary>
+            le numero de sequence du statur de l'engagement
+            </summary>
+            <param name="numeroSequentielEngagement"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="statutEngagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.FermetureAvisConformite(System.Int64,System.String,System.String,System.DateTime)">
+            <summary>
+            Fermeture d'un avis de conformité - suivant une action 
+            </summary>        
+            <param name="numeroSequentielEngagement"></param>
+            <param name="codeRaisonStatut"></param>
+            <param name="statutEngagement"></param>     
+            <param name="dateNonParticipation"></param>     
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.AnnulationAvisConformite(System.Int64,System.DateTime,System.Int64)">
+            <summary>
+            Annulation des avis de conformités postérieurs à la date dde debut de non participation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="nouvPerAdmis_Dd"></param>
+            <param name="numeroSequentielEngagement"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.TraiterStatutAvis(System.Boolean,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre)">
+            <summary>
+            traite les differents statuts des avis de conformités
+            </summary>
+            <param name="aUnSeulStatut">Vraie si l'avis de conformité n'a qu'un seul statut</param>
+            <param name="lesEngagementsPratiques"></param>
+            <param name="periodeAvisEntre"></param>
+            <param name="objParamEntree"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.VerifierEngagemnentActif(System.Int64,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de verifier si au moins un engagement est actif après la date de non participation en vue d'une annulation,
+            si oui ,un couriel est envoye
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirLesDerogationsInactives(System.Int64)">
+            <summary>
+            recupere toute sles derogations inactives d'"un medecin omnipraticienn
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.CreerParametreModifierDerogationEntre(System.Int64,System.DateTime,System.String,System.DateTime)">
+            <summary>
+            parametre la valeur d'entree et reactive la derogation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateDebutDerog"></param>
+            <param name="codeRaisonStatut"></param>
+            <param name="datDebNonParticipation"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.CreerParametreModifierAutorisationEntre(System.Int64,System.DateTime,System.String)">
+            <summary>
+            parametre la valeur d'entree et reactive l'autorisation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateDebutAutor"></param>
+            <param name="codeRaisonStatut"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactivationAvisConfFermeAnnule(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},System.Int64,System.DateTime,System.Boolean,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre)">
+            <summary>
+            Permet de Reactiver les differents status de l'avis de conformités avant fermeture pour raison de non participation
+            </summary>
+            <param name="avisConformites"></param>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="ferme"></param>
+            <param name="codRaisonStatutEntre"></param>
+            si ferme est vraie, les avis conformites fermés sont traités sinon les avis annulés
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirDateProchainEngagementAnnuledelaSequence(System.Int64,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,System.String,System.DateTime)">
+            <summary>
+            permet de recuperer la date du prochain engagement annule de la sequence
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="avis"></param>
+            <param name="statutEngagement"></param>
+            <param name="dateNonParticipation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ObtenirNombreStatutsAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite)">
+            <summary>
+            permet d'obtenir le nombre les differents stauts distinct de l'avis de conformité
+            </summary>
+            <param name="avis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactiverDerogation(System.Int64,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation},System.DateTime)">
+            <summary>
+            Permet de reactiver toute derogation fermée ou annulée pour raison de non particpation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="lstDerogFermees"></param>
+            <param name="lstDerogAnnulees"></param>
+            <param name="dateNonParticipation"></param>
+            <returns></returns>       
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactiverAutorisation(System.Int64,System.Collections.Generic.List{RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation},System.Collections.Generic.List{RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation})">
+            <summary>
+            Permet de reactiver toute Autorisation fermée ou annulée pour raison de non particpation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="lstAutorisationFermees"></param>
+            <param name="lstAutorisationAnnulees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.ReactiverAvis(System.Int64,System.DateTime,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre)">
+            <summary>
+            Permet de reactiver toute avis de conformite fermée ou annulée pour raison de non particpation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="avisConfFermees"></param>
+            <param name="avisConfAnnulees"></param>
+            <param name="codRaisonStatutEntre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.VerificationMiseAJourDatePremSpec(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre)">
+            <summary>
+            Permet de verifier il s'agit de l'ajout ou de la modification ou retrait date de spécialité
+            </summary>
+            <param name="param"></param>
+            <returns>False si il s'agit d'une modification ou retrait de date de spécialité sinon retourne True pour l'ajout de la 1ère date de spécialité</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.VerificationMiseAJourDatePremDec(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre)">
+            <summary>
+            Permet de verifier il s'agit de l'ajout ou de la modification ou retrait date de décès
+            </summary>
+            <param name="param"></param>
+            <returns>False si il s'agit d'une modification ou retrait de date de spécialité sinon retourne True pour l'ajout</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.VerificationMAJDossier(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de verifier si il ya eu des modifications au dossier du medecin ,si oui un courriel est envoye
+            </summary>
+            <returns>si False,aucune modification effectuée</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.VerifierMAJDossierEngagement(System.Int64,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            permet de verifier si il n'ya pas eu de modification au dossier du medecin omnipraticien et si il n'ya pas eu de nouveau engagement apres la date de non partcipation
+            si oui un courriel est envoyé
+            </summary>
+            <param name="noSeqIntervenant"></param>
+            <param name="dateNParticipation"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagAvisConfNonParticipation.EnvoyerCourlConfr(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnumRaisonCourriel,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre)">
+            <summary>
+            envoi de courriel
+            </summary>
+            <param name="objParamEntre"></param>
+            <param name="raisonCourriel"></param>
+            <param name="contenuMsg"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation">
+            <summary>
+            Interface des avis de conformité du medecin omnipraticien - periode de non participation 
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterEngagementInscriptionDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter/Ajuster un engagement du medecin omnipraticiem à une date de non participation inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterEngagementAnnuDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter un engagement du medecin omnipraticien pour lequel une periode de non participation est annulée
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterEngagementModifDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter un engagement du medecin omnipraticien pour lequel une periode de non participation est modifiée
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterEngagementPremiereSpecialiteDeces(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter un engagement du medecin omnipraticien pour lequel une date de debut de spécialité ou date de decès a été inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterEngagementDeces(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter un engagement du medecin omnipraticien pour lequel une date de decès été inscrite
+            </summary>
+            <param name="param"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesEngagementsPratiquesProfessionnel(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet d'obtenir les avis de conformités du professionnel
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ModifierPeriodeLesAvisConformites(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de Modifier la période d'un avis de conformité à la date de non participation
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ModifierRaisonFermetureStatEngag(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagEntre)">
+            <summary>
+            Permet de Modifier la raison de fermeture du statut de l'engagement
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterEngagDateNonParticipation(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de traiter/Ajuster un engagement du medecin omnipraticiem à une date de non participation inscrite
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.SaisirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationEntre)" -->
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesAvisConfPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'otenir les avis de conformites  du medecin omnipraticien anterieures ou posterieurs à la date de debut de non participation
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les avis de conformites posterieurs sont retournés sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.FermerAvisConfProfessionel(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},System.DateTime,System.String)">
+            <summary>
+            Ferme l'avis de conformité actif à la periode de non-participation -1 jour
+            </summary>
+            <param name="lstObjParamEntree"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="codRaisonStatutEntre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.AnnulerAvisConf(System.Int64,System.DateTime,System.String)">
+            <summary>
+            Annulation des avis de conformités postérieurs à la date dde debut de non participation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param> 
+            <param name="codeRaisonStatutAvisConf"></param> 
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesAvisConfFermeesAnnulees(System.Int64,System.DateTime,System.Boolean)" -->
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.InactiverAvisConformiteTermine(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite)">
+            <summary>
+            permet d'inactiver l'avis de conformité terminé
+            </summary>
+            <param name="avis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactiverAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,System.DateTime,System.Boolean,System.String)">
+            <summary>
+            permet de reactiver -creer un avis de confimité suite à une annulation 
+            </summary>
+            <param name="avisInactif"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="avisferme"></param>
+            <param name="codRaisonStatut"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.InactivationCreationStatuts(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti,System.Int64,System.Boolean)">
+            <summary>
+            permet d'inactiver et creer à nouveau les differents status de l'avis de conformité
+            </summary>
+            <param name="avis"></param>
+            <param name="nouvAvisConf"></param>
+            <param name="numSeqStatEngag"></param>
+            <param name="ferme"></param>
+            si ferme est vraie, les avis conformites fermés sont traités sinon les avis annulés
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactivationAvisConfFermeAnnule(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},System.Int64,System.DateTime,System.Boolean,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre)">
+            <summary>
+            Permet de Reactiver les differents status de l'avis de conformités avant fermeture pour raison de non participation
+            </summary>
+            <param name="avisConformites"></param>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="ferme"></param>
+            <param name="codRaisonStatutEntre"></param>
+            si ferme est vraie, les avis conformites fermés sont traités sinon les avis annulés
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirNombreStatutsAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite)">
+            <summary>
+            permet d'obtenir le nombre les differents stauts distinct de l'avis de conformité
+            </summary>
+            <param name="avis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirDateProchainEngagementAnnuledelaSequence(System.Int64,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,System.String,System.DateTime)">
+            <summary>
+            permet de recuperer la date du prochain engagement annule de la sequence 
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="avis"></param>
+            <param name="statutEngagement"></param>
+            <param name="dateNonParticipation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirStatutsEngagementPratiqueRSS(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+            Permet de faire l'obtention de la liste des statuts engagement pratique RSS 
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des statuts engagement pratique RSS</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirNumSeqStatutEngagementPratique(System.Int64,System.DateTime,System.String)">
+            <summary>
+            le numero de sequence du statur de l'engagement
+            </summary>
+            <param name="numeroSequentielEngagement"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="statutEngagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesDerogationsActivPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'otenir les derogations actives du medecin omnipraticien anterieures ou posterieurs à la date de debut de non participation
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les derogations posterieurs sont retournées sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.FermerDerogationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre,System.DateTime)">
+            <summary>
+            Ferme la derogation à la periode de non-participation -1 jour
+            </summary>
+            <param name="objParamEntree"></param>
+            <param name="datDebNonPartn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.AnnulationDerogationPosterieurDateNonPartipation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Annule la derogation posterieure à la date de non de participation du medecin omnipraticien
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterDerogationDateNonParticipation(System.Int64,System.DateTime,System.String,System.Boolean)">
+            <summary>
+            Traitement de derogation(s) d'un medecin omnipraticien qui devient non-participant
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="codRaisonStatut"></param>    
+            <param name="estModifie"></param>   
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesDerogationsProfessionnelFermeesAnnulees(System.Int64,System.DateTime,System.Boolean,System.String)" -->
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactivationDerogationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Reactive la derogation suite à une annulation de periode de non admissibilité
+            </summary>
+            <param name="objParamEntree"></param>       
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesDerogModifActivPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'otenir les derogations actives(TER ou ANN) du medecin omnipraticien anterieures ou posterieurs à la date de debut de non participation avant modification
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les derogations posterieurs sont retournées sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesAutorisationsActivPostProfessionnel(System.Int64,System.DateTime,System.Boolean)">
+            <summary>
+            permet d'obtenir les Autorisations  du medecin omnipraticien anterieures ou posterieurs à la date de debut de non participation
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="post">si vraie ,les autorisations posterieurs sont retournées sinon les anterieures</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.FermerAutorisationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre,System.DateTime)">
+            <summary>
+            Ferme l'autorisation à la periode de non-participation -1 jour
+            </summary>
+            <param name="objParamEntree"></param>
+            <param name="datDebNonPartn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.AnnulationAutorisationPosterieurDateNonPartipation(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre)">
+            <summary>
+            Annule l'autorisation posterieure à la date de non de participation du medecin omnipraticien
+            </summary>
+            <param name="objParamEntree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.TraiterAutorisationDateNonParticipation(System.Int64,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodeRaisonStatutAutorisation,System.Boolean)">
+            <summary>
+            Traitement de(s) autorisation(s) d'un medecin omnipraticien qui devient non-participant
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="codeRaisonStatutAutorisation"></param>        
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ObtenirLesAutorisationsProfessionnelFermeesAnnulees(System.Int64,System.DateTime,System.Boolean,System.String)">
+            <summary>
+            permet d'obtenir les Autorisations Fermées ou annulées du medecin omnipraticien 
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datDebNonPartn"></param>
+            <param name="ferme"></param>
+            <param name="codRaisonStatutEntre"></param>
+            <returns>
+            Date Non participation : si ferme est vraie, les autorisations fermées à la date de non participation ayant le code 3 avec Statut=TER,sinon 
+                       retourne les autorisations annulées code= 7 et statut=ANN
+            Date 1ère Spec : autorisation dermée : 05 , autorisation annulée : 08           
+            </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactivationAutorisationProfessionel(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre)">
+            <summary>
+            Reactive l'autorisation suite à une Fermeture /annulation de periode de non admissibilité
+            </summary>
+            <param name="objParamEntree"></param>       
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactiverDerogation(System.Int64,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation},System.DateTime)">
+            <summary>
+            Permet de reactiver toute derogation fermée ou annulée pour raison de non particpation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="lstDerogFermees"></param>
+            <param name="lstDerogAnnulees"></param>
+            <param name="dateNonParticipation"></param>
+            <returns></returns>    
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactiverAutorisation(System.Int64,System.Collections.Generic.List{RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation},System.Collections.Generic.List{RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation})">
+            <summary>
+            Permet de reactiver toute Autorisation fermée ou annulée pour raison de non particpation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="lstAutorisationFermees"></param>
+            <param name="lstAutorisationAnnulees"></param>
+            <returns></returns>     
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.ReactiverAvis(System.Int64,System.DateTime,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite},RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.CodRaisonStatutEntre)">
+            <summary>
+            Permet de reactiver toute avis de conformite fermée ou annulée pour raison de non particpation
+            </summary>
+            <param name="numeroSequentielDispensateur"></param>
+            <param name="dateNonParticipation"></param>
+            <param name="avisConfFermees"></param>
+            <param name="avisConfAnnulees"></param>
+            <param name="codRaisonStatutEntre"></param>
+            <returns></returns> 
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.VerificationMAJDossier(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            Permet de veifier si il ya eu des modifications au dossier du medecin , si oui envoie un courriel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.VerifierMAJDossierEngagement(System.Int64,System.DateTime,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.OperationEvt)">
+            <summary>
+            permet de verifier si il n,ya pas eu de modification au dossier du medecin omnipraticien et si il n'ya pas eu de nouveau engagement apres la date de non partcipation
+            si oui un courriel est envoyé
+            </summary>
+            <param name="noSeqIntervenant"></param>
+            <param name="dateNParticipation"></param>
+            <param name="operationEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.EnvoyerCourlConfr(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnvoyCourlEntre,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.EnumRaisonCourriel,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.ContenuCourlEntre)">
+            <summary>
+            envoi de courriel
+            </summary>
+            <param name="objParamEntre"></param>
+            <param name="raisonCourriel"></param>
+            <param name="contenuMsg"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation.VerificationMiseAJourDatePremSpec(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre)">
+            <summary>
+            Permet de verifier il s'agit d'une modification ou retrait de date de spécialité
+            </summary>
+            <param name="param"></param>
+            <returns>True si il s'agit d'une modification ou retrait de date de spécialité sinon retourne False pour l'ajout de la 1ère date de spécialité</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ParamSorti">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ParamSorti.ExtensionData">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ParamSorti.InfoMsgTrait">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="E:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ParamSorti.PropertyChanged">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ParamSorti.RaisePropertyChanged(System.String)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.ExtensionData">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.CodAppli">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.IdMsg">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.CodSever">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.TxtMsgFran">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.TxtMsgAngl">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="E:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.PropertyChanged">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.MsgTrait.RaisePropertyChanged(System.String)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ExceptionRamq">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ExceptionRamq.ExtensionData">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ExceptionRamq.strMessage">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ExceptionRamq.Message">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="E:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ExceptionRamq.PropertyChanged">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ExceptionRamq.RaisePropertyChanged(System.String)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva.SaisirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva.SaisirDemandeReevaluationAsync(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva.ObtenirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva.ObtenirDemandeReevaluationAsync(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva.AnnulerDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReeva.AnnulerDemandeReevaluationAsync(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.IServCreerDemReevaChannel">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.#ctor">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.#ctor(System.String)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.#ctor(System.String,System.String)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.#ctor(System.String,System.ServiceModel.EndpointAddress)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.SaisirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.SaisirDemandeReevaluationAsync(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.ObtenirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.ObtenirDemandeReevaluationAsync(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.AnnulerDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.svcCreerDemReeva.ServCreerDemReevaClient.AnnulerDemandeReevaluationAsync(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <exclude>
+            <summary>
+            Un résumé a été ajouter pour prévenir les avertissements nous informant qu'il n'y a pas de documentation XML pour les membres visibles.
+            La balise "exclude" sert à empêcher SandCastle de générer une documentation pour les références de services.
+            </summary>
+            </exclude>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.TraitementDonneesAdmissProf.AccesDonneesPRE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.TraitementDonneesAdmissProf.AccesSysExt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.TraitementDonneesAdmissProf.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal,RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul,RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite,RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation)">
+            <summary>
+            Constructeur de la cpo
+            </summary>
+            <param name="accesDonneesPRE"></param>
+            <param name="servDispCnsul"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.TraiterAdmissProf">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.TraiterAdmissProf.#ctor(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.ITraitementDonneesAdmissProf)">
+            <summary>
+            Constructeur de la CPO
+            </summary>
+            <param name="traitementDonneesAdmissProf"></param>
+        </member>
+        <member name="T:Constantes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ParamEntreAjusterAvisConformiteMedResidents">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ParamEntreAjusterAvisConformiteMedResidents.IndNoSeq">
+            <summary>
+            Numéro séquentiel d'individu
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ParamEntreAjusterAvisConformiteMedResidents.PvcClaDisp">
+            <summary>
+            Classe du dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ParamEntreAjusterAvisConformiteMedResidents.DisNoSeq">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ParamEntreTraiterAdmissProf">
+             <summary> 
+            
+             </summary>
+             <remarks>
+             </remarks>
+        </member>
+        <member name="T:ParamSortiAjusterAvisConformiteMedResidents">
+             <summary> 
+            
+             </summary>
+             <remarks>
+             </remarks>
+        </member>
+        <member name="T:ParamSortiTraiterAdmissProf">
+             <summary> 
+            
+             </summary>
+             <remarks>
+             </remarks>
+        </member>
+        <member name="T:TraitEveneAutreSys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TraitEveneAutreSys.AjusterAvisConformite">
+            <summary>
+            Dépendance CPO AjusterAvisConformite
+            </summary>
+        </member>
+        <member name="P:TraitEveneAutreSys.TraiterAdmissProf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TraitEveneAutreSys.#ctor(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterAvisConformite,RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.ITraiterAdmissProf)">
+            <summary>
+            Constructeur de la cpo
+            </summary>
+            <param name="ajusterAvisConformite"></param>
+        </member>
+        <member name="M:TraitEveneAutreSys.AjusterAvisConformiteMedResidents(ParamEntreAjusterAvisConformiteMedResidents)">
+            <summary>
+            Cette étape considère les modifications à un dispensateur pour ajuster les avis de conformité des médecins résidents (classe « 5 ») qui passent à la classe « 1 ».
+            L'utilisation des courtes méthodes de vérification a été faite pour aider les tests unitaires.
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Classe vide héritant de ParamSorti</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:TraitEveneAutreSys.TraiterAdmissibiliteDuProfessionnel(ParamEntreTraiterAdmissProf)">
+            <summary>
+            Ferme les avis de conformité et dérogations d'un professionnel si nécessaire
+            </summary>
+            <param name="intrant">Paramètre d'entrée</param>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

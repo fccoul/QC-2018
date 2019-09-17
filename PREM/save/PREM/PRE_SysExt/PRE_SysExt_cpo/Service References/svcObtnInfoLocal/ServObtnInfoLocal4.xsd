@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1" elementFormDefault="qualified" targetNamespace="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd2" namespace="http://COD1_V4OutilBase_cpo/1" />
+  <xs:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="ObtenirNomLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objParamObtnNomLoc" nillable="true" type="tns:EntreObtnNomLoc" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnNomLoc">
+    <xs:sequence>
+      <xs:element name="DateEntre" type="xs:dateTime" />
+      <xs:element name="ListeLocCod" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnNomLoc" nillable="true" type="tns:EntreObtnNomLoc" />
+  <xs:element name="ObtenirNomLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirNomLocalResult" nillable="true" type="tns:SortieObtnNomLoc" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnNomLoc">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://COD1_V4OutilBase_cpo/1" base="q1:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="LocCod" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="LocNom" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="LocDd" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="LocDf" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NouvLocCod" nillable="true" type="q6:ArrayOfstring" />
+          <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NouvLocNom" nillable="true" type="q7:ArrayOfstring" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NouvLocDd" nillable="true" type="q8:ArrayOfstring" />
+          <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NouvLocCodDf" nillable="true" type="q9:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnNomLoc" nillable="true" type="tns:SortieObtnNomLoc" />
+  <xs:element name="ObtenirInfoPays">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objParamObtnInfoPays" nillable="true" type="tns:EntreObtnInfoPays" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnInfoPays">
+    <xs:sequence>
+      <xs:element name="CodPays" type="xs:int" />
+      <xs:element name="NomPaysFran" nillable="true" type="xs:string" />
+      <xs:element name="NomAbrPaysFran" nillable="true" type="xs:string" />
+      <xs:element name="NomPaysAngl" nillable="true" type="xs:string" />
+      <xs:element name="NomAbrPaysAngl" nillable="true" type="xs:string" />
+      <xs:element name="CodPaysCar2" nillable="true" type="xs:string" />
+      <xs:element name="CodPaysCar3" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnInfoPays" nillable="true" type="tns:EntreObtnInfoPays" />
+  <xs:element name="ObtenirInfoPaysResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirInfoPaysResult" nillable="true" type="tns:SortieObtnInfoPays" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnInfoPays">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://COD1_V4OutilBase_cpo/1" base="q10:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodPays" nillable="true" type="q11:ArrayOfint" />
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomPaysFran" nillable="true" type="q12:ArrayOfstring" />
+          <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomAbrPaysFran" nillable="true" type="q13:ArrayOfstring" />
+          <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomPaysAngl" nillable="true" type="q14:ArrayOfstring" />
+          <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomAbrPaysAngl" nillable="true" type="q15:ArrayOfstring" />
+          <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodPaysCar2" nillable="true" type="q16:ArrayOfstring" />
+          <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodPaysCar3" nillable="true" type="q17:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnInfoPays" nillable="true" type="tns:SortieObtnInfoPays" />
+  <xs:element name="ObtenirTerriCLSCCP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objParamObtnTerriCLSCCP" nillable="true" type="tns:EntreObtnTerriCLSCCP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnTerriCLSCCP">
+    <xs:sequence>
+      <xs:element name="ListeCP" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnTerriCLSCCP" nillable="true" type="tns:EntreObtnTerriCLSCCP" />
+  <xs:element name="ObtenirTerriCLSCCPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirTerriCLSCCPResult" nillable="true" type="tns:SortieObtnTerriCLSCCP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnTerriCLSCCP">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://COD1_V4OutilBase_cpo/1" base="q18:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CP" nillable="true" type="q19:ArrayOfstring" />
+          <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodTerriCLSC" nillable="true" type="q20:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnTerriCLSCCP" nillable="true" type="tns:SortieObtnTerriCLSCCP" />
+  <xs:element name="ObtenirTerriCLSCCodLocal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objParamObtnTerriCLSCCodLocal" nillable="true" type="tns:EntreObtnTerriCLSCCodLocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnTerriCLSCCodLocal">
+    <xs:sequence>
+      <xs:element name="ListeCodLocal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnTerriCLSCCodLocal" nillable="true" type="tns:EntreObtnTerriCLSCCodLocal" />
+  <xs:element name="ObtenirTerriCLSCCodLocalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirTerriCLSCCodLocalResult" nillable="true" type="tns:SortieObtnTerriCLSCCodLocal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnTerriCLSCCodLocal">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://COD1_V4OutilBase_cpo/1" base="q21:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodLocal" nillable="true" type="q22:ArrayOfstring" />
+          <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomMunic" nillable="true" type="q23:ArrayOfstring" />
+          <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodTerriCLSC" nillable="true" type="q24:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnTerriCLSCCodLocal" nillable="true" type="tns:SortieObtnTerriCLSCCodLocal" />
+  <xs:element name="ObtenirCodRSS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objParamObtnCodRSS" nillable="true" type="tns:EntreObtnCodRSS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnCodRSS">
+    <xs:sequence>
+      <xs:element name="ListeLocCod" nillable="true" type="xs:string" />
+      <xs:element name="DatTrait" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnCodRSS" nillable="true" type="tns:EntreObtnCodRSS" />
+  <xs:element name="ObtenirCodRSSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirCodRSSResult" nillable="true" type="tns:SortieObtnCodRSS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnCodRSS">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://COD1_V4OutilBase_cpo/1" base="q25:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodLocal" nillable="true" type="q26:ArrayOfstring" />
+          <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodRSS" nillable="true" type="q27:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnCodRSS" nillable="true" type="tns:SortieObtnCodRSS" />
+  <xs:element name="ObtenirInfoLocalPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objObtnInfoLocalPart" nillable="true" type="tns:EntreObtnInfoLocalPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnInfoLocalPart">
+    <xs:sequence>
+      <xs:element name="NomPart" nillable="true" type="xs:string" />
+      <xs:element name="DatServ" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnInfoLocalPart" nillable="true" type="tns:EntreObtnInfoLocalPart" />
+  <xs:element name="ObtenirInfoLocalPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirInfoLocalPartResult" nillable="true" type="tns:SortieObtnInfoLocalPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnInfoLocalPart">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://COD1_V4OutilBase_cpo/1" base="q28:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodLocal" nillable="true" type="q29:ArrayOfstring" />
+          <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomLocal" nillable="true" type="q30:ArrayOfstring" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/System" name="DdLocal" nillable="true" type="q31:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/System" name="DfLocal" nillable="true" type="q32:ArrayOfNullableOfdateTime" />
+          <xs:element name="NbrOcc" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnInfoLocalPart" nillable="true" type="tns:SortieObtnInfoLocalPart" />
+  <xs:element name="ObtenirInfoTau">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objObtnInfoTau" nillable="true" type="tns:EntreObtnInfoTau" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnInfoTau">
+    <xs:sequence>
+      <xs:element name="LocCod" nillable="true" type="xs:string" />
+      <xs:element name="NoEnten" type="xs:int" />
+      <xs:element name="Serv" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnInfoTau" nillable="true" type="tns:EntreObtnInfoTau" />
+  <xs:element name="ObtenirInfoTauResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirInfoTauResult" nillable="true" type="tns:SortieObtnInfoTau" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnInfoTau">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://COD1_V4OutilBase_cpo/1" base="q33:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element name="CodTerriTau" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnInfoTau" nillable="true" type="tns:SortieObtnInfoTau" />
+  <xs:element name="ObtenirInfoTerriRLS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objObtnInfoTerriRLS" nillable="true" type="tns:EntreObtnInfoTerriRLS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnInfoTerriRLS">
+    <xs:sequence>
+      <xs:element name="CodRSS" nillable="true" type="xs:string" />
+      <xs:element name="CodTerriRLSRechr" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnInfoTerriRLS" nillable="true" type="tns:EntreObtnInfoTerriRLS" />
+  <xs:element name="ObtenirInfoTerriRLSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirInfoTerriRLSResult" nillable="true" type="tns:SortieObtnInfoTerriRLS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnInfoTerriRLS">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://COD1_V4OutilBase_cpo/1" base="q34:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodTerriRLS" nillable="true" type="q35:ArrayOfstring" />
+          <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomTerriRLS" nillable="true" type="q36:ArrayOfstring" />
+          <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodRegnSocSan" nillable="true" type="q37:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnInfoTerriRLS" nillable="true" type="tns:SortieObtnInfoTerriRLS" />
+  <xs:element name="ObtenirInfoTerriCLSC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_objObtnInfoTerriCLSC" nillable="true" type="tns:EntreObtnInfoTerriCLSC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EntreObtnInfoTerriCLSC">
+    <xs:sequence>
+      <xs:element name="strCodTerriCLSC" nillable="true" type="xs:string" />
+      <xs:element name="strNomTerriCLSC" nillable="true" type="xs:string" />
+      <xs:element name="strCodRSS" nillable="true" type="xs:string" />
+      <xs:element name="strCodTerriRUIS" nillable="true" type="xs:string" />
+      <xs:element name="strCodTerriRLS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntreObtnInfoTerriCLSC" nillable="true" type="tns:EntreObtnInfoTerriCLSC" />
+  <xs:element name="ObtenirInfoTerriCLSCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenirInfoTerriCLSCResult" nillable="true" type="tns:SortieObtnInfoTerriCLSC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SortieObtnInfoTerriCLSC">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://COD1_V4OutilBase_cpo/1" base="q38:ParamSorti">
+        <xs:sequence>
+          <xs:element name="CodRet" nillable="true" type="xs:string" />
+          <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodTerriCLSC" nillable="true" type="q39:ArrayOfstring" />
+          <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="NomTerriCLSC" nillable="true" type="q40:ArrayOfstring" />
+          <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodRSS" nillable="true" type="q41:ArrayOfstring" />
+          <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodRUIS" nillable="true" type="q42:ArrayOfstring" />
+          <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="CodRLS" nillable="true" type="q43:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SortieObtnInfoTerriCLSC" nillable="true" type="tns:SortieObtnInfoTerriCLSC" />
+</xs:schema>

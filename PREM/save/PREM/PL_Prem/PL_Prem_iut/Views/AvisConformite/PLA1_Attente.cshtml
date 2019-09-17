@@ -1,0 +1,67 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA1_AvisConformite.PLA1_Attente
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLA1CSS")
+}
+@{
+    ViewData["TitrePage"] = "Avis non transmis";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div role="group" class="collection">
+
+        <!-- Div contenant le message informatif sur l'engagement actif -->
+        <div id="AlertAvis" class="alert alert-info cacher" role="alert">
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped dt-responsive" id="DataTableAttente">
+                <thead>
+                    <tr>
+                        <th>
+                            Identification du médecin
+                        </th>
+                        <th>
+                            Date prévue de début de pratique
+                        </th>
+                        <th>
+                            Territoire
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (var i = 0; i < Model.NumerosNomsPratique.Count; i++)
+                    {
+                        <tr>
+                            <th scope="row">
+                                @Model.NumerosNomsPratique[i]
+                            </th>
+                            <td>
+                                @Model.DatesPrevues[i].ToString("d MMMM yyyy")
+                            </td>
+                            <td>
+                                @Model.Territoires[i]
+                            </td>
+                            <td>
+                                <button name="NumeroAvis" value="@Model.NumerosAvis[i].Value.ToString()" class="btn btn-primary" type="submit">
+                                    Accéder
+                                </button>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    @Html.Hidden("MessageAvertissement")
+}
+@section ScriptsBasDepage
+{
+  @Scripts.Render("~/bundles/PLA1_Attente")
+}
+

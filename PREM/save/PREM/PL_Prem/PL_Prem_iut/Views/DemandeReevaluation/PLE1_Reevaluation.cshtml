@@ -1,0 +1,112 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLE1_DemandeReevaluation.PLE1_Reevaluation 
+@using RAMQ.PRE.PL_Prem_iut.Entite;
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+@section HautDePage{
+    @Styles.Render("~/bundles/PLE1CSS")
+    @Styles.Render("~/bundles/PREMCSS")
+}
+
+@Html.Partial("Chargement")
+
+@{
+    ViewBag.TitrePage = "Demande de réévaluation";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Annulation d'une demande</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Voulez-vous vraiment supprimer cette demande de réévaluation?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger btn-ok">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div role="group" class="collection">
+
+        <!-- Div contenant le messages informatif -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="MessageInformation" class="alert alert-info hidden" role="alert"></div>
+            </div>
+        </div>
+
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel", new { gridClass = "col-md-3" })
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <div id="informationMedecin"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div id="sectionSaisie" role="group" class="collection" >
+            <h4>Période à réévaluer</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Date de début -->
+                    <div class="col-md-2">
+                        @Html.EditorFor(x => x.DateDebut, "DatePicker", new { placeholder = "AAAA-MM-JJ", gridInputClass = "col-xs-3 col-sm-3 col-md-3", gridLabelClass = "control-label" })
+                    </div>
+                    <div class="col-md-2">
+                        @Html.EditorFor(x => x.DateFin, "DatePicker", new { placeholder = "AAAA-MM-JJ", gridInputClass = "col-xs-3 col-sm-3 col-md-3", gridLabelClass = "control-label" })
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            @Html.EditorFor(x => x.TypeDemande, "DropDownList", new { classe = "selectCategorie", label = "Type de réévaluation", disabled = "true", data = Model.TypesDemandes })
+                        </div>
+                    </div>
+                    <!-- Transmettre (bouton) -->
+                    <div class="col-md-2 transmettre">
+                        <div class="row"> <div class="col-xs-7 col-sm-5 col-md-5"><label class="control-label">&nbsp;</label></div></div>
+                        <div class="row">
+                            <button id="btnTransmettre" class="btn btn-success" type="button">
+                                <i class="fa fa-check" aria-hidden="false"></i> Transmettre
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div role="group" class="collection" id="sectionTableau">
+            <h4>Période de réévaluation prévue</h4>
+            <div id="">
+                <table class="table" id="tableReevaluations">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date de début</th>
+                            <th scope="col">Date de fin</th>
+                            <th scope="col">Type de réévaluation</th>
+                            <th scope="col">Demandeur</th>
+                            <th scope="col" />
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Boîte de dialogue pour l'affichage d'une demande de confirmation -->
+        @Html.DisplayFor(x => x.MessageErreur, "ModalConfirmation")
+
+        }
+
+        @section ScriptsBasDepage
+        {
+            @Scripts.Render("~/bundles/PLE1")
+        }

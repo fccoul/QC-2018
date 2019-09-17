@@ -1,0 +1,76 @@
+﻿@using System.Collections
+@model string
+@{
+
+    RouteValueDictionary htmlAttributes = new RouteValueDictionary();
+    List<SelectListItem> listeRecu = null;
+    string lableText = "";
+
+    if ((ViewBag.classe) != null)
+    {
+        htmlAttributes.Add("class", ("form-control " + ViewBag.classe));
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control ");
+    }
+    if ((ViewBag.type) != null)
+    {
+        htmlAttributes.Add("type", ViewBag.type);
+    }
+    if ((ViewBag.placeholder) != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+    if ((ViewBag.mask) != null)
+    {
+        htmlAttributes.Add("mask", ViewBag.mask);
+    }
+    if ((ViewBag.lectureSeule) != null)
+    {
+        htmlAttributes.Add("readonly", ViewBag.lectureSeule);
+    }
+    if ((ViewBag.disabled) != null)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+    if ((ViewBag.data) != null)
+    {
+        listeRecu = (List<SelectListItem>)ViewBag.data;
+        if (Model != null)
+        {
+            listeRecu.FirstOrDefault(f => f.Value == Model).Selected = true;
+        }
+    }
+    else
+    {
+        listeRecu = null;
+    }
+    if ((ViewBag.label) != null)
+    {
+        lableText = ViewBag.label;
+    }
+
+}
+<div class="form-group">
+    @if (String.IsNullOrWhiteSpace(lableText))
+    {
+        @Html.LabelFor(x => x, new {@class = "control-label" })
+    }
+    else
+    {
+        @Html.LabelFor(x => x, lableText, new {@class = "control-label" })
+    }
+
+    @if (listeRecu != null && listeRecu.Any())
+    {
+        @Html.DropDownListFor(x => x, listeRecu, "", htmlAttributes)        
+    }
+    else
+    {
+        @Html.DropDownListFor(x => x, Enumerable.Empty<SelectListItem>(), "", htmlAttributes)
+    }
+
+
+    @Html.ValidationMessageFor(x => x, null, new {@class = "help-block"})
+</div>

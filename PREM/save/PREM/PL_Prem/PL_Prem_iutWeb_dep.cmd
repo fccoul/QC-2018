@@ -1,0 +1,1 @@
+installer PL_Prem_iutWeb_dep.msi CHEMINAPPLI="d:\inetpub\ExtranetRoot" ENVIR="%envir%" 

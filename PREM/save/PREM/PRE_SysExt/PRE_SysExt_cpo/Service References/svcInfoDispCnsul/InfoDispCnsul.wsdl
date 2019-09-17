@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul">
+      <s:element name="ObtnInfoDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnInfoDispEntree" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnInfoDispEntree">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NoPratiDisp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateServ" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoCpteAdmn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtnInfoDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtnInfoDispResult" type="tns:ParamObtnInfoDispSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnInfoDispSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NomDisp" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PreDisp" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Datdeces" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IndCpteAdmnActif" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColAdmisFact" type="tns:ArrayOfAdmisFact" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColStagForma" type="tns:ArrayOfStagForma" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColSpec" type="tns:ArrayOfSpec" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColSituPartc" type="tns:ArrayOfSituPartc" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColContr" type="tns:ArrayOfContr" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ParamSorti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InfoMsgTrait" type="tns:MsgTrait" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MsgTrait">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodSys" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodSever" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxtMsgFran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxtMsgAngl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdmisFact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdmisFact" nillable="true" type="tns:AdmisFact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdmisFact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AdmSta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdmDd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdmDf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RsaCodRais" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfStagForma">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StagForma" nillable="true" type="tns:StagForma" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StagForma">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EquNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSpec">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Spec" nillable="true" type="tns:Spec" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Spec">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SpeCod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpeNom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SdiNivSpec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SdiDd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SdiDf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpeTyp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSituPartc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SituPartc" nillable="true" type="tns:SituPartc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SituPartc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SpdNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CsiCodCatg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpdDd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpdDf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpaNoSeq" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Contr" nillable="true" type="tns:Contr" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Contr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConCodConPrati" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EquNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColModRemu" type="tns:ArrayOfModRemu" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfModRemu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModRemu" nillable="true" type="tns:ModRemu" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModRemu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MreCod" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtnInfoSpecPilot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnInfoSpecPilotEntree" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnInfoSpecPilotEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SpeCod" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateServ" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtnInfoSpecPilotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtnInfoSpecPilotResult" type="tns:ParamObtnInfoSpecPilotSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnInfoSpecPilotSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SpeNom" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IndSpecActif" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ObtenirSituPartcDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnSituPartcDispEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnSituPartcDispEntre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoSeqDisp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatServ" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirSituPartcDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirSituPartcDispResult" type="tns:ParamObtnSituPartcDispSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnSituPartcDispSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ListSituPartcDisp" type="tns:ArrayOfSituPartcDisp" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfSituPartcDisp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SituPartcDisp" nillable="true" type="tns:SituPartcDisp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SituPartcDisp">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RepositoryCurseurOfSituPartcDisp">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="spd_no_seq" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="dis_no_seq" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="spa_no_seq" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="spd_dd" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="rst_cod_rais" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="equ_no" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="nae_no_fact" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="spe_cod" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="spd_df" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="spd_dc" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="spd_util_creat" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="spd_dm" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="spd_util_maj" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="equ_no_refre" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="nae_no_refre" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="cac_cod" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RepositoryCurseurOfSituPartcDisp" />
+      <s:element name="ObtnInfoSituPartcPilot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnSituPartcPilotEntree" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnSituPartcPilotEntree">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SpaNoSeq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateServ" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtnInfoSituPartcPilotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtnInfoSituPartcPilotResult" type="tns:ParamObtnSituPartcPilotSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnSituPartcPilotSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SpaDesAbr" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IndSituPartcActif" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ObtenirCoordDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_objParamObtnCoordDispEntre" type="tns:ParamObtnCoordDispEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnCoordDispEntre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NoPratiDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoTyp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatServ" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirCoordDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirCoordDispResult" type="tns:ParamObtnCoordDispSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnCoordDispSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ColctCoord" type="tns:ArrayOfCoordonnee" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCoordonnee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Coordonnee" nillable="true" type="tns:Coordonnee" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Coordonnee">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CooAdrLigne2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooAdrLigne3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooAdrLigne4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooAdrLivr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooCodDirtnOdonm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooCodGenrqOdonm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooCodPostl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooCodPrtclLienOdonm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooCodRSS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooCouriElctr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooDC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooDM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooEtatUs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooIndValidAdr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooIndCouriElctr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooIndiPostCan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooInfoPostl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooMunic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoAppAdrCiviq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoAppAdrCiviqSuffx" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoCiviqAdr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoCiviqAdrSuffx" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoLoclPhcie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNomSpcfOdonm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNomTriMunic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNomTriOdonm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooPays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooPostPremNoTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooPostDeuxNoTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooProv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooRensDesti" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooPremNoTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooDeuxNoTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooNoTlcop" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooUtilCreat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooUtilMaj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CooLocCod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoNoDet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoTypUtilCoord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoTypDet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoDDUtilCoord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UcoDFUtilCoord" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirAdrCourlScurs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_objParamObtnAdrCourlScursEntre" type="tns:ParamObtnAdrCourlScursEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnAdrCourlScursEntre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NoPratiDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatServ" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirAdrCourlScursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirAdrCourlScursResult" type="tns:ParamObtnAdrCourlScursSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnAdrCourlScursSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ColctAdrCourlScurs" type="tns:ArrayOfAdrCourlScurs" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdrCourlScurs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdrCourlScurs" nillable="true" type="tns:AdrCourlScurs" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdrCourlScurs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AdrCourlScurs" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirNomPreDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnNomPreDispEntree" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnNomPreDispEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaNumDisp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirNomPreDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirNomPreDispResult" type="tns:ParamObtnNomPreDispSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnNomPreDispSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ColctNomPreDisp" type="tns:ArrayOfNomPreDisp" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfNomPreDisp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NomPreDisp" nillable="true" type="tns:NomPreDisp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NomPreDisp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PvcClaDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prenom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifierExistDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_objParamEntre" type="tns:ParamVrifExistDispEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamVrifExistDispEntre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NoPrati" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisNoSeq" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifierExistDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifierExistDispResult" type="tns:ParamVrifExistDispSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamVrifExistDispSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IndDispExist" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ObtenirDispLieIdUtil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_objParamEntre" type="tns:ParamObtnDispLieIdUtilEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnDispLieIdUtilEntre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdUtil" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatServ" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirDispLieIdUtilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirDispLieIdUtilResult" type="tns:ParamObtnDispLieIdUtilSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnDispLieIdUtilSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="IndNoSeq" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomDisp" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PreDisp" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListeDisp" type="tns:ArrayOfDispLieIdUtil" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDispLieIdUtil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DispLieIdUtil" nillable="true" type="tns:DispLieIdUtil" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DispLieIdUtil">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DisNoSeq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PvcClaDisp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisNo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirRelDispIndiv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_objParamEntre" type="tns:ParamObtnRelDispIndivEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnRelDispIndivEntre">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PvcClaDisp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisNoSeq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndNoSeq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatServ" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirRelDispIndivResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirRelDispIndivResult" type="tns:ParamObtnRelDispIndivSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnRelDispIndivSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ListeDisp" type="tns:ArrayOfDispensateur" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDispensateur">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Dispensateur" nillable="true" type="tns:Dispensateur" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Dispensateur">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Individu">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DisNoSeq" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisNo" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="PvcClaDisp" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="PvcTerriPermi" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisChifrPrv" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ProCod" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisDC" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisUtilCreat" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisDatObtnPermi" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisDatInscrRamq" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisAnGrad" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IseNoSeqGrad" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisIndDemCouri" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisIndFactRecen" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DDSpec" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DDPrati" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisNbrAnHqGenrl" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisNbrAnHqSpec" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisDroitAcqTh" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="DisDM" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="DisUtilMaj" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ListCoord" type="tns:ArrayOfCoordonnee" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Individu">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IndNoSeq" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndPre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndNom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndNomTron" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndNas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndDC" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndUtilCreat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndLang" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndTitreCivlt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndSexe" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndDatNaiss" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndNomNaiss" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaCivil" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndDatDeces" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndDM" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndUtilMaj" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirNomPreListeDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnNomPreListeDispEntree" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnNomPreListeDispEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NomPreListeDispEntree" type="tns:ArrayOfNomPreListeDispEntree" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNomPreListeDispEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NomPreListeDispEntree" nillable="true" type="tns:NomPreListeDispEntree" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NomPreListeDispEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DisNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PvcClaDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypIdDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatServ" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirNomPreListeDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirNomPreListeDispResult" type="tns:ParamObtnNomPreListeDispSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnNomPreListeDispSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NomPreListeDispSortie" type="tns:ArrayOfNomPreListeDispSortie" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfNomPreListeDispSortie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NomPreListeDispSortie" nillable="true" type="tns:NomPreListeDispSortie" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NomPreListeDispSortie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Pre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PvcClaDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypIdDisp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirProfNoEnten">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnProfNoEntenEntree" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnProfNoEntenEntree">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NoEnten" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DDPeriode" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DFPeriode" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirProfNoEntenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirProfNoEntenResult" type="tns:ParamObtnProfNoEntenSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnProfNoEntenSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodRetou" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ColDispProf" type="tns:ArrayOfDispProf" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfDispProf">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DispProf" nillable="true" type="tns:DispProf" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DispProf">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PvcClaDisp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndNoSeq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisNoSeq" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DDSpec" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListePerAdmis" type="tns:ArrayOfPerAdmis" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPerAdmis">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PerAdmis" nillable="true" type="tns:PerAdmis" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PerAdmis">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DDPerAdmis" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DFPerAdmis" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaAdmis" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodRaisNonAdmis" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisNoSeq" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeterminerAdmisFactuDisp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamDeterminerAdmisFactuDispEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamDeterminerAdmisFactuDispEntre">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Classe" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoDisp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DDAppliForfa" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DFAppliForfa" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeterminerAdmisFactuDispResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeterminerAdmisFactuDispResult" type="tns:ParamDeterminerAdmisFactuDispSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamDeterminerAdmisFactuDispSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IndAdmis" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PeriodesAdmis" type="tns:ArrayOfAdmisFact" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ObtenirMasvmNoEnten">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtenirMasvmNoEntenEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtenirMasvmNoEntenEntre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NoEntenListeEntree" type="tns:ArrayOfNoEntenListeEntree" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNoEntenListeEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NoEntenListeEntree" nillable="true" type="tns:NoEntenListeEntree" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NoEntenListeEntree">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PvcClaDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DatServ" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirMasvmNoEntenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirMasvmNoEntenResult" type="tns:ParamObtenirMasvmNoEntenSortie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtenirMasvmNoEntenSortie">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="NoEntenListeSortie" type="tns:ArrayOfNoEntenListeSortie" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfNoEntenListeSortie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NoEntenListeSortie" nillable="true" type="tns:NoEntenListeSortie" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NoEntenListeSortie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PvcClaDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoDisp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisNoSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoEnten" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodPrfsn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DDSpec" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirInfoProfGestDem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_paramEntree" type="tns:ParamObtnInfoProfGestDemEntre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnInfoProfGestDemEntre">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NoDisp" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatServ" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenirInfoProfGestDemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenirInfoProfGestDemResult" type="tns:ParamObtnInfoProfGestDemSorti" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamObtnInfoProfGestDemSorti">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodRetou" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ClaProf" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NoProf" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomProf" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PreProf" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="NoEnten" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomEnten" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodSpec" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="NomSpec" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtnInfoDispSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnInfoDisp" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoDispSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnInfoDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoSpecPilotSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnInfoSpecPilot" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoSpecPilotSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnInfoSpecPilotResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirSituPartcDispSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirSituPartcDisp" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirSituPartcDispSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirSituPartcDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoSituPartcPilotSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnInfoSituPartcPilot" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoSituPartcPilotSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnInfoSituPartcPilotResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirCoordDispSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirCoordDisp" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirCoordDispSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirCoordDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirAdrCourlScursSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirAdrCourlScurs" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirAdrCourlScursSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirAdrCourlScursResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirNomPreDispSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirNomPreDisp" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirNomPreDispSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirNomPreDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifierExistDispSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifierExistDisp" />
+  </wsdl:message>
+  <wsdl:message name="VerifierExistDispSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifierExistDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirDispLieIdUtilSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirDispLieIdUtil" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirDispLieIdUtilSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirDispLieIdUtilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirRelDispIndivSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirRelDispIndiv" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirRelDispIndivSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirRelDispIndivResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirNomPreListeDispSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirNomPreListeDisp" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirNomPreListeDispSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirNomPreListeDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirProfNoEntenSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirProfNoEnten" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirProfNoEntenSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirProfNoEntenResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeterminerAdmisFactuDispSoapIn">
+    <wsdl:part name="parameters" element="tns:DeterminerAdmisFactuDisp" />
+  </wsdl:message>
+  <wsdl:message name="DeterminerAdmisFactuDispSoapOut">
+    <wsdl:part name="parameters" element="tns:DeterminerAdmisFactuDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirMasvmNoEntenSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirMasvmNoEnten" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirMasvmNoEntenSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirMasvmNoEntenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirInfoProfGestDemSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoProfGestDem" />
+  </wsdl:message>
+  <wsdl:message name="ObtenirInfoProfGestDemSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoProfGestDemResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InfoDispCnsulSoap">
+    <wsdl:operation name="ObtnInfoDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les statistiques d'un dossier d'analyse</wsdl:documentation>
+      <wsdl:input message="tns:ObtnInfoDispSoapIn" />
+      <wsdl:output message="tns:ObtnInfoDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSpecPilot">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les informations sur une spécialité</wsdl:documentation>
+      <wsdl:input message="tns:ObtnInfoSpecPilotSoapIn" />
+      <wsdl:output message="tns:ObtnInfoSpecPilotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirSituPartcDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les informations particulières d'un dispensateur.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirSituPartcDispSoapIn" />
+      <wsdl:output message="tns:ObtenirSituPartcDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSituPartcPilot">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les informations sur une situation particulière</wsdl:documentation>
+      <wsdl:input message="tns:ObtnInfoSituPartcPilotSoapIn" />
+      <wsdl:output message="tns:ObtnInfoSituPartcPilotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirCoordDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les coordonnées d'un établissement</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirCoordDispSoapIn" />
+      <wsdl:output message="tns:ObtenirCoordDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirAdrCourlScurs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir l'adresse de couriel sécurisé d'un dispensateur</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirAdrCourlScursSoapIn" />
+      <wsdl:output message="tns:ObtenirAdrCourlScursSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNomPreDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir nom et prénom du dispensateur</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirNomPreDispSoapIn" />
+      <wsdl:output message="tns:ObtenirNomPreDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifierExistDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Vérifier l'existence d'un dispensateur</wsdl:documentation>
+      <wsdl:input message="tns:VerifierExistDispSoapIn" />
+      <wsdl:output message="tns:VerifierExistDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDispLieIdUtil">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les dispensateurs liés à un identifiant utilisateur</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirDispLieIdUtilSoapIn" />
+      <wsdl:output message="tns:ObtenirDispLieIdUtilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRelDispIndiv">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les informations sur la relation dispensateur individu</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirRelDispIndivSoapIn" />
+      <wsdl:output message="tns:ObtenirRelDispIndivSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNomPreListeDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir nom et prénom d'une liste de dispensateur</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirNomPreListeDispSoapIn" />
+      <wsdl:output message="tns:ObtenirNomPreListeDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirProfNoEnten">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les professionels selon le numéro d'entente</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirProfNoEntenSoapIn" />
+      <wsdl:output message="tns:ObtenirProfNoEntenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeterminerAdmisFactuDisp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Déterminer l’admissibilité à facturer d’un dispensateur</wsdl:documentation>
+      <wsdl:input message="tns:DeterminerAdmisFactuDispSoapIn" />
+      <wsdl:output message="tns:DeterminerAdmisFactuDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirMasvmNoEnten">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir le numéro d'entente d'un dispensateur</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirMasvmNoEntenSoapIn" />
+      <wsdl:output message="tns:ObtenirMasvmNoEntenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoProfGestDem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtenir les informations du professionnel pour le système GDC</wsdl:documentation>
+      <wsdl:input message="tns:ObtenirInfoProfGestDemSoapIn" />
+      <wsdl:output message="tns:ObtenirInfoProfGestDemSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InfoDispCnsulSoap" type="tns:InfoDispCnsulSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtnInfoDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtnInfoDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSpecPilot">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtnInfoSpecPilot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirSituPartcDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirSituPartcDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSituPartcPilot">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtnInfoSituPartcPilot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirCoordDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirCoordDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirAdrCourlScurs">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirAdrCourlScurs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNomPreDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirNomPreDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifierExistDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/VerifierExistDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDispLieIdUtil">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirDispLieIdUtil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRelDispIndiv">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirRelDispIndiv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNomPreListeDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirNomPreListeDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirProfNoEnten">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirProfNoEnten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeterminerAdmisFactuDisp">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/DeterminerAdmisFactuDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirMasvmNoEnten">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirMasvmNoEnten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoProfGestDem">
+      <soap:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirInfoProfGestDem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InfoDispCnsulSoap12" type="tns:InfoDispCnsulSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtnInfoDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtnInfoDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSpecPilot">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtnInfoSpecPilot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirSituPartcDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirSituPartcDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSituPartcPilot">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtnInfoSituPartcPilot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirCoordDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirCoordDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirAdrCourlScurs">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirAdrCourlScurs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNomPreDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirNomPreDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifierExistDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/VerifierExistDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDispLieIdUtil">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirDispLieIdUtil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRelDispIndiv">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirRelDispIndiv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNomPreListeDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirNomPreListeDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirProfNoEnten">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirProfNoEnten" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeterminerAdmisFactuDisp">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/DeterminerAdmisFactuDisp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirMasvmNoEnten">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirMasvmNoEnten" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoProfGestDem">
+      <soap12:operation soapAction="http://tempuri.org/EPZ3_InfoDisp_ws/InfoDispCnsul/ObtenirInfoProfGestDem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InfoDispCnsul">
+    <wsdl:port name="InfoDispCnsulSoap" binding="tns:InfoDispCnsulSoap">
+      <soap:address location="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InfoDispCnsulSoap12" binding="tns:InfoDispCnsulSoap12">
+      <soap12:address location="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

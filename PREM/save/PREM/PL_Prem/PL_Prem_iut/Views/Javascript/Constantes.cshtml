@@ -1,0 +1,138 @@
+﻿@using RAMQ.PRE.PRE_Entites_cpo;
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+<script>
+    var controlleurPLA1 = {};
+    controlleurPLA1.ObtenirTerritoiresPermis = "@Url.Action("ObtenirTerritoiresPermis", "AvisConformite")";
+    controlleurPLA1.ValidationAvisEnCours = "@Url.Action("ValidationAvisDerogationEnCours", "AvisConformite")";
+    controlleurPLA1.ObtenirAvisAModifier = "@Url.Action("ObtenirAvisAModifier", "AvisConformite")";
+    controlleurPLA1.ObtenirNomTerritoire = "@Url.Action("ObtenirNomTerritoire", "AvisConformite")";
+
+    var controlleurPLA2 = {};
+    controlleurPLA2.ValidationEngagementActif = "@Url.Action("ValidationEngagementActif", "DecisionAvisConformite")";
+    controlleurPLA2.ObtenirNomTerritoire = "@Url.Action("ObtenirNomTerritoire", "DecisionAvisConformite")";
+    controlleurPLA2.ObtenirTextMessageErreur = "@Url.Action("ObtenirTextMessageErreur", "DecisionAvisConformite")";
+    controlleurPLA2.ObtenirDescriptionCodeRaisonStatutEngagement = "@Url.Action("ObtenirDescriptionCodeRaisonStatutEngagementJSon", "DecisionAvisConformite")";
+    controlleurPLA2.ObtenirDerogation = "@Url.Action("ObtenirDerogation", "DecisionAvisConformite")";
+    controlleurPLA2.ObtenirDescriptionTypeDerogation = "@Url.Action("ObtenirDescriptionTypeDerogationJson", "DecisionAvisConformite")";
+    controlleurPLA2.ObtenirAvisConformiteSansAnnulerRevoquer = "@Url.Action("ObtenirAvisConformiteSansAnnulerRevoquer", "DecisionAvisConformite")";
+
+    var controlleurPLC1 = {};
+    controlleurPLC1.ListeTerritoires = "@Url.Action("PLC1_ListeTerritoires", "Rapport")";
+    controlleurPLC1.RedirigerVersRapport = "@Url.Action("PLC1_RedirectionRapport", "Rapport")";
+
+    var controlleurPLC2 = {};
+    controlleurPLC2.ObtenirSection = "@Url.Action("ObtenirSection", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirInformationMedecin = "@Url.Action("ObtenirInformationMedecin", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirEngagementSelonAnnee = "@Url.Action("ObtenirEngagementSelonAnnee", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirPratiqueExclusive = "@Url.Action("ObtenirPratiqueExclusive", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirValeurListeJourneesFacturerRSS = "@Url.Action("ObtenirValeurListeJourneesFacturerRSS", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirInformationEngagement = "@Url.Action("ObtenirInformationEngagement", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirNomRSS = "@Url.Action("ObtenirNomRSS", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirRepartitionPratique = "@Url.Action("ObtenirRepartitionPratique", "ProfilProfessionnel")";
+    controlleurPLC2.ObtenirValeurListeJourneesFacturerTerritoire = "@Url.Action("ObtenirValeurListeJourneesFacturerTerritoire", "ProfilProfessionnel")";
+    controlleurPLC2.ValiderDroitDRMG = "@Url.Action("ValiderDroitDRMG", "ProfilProfessionnel")";
+
+
+    var controlleurPLE1 = {};
+    controlleurPLE1.CreerDemandeReevaluation = "@Url.Action("CreerDemandeReevaluation", "DemandeReevaluation")";
+    controlleurPLE1.ObtenirInformationMedecin = "@Url.Action("ObtenirInformationMedecin", "DemandeReevaluation")";
+    controlleurPLE1.AnnulerDemande = "@Url.Action("AnnulerDemandeReevaluation", "DemandeReevaluation")";
+
+
+    var controlleurCommun = {};
+    controlleurCommun.ObtenirNumerosPratique = "@Url.Action("ObtenirNumerosPratiqueJson", "Commun")";
+    controlleurCommun.ObtenirNomTerritoire = "@Url.Action("ObtenirNomTerritoire", "Commun")";
+    controlleurCommun.ObtenirNomTerritoireSelonAvisConformite = "@Url.Action("ObtenirNomTerritoireSelonAvisConformite", "Commun")";
+    controlleurCommun.ObtenirAvisConformite = "@Url.Action("ObtenirAvisConformite", "Commun")";
+    controlleurCommun.ErreurTechnique = "@Url.Action("ErreurTechnique", "Commun")";
+    controlleurCommun.ObtenirProfessionnelRecherche = "@Url.Action("ObtenirProfessionnelRecherche", "Commun")";
+    controlleurCommun.RetourneMessageTraitement = "@Url.Action("RetourneMessageTraitement", "Commun")";
+    controlleurCommun.ProfessionnelPossedeClasseUn = "@Url.Action("ProfessionnelPossedeClasseUn", "Commun")";
+    controlleurCommun.FormaterDateLong = "@Url.Action("FormaterDateLong", "Commun")";
+
+    var etatAvis = {};
+    etatAvis.Reporter = "@Enumerations.TypeTraitementAvisConformite.Reporter.ToString("D")";
+
+    function FormatterJsonDate(jsonDateString) {
+      return new Date(parseInt(jsonDateString.replace('/Date(', '')));
+    }
+
+    function FormatterDate(date) {
+      var annee = date.getFullYear();
+      var mois = ("0"+(date.getMonth()+1)).slice(-2);
+      var jour = ("0"+(date.getDate())).slice(-2);
+
+      return annee + "-" + mois + "-" + jour;
+    }
+
+    function PlusDeXAnneePasser(dateAVerifier, nombreAnnee) {
+        var aujourdhui = new Date();
+        return dateAVerifier < aujourdhui.setFullYear(aujourdhui.getFullYear() - nombreAnnee);
+    }
+
+    function EstDateValide(valeur, formatDate) {
+        var formatDate = formatDate || 'yyyy-mm-dd',
+
+        delimiteur = /[^mdy]/.exec(formatDate)[0],
+        leFormat = formatDate.split(delimiteur),
+        laDate = valeur.split(delimiteur),
+
+        estDate = function (date, format) {
+            var m, d, y
+            for (var i = 0, len = format.length; i < len; i++) {
+                if (/m/.test(format[i])) m = date[i]
+                if (/d/.test(format[i])) d = date[i]
+                if (/y/.test(format[i])) y = date[i]
+            }
+            return (
+              m > 0 && m < 13 &&
+              y && y.length === 4 &&
+              d > 0 && d <= (new Date(y, m, 0)).getDate()
+            )
+        }
+
+        return estDate(laDate, leFormat)
+    }
+
+    function ErreurTechnique(erreur, message) {
+        if (erreur.statusText != "abort") {
+            window.location.replace(controlleurCommun.ErreurTechnique + "?message=" + message);
+        }
+    }
+
+    function ValiderGroupeSupport() {
+        return @Utilitaire.EstDansGroupe(Configuration.GroupeSupport).ToString().ToLower();
+    }
+
+    function SautDeLigne(nombre) {
+        var saut = "";
+        for (var i = 0; i < nombre; i++) {
+            saut = saut + "<br />";
+        }
+        return saut;
+    }
+
+    function RetourneMessageErreur(numeroMessage, parametres) {
+        parametres = (typeof parametres === 'undefined') ? null : parametres;
+        var messageErreur = "";
+
+        $.ajax({
+            type: 'POST',
+            url: controlleurCommun.RetourneMessageTraitement,
+            async: false,
+            data: {
+                numeroMessage: numeroMessage,
+                parametres: parametres
+            },
+            success: function (message) {
+                messageErreur = message;
+            },
+            error: function (err) {
+                ErreurTechnique(err, "Erreur pendant un appel AJAX dans la fonction JavaScript RetourneMessageErreur");
+            }
+        });
+
+        return messageErreur;
+    }
+
+</script>

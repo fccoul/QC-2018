@@ -1,0 +1,56 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension
+
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PREMCSS")
+    @Styles.Render("~/bundles/PLA2CSS")
+}
+
+@{
+    ViewData["TitrePage"] = "Gérer les suspensions";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(x => x.ModeAffichage)
+    <div class="collection clearfix" id="ZoneGroup">
+
+        <!-- Div contenant le messages informatif -->
+        <div id="MessageInformation" class="alert alert-info cacher" role="alert"></div>
+        @Html.HiddenFor(x => x.IdentiteMedecin)
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel", new { label = "Numéro de pratique" })
+
+        <div class="row">
+            <div class="col-md-8">
+                @Html.HiddenFor(x => x.DescriptionAvisConformite)
+                @Html.EditorFor(x => x.AvisConformite,
+                    "DropDownList", new
+                    {
+                        label = "Avis de conformité",
+                        classe = "select2dropdownlist",
+                        disabled = true
+                    })
+            </div>
+        </div>
+
+        <div class="row" id="ZoneSuspensions" hidden="hidden">
+            <div class="form-group col-md-12">
+                <div id="LabelSuspension">
+                </div>
+                <div class="list-group" id="ListeGroupeSuspension">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
+
+            @section ScriptsBasDepage
+{
+                @Scripts.Render("~/bundles/PLA2_GererSuspension")
+            }

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define RAMQ.GCD.BranchePrinc.RpertConfg="C:\Travail\PRE\Config\Princ"?>
+  <?define RAMQ.GCD.BranchePrinc.Nom="Princ"?>
+  <?define RAMQ.GCD.BranchePrinc.Livraison=""?>
+  <?define RAMQ.GCD.BranchePrinc.ProductCode="$(var.ProductCodes.Princ)"?>
+  <?define RAMQ.GCD.BranchePrinc.UpgradeCode="$(var.UpgradeCodes.Princ)"?>
+  <?define RAMQ.GCD.BranchePrinc.PrefixLivraison=""?>
+</Include>

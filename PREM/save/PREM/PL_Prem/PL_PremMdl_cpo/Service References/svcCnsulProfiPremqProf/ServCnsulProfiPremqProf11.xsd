@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="VerifierAdmissibiliteProfessionnelFacturerEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateDebutPeriode" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinPeriode" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumeroClasse" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDispensateur" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerifierAdmissibiliteProfessionnelFacturerEntre" nillable="true" type="tns:VerifierAdmissibiliteProfessionnelFacturerEntre" />
+  <xs:complexType name="VerifierAdmissibiliteProfessionnelFacturerSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://COD1_V4OutilBase_cpo/2" base="q1:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IndicateurAdmissibilite" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" minOccurs="0" name="PeriodesAdmissibilite" nillable="true" type="q2:ArrayOfAdmissibiliteFacturer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VerifierAdmissibiliteProfessionnelFacturerSorti" nillable="true" type="tns:VerifierAdmissibiliteProfessionnelFacturerSorti" />
+  <xs:complexType name="ObtenirDispensateurIndividuEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateService" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumeroClasseDispensateur" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDispensateur" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroSequentielDispensateur" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielIndividu" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObtenirDispensateurIndividuEntre" nillable="true" type="tns:ObtenirDispensateurIndividuEntre" />
+  <xs:complexType name="ObtenirDispensateurIndividuSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://COD1_V4OutilBase_cpo/2" base="q3:ParamSorti">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AnneesGraduation" nillable="true" type="q4:ArrayOfNullableOfint" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ChiffresPreuveDispensateur" nillable="true" type="q5:ArrayOfNullableOfint" />
+          <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CodesProfession" nillable="true" type="q6:ArrayOfstring" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesCreationDispensateur" nillable="true" type="q7:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesCreationIndividu" nillable="true" type="q8:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesDebutPratique" nillable="true" type="q9:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesDecesIndividu" nillable="true" type="q10:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesInscriptionRamq" nillable="true" type="q11:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesMAJDispensateur" nillable="true" type="q12:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesModificationIndividu" nillable="true" type="q13:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesNaissanceIndividu" nillable="true" type="q14:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesObtentionPermis" nillable="true" type="q15:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DatesPremiereSpecialite" nillable="true" type="q16:ArrayOfNullableOfdateTime" />
+          <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DroitsAcquisTarifHoraire" nillable="true" type="q17:ArrayOfstring" />
+          <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdentifiantUtilisateurModificateurIndividu" nillable="true" type="q18:ArrayOfstring" />
+          <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdentifiantsUtilisateurCreateur" nillable="true" type="q19:ArrayOfstring" />
+          <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdentifiantsUtilisateurModificateur" nillable="true" type="q20:ArrayOfstring" />
+          <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdentifiantsUtilisteurCreateurIndividu" nillable="true" type="q21:ArrayOfstring" />
+          <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IndicateursDemandeCourrier" nillable="true" type="q22:ArrayOfstring" />
+          <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IndicateursFacturationRecente" nillable="true" type="q23:ArrayOfstring" />
+          <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguesIndividu" nillable="true" type="q24:ArrayOfstring" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NombresAnneesExperienceQuebecSpecialiste" nillable="true" type="q25:ArrayOfNullableOfdouble" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NombresAnnneesExperienceHorsQuebec" nillable="true" type="q26:ArrayOfNullableOfdouble" />
+          <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NomsIndividu" nillable="true" type="q27:ArrayOfstring" />
+          <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NomsNaissanceIndividu" nillable="true" type="q28:ArrayOfstring" />
+          <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NomsTronqueIndividu" nillable="true" type="q29:ArrayOfstring" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NumeroAssuranceSocialeIndividu" nillable="true" type="q30:ArrayOfNullableOflong" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NumerosClasseDispensateur" nillable="true" type="q31:ArrayOfNullableOfint" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NumerosDispensateur" nillable="true" type="q32:ArrayOfNullableOfint" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NumerosSequentielDispensateur" nillable="true" type="q33:ArrayOfNullableOflong" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NumerosSequentielIndividu" nillable="true" type="q34:ArrayOfNullableOflong" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="NumerosSequentielIntervenantGraduation" nillable="true" type="q35:ArrayOfNullableOflong" />
+          <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PrenomsIndividu" nillable="true" type="q36:ArrayOfstring" />
+          <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SexeIndividu" nillable="true" type="q37:ArrayOfstring" />
+          <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StatutsCivilIndividu" nillable="true" type="q38:ArrayOfstring" />
+          <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TerritoiresPermis" nillable="true" type="q39:ArrayOfstring" />
+          <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TitreCiviliteIndividu" nillable="true" type="q40:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObtenirDispensateurIndividuSorti" nillable="true" type="tns:ObtenirDispensateurIndividuSorti" />
+  <xs:complexType name="ObtenirVuePeriodeEngagementEntre">
+    <xs:sequence>
+      <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NumerosSequenceDispensateur" nillable="true" type="q41:ArrayOflong" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObtenirVuePeriodeEngagementEntre" nillable="true" type="tns:ObtenirVuePeriodeEngagementEntre" />
+  <xs:complexType name="ObtenirVuePeriodeEngagementSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://COD1_V4OutilBase_cpo/2" base="q42:ParametreSorti">
+        <xs:sequence>
+          <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" minOccurs="0" name="EngagementsPeriode" nillable="true" type="q43:ArrayOfEngagementPeriode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObtenirVuePeriodeEngagementSorti" nillable="true" type="tns:ObtenirVuePeriodeEngagementSorti" />
+</xs:schema>

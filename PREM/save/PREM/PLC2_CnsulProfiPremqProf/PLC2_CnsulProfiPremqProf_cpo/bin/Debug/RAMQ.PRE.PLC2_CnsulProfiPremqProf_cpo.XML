@@ -1,0 +1,728 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.HistoriqueEngagement">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.HistoriqueEngagement.PeriodeEngagementsAbsence" -->
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.HistoriqueEngagement.DatePremiereFacturation">
+            <summary>
+            informations sur les periode de pratique - date 1ère facturation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.HistoriqueEngagement.InformationProfessionnel">
+            <summary>
+            information sur le professionel
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.PeriodeComparer">
+            <summary>
+            comparateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ChevauchementPeriode">
+            <summary>
+            Chevauchement de periode dans l'historique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ChevauchementPeriode.SupprimerPeriodeAbs">
+            <summary>
+            liste des periodes d'absence à supprimer de l'historique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ChevauchementPeriode.AjouterPeriodeAbs">
+            <summary>
+            liste des periodes d'absence à ajouter dans l'historique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration">
+            <summary>
+            Classe d'une entité d'une réduction à la rémunération
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.NumeroSequentielReduction">
+            <summary>
+            Numéro séquentiel de réduction
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.RaisonReduction">
+            <summary>
+            Raison de la réduction
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.TypeReduction">
+            <summary>
+            Type de la réduction
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.EstExemption">
+            <summary>
+            Est exemption
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites.ReductionRemuneration.RaisonExemption">
+            <summary>
+            Raison de l'exemption
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf">
+            <summary> 
+             Interface de consultation du profil PREM des professionnels
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-16
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf.ObtenirLesEngagementsPratiquesProfessionnel(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre)">
+            <summary>
+            Permet d'obtenir les engagements de pratique du professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Les engagement de pratique d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf.ObtenirPeriodePratiqueProfessionnel(RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre)">
+            <summary>
+            Permet d'obtenir la période de pratique d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Les informations de la période de pratique d'un professionnel</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf.ValiderProfessionnel(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre)">
+            <summary>
+            Permet de valider les informations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entré</param>
+            <returns>Liste de messages</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf.CalculerNombreJourneeFacturation(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Permet de calculer le nombre de journée de facturation
+            </summary>
+            <param name="intrant">Paramètres d'entré</param>
+            <returns>Journées facturés</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf.ObtenirReductionRemuneration(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre)">
+            <summary>
+            Permet d'obtenir la réduction à la rémunération
+            </summary>
+            <param name="intrant">Paramètres d'entré</param>
+            <returns>Réduction à la rémunération</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.ICnsulProfiPremqProf.ObtenirPourcentageMaximum">
+            <summary>
+            Permet d'obtenir le pourcentage maximum
+            </summary>
+            <returns>Pourcentage maximum</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf">
+            <summary> 
+             Consultation du profil PREM des professionnels
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-16
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.#ctor(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique,RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IPeriodePratique,RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation,RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite,RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Validations.IValidations,RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IJourneeFacturation,RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IReductionRemuneration)">
+            <summary>
+            Constructeur pour l'obtention des engagement de pratique
+            </summary>
+            <param name="engagementPratique"></param>
+            <param name="periodePratique"></param>
+            <param name="derogation"></param>
+            <param name="admissibilite"></param>
+            <param name="validations"></param>
+            <param name="journeeFacturation"></param>
+            <param name="reductionRemuneration"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.ObtenirLesEngagementsPratiquesProfessionnel(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre)">
+            <summary>
+            Permet d'obtenir les engagements de pratique du professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Les engagement de pratique d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.ObtenirPeriodePratiqueProfessionnel(RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre)">
+            <summary>
+            Permet d'obtenir la période de pratique d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Les informations de la période de pratique d'un professionnel</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.ValiderProfessionnel(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre)">
+            <summary>
+            Permet de valider les informations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entré</param>
+            <returns>Liste de messages</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.CalculerNombreJourneeFacturation(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Permet de calculer le nombre de journée de facturation
+            </summary>
+            <param name="intrant">Paramètres d'entré</param>
+            <returns>Journées facturés</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.ObtenirReductionRemuneration(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre)">
+            <summary>
+            Permet d'obtenir la réduction à la rémunération
+            </summary>
+            <param name="intrant">Paramètres d'entré</param>
+            <returns>Réduction à la rémunération</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.CnsulProfiPremqProf.ObtenirPourcentageMaximum">
+            <summary>
+            Permet d'obtenir le pourcentage maximum
+            </summary>
+            <returns>Pourcentage maximum</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ObtenirPourcentageMaximumSorti">
+            <summary>
+            Paramètre d'entré pour l'obtention du pourcentage maximum
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ObtenirPourcentageMaximumSorti.PourcentageMaximum">
+            <summary>
+            Pourcentage maximum
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre">
+            <summary>
+            Classe de paramètre d'entrer pour la réduction de la rémunération
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre.NumeroSequentielMedecin">
+            <summary>
+            Numéro séquentiel du médecin omnipraticien
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre.RpprUniquement">
+            <summary>
+            RPPR Uniquement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationSorti">
+            <summary>
+            Classe de paramètre de sortie pour la réduction à la rémunération
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationSorti.ReductionRemunerations">
+            <summary>
+            Liste de réduction à la rémunération
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre">
+            <summary>
+            Classe de paramètre d'entrer pour la validation du professionnel
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre.DateDeces">
+            <summary>
+            Date de décès
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre.DatePremiereSpecialite">
+            <summary>
+            Date de première spécialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre.NumeroDispensateur">
+            <summary>
+            Numéro du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre.NumeroClasseDispensateur">
+            <summary>
+            Numéro de classe du dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelSorti">
+            <summary>
+            Classe de paramètre de sortie pour la validation du professionnel
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Constante">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Constante.DateDebutPREM">
+            <summary>
+            Date de debut Annee PREM
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Constante.TypeNonParticipation">
+            <summary>
+            Non-Participation
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IReductionRemuneration">
+            <summary>
+            Interface de la réduction à la rémunération
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IReductionRemuneration.ObtenirReductionRemuneration(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre)">
+            <summary>
+            Obtenir la réduction à la rémunération
+            </summary>
+            <param name="intrant">Paramètre d'entrer</param>
+            <returns>Réductions à la rémunération</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IJourneeFacturation">
+            <summary>
+            Interface pour faire l'obtention du calcule du nombre de journée de facturation
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IJourneeFacturation.CalculerNombreJourneeFacturation(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Permet de faire l'appel au calcule du nombre de journée de facturation
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Le calcule des journées facturé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IJourneeFacturation.ObtenirPourcentageMaximum">
+            <summary>
+            Permet d'obtenir le pourcentage maximum
+            </summary>
+            <returns>Pourcentage maximum</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique">
+            <summary> 
+             Interface des engagements de pratiques
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirLesEngagementsPratiquesProfessionnel(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre)">
+            <summary>
+            Permet d'obtenir les engagements de pratique du professionnel
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Les engagement de pratique d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirPeriodePratiqueProfessionnel(System.Int64)">
+            <summary>
+            Permet d'obtenir les période de pratique d'un professionnel
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Période de pratique</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirDerogations(System.Int64)">
+            <summary>
+            Permet d'obtenir les dérogations
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Liste de dérogation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirLesAvisConformite(System.Int64)">
+            <summary>
+            Permet d'obtenir les avis de conformités
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Liste des avis de conformités</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirAutorisations(System.Int64)">
+            <summary>
+            Permet d'obtenir les autorisations
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Liste des autorisations</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirPeriodeEngagementsAbsenceProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementEntre)">
+            <summary>
+            Permet l'obtention des périodes d'engagement et absences du professionnel de la santé
+            </summary>
+            <param name="intrant"></param>
+            <returns>Liste des engagements et absences d'avis></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirInformationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+            Obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <param name="intrant">Les critères de recherche</param>
+            <returns>Une liste avec les informations des professionnels</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirDateDebutHistoriqueEngagementAbs(System.Int64)">
+            <summary>
+            Permet d'obtenir la date de debut de l'historique d'engagement du medecin omnipraticien en cas d'absence
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirlesPeriodesNonParticipation(System.Int64,System.Int32,System.DateTime)">
+            <summary>
+            Permet d'obtenir les periodes de non participation du medecin omnipraticien
+            </summary>
+            <param name="numeroDispensateur"></param>
+            <param name="numeroClasseDispensateur"></param>
+            <param name="datePrevue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirEngagementPratiquesFormate(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique})">
+            <summary>
+            permet de formatter la liste des engagements fusionnés avec les periodes absence et Non participation
+            </summary>
+            <param name="intrant"></param>
+            <param name="engagementPratiqueFusionnes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ConstruireChevauchementPeriodeAbsEtNonParticipation(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            ajout ou suppression de periodes d'absence d'avis dans l'historique
+            </summary>
+            <param name="periodesAbs"></param>
+            <param name="periodesNPAR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IEngagementPratique.ObtenirDateDebuthistoriqueDansAvis(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite)">
+            <summary>
+            permet d'obtenir la date de debut dans l'historique d'un avis en particulier
+            </summary>
+            <param name="intrantVue"></param>
+            <param name="statutavis"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IPeriodePratique">
+            <summary> 
+             Interface des période de pratique
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IPeriodePratique.ObtenirPeriodePratiqueProfessionnel(RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre)">
+            <summary>
+            Permet d'obtenir la période de pratique d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Les informations de la période de pratique d'un professionnel</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.JourneeFacturation">
+            <summary>
+            Classe pour faire l'obtention du calcule du nombre de journée de facturation
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.JourneeFacturation.#ctor(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.ICalculerNbrJrFactProfs)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="calculerNombreJourneeFacturation">Instance de Calculer le nombre de journée de facturation</param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.JourneeFacturation.CalculerNombreJourneeFacturation(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Permet de faire l'appel au calcule du nombre de journée de facturation
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Le calcule des journées facturé</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.JourneeFacturation.ObtenirPourcentageMaximum">
+            <summary>
+            Permet d'obtenir le pourcentage maximum
+            </summary>
+            <returns>Pourcentage maximum</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique">
+            <summary> 
+             Classe des engagements de pratiques
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.#ctor(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IPeriodePratique,RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite,RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.IObtenirNomTerritoireFactory,RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation,RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.IAutorisation,RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.Interface.IJourneeFacturation,RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IEngagementAbence,RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel,RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.AvisConformites">
+            <summary>
+            Liste des avis de conformité
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.AvisRevoques">
+            <summary>
+            Liste des avis de conformité révoqués
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.Derogations">
+            <summary>
+            Liste des dérogations d'un professionnel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.Autorisations">
+            <summary>
+            Liste des autorisation d'un professionnel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.MessageErreurs">
+            <summary>
+            Liste de message d'erreur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.CreerNombreAleatoire">
+            <summary>
+            Permet de créer un nombre aléatoire
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirLesEngagementsPratiquesProfessionnel(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre)">
+            <summary>
+            Permet d'obtenir les engagements de pratique du professionnel
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Les engagement de pratique d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirEngagementPratiquesFormate(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique})">
+            <summary>
+            permet de formatter la liste des engagements fusionnés avec les periodes absence et Non participation
+            </summary>
+            <param name="intrant"></param>
+            <param name="engagementPratiqueFusionnes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirPeriodePratiqueProfessionnel(System.Int64)">
+            <summary>
+            Permet d'obtenir les période de pratique d'un professionnel
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Période de pratique</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirDerogations(System.Int64)">
+            <summary>
+            Permet d'obtenir les dérogations
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Liste des dérogations</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirLesAvisConformite(System.Int64)">
+            <summary>
+            Permet d'obtenir les avis de conformités
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Liste des avis de conformités</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirAutorisations(System.Int64)">
+            <summary>
+            Permet d'obtenir les autorisations
+            </summary>
+            <param name="numeroSequenceDispensateur">Numéro de séquence du dispensateur</param>
+            <returns>Liste des autorisations</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirInformationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+            Obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <param name="intrant">Les critères de recherche</param>
+            <returns>Une liste avec les informations des professionnels</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirPeriodeEngagementsAbsenceProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementEntre)">
+            <summary>
+            Permet l'obtention des périodes d'engagement et absences du professionnel de la santé
+            </summary>
+            <param name="intrant"></param>
+            <returns>Liste des engagements et absences d'avis></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirlesPeriodesNonParticipation(System.Int64,System.Int32,System.DateTime)">
+            <summary>
+            Permet d'obtenir les periodes de non participation du medecin omnipraticien
+            </summary>
+            <param name="numeroDispensateur"></param>
+            <param name="numeroClasseDispensateur"></param>
+            <param name="datePrevue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ConstruireChevauchementPeriodeAbsEtNonParticipation(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            ajout ou suppression de periodes d'absence d'avis dans l'historique
+            </summary>
+            <param name="periodesAbs"></param>
+            <param name="periodesNPAR"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirDateDebuthistoriqueDansAvis(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite)">
+            <summary>
+            permet d'obtenir la date de debut dans l'historique d'un avis en particulier
+            </summary>
+            <param name="intrantVue"></param>
+            <param name="statutavis"></param>        
+            <returns>si true,on charge la date de debut du statut </returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.EngagementPratique.ObtenirDateDebutHistoriqueEngagementAbs(System.Int64)">
+            <summary>
+            Permet d'obtenir la date de debut de l'historique d'engagement du medecin omnipraticien en cas d'abscence
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.PeriodePratique">
+            <summary> 
+             Classe des période de pratique
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.PeriodePratique.#ctor(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.PeriodePratique.ObtenirPeriodePratiqueProfessionnel(RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre)">
+            <summary>
+            Permet d'obtenir la période de pratique d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Les informations de la période de pratique d'un professionnel</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.ReductionRemuneration">
+            <summary>
+            Classe de la réduction à la rémunération
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.ReductionRemuneration.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Professionnel.ReductionRemuneration.ObtenirReductionRemuneration(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ReductionRemunerationEntre)">
+            <summary>
+            Obtenir la réduction à la rémunération
+            </summary>
+            <param name="intrant">Paramètre d'entrer</param>
+            <returns>Réductions à la rémunération</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Utilitaire.Mappeur">
+            <summary> 
+             Mappeur
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre,RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre en PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti,RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti@)">
+            <summary>
+             Map un objet PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti en PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Validations.IValidations">
+            <summary> 
+             Classe de validations
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Validations.IValidations.ValiderProfessionnel(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre)">
+            <summary>
+            Valider le professionnel
+            </summary>
+            <param name="informationProfessionnel">Information du professionnel</param>
+            <returns>Liste de messages</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Validations.Validations">
+            <summary> 
+             Classe de validations
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Validations.Validations.#ctor(RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations,RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite,RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Validations.Validations.ValiderProfessionnel(RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres.ValiderProfessionnelEntre)">
+            <summary>
+            Valider le professionnel
+            </summary>
+            <param name="informationProfessionnel">Information du professionnel</param>
+            <returns>Liste de messages</returns>
+        </member>
+    </members>
+</doc>

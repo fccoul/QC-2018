@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f0e4fe45-4dbb-4d89-9bcd-42185142e865" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServObtnInfoLocal.xsd" MetadataType="Schema" ID="4c6e43ee-3935-46b9-bfb0-e3286d82f7c6" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServObtnInfoLocal1.xsd" MetadataType="Schema" ID="f653db0b-8094-4717-a1f0-3bec4947d5c3" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServObtnInfoLocal2.xsd" MetadataType="Schema" ID="9ed3ffe2-0f0d-4e05-8ff7-1b9e12856e82" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServObtnInfoLocal.wsdl" MetadataType="Wsdl" ID="9e791d30-907d-4a00-9892-46e8c2a33229" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?wsdl" />
+    <MetadataFile FileName="ServObtnInfoLocal.disco" MetadataType="Disco" ID="2f05746a-1d63-4c97-a92f-038c5f8da90a" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?disco" />
+    <MetadataFile FileName="ServObtnInfoLocal3.xsd" MetadataType="Schema" ID="bb5b631c-5032-44ea-a276-a540b74fb1d6" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServObtnInfoLocal4.xsd" MetadataType="Schema" ID="d9ea1437-96a0-4985-bb98-e8b929090b88" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

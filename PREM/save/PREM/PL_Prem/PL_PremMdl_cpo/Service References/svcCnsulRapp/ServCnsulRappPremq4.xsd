@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Enumerations.TypeFichierSortieRapport">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="XML" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.TypeFichierSortieRapport" nillable="true" type="tns:Enumerations.TypeFichierSortieRapport" />
+</xs:schema>

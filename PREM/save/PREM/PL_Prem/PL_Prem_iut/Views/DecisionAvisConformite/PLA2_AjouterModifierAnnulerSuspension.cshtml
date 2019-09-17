@@ -1,0 +1,123 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Suspension
+@using RAMQ.PRE.PL_Prem_iut.Entite;
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+@using Enum = RAMQ.PRE.PRE_Entites_cpo.Enumerations;
+
+@{
+    var texteBouton = String.Empty;
+    switch (Model.ModeAffichage)
+    {
+        case Enum.TypeTraitementSuspension.Ajouter:
+            ViewData["TitrePage"] = "Ajouter une suspension";
+            texteBouton = "Transmettre";
+            break;
+        case Enum.TypeTraitementSuspension.Annuler:
+            ViewData["TitrePage"] = "Annuler une suspension";
+            texteBouton = "Annuler la suspension";
+            break;
+        case Enum.TypeTraitementSuspension.Modifier:
+            ViewData["TitrePage"] = "Modifier une suspension";
+            texteBouton = "Transmettre";
+            break;
+    }
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "AjouterModifierAnnulerSuspensionForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.ModeAffichage);
+    <div role="group" class="collection">
+        <dl>
+            <dt>@Html.Label("Identification du médecin")</dt>
+            <dd>
+                @Html.HiddenFor(x => x.IdentiteMedecin)
+                @Html.Raw(Model.IdentiteMedecin)
+                <br />
+                <br />
+            </dd>
+            @{
+                if (Model.ModeAffichage == Enum.TypeTraitementSuspension.Ajouter)
+                {
+                    <dd>
+                        <div class="row">
+                            <div class="col-md-8">
+                                @Html.EditorFor(x => x.Type, "DropDownList", new { label = "Type de suspension", classe = "select2dropdownlist", data = Model.Types })
+                            </div>
+                        </div>
+                    </dd>
+
+                }
+                else
+                {
+                    <dt>@Html.Label("Type de suspension")</dt>
+                    <dd>
+                        @Html.Raw(Model.Type)
+                        <br />
+                        <br />
+                    </dd>
+                }
+
+            }
+
+            @{
+                if (Model.ModeAffichage == Enum.TypeTraitementSuspension.Modifier || Model.ModeAffichage == Enum.TypeTraitementSuspension.Ajouter)
+                {
+                    <dd>
+                        @Html.EditorFor(x => x.DateDebut, "DatePicker", new { placeholder = "AAAA-MM-JJ" })
+                    </dd>
+                    <dd>
+                        @Html.EditorFor(x => x.DateFin, "DatePicker", new { placeholder = "AAAA-MM-JJ" })
+                    </dd>
+                }
+                else
+                {
+                    <dt>@Html.Label("Date de début")</dt>
+                    <dd>
+                        @if (Model.DateDebut.HasValue)
+                        {
+                            @Html.HiddenFor(x => x.DateDebut)
+                            @Html.Raw(Model.DateDebut.Value.ToShortDateString());
+                        }
+                        else
+                        { @Html.Raw(null);
+                        }
+                        <br />
+                        <br />
+                    </dd>
+                    <dt>@Html.Label("Date de fin")</dt>
+                        <dd>
+                            @if (Model.DateFin.HasValue)
+                            {
+                                @Html.HiddenFor(x => x.DateFin)
+                                @Html.Raw(Model.DateFin.Value.ToShortDateString());
+                            }
+                            else
+                            { @Html.Raw(null);
+                            }
+                            <br />
+                            <br />
+                        </dd>
+                }
+
+            }
+            <dt>@Html.EditorFor(x => x.EstRenseignementConfirmer, "Boolean", new { label = "Je confirme que les renseignements transmis réflète la décision prise." })</dt>
+        </dl>
+
+        <!-- Bouton -->
+        <div class="row">
+            <div class="form-group col-md-4">
+                <button id="BoutonGenerique" name="singlebutton" class="btn btn-primary btn-success" type="submit"><i class="fa fa-check" aria-hidden="true"></i> @texteBouton</button>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-6">
+                <a href="@Url.Action("PLA2_GererSuspension", "DecisionAvisConformite")" id="RetourGererSuspension" class="btn btn-primary btn-block" role="button">Gérer les suspensions</a>
+            </div>
+        </div>
+    </div>
+                }
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA2_AjouterModifierAnnulerSuspension")
+}

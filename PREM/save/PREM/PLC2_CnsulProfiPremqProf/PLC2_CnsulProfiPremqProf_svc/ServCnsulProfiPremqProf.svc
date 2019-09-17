@@ -1,0 +1,5 @@
+﻿<%@ ServiceHost Language="C#" 
+                Debug="false" 
+                Service="RAMQ.PRE.PLC2_CnsulProfiPremqProf_svc.ServCnsulProfiPremqProf, RAMQ.PRE.PLC2_CnsulProfiPremqProf_svc" 
+                Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf"
+                CodeBehind="ServCnsulProfiPremqProf.svc.cs" %>

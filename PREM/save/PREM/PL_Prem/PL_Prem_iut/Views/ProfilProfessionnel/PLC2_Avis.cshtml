@@ -1,0 +1,95 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement
+@using RAMQ.PRE.PL_Prem_iut.Entite;
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+@section HautDePage{}
+
+@Styles.Render("~/bundles/PREMCSS")
+@Styles.Render("~/bundles/PLC2CSS")
+
+@Html.Partial("Chargement")
+
+@{
+    ViewBag.TitrePage = "Profil de pratique";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div role="group" class="collection">
+
+        <!-- Div contenant le messages informatif -->
+        <div class="row">
+            <div class="col-md-8">
+                <div id="MessageInformation" class="alert alert-info cacher" role="alert">
+                </div>
+            </div>
+        </div>
+
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel", new { gridClass = "col-md-3" })
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <div id="informationMedecin">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div role="group" class="collection" id="sectionTableau">
+       
+        <ul class="nav nav-tabs">
+            <li class="active tabulation"><a data-toggle="tab"  class="nav-link" data_id="HistoriqueEngagement" href="#HistoriqueEngagement">Historique des engagements du médecin</a></li>
+            <li class="tabulation"><a data-toggle="tab" class="nav-link" data_id="RepartitionPratique" href="#RepartitionPratique">Répartition de la pratique</a></li>
+            <li class="tabulation"><a data-toggle="tab" class="nav-link" data_id="PratiqueExclusive" href="#PratiqueExclusive">Pratique exclusive</a></li>
+            
+            @{ //Permet d'afficher l'onglet selon la clé de configuration dans appSetting.config selon l'environnement
+                if (Utilitaire.ConvertirStringEnBoolean(Configuration.AfficherOngletRPPR))
+                {
+                    <li class="tabulation"><a data-toggle="tab" class="nav-link" data_id="RegionPratiquePartielleRestreinte" href="#RegionPratiquePartielleRestreinte">Région à pratique partielle restreinte</a></li>
+                }
+            }
+            
+            @*TODO : Remettre l'appel lorsque la réduction à la rémunération sera à livrer*@
+            @*<li class="tabulation"><a data-toggle="tab" class="nav-link" data_id="ReductionRemuneration" href="#ReductionRemuneration">Réduction de la rémunération</a></li>*@
+        </ul>
+
+        <div class="tab-content">
+            <div id="HistoriqueEngagement" class="tab-pane active">
+                <div id="HistoriqueEngagementDiv" data-request-url="@Url.Action("PLC2_HistoriqueEngagement", "ProfilProfessionnel")">
+                </div>
+            </div>
+
+            @*Faire le tableau dans une boucle*@
+            <div id="RepartitionPratique" class="tab-pane fade">
+                <div id="RepartitionPratiqueDiv" data-request-url="@Url.Action("PLC2_RepartitionPratique", "ProfilProfessionnel")">
+                </div>                
+            </div>
+            <div id="PratiqueExclusive" class="tab-pane fade">
+                <div id="PratiqueExclusiveDiv" data-request-url="@Url.Action("PLC2_PratiqueExclusive", "ProfilProfessionnel")">
+                </div>
+
+            </div>
+            <div id="RegionPratiquePartielleRestreinte" class="tab-pane fade">
+                <div id="RegionPratiquePartielleRestreinteDiv" data-request-url="@Url.Action("PLC2_RegionPratiquePartielleRestreinte", "ProfilProfessionnel")">
+                </div>
+
+            </div>
+            @*// TODO : Remettre l'appel lorsque la réduction à la rémunération sera à livrer*@
+            @*<div id="ReductionRemuneration" class="tab-pane fade">
+                <div id="ReductionRemunerationDiv" data-request-url="@Url.Action("PLC2_ReductionRemuneration", "ProfilProfessionnel")">
+                </div>
+            </div>*@
+        </div>
+
+    </div>
+
+}
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLC2")
+}

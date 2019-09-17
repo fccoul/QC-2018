@@ -1,0 +1,2036 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PL_LogiqueAffaire_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.AbsenceAvis.AbsenceAvis">
+            <summary>
+            Absence Avis
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AbsenceAvis.AbsenceAvis.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AbsenceAvis.AbsenceAvis.ObtenirListeEngagementsEtAbsencesAvis(RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre)">
+            <summary>
+            Permet d'obtenir une liste des engagements et/ou absences d'avis d'un professionnel
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Une liste des engagements et/ou absences d'avis d'un professionnel</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.AbsenceAvis.IAbsenceAvis">
+            <summary>
+            Interfac AbsenceAvis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.Admissibilite">
+            <summary> 
+             Classe des admissibilités
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.Admissibilite.#ctor(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.Admissibilite.VerifierAdmissibiliteProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Permet de vérifier les admissibilités d'un professionnel
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>La vérification des admissibilités</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite">
+            <summary> 
+             Interface des admissibilités
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Admissibilite.IAdmissibilite.VerifierAdmissibiliteProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Permet d'obtenir les information sur l'admissibilité du professionnel à facturer
+            </summary>
+            <param name="intrant">Information du professionnel</param>
+            <returns>Les information sur l'admissibilité du professionnel à facturer</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.Autorisation">
+            <summary>
+            Classe regroupant les différentes actions possibles à faire sur une autorisation PREMQ.
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.Autorisation.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.Autorisation.ObtenirAutorisationPREMQ(RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelEntre)">
+            <summary>
+            Fonction permettant d'obtenir une liste d'autorisation.
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Retourne les informations de l'obtention d'autorisation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.Autorisation.ModifierAutorisation(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre)">
+            <summary>
+            Permet de modifier une Autorisation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Information de l'autorisation.</param>
+            <returns>Le nouveau numéro de séquence de la dérogation.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.IAutorisation">
+            <summary>
+             Interface pour la gestion des autorisations
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.IAutorisation.ObtenirAutorisationPREMQ(RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelEntre)">
+            <summary>
+            Fonction permettant d'obtenir une liste d'autorisation.
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Retourne les informations de l'obtention d'autorisation</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.IAutorisation.ModifierAutorisation(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre)">
+            <summary>
+            Permet de modifier une Autorisation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Information de l'autorisation.</param>
+            <returns>Le nouveau numéro de séquence de la dérogation.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.Extensions.IAutorisationExtensions">
+            <summary>
+            Classe d'extension de l'interface IAutorisation.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.Extensions.IAutorisationExtensions.ValiderNonNull(RAMQ.PRE.PL_LogiqueAffaire_cpo.Autorisation.IAutorisation,System.String)">
+            <summary>
+            Permet de valider si notre interface est nulle.
+            </summary>
+            <param name="value">L'interface à vérifier.</param>
+            <param name="paramName">Nom du paramètre.</param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite">
+            <summary> 
+             Classe des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ObtenirLesAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet d'obtenir une liste des avis de conformité et de leurs statuts
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierPeriodeAvis(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de modifier la période d'un avis de conformité et son statut
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de modification de l'avis de conformité</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.CreerStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre)">
+            <summary>
+            Permet de créer un statut de l'engagement
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de la création du statut de l'engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre)">
+            <summary>
+            Permet de modifier le statut d'un avis de conformité
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de modification du statut de l'avis de conformité</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierRaisFermStatutEngag(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagEntre)">
+            <summary>
+            Permet de modifier la raison de fermeture du statut de l'engagement
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConfEntre)">
+            <summary>
+            Permet de modifier un avis de conformite
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ModifierAvisConformiteStatut(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteStatutEntre)">
+            <summary>
+             Permet la modification des avis de conformités et de ses statuts
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.CreerAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre)">
+            <summary>
+             Permet la création des avis de conformités
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.AvisConformite.ObtenirStatutsEngagementPratiqueRSS(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+            Permet de faire l'obtention de la liste des statuts engagement pratique RSS 
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des statuts engagement pratique RSS</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite">
+            <summary> 
+             Interface des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ObtenirLesAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre)">
+            <summary>
+            Permet d'obtenir une liste des avis de conformité et de leurs statuts
+            </summary>
+            <Parametre name="intrant">Parametreètre d'entré</Parametre>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierPeriodeAvis(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+            Permet de modifier la période d'un avis de conformité et son statut
+            </summary>
+            <Parametre name="intrant">Parametreètre d'entré</Parametre>
+            <returns>Retourne les informations de modification de l'avis de conformité</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.CreerStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre)">
+            <summary>
+            Permet de créer un statut de l'engagement
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de la création du statut de l'engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierStatutAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre)">
+            <summary>
+            Permet de modifier le statut d'un avis de conformité
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Retourne les informations de modification du statut de l'avis de conformité</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierRaisFermStatutEngag(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagEntre)">
+            <summary>
+            Permet de modifier la raison de fermeture du statut de l'engagement
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConfEntre)">
+            <summary>
+            Permet de modifier un avis de conformite
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ModifierAvisConformiteStatut(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteStatutEntre)">
+            <summary>
+             Permet la modification des avis de conformités et de ses statuts
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.CreerAvisConformite(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre)">
+            <summary>
+             Permet la création des avis de conformités
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite.ObtenirStatutsEngagementPratiqueRSS(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+            Permet de faire l'obtention de la liste des statuts engagement pratique RSS 
+            </summary>
+            <param name="intrant">Paramètres d'entrée</param>
+            <returns>Liste des statuts engagement pratique RSS</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.CaracteristiquePratique.CaracteristiquePratique">
+            <summary>
+            CaracteristiquePratique
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.CaracteristiquePratique.CaracteristiquePratique.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.CaracteristiquePratique.CaracteristiquePratique.ObtenirCaracteristiquesPratique(RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre)">
+            <summary>
+            Permet d'obtenir les caractéristiques pratique RSS
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Liste des caractéristiques pratique</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.CaracteristiquePratique.ICaracteristiquePratique">
+            <summary>
+            Interface CaracteristiquePratique
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.CaracteristiquePratique.ICaracteristiquePratique.ObtenirCaracteristiquesPratique(RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre)">
+            <summary>
+            Permet d'obtenir les caractéristiques pratique RSS
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Liste des caractéristiques pratique</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.DemandeReevaluation">
+            <summary> 
+             Classe des demandes de réévaluation
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Mars 2018
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.DemandeReevaluation.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.DemandeReevaluation.ObtenirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <summary>
+            Permet d'obtenir une liste des demandes de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.DemandeReevaluation.ModifierDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ModifierDemandeReevaluationEntre)">
+            <summary>
+            Permet de modifier une demande de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.DemandeReevaluation.AnnulerDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <summary>
+            Permet d'annuler une demande de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.DemandeReevaluation.CreerDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.CreerDemandeReevaluationEntre)">
+            <summary>
+            Permet de créer une demande de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.IDemandeReevaluation">
+            <summary> 
+             Interface de la classe des demandes de réévaluation
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Mars 2018
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.IDemandeReevaluation.AnnulerDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <summary>
+            Permet d'annuler une demande de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.IDemandeReevaluation.CreerDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.CreerDemandeReevaluationEntre)">
+            <summary>
+            Permet de creer une demande de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.IDemandeReevaluation.ModifierDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ModifierDemandeReevaluationEntre)">
+            <summary>
+            Permet de modifier une demande de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.DemandeReevaluation.IDemandeReevaluation.ObtenirDemandeReevaluation(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <summary>
+            Permet d'obtenir une liste des demandes de réévaluation
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation">
+            <summary> 
+             Classe des dérogations
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.ObtenirDerogationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre)">
+            <summary>
+            Permet d'obtenir les dérogations d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Liste des dérogations d'un professionnel de la santé</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.ModifierDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Permet de modifier une dérogation d'un professionnel de la santé
+            </summary>
+            <param name="intrant">Information de la dérogation</param>
+            <returns>Le nouveau numéro de séquence de la dérogation</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.Derogation.CreerDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre)">
+            <summary>
+            Permet de créer une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrées.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation">
+            <summary> 
+             Interface des dérogations
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation.ModifierDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre)">
+            <summary>
+            Permet de modifier une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Information de la dérogation.</param>
+            <returns>Le nouveau numéro de séquence de la dérogation.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation.ObtenirDerogationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre)">
+            <summary>
+            Permet d'obtenir les dérogations d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrées.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Derogation.IDerogation.CreerDerogation(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre)">
+            <summary>
+            Permet de créer une dérogation d'un professionnel de la santé.
+            </summary>
+            <param name="intrant">Paramètres d'entrées.</param>
+            <returns>Liste des dérogations d'un professionnel de la santé.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation">
+            <summary> 
+            Entité d'une autorisation
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.NumeroSequence">
+            <summary>
+            Numéro de séquence de l'autorisation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.TypeLieuGeographique">
+            <summary>
+            Type lieu géographique
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.CodeLieuGeographique">
+            <summary>
+            Code lieu géographique
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.NumeroSequenceRegroupementAdministratif">
+            <summary>
+            Numéro séquentiel identifiant un regroupement administratif des lieux géographiques.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.Type">
+            <summary>
+            Type d'autorisation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.DateDebut">
+            <summary>
+            Date de début de l'autorisation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.DateFin">
+            <summary>
+            Date de fin de l'autorisation
+            </summary>
+            <returns>Nullable</returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.DateHeureCreationOccurence">
+            <summary>
+            Date heure création de l’occurrence
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.IdentitfiantUtilisateurCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurrence.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.DateHeureInactivation">
+            <summary>
+            Date et heure de l'inactivation de l'occurrence.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.IdentifiantUtilisateurInactivation">
+            <summary>
+            Identifiant de l'utilisateur qui a inactivé l'occurrence.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.CodeRSS">
+            <summary>
+            Code Rss
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Entites.Autorisation.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut de l'autorisation
+            </summary>
+            <returns></returns>       
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationGabaritXSL.GenerateurGabaritXSL">
+            <summary> 
+             Classe pour la génération des gabarits XSL
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationGabaritXSL.GenerateurGabaritXSL.#ctor(RAMQ.Rapports.RenderX.IRenderX)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="renderX">un instance d'objet de renderX</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationGabaritXSL.GenerateurGabaritXSL.GenererGabaritXSL(System.String,System.Byte[])">
+            <summary>
+            Générer un gabarit XSL
+            </summary>
+            <param name="cheminGabaritXSL">chemin du gabarit XSL</param>
+            <param name="fichierXml">Contenu du fichier XML</param>
+            <returns>Retourne un gabarit XSL</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationGabaritXSL.IGenerateurGabaritXSL">
+            <summary> 
+             Interface pour la génération des gabarits XSL
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationGabaritXSL.IGenerateurGabaritXSL.GenererGabaritXSL(System.String,System.Byte[])">
+            <summary>
+            Générer un gabarit XSL
+            </summary>
+            <param name="cheminGabaritXSL">chemin du gabarit XSL</param>
+            <param name="fichierXml">Contenu du fichier XML</param>
+            <returns>Retourne un gabarit XSL</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationPDF.GenerateurPDF">
+            <summary> 
+             Classe pour la génération d'un fichier PDF
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationPDF.GenerateurPDF.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.IXmlBuilderFactory,RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.ICheminGabarit,RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationGabaritXSL.IGenerateurGabaritXSL)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationPDF.GenerateurPDF.XmlBuilder">
+            <summary>
+            Propriété pour permettre l'injection de dépendance du IXmlBuilder
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationPDF.GenerateurPDF.Generer(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit,System.Collections.Generic.IList{System.String})">
+            <summary>
+            Générer fichier PDF
+            </summary>
+            <param name="typeGabarit">Type de gabarit</param>
+            <param name="priorites">Liste des priorités</param>
+            <returns>Retourne un fichier PDF soit faire d'array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationPDF.IGenerateurPDF">
+            <summary> 
+             Interface pour la génération d'un fichier PDF
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationPDF.IGenerateurPDF.Generer(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit,System.Collections.Generic.IList{System.String})">
+            <summary>
+            Générer fichier PDF
+            </summary>
+            <param name="typeGabarit">Type de gabarit</param>
+            <param name="priorites">Liste des priorités</param>
+            <returns>Retourne un fichier PDF soit faire d'array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ChaineXmlBrute">
+            <summary> 
+             Classe permettant de sérialiser un contenu de texte de façon brute.
+             Autrement dit,  le sérialiseur ne va pas réinterpréter le contenu en 
+             remplaçant les caractères spéciaux.
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ChaineXmlBrute.Texte">
+            <summary>
+            Texte
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ChaineXmlBrute.GetSchema">
+            <summary>
+            Obtenir schéma
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ChaineXmlBrute.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Lecteur XML
+            </summary>
+            <param name="reader">Lecteur XML</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ChaineXmlBrute.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Éditeur XML
+            </summary>
+            <param name="writer">Éditeur XML </param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.ConfirmationAvisConformiteXmlBuilder">
+            <summary> 
+             Classe qui prend en charge la création du XML pour
+             la page de confirmation d'une avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.ConfirmationAvisConformiteXmlBuilder.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ISerialiseurXml)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="serialiseurXml">Sérialiseur XML</param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.ConfirmationAvisConformiteXmlBuilder.Gabarit">
+            <summary>
+            Gabarit
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.ConfirmationAvisConformiteXmlBuilder.NombrePrioriteRequis">
+            <summary>
+            Nombre de priorité requis
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.ConfirmationAvisConformiteXmlBuilder.Construire(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Construire 
+            </summary>
+            <param name="priorites">Liste des priorités à insérer dans le gabarit</param>
+            <returns>Retourne une structure XML en format d'array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.GabaritConfirmationAvisConformite">
+            <summary> 
+             Classe représentant le gabarit XSL pour un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.GabaritConfirmationAvisConformite.Page">
+            <summary>
+            Page
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.PageConfirmationAvisConformite">
+            <summary> 
+             Classe qui représente la section "Pages" dans le fichier
+             XML pour la confirmation d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.PageConfirmationAvisConformite.Priorite1">
+            <summary>
+            Priorité 1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.PageConfirmationAvisConformite.Priorite2">
+            <summary>
+            Priorité 2
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.PageConfirmationAvisConformite.Priorite3">
+            <summary>
+            Priorité 3
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.PageConfirmationAvisConformite.Priorite4">
+            <summary>
+            Priorité 4
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.PageConfirmationAvisConformite.Priorite5">
+            <summary>
+            Priorité 5
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.GabaritConfirmationModificationSuspension">
+            <summary> 
+             Classe représentant le gabarit XSL pour la confirmation
+             dune modification d'une suspension
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.GabaritConfirmationModificationSuspension.Page">
+            <summary>
+            Page
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension">
+            <summary> 
+             Classe qui représente la section "Pages" dans le fichier
+             XML pour la confirmation de la modification d'une suspension
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite1">
+            <summary>
+            Priorité 1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite2">
+            <summary>
+            Priorité 2
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite3">
+            <summary>
+            Priorité 3
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite4">
+            <summary>
+            Priorité 4
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite5">
+            <summary>
+            Priorité 5
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite6">
+            <summary>
+            Priorité 6
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite7">
+            <summary>
+            Priorité 7
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite8">
+            <summary>
+            Priorité 8
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.PageConfirmationModificationSuspension.Priorite9">
+            <summary>
+            Priorité 9
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.ConfirmationModificationSuspensionXmlBuilder">
+            <summary> 
+             Classe qui prend en charge la création du XML pour
+             la page de confirmation d'une modification d'une
+             suspension
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.ConfirmationModificationSuspensionXmlBuilder.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ISerialiseurXml)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="serialiseurXml">Sérialiseur XML</param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.ConfirmationModificationSuspensionXmlBuilder.Gabarit">
+            <summary>
+            Gabarit
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.ConfirmationModificationSuspensionXmlBuilder.NombrePrioriteRequis">
+            <summary>
+            Nombre de priorité requis
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.ConfirmationModificationSuspensionXmlBuilder.Construire(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Construire 
+            </summary>
+            <param name="priorites">Liste des priorités à insérer dans le gabarit</param>
+            <returns>Retourne une structure XML en format d'array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.GabaritConfirmationSuspension">
+            <summary> 
+             Classe représentant le gabarit XSL pour une confirmation 
+             d'une suspension
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.GabaritConfirmationSuspension.Page">
+            <summary>
+            Page
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension">
+            <summary> 
+             Classe qui représente la section "Pages" dans le fichier
+             XML pour la confirmation d'une suspension
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite1">
+            <summary>
+            Priorité 1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite2">
+            <summary>
+            Priorité 2
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite3">
+            <summary>
+            Priorité 3
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite4">
+            <summary>
+            Priorité 4
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite5">
+            <summary>
+            Priorité 5
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite6">
+            <summary>
+            Priorité 6
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.PageConfirmationSuspension.Priorite7">
+            <summary>
+            Priorité 7
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.ConfirmationSuspensionXmlBuilder">
+            <summary> 
+             Classe qui prend en charge la création du XML pour
+             la page de confirmation d'une suspension
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.ConfirmationSuspensionXmlBuilder.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ISerialiseurXml)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="serialiseurXml">Sérialiseur en XML</param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.ConfirmationSuspensionXmlBuilder.Gabarit">
+            <summary>
+            Gabarit
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.ConfirmationSuspensionXmlBuilder.NombrePrioriteRequis">
+            <summary>
+            Nombre de priorité requis
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationSuspension.ConfirmationSuspensionXmlBuilder.Construire(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Construire 
+            </summary>
+            <param name="priorites">Liste des priorités à insérer dans le gabarit</param>
+            <returns>Retourne une structure XML en format d'array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ISerialiseurXml">
+            <summary> 
+             Interface permettant de sérialiser un objet sous format XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ISerialiseurXml.Serialiser``1(``0)">
+            <summary>
+            Sérialise un objet
+            </summary>
+            <typeparam name="T">Type de l'objet</typeparam>
+            <param name="instance">Instance de l'objet</param>
+            <returns>Retourne un array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Colonne1">
+            <summary> 
+             Classe représentant la colonne1 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Colonne1.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Colonne1.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Colonne1.Texte">
+            <summary>
+            Texte
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Colonne1.ChaineXmlBrute">
+            <summary>
+            Chaîne de texte XML brute
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Ligne1">
+            <summary> 
+             Classe représentant la ligne1 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Ligne1.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Ligne1.Colonne1">
+            <summary>
+            Colonne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite1">
+            <summary> 
+             Classe représentant la priorité 1 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite1.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite1.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite2">
+            <summary> 
+             Classe représentant la priorité 2 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite2.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite2.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite3">
+            <summary> 
+             Classe représentant la priorité 3 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite3.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite3.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite4">
+            <summary> 
+             Classe représentant la priorité 4 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite4.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite4.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite5">
+            <summary> 
+             Classe représentant la priorité 5 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite5.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite5.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite6">
+            <summary> 
+             Classe représentant la priorité 6 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite6.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite6.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite7">
+            <summary> 
+             Classe représentant la priorité 7 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite7.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite7.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite8">
+            <summary> 
+             Classe représentant la priorité 8 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite8.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite8.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite9">
+            <summary> 
+             Classe représentant la priorité 9 dans le fichier XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite9.Numero">
+            <summary>
+            Numéro
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite9.Ligne1">
+            <summary>
+            Ligne1
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.ConfirmationDerogationXmlBuilder">
+            <summary> 
+             Classe qui prend en charge la création du XML pour
+             la page de confirmation d'une dérogation
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.ConfirmationDerogationXmlBuilder.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ISerialiseurXml)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="serialiseurXml">Sérialiseur XML</param>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.ConfirmationDerogationXmlBuilder.Gabarit">
+            <summary>
+            Gabarit
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.ConfirmationDerogationXmlBuilder.NombrePrioriteRequis">
+            <summary>
+            Nombre de priorité requis
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.ConfirmationDerogationXmlBuilder.Construire(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Construire 
+            </summary>
+            <param name="priorites">Liste des priorités à insérer dans le gabarit</param>
+            <returns>Retourne une structure XML en format d'array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.GabaritConfirmationDerogation">
+            <summary> 
+             Classe représentant le gabarit XSL pour une confirmation 
+             d'une dérogation
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.GabaritConfirmationDerogation.Page">
+            <summary>
+            Page
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation">
+            <summary> 
+             Classe qui représente la section "Pages" dans le fichier
+             XML pour la confirmation d'une dérogation
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation.Priorite1">
+            <summary>
+            Priorité 1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation.Priorite2">
+            <summary>
+            Priorité 2
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation.Priorite3">
+            <summary>
+            Priorité 3
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation.Priorite4">
+            <summary>
+            Priorité 4
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation.Priorite5">
+            <summary>
+            Priorité 5
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.PageConfirmationDerogation.Priorite6">
+            <summary>
+            Priorité 6
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.SerialiseurXml">
+            <summary> 
+             Classe permettant de sérialiser un objet sous format XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.Gabarits.SerialiseurXml.Serialiser``1(``0)">
+            <summary>
+            Sérialise un objet
+            </summary>
+            <typeparam name="T">Type de l'objet</typeparam>
+            <param name="instance">Instance de l'objet</param>
+            <returns>Retourne un array de byte</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.IXmlBuilderFactory">
+            <summary> 
+             Interface permettant de fabriquer le bon XmlBuilder selon le
+             type de gabarit
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.IXmlBuilderFactory.FabriquerBuilder(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit)">
+            <summary>
+            Fabriquer le builder spécifique pour construire le XML
+            </summary>
+            <param name="typeGabarit">Type de gabarit</param>
+            <returns>Retourne le bon builder tout dépendamment du type de gabarit</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.IXmlBuilder">
+            <summary> 
+             Interface pour les builder XML
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.IXmlBuilder.Construire(System.Collections.Generic.IList{System.String})">
+            <summary>
+            Construire 
+            </summary>
+            <param name="priorites">Liste des priorités à insérer dans le gabarit</param>
+            <returns>Retourne une structure XML en format d'array de byte selon le type de Gabarit</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.XmlBuilderFactory">
+            <summary> 
+             Classe permettant de fabriquer le bon XmlBuilder selon le
+             type de gabarit
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.GenerationXmlGabarit.XmlBuilderFactory.FabriquerBuilder(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit)">
+            <summary>
+            Fabriquer le builder spécifique pour construire le XML
+            </summary>
+            <param name="typeGabarit">Type de gabarit</param>
+            <returns>Retourne le bon builder tout dépendamment du type de gabarit</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.CheminGabarit">
+            <summary> 
+             Cette classe permet de récupérer le chemin physique
+             d'un gabarit sur le réseau.
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.CheminGabarit.#ctor(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.ILecteurConfiguration)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="lecteurConfiguration">lecteur de configurations</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.CheminGabarit.Obtenir(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit)">
+            <summary>
+            Obtenir le chemin réseau d'un gabarit selon le type de gabarit
+            </summary>
+            <param name="typeGabarit">Type de gabarit</param>
+            <returns>Retourne le chemin sur le réseau du gabarit selon le type de gaabrit</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.ICheminGabarit">
+            <summary> 
+             Cette classe permet de récupérer le chemin physique
+             d'un gabarit sur le réseau.
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.ICheminGabarit.Obtenir(RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit)">
+            <summary>
+            Obtenir le chemin réseau d'un gabarit selon le type de gabarit
+            </summary>
+            <param name="typeGabarit">Type de gabarit</param>
+            <returns>Retourne le chemin sur le réseau du gabarit selon le type de gaabrit</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.ILecteurConfiguration">
+            <summary> 
+             Interface permettant de lire des configurations
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.ILecteurConfiguration.LireConfiguration(System.String)">
+            <summary>
+            Lire une configuration dans la section AppSettings
+            </summary>
+            <param name="nomCleConfiguration"></param>
+            <returns>Retourne la valeur de la clé de configuration passée en paramètre.</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.LecteurConfiguration">
+            <summary> 
+             Classe permettant de lire des configurations
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.CheminReseauGabarit.LecteurConfiguration.LireConfiguration(System.String)">
+            <summary>
+            Lire une configuration dans la section AppSettings
+            </summary>
+            <param name="nomCleConfiguration"></param>
+            <returns>Retourne la valeur de la clé de configuration passée en paramètre.</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit">
+            <summary> 
+             Énumération des type de gabarit
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit.Autre">
+            <summary>
+            Gabarit par défaut
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit.ConfirmationAvisConformite">
+            <summary>
+            Gabarit de confirmation pour un avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit.ConfirmationSuspension">
+            <summary>
+            Gabarit de confirmation pour une suspension
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit.ConfirmationModificationSuspension">
+            <summary>
+            Gabarit de confirmation pour la modification d'une suspension
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.TypeGabarit.ConfirmationDerogation">
+            <summary>
+            Gabarit de confirmation pour une dérogation
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.ValidateurParametreObligatoire">
+            <summary> 
+             Classe pour valider les paramètres obligatoires
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.GenerationPDF.ValidateurParametreObligatoire.ValiderParametreNull(System.Object,System.String)">
+            <summary>
+            Valide si le paramètre est null
+            </summary>
+            <param name="parametre">Paramètre qu'on veut valider si celui-ci est null</param>
+            <param name="nomParametre">Nom du paramètre à tester</param>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelEntre">
+            <summary> 
+             Paramètre d'entrée pour obtenir les autorisations d'un professionnel de la santé
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelSorti">
+            <summary> 
+             Paramètre de sortie pour obtenir les autorisations d'un professionnel de la santé
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelSorti.Autorisations">
+            <summary>
+            Liste d'autorisations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.EngagementAbsence">
+            <summary> 
+             Classe pour la recherche ddes engagements et peridoe absence.
+            </summary>
+            <remarks>
+             Auteur : Franck COULIBALY <br/>
+             Date   : Juin 2018
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.EngagementAbsence.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            constructeur par defaut
+            </summary>
+            <param name="clientPlanRegionnalMedical"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.EngagementAbsence.ObtenirPeriodeEngagementsAbsenceProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementEntre)">
+            <summary>
+            Permet l'obtention des périodes d'engagement et absences du professionnel de la santé
+            </summary>
+            <param name="intrant"></param>
+            <returns>Liste des engagements et absences d'avis></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IEngagementAbence">
+            <summary> 
+             Interface pour la recherche ddes engagements et peridoe absence.
+            </summary>
+            <remarks>
+             Auteur : Franck COULIBALY <br/>
+             Date   : Juin 2018
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IEngagementAbence.ObtenirPeriodeEngagementsAbsenceProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementEntre)">
+            <summary>
+            Permet l'obtention des périodes d'engagement et absences du professionnel de la santé
+            </summary>
+            <param name="intrant"></param>
+            <returns>Liste des engagements et absences d'avis></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel">
+            <summary> 
+             Interface pour la recherche de professionnels.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel.ObtenirInformationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+             Obtenir les informations sur la relation dispensateur individu.
+            </summary>
+            <param name="intrant">Les critètres de recherche.</param>
+            <returns>Une liste avec les informations des professionnels.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel.ObtenirInforPersonnellesDispensateur(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre)">
+            <summary>
+             Obtenir les informations personnelles d'un dispensateur
+            </summary>
+            <param name="intrant">Les critètres de recherche.</param>
+            <returns>Une liste avec les informations des professionnels.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel">
+            <summary> 
+             Classe pour la recherche de professionnels.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel.#ctor(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul)">
+            <summary>
+            Constructeur.
+            </summary>
+            <param name="infoDispCnsul">Classe d'information d'un dispensateur en consultation.</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel.ObtenirInformationProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+             Obtenir les informations sur la relation dispensateur individu.
+            </summary>
+            <param name="intrant">Les critètres de recherche.</param>
+            <returns>Une liste avec les informations des professionnels.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.RechercherProfessionnel.ObtenirInforPersonnellesDispensateur(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre)">
+            <summary>
+             Obtenir les informations personnelles d'un dispensateur
+            </summary>
+            <param name="intrant">Les critètres de recherche.</param>
+            <returns>Une liste avec les informations des professionnels.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Rapport.Rapport">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Rapport.Rapport.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur.
+            </summary>
+            <param name="clientPlanRegnMdcal">.</param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Rapport.Rapport.ObtenirLignesRapportRepartInterRegionPrati(RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappRepartInterRegionPrati)">
+            <summary>
+            
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur">
+            <summary> 
+             Mappeur
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre en PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ObtenirLesAvisConformiteSorti en PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre
+             en PlanRegnMdcal.Parametre.ModifierPeriodeAvisEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierPeriodeAvisSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierPeriodeAvisSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConfEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConfEntre
+             en PlanRegnMdcal.Parametre.ModifierAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierAvisConformiteSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConfSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerAvisConformiteSorti)" -->
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre
+             en PlanRegnMdcal.Parametre.CreerAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteStatutEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteStatutEntre
+             en PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteStatutSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre
+             en PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirStatutsEngagementPratiqueRSSSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteStatutSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre en PlanRegnMdcal.Parametre.CreerStatutAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.CreerStatutAvisConformiteSorti en PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutAvisConformiteEntre en PlanRegnMdcal.Parametre.ModifierStatutAvisConformiteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierStatutEngagementSorti,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierAvisConformiteStatutSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagEntre
+             en PlanRegnMdcal.Parametre.ModifierRaisFermStatutEngagEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierRaisFermStatutEngagSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierRaisFermStatutEngagSorti en PRE_Entites_cpo.AvisConformite.Parametre.ModifierRaisFermStatutEngagSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre en ObtenirLesDerogationsProfessionnelSanteEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirDerogationsProfessionnelSanteSorti,RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti@)">
+            <summary>
+             Map un objet ObtenirLesDerogationsProfessionnelSanteSorti en PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre
+             en ModifierDerogationEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDerogationSorti,RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti@)">
+            <summary>
+             Map un objet ModifierDerogationSorti
+             en PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre
+             en ModifierDerogationEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDerogationSorti)">
+            <summary>
+             Map un objet ModifierDerogationSorti
+             en PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre)">
+            <summary>
+             Map un objet Professionnel.Parametre.ObtenirDispensateurIndividuEntre en FIP.EPZ3.Parametre.ObtnRelDispIndivEntre
+            </summary>
+            <Parametre name="parametreEntre">Objet source</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti)">
+            <summary>
+             Map un objet FIP.EPZ3.Parametre.ObtnRelDispIndivSorti en Professionnel.Parametre.ObtenirDispensateurIndividuSorti
+            </summary>
+            <Parametre name="parametreEntreEZP3">Objet source</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAutorisationEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationEntre
+             en ModifierAutorisationEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierAutorisationSorti,RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationSorti@)">
+            <summary>
+             Map un objet ModifierAutorisationSorti
+             en PRE_Entites_cpo.Autorisation.Parametre.ModifierAutorisationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PL_LogiqueAffaire_cpo.Parametres.ObtenirLesAutorisationsProfessionnelEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Autorisation.Parametre.ObtenirLesAutorisationsProfessionnelEntre en 
+             PlanRegnMdcal.Parametre.ObtenirAutorisationsEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirAutorisationsSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ObtenirAutorisationsSorti en 
+             PRE_Entites_cpo.Autorisation.Parametre.ObtenirLesAutorisationsProfessionnelSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.MapperAutorisation(System.Collections.Generic.List{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation})">
+            <summary>
+            Permet de mapper un objet PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Autorisation en
+            PRE_Entites_cpo.Autorisation.Entite.Autorisation
+            </summary>
+            <param name="autorisations">Liste d'entité de travail Autorisation</param>
+            <returns>Liste d'entité de donnée Autorisation.</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.AbsenceAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre 
+             en PlanRegnMdcal.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti,RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti@)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti 
+             en PRE_Entites_cpo.AbsenceAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirCaracteristiquePratiqueRssEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre en ObtenirCaracteristiquePratiqueRssEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirCaracteristiquePratiqueRssSorti,RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssSorti@)">
+            <summary>
+             Map un objet ObtenirCaracteristiquePratiqueRssSorti en PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre,RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirInfoPerslDispEntre@)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Professionnel.Parametre.ObtenirPeriodePratiqueProfessionnelEntre en PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirInfoPerslDispSorti,RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispSorti@)">
+            <summary>
+             Map un objet PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirInfoPerslDispSorti en PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappRepartInterRegionPrati)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ObtenirJoursFactPratiAvisSorti en 
+             PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationEntre
+             en PlanRegnMdcal.Parametre.ObtenirListeDemReevaEntre 
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirListeDemReevaSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ObtenirListeDemReevaSorti 
+             en PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ModifierDemandeReevaluationEntre)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierDemReevaPREMEntre 
+             en PRE_Entites_cpo.DemandeReevaluation.Parametre.ModifierDemandeReevaluationEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ModifierDemReevaPREMSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.ModifierDemReevaPREMSorti 
+             en PRE_Entites_cpo.DemandeReevaluation.Parametre.ModifierDemandeReevaluationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.DemandeReevaluation.Parametre.ModifierDemandeReevaluationEntre
+             en PlanRegnMdcal.Parametre.ModifierDemReevaPREMEntre 
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.AnnulerDemandeReevaPREMQSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.AnnulerDemandeReevaPREMQSorti 
+             en PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.CreerDemandeReevaluationEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.DemandeReevaluation.Parametre.CreerDemandeReevaluationEntre
+             en PlanRegnMdcal.Parametre.CreerDemReevaPREMEntre 
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.CreerDemReevaPREMSorti)">
+            <summary>
+             Map un objet PlanRegnMdcal.Parametre.CreerDemReevaPREMSorti 
+             en PRE_Entites_cpo.DemandeReevaluation.Parametre.CreerDemandeReevaluationSorti
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementEntre)">
+            <summary>
+             Map un objet PRE_Entites_cpo.Professionel.Parametre.ObtenirVuePeriodeEngagementEntre
+             en AccesDonneParametre.ObtenirVuePeriodesEngagementsEntre
+            </summary>
+            <Parametre name="source">Objet source</Parametre>
+            <Parametre name="cible">Objet cible</Parametre>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Parametre.ObtenirVuePeriodesEngagementsSorti)">
+            <summary>
+             Map un objet AccesDonneParametre.ObtenirVuePeriodesEngagementsSorti en PRE_Entites_cpo.Professionel.Parametre.ObtenirVuePeriodeEngagementSorti.
+            </summary>
+            <Parametre name="source">Objet source.</Parametre>
+            <Parametre name="cible">Objet cible.</Parametre>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

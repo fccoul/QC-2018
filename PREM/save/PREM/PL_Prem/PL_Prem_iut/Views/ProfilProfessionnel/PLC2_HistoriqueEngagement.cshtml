@@ -1,0 +1,375 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement
+
+<div class="row">
+        <div class="col-md-12">
+            <div class="panel-group">
+                @Html.HiddenFor(x => x.MedecinResponsabiliteDRMG)
+                @Html.HiddenFor(x => x.MessageErreur)
+                @{
+                    string idCollapse = string.Empty;
+                    string hrefCollapse = string.Empty;
+                    int valeurIncremental = 0;
+                    string classContextuel = string.Empty;
+                    Dictionary<string, RAMQ.DomainesValeur.IValeur> dictRaisonStatusAvisConf =
+                        TempData["DictRaisStatusAvisConf"] as Dictionary<string, RAMQ.DomainesValeur.IValeur> ?? new Dictionary<string, RAMQ.DomainesValeur.IValeur>() ;
+
+                    Dictionary<string, RAMQ.DomainesValeur.IValeur> dictRaisonStatusDerogation =
+                       TempData["DictRaisStatusDerogation"] as Dictionary<string, RAMQ.DomainesValeur.IValeur> ?? new Dictionary<string, RAMQ.DomainesValeur.IValeur>();
+
+                    Dictionary<string, RAMQ.DomainesValeur.IValeur> dictRaisonStatusAutorisation =
+                       TempData["DictRaisStatusAutorisation"] as Dictionary<string, RAMQ.DomainesValeur.IValeur> ?? new Dictionary<string, RAMQ.DomainesValeur.IValeur>();
+
+                    foreach (var engagement in Model.EngagementPratiques)
+                    {
+
+                        idCollapse = string.Format("panelCollapse{0}", valeurIncremental);
+                        if (engagement.Historiques.Count() > 0)
+                        {
+                            hrefCollapse = string.Format("#{0}", idCollapse);
+                        }
+                        else
+                        {
+                            hrefCollapse = "#";
+                        }
+
+                        switch (engagement.Description)
+                        {
+                            case "Avis de conformité":
+                                classContextuel = "custom-info";
+                                break;
+                            case "Dérogation":
+                                classContextuel = "custom-warning";
+                                break;
+                            case "Autorisation":
+                                classContextuel = "success";
+                                break;
+                            case "Avis de conformité révoqué":
+                                classContextuel = "custom-danger";
+                                break;
+                            default:
+                                classContextuel = "default";
+                                break;
+                        }
+
+                        var estDRMG = ((RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController)this.ViewContext.Controller).ValiderDroitDRMG();
+
+                        <div class="panel panel-@classContextuel">
+                            <div class="panel-heading">
+                                <p class="panel-title">
+
+                                    @{
+                                        if (engagement.Description.Contains("Avis"))
+                                        {
+                                            var hrefCollapseAvis = string.Empty;
+                                            var code = ((RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController)this.ViewContext.Controller).ObtenirCodeRSSUtilisateurCourant();
+                                            if ((estDRMG && engagement.CodeRegion == code.CodeRSS) || !estDRMG)
+                                            {
+                                                hrefCollapseAvis = hrefCollapse;
+                                            }
+                                            else
+                                            {
+                                                hrefCollapseAvis = "#";
+                                            }
+                                            <a data-toggle="collapse" href=@hrefCollapseAvis>
+
+                                                @{ 
+                                                    var region = string.Empty;
+                                                    var nomCodeRSS = ((RAMQ.PRE.PL_Prem_iut.Controllers.ProfilProfessionnelController)this.ViewContext.Controller).ObtenirNomRSS(engagement.CodeRegion);
+
+                                                    if (engagement.Territoire.Type == "RLS" || 
+                                                        engagement.Territoire.Type == "Regroupement" || 
+                                                        engagement.Territoire.Type == "Territoire" || 
+                                                        string.IsNullOrEmpty(engagement.Territoire.Type))
+                                                    {
+                                                        region = string.Format("{0} ({1})",
+                                                                               engagement.Territoire.Nom,
+                                                                               nomCodeRSS);
+                                                    }
+                                                    else
+                                                    {
+                                                        region = nomCodeRSS;
+                                                    }
+                                                }
+
+
+
+                                                @string.Format("{0} - {1} - du {2} au {3}",
+                                                        engagement.Description,
+                                                        region,
+                                                        engagement.Periode.DateDebut.Value.ToShortDateString(),
+                                                        engagement.Periode.DateFin.HasValue ? engagement.Periode.DateFin.Value.ToShortDateString() : "- - - -")
+
+
+                                            </a>
+                                        }
+                                        else if (engagement.Description == "Dérogation" || engagement.Description == "Autorisation")
+                                        {
+                                            var hrefCollapseDerogationAutorisation = string.Empty;
+                                            if (estDRMG)
+                                            {
+                                                hrefCollapseDerogationAutorisation = "#";
+                                            }
+                                            else
+                                            {
+                                                hrefCollapseDerogationAutorisation = hrefCollapse;
+                                            }
+                                            <a data-toggle="collapse" href=@hrefCollapseDerogationAutorisation>
+
+                                                @{
+                                                    var typeDerogIVN = string.Empty;
+                                                    if (engagement.Type == "IVN")
+                                                    {
+                                                        typeDerogIVN = "Instance à vocation nationale";
+                                                    }
+                                                }
+
+                                                @string.Format("{0} - {1} - du {2} au {3}",
+                                                                engagement.Description,
+                                                                engagement.Type == "IVN" ? typeDerogIVN : engagement.Type,
+                                                                engagement.Periode.DateDebut.Value.ToShortDateString(),
+                                                                engagement.Periode.DateFin.HasValue ? engagement.Periode.DateFin.Value.ToShortDateString() : "- - - -")
+                                            </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        ///<remarks>
+                                                        ///prise en compte de la demande 26 : La notion "Absence d'avis" doit être remplacée par "Absence d'avis de conformité" dans l'ensemble des panoramas.
+                                                        ///</remarks>
+                                                        string des =engagement.Description.Equals(RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement.TypeAbsenceAvis)?
+                                                                                          "Absence d’avis de conformité" :engagement.Description;
+
+                                            <a data-toggle="collapse" href=@hrefCollapse>
+
+                                                @string.Format("{0} du {1} au {2}",
+                                                                des,
+                                                                engagement.Periode.DateDebut.Value.ToShortDateString(),
+                                                                engagement.Periode.DateFin.HasValue ? engagement.Periode.DateFin.Value.ToShortDateString() : "- - - -")
+                                            </a>
+                                        }
+
+                                    }
+
+                                </p>
+                            </div>
+                            <div id=@idCollapse class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table table-stripped">
+                                        <thead>
+                                            <tr>
+                                                @{
+                                                    foreach (string entete in RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_HistoriqueEngagement.EnteteTableHistoriqueAvis)
+                                                    {
+                                                        <th>@entete</th>
+                                                    }
+                                                }
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @{
+                                                int compteur = 0;
+                                                foreach (var historique in engagement.Historiques)
+                                                {
+                                                    var pourcentage = string.Format("{0}%", historique.PourcentageEffectuer.HasValue ? Math.Round(historique.PourcentageEffectuer.Value, 2, MidpointRounding.AwayFromZero) : 0);
+
+                                                    if (historique.Statut == "Terminé" && engagement.Description != "Dérogation")
+                                                    {
+                                                        pourcentage = string.Empty;
+                                                    }
+                                                    else if (pourcentage.EndsWith(",00%") || pourcentage.EndsWith(",0%"))
+                                                    {
+                                                        pourcentage = pourcentage.Replace(",00%", "%").Replace(",0%", "%");
+                                                    }
+
+                                                    if (compteur % 2 == 0)
+                                                    {
+                                                        <tr>
+
+                                                                @if (historique.Statut == "Terminé" && engagement.Description != "Dérogation")
+                                                                {
+                                                                    <td>
+                                                                        @string.Format("{0}", historique.Periode.DateDebut.Value.ToShortDateString())
+                                                                   </td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>
+                                                                        @string.Format("{0} au {1}",
+historique.Periode.DateDebut.Value.ToShortDateString(),
+historique.Periode.DateFin.HasValue ? historique.Periode.DateFin.Value.ToShortDateString() : "- - - -")
+                                                                    </td>
+                                                                }
+                                                            <td>@historique.Statut</td>
+                                                        
+                                                          @{
+                                                              string description = string.Empty;
+                                                              RAMQ.DomainesValeur.IValeur val;
+                                                              if (!string.IsNullOrEmpty(historique.RaisonStatut))
+                                                              {
+                                                                  var rv_low_value = historique.RaisonStatut.ToString().Length > 1 ? historique.RaisonStatut.ToString() : historique.RaisonStatut.ToString().PadLeft(2, '0');
+
+                                                                  if(engagement.Description== "Dérogation")
+                                                                  {
+                                                                      dictRaisonStatusDerogation.TryGetValue(rv_low_value, out val);
+                                                                  }
+                                                                  else if(engagement.Description == "Autorisation")
+                                                                  {
+                                                                      dictRaisonStatusAutorisation.TryGetValue(rv_low_value, out val);
+                                                                  }
+                                                                  else //-Avis de conformité
+                                                                  {
+                                                                      dictRaisonStatusAvisConf.TryGetValue(rv_low_value, out val);
+
+                                                                  }
+                                                                  if (val != null)
+                                                                  {
+                                                                      description = val.ValDes;
+                                                                  }
+
+                                                              }
+                                                            <td><p data-toggle="tooltipStatus" title="@description" data-placement="top" class="tooltipStatus" id="cssTd">@historique.RaisonStatut<p></td>
+                                                           
+                                                           }                                                          
+                                                       
+                                                            @if (historique.NombreJourEngagement.HasValue &&
+                                                                (historique.NombreJourEngagement.Value.ToString().EndsWith(",00") ||
+                                                                 historique.NombreJourEngagement.Value.ToString().EndsWith(",0")))
+                                                            {
+
+                                                                <td>@string.Format("{0}", historique.NombreJourEngagement.Value.ToString().Replace(",00", "").Replace(",0", ""))</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@historique.NombreJourEngagement</td>
+                                                            }
+
+                                                            @if (historique.TotalJourFacturer.HasValue &&
+                                                                (historique.TotalJourFacturer.Value.ToString().EndsWith(",00") ||
+                                                                 historique.TotalJourFacturer.Value.ToString().EndsWith(",0")))
+                                                            {
+
+                                                                <td>@string.Format("{0}", historique.TotalJourFacturer.Value.ToString().Replace(",00", "").Replace(",0", ""))</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@historique.TotalJourFacturer</td>
+                                                            }
+                                                            @{
+                                                                if (historique.EstNonRespectEntente)
+                                                                {
+                                                                    <td class="textRouge">@pourcentage</td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>@pourcentage</td>
+                                                                }
+                                                            }
+                                                            
+                                                        </tr>
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr class="@classContextuel">
+
+                                                                @if (historique.Statut == "Terminé" && engagement.Description != "Dérogation")
+                                                                {
+                                                                <td>
+                                                                    @string.Format("{0}", historique.Periode.DateDebut.Value.ToShortDateString())
+                                                                </td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>
+                                                                        @string.Format("{0} au {1}",
+                                                                        historique.Periode.DateDebut.Value.ToShortDateString(),
+                                                                        historique.Periode.DateFin.HasValue ? historique.Periode.DateFin.Value.ToShortDateString() : "- - - -")
+                                                                    </td>
+                                                                }
+
+                                                            <td>@historique.Statut</td>
+
+                                                            
+                                                            @{
+                                                                string description = string.Empty;
+                                                                RAMQ.DomainesValeur.IValeur val;
+                                                                if (!string.IsNullOrEmpty(historique.RaisonStatut))
+                                                                {
+                                                                    var rv_low_value = historique.RaisonStatut.ToString().Length > 1 ? historique.RaisonStatut.ToString() : historique.RaisonStatut.ToString().PadLeft(2, '0');
+                                                                                                                                 
+                                                                        if (engagement.Description == "Dérogation")
+                                                                        {
+                                                                            dictRaisonStatusDerogation.TryGetValue(rv_low_value, out val);
+                                                                        }
+                                                                        else if (engagement.Description == "Autorisation")
+                                                                        {
+                                                                            dictRaisonStatusAutorisation.TryGetValue(rv_low_value, out val);
+                                                                        }
+                                                                        else //-Avis de conformité
+                                                                        {
+                                                                            dictRaisonStatusAvisConf.TryGetValue(rv_low_value, out val);
+
+                                                                        }
+                                                                        if (val != null)
+                                                                        {
+                                                                            description = val.ValDes;
+                                                                        }
+ 
+                                                                }
+                                                                <td><p data-toggle="tooltipStatus" title="@description" data-placement="top" class="tooltipStatus" id="cssTd">@historique.RaisonStatut<p></td>
+
+                                                            }
+                                                            
+                                                            @if (historique.NombreJourEngagement.HasValue &&
+                                                                (historique.NombreJourEngagement.Value.ToString().EndsWith(",00") ||
+                                                                 historique.NombreJourEngagement.Value.ToString().EndsWith(",0")))
+                                                            {
+
+                                                                <td>@string.Format("{0}", historique.NombreJourEngagement.Value.ToString().Replace(",00", "").Replace(",0", ""))</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@historique.NombreJourEngagement</td>
+                                                            }
+
+                                                            @if (historique.TotalJourFacturer.HasValue &&
+                                                                (historique.TotalJourFacturer.Value.ToString().EndsWith(",00") ||
+                                                                 historique.TotalJourFacturer.Value.ToString().EndsWith(",0")))
+                                                            {
+
+                                                                <td>@string.Format("{0}", historique.TotalJourFacturer.Value.ToString().Replace(",00", "").Replace(",0", ""))</td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>@historique.TotalJourFacturer</td>
+                                                            }
+                                                            @{
+                                                                if (historique.EstNonRespectEntente)
+                                                                {
+                                                                    <td class="textRouge">@pourcentage</td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>@pourcentage</td>
+                                                                }
+                                                            }
+                                                        </tr>
+                                                    }
+
+
+                                                    compteur += 1;
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                                                    valeurIncremental += 1;
+                                                }
+                }
+            </div>
+        </div>
+    </div>
+
+ 
+ 

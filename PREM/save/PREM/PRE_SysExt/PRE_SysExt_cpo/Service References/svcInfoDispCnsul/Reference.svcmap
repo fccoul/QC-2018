@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="392395bf-218c-404a-91c2-1d74b1fdc0b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InfoDispCnsul.disco" MetadataType="Disco" ID="70b4b916-743b-4d9d-9e95-24c1e58cc498" SourceId="1" SourceUrl="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx?disco" />
+    <MetadataFile FileName="InfoDispCnsul.wsdl" MetadataType="Wsdl" ID="1341ef1a-2192-4b99-a904-21c435c958f0" SourceId="1" SourceUrl="http://nlb-unit-app4/FIPAPP/EP/EPZ_AccesTraitComunExt/EPZ3_InfoDisp_ws/InfoDispCnsul.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

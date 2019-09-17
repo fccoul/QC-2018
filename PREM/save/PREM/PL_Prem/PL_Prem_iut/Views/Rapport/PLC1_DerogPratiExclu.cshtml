@@ -1,0 +1,131 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_DerogPratiExclu
+@using OutilCommun = RAMQ.PRE.PRE_OutilComun_cpo;
+@using RAMQ.PRE.PL_Prem_iut.Helpers
+
+@Styles.Render("~/bundles/PLC1CSS")
+
+@{
+    ViewData["TitrePage"] = "Dérogation pour pratique exclusive (article 4.01)";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div role="group" class="collection">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-xl-1">
+            @Html.LabelFor(x => x.Annee)
+            @Html.DropDownListFor(x => x.Annee, Model.ListAnnees, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3 col-lg-3 col-xl-2">
+            @Html.LabelFor(x => x.TypePratique)
+            @Html.DropDownListFor(x => x.TypePratique, Model.ListTypesPratique, new { @class = "form-control" })
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 col-btn">
+            <br />
+            <button id="AppliquerRecherche" name="TypeAction" class="btn btn-primary btn-success" type="submit" value="@OutilCommun.Constantes.TypeActionAvisConformite.Rechercher">
+                <i class="fa fa-check" aria-hidden="true"></i>Appliquer
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+@{
+    var dateDuJour = DateTime.Now;
+    if (dateDuJour >= Model.DateDebutRapport && dateDuJour <= Model.DateFinRapport)
+    {
+        <h3>Du @Model.DateDebutRapport.Value.ToString("dd MMMM yyyy") au @dateDuJour.ToString("dd MMMM yyyy")</h3>
+        <p>Liste présentée à titre indicatif uniquement. Ces informations ne sont pas définitives.</p>
+    }
+    else
+    {
+        <h3>Du @Model.DateDebutRapport.Value.ToString("dd MMMM yyyy") au @Model.DateFinRapport.Value.ToString("dd MMMM yyyy")</h3>
+    }
+}
+        </div>
+        <div class="col-md-3" id="liensEnregistrement">
+            <br />
+            <i class="fa fa-print" aria-hidden="true"></i>
+            <a href="#" id="BtnImprimer">Imprimer       </a>
+            <i class="fa fa-file" aria-hidden="true"></i>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enregistrer</a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("Enregistrer en PDF", "PLC1_DerogPratiExclu_Pdf", new {Annee = Model.Annee, TypePratique = Model.TypePratique })</li>
+                <li>@Html.ActionLink("Enregistrer en XML", "PLC1_DerogPratiExclu_Xml", new { Annee = Model.Annee, TypePratique = Model.TypePratique })</li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="table-responsive">
+        <table class="table table-striped dt-responsive tableRapport" id="DataTableAttente">
+            <thead>
+                <tr>
+                    <th>
+                        Numéro de pratique
+                    </th>
+                    <th>
+                        Médecin
+                    </th>
+                    <th>
+                        Type de pratique
+                    </th>
+                    <th>
+                        Date de prise d'effet
+                    </th>
+                    <th>
+                        Date de fin
+                    </th>
+                    <th title="Il s’agit du nombre de jours facturés pendant une période donnée pour un type de pratique (Dépannage ou IVN).">
+                        Nbr de jr facturés
+                    </th>
+                    <th title="Il s’agit du nombre de jours facturés pendant une période donnée tout type de pratique confondu.">
+                        Nbr de jr totaux fact
+                    </th>
+                    <th title="Le calcul du pourcentage est le suivant : (Nombre de jours facturés / Nombre de jours totaux facturés) * 100. Ce champ est en rouge si la valeur est plus petite que 95%.">
+                        % effectué
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        @*<p>Nombre total de médecins pour cette recherche: @Model.NombreDispensateursRetournes</p>*@
+    </div>
+</div>
+
+}
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLC1")
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+    var donneesRapport = [];
+    @foreach (var ligne in Model.LignesRapport)
+    {
+        <text>
+        donneesRapport.push(["@ligne.NumeroPratique", "@ligne.Medecin", "@ligne.TypePratique", "@ligne.DatePriseEffet.ToShortDateString()", "@(ligne.DateFin.HasValue == true ? @ligne.DateFin.Value.ToShortDateString() : "")", "@ligne.NombreJoursFactures", "@ligne.NombreJoursTotatuxFactures", "@ligne.PourcentageEffectue"]);
+        </text>
+    }
+
+    //Chargement des données
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var lienRedirection = "@Url.Action("PLC2_Avis", "ProfilProfessionnel", new { idProf = 12345 })";
+        window.optionsDataTable.rowCallback = function (row, data, index) {
+            if (data[0] != undefined) {
+                $('td:eq(0)', row).html("<a href='" + lienRedirection.replace("12345",data[0].replace("-", "")) + "'>" + $('td:eq(0)', row).html() + "</a>");
+            }
+            if (data[7] != undefined && Number(data[7].replace(",", ".")) < 95) {
+                $('td:eq(7)', row).addClass("pourcentageRouge");
+            }
+        }
+        window.optionsDataTable.pageLength = 100;
+        window.optionsDataTable.searching = false;
+        var datatable = $('.tableRapport').DataTable(window.optionsDataTable);
+        datatable.clear();
+        datatable.rows.add(donneesRapport);
+        datatable.draw();
+    });
+
+
+
+    </script>
+}

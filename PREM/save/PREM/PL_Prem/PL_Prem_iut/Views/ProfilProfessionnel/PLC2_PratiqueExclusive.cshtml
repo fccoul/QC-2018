@@ -1,0 +1,23 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_PratiqueExclusive
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.EditorFor(x => x.AnneePratique, "DropDownList", new { classe = "select2dropdownlist", label = "Choix de l'année", data = Model.AnneesPratique })
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        @Html.EditorFor(x => x.EngagementPratiqueExclusive, "DropDownList", new { classe = "select2dropdownlist", label = "Engagement de la pratique"})
+        @Html.HiddenFor(x => x.EstPratiqueDepannage)
+        @Html.HiddenFor(x => x.NumeroPratique)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="InformationEngagementPratiqueExclusive">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="ZoneTableauPratiqueExclusive">
+    </div>
+</div>

@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C63BB18-EC97-45DB-80B0-14912578A696}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PRE_SysExt_cpo</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PRE_SysExt_cpo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Debug\RAMQ.PRE.PRE_SysExt_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Release\RAMQ.PRE.PRE_SysExt_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="oracle.dataaccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\Unit\COM\COM_LIV40\VbDotNet\Ref\V4\Oracle\x64\4_121_1\oracle.dataaccess.dll</HintPath>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC1_V4DonneComne_cpo, Version=2.0.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.0.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC2_V4FournAccesDonne_cpo, Version=2.0.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.0.2\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.0.8.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.0.8\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD2_V4GestCache_cpo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.0.0\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_Entites_cpo, Version=1.0.75.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.75\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_FournAccesDonne_cpo, Version=1.0.9.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_FournAccesDonne.1.0.9\lib\NET45\RAMQ.PRE.PRE_FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_OutilComun_cpo, Version=1.0.29.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_OutilComun.1.0.29\lib\NET45\RAMQ.PRE.PRE_OutilComun_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleConfig, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\simple-config.1.4.0\lib\net40\SimpleConfig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constantes.cs" />
+    <Compile Include="FIP\EPZ3\IInfoDispCnsul.cs" />
+    <Compile Include="FIP\EPZ3\InfoDispCnsul.cs" />
+    <Compile Include="FIP\EPZ3\Parametre\ObtenirInfoPerslDispEntre.cs" />
+    <Compile Include="FIP\EPZ3\Parametre\ObtenirPeriodePratiqueProfessionnelEntre.cs" />
+    <Compile Include="FIP\EPZ3\Parametre\ObtenirInfoPerslDispSorti.cs" />
+    <Compile Include="FIP\EPZ3\Parametre\ObtenirPeriodePratiqueProfessionnelSorti.cs" />
+    <Compile Include="FIP\EPZ3\Parametre\ObtnRelDispIndivEntre.cs" />
+    <Compile Include="FIP\EPZ3\Parametre\ObtnRelDispIndivSorti.cs" />
+    <Compile Include="GEO\SOB2\IObtnInfoLocal.cs" />
+    <Compile Include="GEO\SOB2\ObtnInfoLocal.cs" />
+    <Compile Include="GEO\SOD1\IObtnInfoPilotLieuGeo.cs" />
+    <Compile Include="GEO\SOD1\ObtnInfoPilotLieuGeo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\svcInfoDispCnsul\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcObtnInfoLocal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcObtnInfoPilotLieuGeo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitaire\Mappeur.cs" />
+    <None Include="packages.config" />
+    <None Include="RAMQ.snk" />
+    <None Include="Service References\svcInfoDispCnsul\InfoDispCnsul.wsdl" />
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.DeterminerAdmisFactuDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirAdrCourlScursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirCoordDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirDispLieIdUtilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirInfoProfGestDemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirMasvmNoEntenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirNomPreDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirNomPreListeDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirProfNoEntenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirRelDispIndivResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtenirSituPartcDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtnInfoDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtnInfoSituPartcPilotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ObtnInfoSpecPilotResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamDeterminerAdmisFactuDispSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtenirMasvmNoEntenSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnAdrCourlScursSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnCoordDispSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnDispLieIdUtilSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnInfoDispSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnInfoProfGestDemSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnInfoSpecPilotSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnNomPreDispSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnNomPreListeDispSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnProfNoEntenSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnRelDispIndivSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnSituPartcDispSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamObtnSituPartcPilotSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamVrifExistDispSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcInfoDispCnsul\RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.VerifierExistDispResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnCodRSS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoLocalPart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoPays.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoTau.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoTerriCLSC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoTerriRLS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnNomLoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnTerriCLSCCodLocal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnTerriCLSCCP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal.wsdl" />
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoPilotLieuGeo.ObtnListeRegrLgeoRattaRssSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoPilotLieuGeo.ObtnListeRegrRattaLgeoSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo.wsdl" />
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\svcInfoDispCnsul\" />
+    <WCFMetadataStorage Include="Service References\svcObtnInfoLocal\" />
+    <WCFMetadataStorage Include="Service References\svcObtnInfoPilotLieuGeo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcInfoDispCnsul\InfoDispCnsul.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcInfoDispCnsul\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcInfoDispCnsul\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcInfoDispCnsul\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoLocal\ServObtnInfoLocal.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoLocal\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoLocal\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoLocal\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\ServObtnInfoPilotLieuGeo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcObtnInfoPilotLieuGeo\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

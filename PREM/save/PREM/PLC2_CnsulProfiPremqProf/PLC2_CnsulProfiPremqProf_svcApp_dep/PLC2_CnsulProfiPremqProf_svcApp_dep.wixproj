@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>e91b0639-53e5-4103-8199-6cd44f6aab3d</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>PLC2_CnsulProfiPremqProf_svcApp_dep</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <RamqWixTargetsPath Condition=" '$(RamqWixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\RAMQ\RAMQ.Wix.targets</RamqWixTargetsPath>
+    <RamqWixTargetsPath Condition=" '$(RamqWixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\RAMQ\RAMQ.Wix.targets</RamqWixTargetsPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Codes.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ProjetWix_Aide.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PLC2_CnsulProfiPremqProf_cpo\PLC2_CnsulProfiPremqProf_cpo.csproj">
+      <Name>PLC2_CnsulProfiPremqProf_cpo</Name>
+      <Project>{a2b3d4ae-d43e-420a-80d1-5eb710a5db1d}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\PLC2_CnsulProfiPremqProf_svc\PLC2_CnsulProfiPremqProf_svc.csproj">
+      <Name>PLC2_CnsulProfiPremqProf_svc</Name>
+      <Project>ac8ac37f-538e-4b2a-9905-ca7e5a606ded</Project>
+      <Private>True</Private>
+      <DoNotHarvest>
+      </DoNotHarvest>
+      <RefProjectOutputGroups>Content</RefProjectOutputGroups>
+      <RefTargetDir>SSFU</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <Import Project="$(RamqWixTargetsPath)" />
+  <PropertyGroup>
+    <EnableProjectHarvesting>True</EnableProjectHarvesting>
+  </PropertyGroup>
+</Project>

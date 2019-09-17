@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>RAMQ.PRE.PRE_AccesDonne</id>
+    <version></version>
+    <title>PRE_AccesDonne</title>
+    <authors>RAMQ</authors>
+    <owners>RAMQ</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Composantes pour les accès au schema PRE de la base de donnée</description>
+    <summary>Permet l'accès au données</summary>
+    <releaseNotes>Version convertie en C#</releaseNotes>
+    <copyright>© RAMQ</copyright>
+    <language>fr-CA</language>
+    <tags></tags>
+    <dependencies>
+      <dependency id="L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne" version="[2.0.0, 3.0.0)" />
+      <dependency id="L2-Princ.RAMQ.COM.COD1_V4OutilBase" version="[2.0.0, 3.0.0)" />
+      <dependency id="Princ.RAMQ.PRE.PRE_FournAccesDonne" version="[1.0.0, 2.0.0)" />
+    </dependencies>
+  </metadata>
+</package>

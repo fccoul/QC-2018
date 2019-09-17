@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?include Codes.wxi?>
+<?include RAMQ.GCD.Var.wxi?>
+<?include PLF1_TraiterEveneAutreSys_svc.Var.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="$(var.RAMQ.GCD.BranchePrinc.ProductCode)"
+           Name="PLF1_TraiterEveneAutreSys_svcApp_dep"
+           Language="1036"
+           Version="$(var.PLF1_TraiterEveneAutreSys_svc.Version)"
+           Manufacturer="RAMQ"
+           UpgradeCode="$(var.RAMQ.GCD.BranchePrinc.UpgradeCode)">
+
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Exemple de définition des répertoires cibles- -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="CHEMINAPPLI" Name="CHEMINAPPLI" ComponentGuidGenerationSeed="71398a40-8618-4796-bf4f-a99946255643">
+        <Directory Id="PPP" Name="PREAPP" ComponentGuidGenerationSeed="564961ea-9772-4686-b192-a127dafb33d9">
+          <Directory Id="SS" Name="PL" ComponentGuidGenerationSeed="7e76ecaa-f507-4b35-8162-726e5f5086b3">
+            <Directory Id="SSF" Name="PLF_TraitPremAutreAppli">
+              <Directory Id="SSFU" Name="PLF1_TraiterEveneAutreSys_svc">
+                <Directory Id="BinFolder" Name="bin"></Directory>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <ComponentGroup Id="ProductComponentRef">
+
+      <!-- Copie des fichiers du bin (SVC) -->
+      <Component Id="BinSvc" Directory="BinFolder">
+        <File Id="BinSvc.Output"
+              Name="$(var.PLF1_TraiterEveneAutreSys_svc.TargetFileName)"
+              Source="$(var.PLF1_TraiterEveneAutreSys_svc.TargetPath)" />
+      </Component>
+      
+      
+      <!-- Copie des fichiers du bin (CPO) -->
+      <Component Id="PLF1_TraiterEveneAutreSys_cpo" Directory="BinFolder">
+        <File Id="PLF1_TraiterEveneAutreSys_cpo.Output"
+              Name="$(var.PLF1_TraiterEveneAutreSys_cpo.TargetFileName)"
+              Source="$(var.PLF1_TraiterEveneAutreSys_cpo.TargetPath)" />
+      </Component>
+
+      <?define environementList=FONCT;INTEG;ACPTN;FORMA;PARTE;PRDEV;URG;PROD?>
+
+      <?foreach ENVIR in $(var.environementList)?>
+      <Component Id="Config$(var.ENVIR)" Directory="SSFU" Guid="12e78e0a-b1a8-4baf-bbb2-bf2f288533b1">
+        <Condition><![CDATA[ENVIR="$(var.ENVIR)"]]></Condition>
+        <File KeyPath="yes"
+              Id="$(var.ENVIR).appSettings.Config"
+              Name="appSettings.config"
+              Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)Config\$(var.ENVIR).appSettings.Config" />     
+      </Component>
+      <?endforeach?>
+      
+    </ComponentGroup>
+
+    <Feature Id="ProductFeature" Title="PLF1_TraiterEveneAutreSys_svc" Level="1">
+      <!-- Copie des fichiers des projets -->
+      <ComponentGroupRef Id="ProductComponentRef" />
+      <!-- Copie des fichiers dont le Build Action est à "Content" -->
+      <ComponentGroupRef Id="PLF1_TraiterEveneAutreSys_svc.Content" />
+      <!-- Pour les projets ayant des références NuGet, copie des fichiers en référence -->
+      <ComponentGroupRef Id="PLF1_TraiterEveneAutreSys_svc.DllRefreNuget" />
+    </Feature>
+
+  </Product>
+
+</Wix>

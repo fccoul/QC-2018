@@ -1,0 +1,51 @@
+﻿.typeUtilisateur {
+    font-size: 70%;
+}
+
+.row .centrer {
+    align-items: center;
+    display: flex;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+#ModaleChargement {
+    display: none;
+    padding-right: 16px;
+}
+
+#progress-bar {
+    width: 100%;
+}
+
+.fa .fa-exclamation-triangle {
+    color: orange;
+}
+
+.collection {
+    background-color: #fff;
+    margin-top: 2em;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1.5em;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+
+
+input, input::-webkit-input-placeholder { /* Chrome, Safari, Opera */
+    font-size: 12px;
+}
+
+    input, input:-ms-input-placeholder { /* IE10–11 */
+        font-size: 12px;
+    }
+
+        input, input::-moz-placeholder { /* Firefox */
+            font-size: 12px;
+        }

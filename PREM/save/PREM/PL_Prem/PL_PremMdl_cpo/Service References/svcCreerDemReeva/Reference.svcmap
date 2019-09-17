@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b79fb2b-67cd-48ae-aad7-2b98ffe04abf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="RAMQ.PRE.PRE_Entites_cpo" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServCreerDemReeva.xsd" MetadataType="Schema" ID="0c95461f-5a36-4bb7-bad4-846fbb6ce476" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServCreerDemReeva.disco" MetadataType="Disco" ID="3e98aea7-f893-4961-ab2d-de4dc186a3d7" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?disco" />
+    <MetadataFile FileName="ServCreerDemReeva1.xsd" MetadataType="Schema" ID="ee411763-a1c3-4948-bef7-716c3b94f623" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServCreerDemReeva2.xsd" MetadataType="Schema" ID="84f81f29-eecd-4294-beaf-d8d50fb86908" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServCreerDemReeva5.xsd" MetadataType="Schema" ID="464fdb12-de00-4a68-89bf-bbc588a71060" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServCreerDemReeva3.xsd" MetadataType="Schema" ID="c2de4f0b-53bc-4167-a4a3-8425e1681db0" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServCreerDemReeva.wsdl" MetadataType="Wsdl" ID="1846dfd6-73d0-4fb0-b34a-bdd4ca771194" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?wsdl" />
+    <MetadataFile FileName="ServCreerDemReeva4.xsd" MetadataType="Schema" ID="8e8f5b93-c5e5-4725-9704-c302ea61a935" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLE_GererReevaProf/PLE1_CreerDemReeva_svc/ServCreerDemReeva.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="SSFU">
+            <Component Id="cmp3619BEC619E11FF1E804F9A959566CDF" Guid="*">
+                <File Id="fil1CEEA56C565501076D6657B17E48AE4E" Source="$(var.PLF1_TraiterEveneAutreSys_svc.TargetDir)\RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.Binaries">
+            <ComponentRef Id="cmp3619BEC619E11FF1E804F9A959566CDF" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="SSFU">
+            <Component Id="cmp6F268067B0A7CDD3C79281B56C265EC2" Guid="*">
+                <File Id="fil5423919C00AD4B721B2F1D395F24410E" Source="$(var.PLF1_TraiterEveneAutreSys_svc.TargetDir)\RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.pdb" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.Symbols">
+            <ComponentRef Id="cmp6F268067B0A7CDD3C79281B56C265EC2" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="SSFU">
+            <Component Id="cmp41ED388CF1D9B11C611DE5E0F85A223A" Guid="*">
+                <File Id="fil141BA39E73011BC5BB2495454B9E7DCE" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\ServTraitEveneAutreSys.svc.cs" />
+            </Component>
+            <Component Id="cmpBE073E9E834F061EC0BC594A125C09D0" Guid="*">
+                <File Id="fil15D7E6F61DF4A8A48C0360B16DE478D6" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\IServTraitEveneAutreSys.cs" />
+            </Component>
+            <Component Id="cmpB9CFC18717318059AC4A84BE0CA873E9" Guid="*">
+                <File Id="fil1D2FE132FBDBEC72C11E20A599DE062A" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\Global.asax.cs" />
+            </Component>
+            <Component Id="cmpD0CC5CB28B15FD2DF6D6224B417E5CA2" Guid="*">
+                <File Id="fil87E87FC83B1DAD92F7E9D1D98CF327AC" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\Web.config" />
+            </Component>
+            <Component Id="cmp0710DADD725B5306796B32228B841B06" Guid="*">
+                <File Id="fil5035D1B72CD0FCC0B31A16AE04AD9F41" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\PLF1_TraiterEveneAutreSys_svc.csproj" />
+            </Component>
+            <Directory Id="dir8D01AA1D92ECE166416ED2EC54B9CF38" Name="Properties">
+                <Component Id="cmp32BE695B34DC48667EB3B4BF87473775" Guid="*">
+                    <File Id="fil2F7FDCAE3FB1A3D8A8AF7668A2479B74" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\Properties\AssemblyInfo.cs" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.Sources">
+            <ComponentRef Id="cmp41ED388CF1D9B11C611DE5E0F85A223A" />
+            <ComponentRef Id="cmpBE073E9E834F061EC0BC594A125C09D0" />
+            <ComponentRef Id="cmpB9CFC18717318059AC4A84BE0CA873E9" />
+            <ComponentRef Id="cmpD0CC5CB28B15FD2DF6D6224B417E5CA2" />
+            <ComponentRef Id="cmp0710DADD725B5306796B32228B841B06" />
+            <ComponentRef Id="cmp32BE695B34DC48667EB3B4BF87473775" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="SSFU">
+            <Component Id="cmp9F3F904B31FEEB391422B435448AC1EE" Guid="*">
+                <File Id="fil7324107A69CF0A14CC20EC24C588AE9E" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\ServTraitEveneAutreSys.svc" />
+            </Component>
+            <Component Id="cmp0ED70C0F09AD56E12D131682D613C649" Guid="*">
+                <File Id="fil78EEDFE8FAFD74AF77878295B5D97CF0" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\Web.config" />
+            </Component>
+            <Component Id="cmpFFFEC40159E069BBE4B3DB8CC29698B9" Guid="*">
+                <File Id="fil659DFD738935C46A8DD8CE442D4EE4D2" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\Global.asax" />
+            </Component>
+            <Component Id="cmp32CCB9A1A9AC6396767D8F39F3C643AD" Guid="*">
+                <File Id="filCCE233EA2CE41481C73281029AE9A928" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\packages.config" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.Content">
+            <ComponentRef Id="cmp9F3F904B31FEEB391422B435448AC1EE" />
+            <ComponentRef Id="cmp0ED70C0F09AD56E12D131682D613C649" />
+            <ComponentRef Id="cmpFFFEC40159E069BBE4B3DB8CC29698B9" />
+            <ComponentRef Id="cmp32CCB9A1A9AC6396767D8F39F3C643AD" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.Satellites" />
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="SSFU">
+            <Directory Id="dir2DFA42843FB1DD841134EC8B95407709" Name="bin">
+                <Component Id="cmp71EB9BA1B0E7870BB96A65692B55B726" Guid="*">
+                    <File Id="filC22E18647AB218469A0925892F6FFAC9" Source="$(var.PLF1_TraiterEveneAutreSys_svc.ProjectDir)\bin\RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.XML" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PLF1_TraiterEveneAutreSys_svc.Documents">
+            <ComponentRef Id="cmp71EB9BA1B0E7870BB96A65692B55B726" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

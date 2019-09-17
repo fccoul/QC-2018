@@ -1,0 +1,1 @@
+installer PLC2_CnsulProfiPremqProf_svcApp_dep.msi CHEMINAPPLI="d:\inetpub\TraitRoot"

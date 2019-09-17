@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys">
+            <summary>
+            Service PLF1
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.#ctor(ITraitEveneAutreSys,System.Func{RAMQ.AccesDonnees.BDOracle.IAccesDonnesOra},RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.IAjusterEngagAvisConfNonParticipation)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="traitEveneAutreSys"></param>
+            <param name="clientAccesDonnesOra"></param>
+            <param name="ajusterEngagAvisConfNonParticipation"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterAvisConformiteMedResidents(ParamEntreAjusterAvisConformiteMedResidents)">
+             <summary>
+            
+             </summary>
+             <param name="objParamEntree"></param>
+             <returns></returns>
+             <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.TraiterAdmissibiliteDuProfessionnel(ParamEntreTraiterAdmissProf)">
+             <summary>
+            
+             </summary>
+             <param name="objParamEntree"></param>
+             <returns></returns>
+             <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagAjouNonPartn(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagModifNonPartn(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est modifiée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagAnnuNonPartn(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est annulée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagDeces(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel un déces a 
+             été inscrit.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagDdSpecInscr(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une date de
+             début de spécialité a été inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagAjouNonPartnBiztalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagModifNonPartnBiztalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est modifiée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagAnnuNonPartnBiztalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est annulée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagDecesBizTalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel un déces a 
+             été inscrit.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AjusterEngagDdSpecInscrBizTalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une date de
+             début de spécialité a été inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys.AppelerCpo``1(System.Func{ITraitEveneAutreSys,``0})">
+            <summary>
+             Appel une méthode de la CPO et fait la gestion d'exception
+            </summary>
+            <typeparam name="T">Type de retour de la méthode appelée</typeparam>
+            <param name="fctAExecuter">Fonction anonyme qui encapsule l'appel</param>
+            <returns></returns>
+            <remarks></remarks>       
+        </member>
+        <member name="T:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterAvisConformiteMedResidents(ParamEntreAjusterAvisConformiteMedResidents)">
+             <summary>
+            
+             </summary>
+             <param name="objParamEntree"></param>
+             <returns></returns>
+             <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.TraiterAdmissibiliteDuProfessionnel(ParamEntreTraiterAdmissProf)">
+             <summary>
+            
+             </summary>
+             <param name="objParamEntree"></param>
+             <returns></returns>
+             <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagAjouNonPartn(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagModifNonPartn(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est modifiée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagAnnuNonPartn(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est annulée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagDeces(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel un déces a 
+             été inscrit.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagDdSpecInscr(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntre)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une date de
+             début de spécialité a été inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagAjouNonPartnBiztalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAjouNonPartnEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est inscrite.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagModifNonPartnBiztalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagModifNonPartnEntreBiztalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est modifiée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagAnnuNonPartnBiztalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagAnnuNonPartnEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une période
+             de non-participation est annulée.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagDecesBizTalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDecesEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel un déces a 
+             été inscrit.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.IServTraitEveneAutreSys.AjusterEngagDdSpecInscrBizTalk(RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param.AjusEngagDdSpecInscrEntreBizTalk)">
+            <summary>
+             Ajuster les engagements PREM du médecin omnipraticien pour lequel une date de
+             début de spécialité a été inscrite.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2139 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PRE_OutilComun_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1">
+            <summary> 
+             Classe de type ICache(Of T) qui implément l'interface sous forme de cache AppFabrique   
+            </summary>
+            <remarks>
+            Auteur : Sébastien Bourdages <br/>
+            Date   : 2016-11-29
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1.#ctor(System.TimeSpan,System.Boolean,System.String)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="tempsExpiration">
+             Temps avant l'expiration des entrées
+            </param>
+            <param name="expirationSliding">
+             Indique si l'expiration est « sliding », c'est à dire si le temps avant 
+             expiration est réinitialisé à chaques fois que l'éléments est accédé.
+            </param>
+            <param name="region">
+            Région de la cache.
+            </param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1.Ajouter(System.String,`0)">
+            <summary>
+            Ajouter un objet en cache avec la clé déterminée
+            </summary>
+            <param name="strCle"></param>
+            <param name="valeur"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1.Obtenir(System.String)">
+            <summary>
+            Obtenir la valeur de la cache selon la clé
+            </summary>
+            <param name="strCle">cle de la cache pour le type d'objet</param>
+            <returns>objet de la cache ou nothing</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1.ObtenirList">
+            <summary>
+            Obtenir la liste de valeur selon le type T
+            </summary>
+            <returns>List(Of T)</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1.Supprimer(System.String)">
+            <summary>
+            Supprimer l'objet de la cache
+            </summary>
+            <param name="strCle"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.AppFabricCache`1.SupprimerRegion">
+            <summary>
+            Supprimer l'ensemble des objets T de la région
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1">
+            <summary> 
+             Classe de type ICache(Of T) qui implément l'interface sous forme cache mémoire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1.Ajouter(System.String,`0)">
+            <summary>
+            Ajouter un objet en cache avec la clé déterminée
+            </summary>
+            <param name="cle"></param>
+            <param name="valeur"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1.Obtenir(System.String)">
+            <summary>
+            Obtenir la valeur de la cache selon la clé
+            </summary>
+            <param name="cle">cle de la cache pour le type d'objet</param>
+            <returns>objet de la cache ou nothing</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1.ObtenirList">
+            <summary>
+            Obtenir la liste de valeur selon le type T
+            </summary>
+            <returns>List(Of T)</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1.Supprimer(System.String)">
+            <summary>
+            Supprimer l'objet de la cache
+            </summary>
+            <param name="cle"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1.SupprimerRegion">
+            <summary>
+            Supprimer l'ensemble des objets T de la région
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.CacheBase`1.FormaterCle(System.String)">
+            <summary>
+             Formate la clé du cache.
+            </summary>
+            <param name="cle"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Cache.ICache`1">
+            <summary> 
+             Interface d'implémation d'utilisataire de caching.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.ICache`1.Ajouter(System.String,`0)">
+            <summary>
+            Ajouter un objet en cache avec la clé déterminée
+            </summary>
+            <param name="cle"></param>
+            <param name="valeur"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.ICache`1.Obtenir(System.String)">
+            <summary>
+            Obtenir la valeur de la cache selon la clé
+            </summary>
+            <param name="cle">cle de la cache pour le type d'objet</param>
+            <returns>objet de la cache ou nothing</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.ICache`1.ObtenirList">
+            <summary>
+            Obtenir la liste de valeur selon le type T
+            </summary>
+            <returns>List(Of T)</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.ICache`1.Supprimer(System.String)">
+            <summary>
+            Supprimer l'objet de la cache
+            </summary>
+            <param name="cle"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.ICache`1.SupprimerRegion">
+            <summary>
+            Supprimer l'ensemble des objets T de la région
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1">
+            <summary> 
+             Classe de type ICache(Of T) qui implément l'interface sous forme cache mémoire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.#ctor(System.TimeSpan,System.Boolean)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="estExpirationSliding">
+             Temps avant l'expiration des entrées
+            </param>
+            <param name="tempsExpiration">
+             Indique si l'expiration est « sliding », c'est à dire si le temps avant 
+             expiration est réinitialisé à chaques fois que l'éléments est accédé.
+            </param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.Ajouter(System.String,`0)">
+            <summary>
+            Ajouter un objet en cache avec la clé déterminée
+            </summary>
+            <param name="cle"></param>
+            <param name="valeur"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.Obtenir(System.String)">
+            <summary>
+            Obtenir la valeur de la cache selon la clé
+            </summary>
+            <param name="cle">cle de la cache pour le type d'objet</param>
+            <returns>objet de la cache ou nothing</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.ObtenirList">
+            <summary>
+            Obtenir la liste de valeur selon le type T
+            </summary>
+            <returns>List(Of T)</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.Supprimer(System.String)">
+            <summary>
+            Supprimer l'objet de la cache
+            </summary>
+            <param name="cle"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.SupprimerRegion">
+            <summary>
+            Supprimer l'ensemble des objets T de la région
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.MemoireCache`1.ObtenirPolicy">
+            <summary>
+             Retourne la policy à utiliser lors de l'ajout d'items
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Cache.NullCache`1">
+            <summary> 
+             Classe de type ICache(Of T) qui implément l'interface afin de représenter une instance sans cache.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.NullCache`1.Ajouter(System.String,`0)">
+            <summary>
+            Ajouter un objet en cache avec la clé déterminée
+            </summary>
+            <param name="cle"></param>
+            <param name="valeur"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.NullCache`1.Obtenir(System.String)">
+            <summary>
+            Obtenir la valeur de la cache selon la clé
+            </summary>
+            <param name="cle">cle de la cache pour le type d'objet</param>
+            <returns>objet de la cache ou nothing</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.NullCache`1.Supprimer(System.String)">
+            <summary>
+            Supprimer l'objet de la cache
+            </summary>
+            <param name="cle"></param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.NullCache`1.SupprimerRegion">
+            <summary>
+            Supprimer l'ensemble des objets T de la région
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Cache.NullCache`1.ObtenirList">
+            <summary>
+            Obtenir la liste de valeur selon le type T
+            </summary>
+            <returns>List(Of T)</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Composante">
+            <summary> 
+             Utilitaire en lien avec la composante
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Composante.#ctor">
+            <summary>
+            Constructeur privé pour empêcher l'instanciation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Composante.ObtenirIdUtil">
+            <summary>
+            Obtenir l'identifiant de l'utilisateur courant
+            Pour un contexte web l'identifiant sera celui de l'enveloppe SOAP
+            Pour un contexte exe/LOT l'identifiant sera le nom de l'exécutable soit SSFU.
+            </summary>
+            <returns>l'identifiant de l'utilisateur</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Composante.ObtenirEnvir">
+            <summary>
+            Obtenir l'environnement (UNIT, FONCT, INTEG, ACPTN, PROD, etc.) actuel
+            tel que défini dans les AppSettings du Machine.config
+            </summary>
+            <remarks>En majuscules</remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Composante.EssayerDispose``1(``0)">
+            <summary>
+             Essaie de disposer d'un objet.
+            </summary>
+            <typeparam name="T">Type de l'objet à disposer</typeparam>
+            <param name="objetDisposer">Objet à disposer</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Composante.ObtenirCodUt(System.Reflection.Assembly)">
+            <summary>
+            Récupère l'alias de la composante
+            </summary>
+            <param name="composante">Composante</param>
+            <returns>Retourne l'unité de traitement de l'assemble ou son nom complet</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Composante.ObtenirTitreCpo(System.Reflection.Assembly)">
+            <summary>
+            Obtenir le Titre de l'assembly
+            </summary>
+            <param name="composante">Composante</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes">
+            <summary>
+            Classe de constante commune dans le projet PRE
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier<br/>
+             Date   : Octobre 2016
+            <br/>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeApplication">
+            <summary>
+            Code d'application
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomUDL">
+            <summary>
+            Nom de l'UDL
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IndicateurNon">
+            <summary>
+            Indicateur non
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IndicateurOui">
+            <summary>
+            Indicateur oui
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.LieuxGeographiques">
+            <summary>
+            Classe de constante pour les lieux géographique
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.LieuxGeographiques.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.LieuxGeographiques.TypeRegroupement">
+            <summary>
+            Type de regroupement
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.LieuxGeographiques.NumeroDocumentOfficiel">
+            <summary>
+            Numéro de document officiel
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.LieuxGeographiques.RegionSocioSanitaire">
+            <summary>
+            Région socio-sanitaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour">
+            <summary>
+            Constantes pour les codes de retour
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_40758_ErreurImprevu">
+            <summary>
+            Erreur imprévu
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_8689_DateReporterAnterieur">
+            <summary>
+            Code de retour 8689
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_42918_AvisEnCours">
+            <summary>
+            Code de retour 42918
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_42920_AvisNonActif">
+            <summary>
+            Code de retour 42920
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.Q_41962_PratiquePossible">
+            <summary>
+            Code de retour 41962
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_41963_PratiqueImpossible">
+            <summary>
+            Code de retour 41963
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43640_CaseCocheEnregistrer">
+            <summary>
+            Code de retour 43640
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43638_CaseCocheTransmettre">
+            <summary>
+            Code de retour 43638
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43641_ValidationProfessionnel">
+            <summary>
+            Code de retour 43641
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43645_ValidationObtentionPermis">
+            <summary>
+            Code de retour 43645
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43644_ValidationMemeTerritoire">
+            <summary>
+            Code de retour 43644
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43639_ValidationAvisFuture">
+            <summary>
+            Code de retour 43639
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43642_DerogationActive">
+            <summary>
+            Code de retour 43642
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.Q_43643_DerogationActive">
+            <summary>
+            Code de retour 43643
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_42919_DerogationEnCours">
+            <summary>
+            Code de retour 42919
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_41964_DateReporterPlusSixMois">
+            <summary>
+            Code de retour 41964
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_43959_AucuneModification">
+            <summary>
+            Code de retour 43959
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_147939_PasDroits">
+            <summary>
+            Code de retour 147939
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_41078_SaisirValeurContinuer">
+            <summary>
+            Code de retour 41078
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_147998_CocherCaseDerogation">
+            <summary>
+            Code de retour 147998
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_147999_CocherCaseSuspension">
+            <summary>
+            Code de retour 147999
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148000_CocherCaseDecision">
+            <summary>
+            Code de retour 148000
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148001_DerogNePeutInsctModif">
+            <summary>
+            Code de retour 148001
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148002_DatDerogDatObtenPermi">
+            <summary>
+            Code de retour 148002
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148003_DerogActiveMemeTyp">
+            <summary>
+            Code de retour 148003
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148004_DerogComtParitRglrs">
+            <summary>
+            Code de retour 148004
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148005_AvisConfPresMdStaSusp">
+            <summary>
+            Code de retour 148005
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.Q_148006_MettreFinDerogation">
+            <summary>
+            Code de retour 148006
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.Q_148007_MettreFinAvisConf">
+            <summary>
+            Code de retour 148007
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148008_DerogTranmAnnuSucces">
+            <summary>
+            Code de retour 148008
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148009_NotAvisConfTerriFerme">
+            <summary>
+            Code de retour 148009
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148010_NotDerogTypeFerme">
+            <summary>
+            Code de retour 148010
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148011_DatFinSuspSupEgDatDeb">
+            <summary>
+            Code de retour 148011
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148012_PerSuspPasDepasserAn">
+            <summary>
+            Code de retour 148012
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148013_ChvmnSuspExist">
+            <summary>
+            Code de retour 148013
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148014_AjouSuspProlPasPosib">
+            <summary>
+            Code de retour 148014
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148015_DatSupsPerAvisconf">
+            <summary>
+            Code de retour 148015
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148016_SuspAvisConfSucces">
+            <summary>
+            Code de retour 148016
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148017_PasPosibAjouModifSusp">
+            <summary>
+            Code de retour 148017
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148018_AvisConfProfSantInxst">
+            <summary>
+            Code de retour 148018
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148019_SuspAvisConfSelecInxst">
+            <summary>
+            Code de retour 148019
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148020_SuspPeutPasIMAAvisConf">
+            <summary>
+            Code de retour 148020
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148021_AnnuSupsSuiviProl">
+            <summary>
+            Code de retour 148021
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148038_DerogProfSantInxst">
+            <summary>
+            Code de retour 148038
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148058_PasPosibAjouSuspDifrn">
+            <summary>
+            Code de retour 148058
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_40958_ParametrePasValide">
+            <summary>
+            Code de retour 40958
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_40959_ParametreAbsent">
+            <summary>
+            Code de retour 40959
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148378_AucunRSSChoisi">
+            <summary>
+            Code de retour 148378
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_43818_AucunAvisNonTransmis">
+            <summary>
+            Code de retour 43818
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148881_DateCoincidePeriodeSuspension">
+            <summary>
+            Code de retour 148881
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148882_DerogationExistante">
+            <summary>
+            Code de retour 148882
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_42198_MedecinPasSujetAuxRestrictionsRegionPratique">
+            <summary>
+            Code de retour 42198
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_44038_AucunDroitExercerRegionPratique">
+            <summary>
+            Code de retour 44038
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148603_AucuneReductionRemunerationDossier">
+            <summary>
+            Code de retour 148603
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148642_LignePeutContenirJourneeRealiserPendantSuspension">
+            <summary>
+            Code de retour 148642
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_148722_MedecinPasSousReponsabiliteUtilisateurConnecter">
+            <summary>
+            Code de retour 148722
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148723_MedecinJamaisSoumisEntentePREM">
+            <summary>
+            Code de retour 148723
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_148724_MedecinDecederOuSpecialiteDepuis">
+            <summary>
+            Code de retour 148724
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_149401_AucuneAutorisationExercice">
+            <summary>
+            Code de retour 149401
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149402_CaseConfirmationNonCochePourTransmission">
+            <summary>
+            Code de retour 149402
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149403_DateFinAutorisationPlusGrandeQueDateDebut">
+            <summary>
+            Code de retour 149403
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149404_PeriodeAutorisationDepasseUnAn">
+            <summary>
+            Code de retour 149404
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149405_AutorisationSaisieOuModifie">
+            <summary>
+            Code de retour 149405
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149406_DateDebutAutorisationEgaleOuPosterieur">
+            <summary>
+            Code de retour 149406
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149407_AutorisationDejaPresenteDurantResidence">
+            <summary>
+            Code de retour 149407
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_149408_AutorisationPendantResidenceAnnulee">
+            <summary>
+            Code de retour 149408
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149409_CaseConfirmationNonCochePourAnnuler">
+            <summary>
+            Code de retour 149409
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_149410_AutorisationAnnulee">
+            <summary>
+            Code de retour 149410
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149411_AvisConformiteExistant">
+            <summary>
+            Code de retour 149411
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149412_DerogationExistante">
+            <summary>
+            Code de retour 149412
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149413_AnnulationPlusRecenteAutorisation">
+            <summary>
+            Code de retour 149413
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149414_ConflitAutorisation">
+            <summary>
+            Code de retour 149414
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_149415_RenouvellementAutorisationTransmise">
+            <summary>
+            Code de retour 149415
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149416_AutorisationExistantePourPeriodeCouranteComiteParitaire">
+            <summary>
+            Code de retour 149416
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149561_AutorisationExistantePourPeriodeCouranteDRMG">
+            <summary>
+            Code de retour 149561
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_149710_AvisConformiteEnVigueurDansRegion">
+            <summary>
+            Code de retour 149710
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.I_149711_AvisConformiteEnVigueurDepuis">
+            <summary>
+            Code de retour 149711
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149061_NumeroPratiqueSixCaractereCommenceParUn">
+            <summary>
+             Code de retour 149061
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_149062_NumeroPratiqueSaisieInexistant">
+            <summary>
+            Code de retour 149062
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_150161_ChampAbsentDuService">
+            <summary>
+            Code de retour 150161
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_150162_CodePostalEtCodeLocalAbsent">
+            <summary>
+            Code de retour 150162
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRetour.E_150289_TailleChampTropGrande">
+            <summary>
+            Code de retour 150289
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeActionAvisConformite">
+            <summary>
+            Constantes pour les types d'action possible à faire sur un avis de conformité
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeActionAvisConformite.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeActionAvisConformite.Rechercher">
+            <summary>
+            Traitement de type Rechercher
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeActionAvisConformite.Effacer">
+            <summary>
+            Traitement de type Effacer
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutAvisConformite">
+            <summary>
+            Constantes pour les statut possible d'un avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutAvisConformite.StatutAutoriser">
+            <summary>
+            Statut autoriser
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutAvisConformite.StatutAnnuler">
+            <summary>
+            Statut annuler
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutAvisConformite.StatutSuspendu">
+            <summary>
+            Statut suspendu
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutAvisConformite.StatutTerminer">
+            <summary>
+            Statut terminer
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutAvisConformite.StatutRevoquer">
+            <summary>
+            Statut révoquer
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutDerogation">
+            <summary>
+            Constantes pour les statut possible d'une dérogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutDerogation.StatutAutoriser">
+            <summary>
+            Statut autoriser
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutDerogation.StatutAnnuler">
+            <summary>
+            Statut annuler
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.StatutDerogation.StatutTerminer">
+            <summary>
+            Statut terminer
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement">
+            <summary>
+            Constantes pour les codes de raison de statut de l'engagement
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.NouveauMedecinDebutantPratique">
+            <summary>
+            01 - Nouveau médecin débutant en pratique ou nouveau facturant
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.MedecinDesirantObtenirAvisConformite">
+            <summary>
+            02 - Médecin déjà en pratique désirant obtenir un avis de conformité (Annexe IV)
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.MedecinRetourTerritoireEloignerApres3Ans">
+            <summary>
+            03 - Médecin déjà en pratique de retour d'un territoire éloigné après 3 ans en pratique continue (art. 3.04)
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.MedecinRetourTerritoirePenurieEffectif">
+            <summary>
+            04 - Médecin déjà en pratique de retour d'un territoire en pénurie d'effectif nommé à l'annexe I après 
+            y avoir exercé 5 ans de façon continue. (art. 3.05)
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.MedecinDepuis20ans">
+            <summary>
+            05 - Médecin déjà en pratique depuis 20 ans ou plus (art. 3.06)
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.SuspensionExerceAutreTerritoire">
+            <summary>
+            06 - Suspension - exerce dans un autre territoire durant des études universitaires ou autre raison
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.SuspensionFinExercice">
+            <summary>
+            07 - Suspension - fin d'exercice dans le cadre du régime
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ProlongationSuspension">
+            <summary>
+            08 - Prolongation de la suspension pour activités reliées à l'organisation ou dispensation de services médicaux
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.MantienAvisPratiqueExclusive">
+            <summary>
+            09 - Maintien de l'avis pour pratique exclusive auprès d'une instance à vocation nationale
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ProlongationMaintienAvisPratiqueExclusive">
+            <summary>
+            10 - Prolongation du maintien de l'avis pour pratique exclusive auprès d'une instance à vocation nationale
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.MaintienAvisPratiqueExclusiveDepannage">
+            <summary>
+            11 - Maintien de l'avis pour pratique exclusive en dépannage
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ProlongationMaintienAvisPratiqueExlusiveDepannage">
+            <summary>
+             12 - Prolongation du maintien de l'avis pour pratique exclusive en dépannage
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.Deces">
+            <summary>
+            13 - Décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.NouveauSpecialistes">
+            <summary>
+            14 - Nouveau spécialiste
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ChangementTerritoirePratique">
+            <summary>
+            15 - Changement de territoire de pratique
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.DepartTerritoirePratique">
+            <summary>
+            16 - Départ du territoire de pratique
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.DesistementMedecinAvisConformite">
+            <summary>
+            17 - Désistement d'un médecin pour un avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ReactivationMedecinAvisConformite">
+            <summary>
+            18 - Réactivation d'un médecin pour un avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ReportDateDebutAvisConformite">
+            <summary>
+            19 - Report de la date de début d'un avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutEngagement.ProlongationAvisConformiteSuitReportDateDebut">
+            <summary>
+            20 - Prolongation d'un avis de conformité suite au report de la date de début d'un autre avis de conformité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation">
+            <summary>
+            Constantes pour les codes de raison de statut de la dérogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation.Deces">
+            <summary>
+            01 - Décès
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation.NouveauSpecialiste">
+            <summary>
+            02 - Nouveau spécialiste
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation.NouvelAvis">
+            <summary>
+            03 - Obtention d'un nouvel avis de conformité.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation.NouvelleDerogation">
+            <summary>
+            04 - Obtention d'une nouvelle dérogation de type différent.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation.ReactivationDerogationSuiteAnnulation">
+            <summary>
+            05 - Réactivation d’une dérogation suite à une annulation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.CodeRaisonStatutDerogation.ProlongationDerogationSuiteReportDateDebutAvis">
+            <summary>
+            06 - Prolongation d’une dérogation suite au report de la date de début d’un avis de conformité.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreConnexionOracle">
+            <summary>
+            Constantes pour les noms des paramètre de connexion oracle
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreConnexionOracle.CodeApplication">
+            <summary>
+            Code application
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreConnexionOracle.NumeroMessageErreurImprevu">
+            <summary>
+            Numéro du message d'erreur imprévu
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreConnexionOracle.NomFichierUDL">
+            <summary>
+            Nom du fichier UDL
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction">
+            <summary>
+            Constantes pour les noms des paramètre de production
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.DELA_EPURA_DEMA_REEVA">
+            <summary>
+            DELA_EPURA_DEMA_REEVA 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.LIMIT_REEVA_AN">
+            <summary>
+            LIMIT_REEVA_AN 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.LIMIT_REEVA_TRIM">
+            <summary>
+            LIMIT_REEVA_TRIM 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_AN">
+            <summary>
+            PROD_AN 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_AN_APPLI_REDUC">
+            <summary>
+            PROD_AN_APPLI_REDUC 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_AN_APPLI_REDUC_REEVA">
+            <summary>
+            PROD_AN_APPLI_REDUC_REEVA 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_AN_AVIS_REDUC">
+            <summary>
+            PROD_AN_AVIS_REDUC  
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_TRIM">
+            <summary>
+            PROD_TRIM 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_TRIM_APPLI_REDUC">
+            <summary>
+            PROD_TRIM_APPLI_REDUC 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_TRIM_APPLI_REDUC_REEVA">
+            <summary>
+            PROD_TRIM_APPLI_REDUC_REEVA 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_TRIM_AVIS_REDUC">
+            <summary>
+            PROD_TRIM_AVIS_REDUC  
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.PROD_TRIM_AVIS_REDUC_REEVA">
+            <summary>
+            PROD_TRIM_AVIS_REDUC_REEVA 
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NomParametreProduction.TYP_PROD">
+            <summary>
+            TYP_PROD 
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement">
+            <summary>
+            Constantes pour les descriptions de type d'engagement de pratiques
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement.TypeAvisConformite">
+            <summary>
+            Avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement.TypeDerogation">
+            <summary>
+            Dérogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement.TypeAutorisation">
+            <summary>
+            Autorisation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement.TypeAbsenceAvis">
+            <summary>
+            Absence d'avis
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DescriptionTypeEngagement.TypeAvisRevoque">
+            <summary>
+            Avis de conformité révoqué
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeEngagement">
+            <summary>
+            Constantes pour les descriptions de type d'engagement de pratiques
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeEngagement.TypeAvisConformite">
+            <summary>
+            Avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeEngagement.TypeDerogation">
+            <summary>
+            Dérogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeEngagement.TypeAutorisation">
+            <summary>
+            Autorisation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeEngagement.TypeAbsenceAvis">
+            <summary>
+            Absence d'avis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant">
+            <summary>
+            Constantes pour les types de jours
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.Total">
+            <summary>
+            Total
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.TotalDerog">
+            <summary>
+            Total Répartition pour Derogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.TotalPratiqueExclusive">
+            <summary>
+            Total Pratique Exclusive
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.PremDpnag">
+            <summary>
+            PremDpnag
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.PremDpnagLoc">
+            <summary>
+            PremDpnagLoc
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.Prem">
+            <summary>
+            Prem
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.Dpnag">
+            <summary>
+            Dpnag
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.IVN">
+            <summary>
+            IVN
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.HQ">
+            <summary>
+            HQ
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.Localite">
+            <summary>
+            Localité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.IVNDerog">
+            <summary>
+            IVN
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.HQDerog">
+            <summary>
+            HQ
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.LocaliteDerog">
+            <summary>
+            Localité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.Avis">
+            <summary>
+            Avis
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeMontant.HorsAvis">
+            <summary>
+            Hors-Avis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IdentifiantPourcentage">
+            <summary>
+            Constantes pour les paramètres de production
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IdentifiantPourcentage.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IdentifiantPourcentage.RESPE_AVIS_PRC">
+            <summary>
+            RESPE_AVIS_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IdentifiantPourcentage.RESPE_AVIS_SUSPD_PRC">
+            <summary>
+            RESPE_AVIS_SUSPD_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IdentifiantPourcentage.RESPE_DEROG_PRC">
+            <summary>
+            RESPE_DEROG_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.IdentifiantPourcentage.RESPEC_PPR_PRC">
+            <summary>
+            RESPEC_PPR_PRC
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NumeroSeqPourcentageProf">
+            <summary>
+            Constantes pour les numéros de séquence dans la liste des pourcentages des professionnels
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NumeroSeqPourcentageProf.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NumeroSeqPourcentageProf.RESPE_AVIS_PRC">
+            <summary>
+            Numéro RESPE_AVIS_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NumeroSeqPourcentageProf.RESPE_DEROG_PRC">
+            <summary>
+            Numéro RESPE_DEROG_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NumeroSeqPourcentageProf.RESPE_AVIS_SUSPD_PRC">
+            <summary>
+            Numéro RESPE_AVIS_SUSPD_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.NumeroSeqPourcentageProf.RESPE_PPR_PRC">
+            <summary>
+            Numéro RESPE_PPR_PRC
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeTotauxSommaireProfs">
+            <summary>
+            Constantes pour les types de totaux dans la liste de sommaire des professionnels
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeTotauxSommaireProfs.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeTotauxSommaireProfs.RSS">
+            <summary>
+            Type total RSS
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeTotauxSommaireProfs.Territoire">
+            <summary>
+            Type total Territoire
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeTotauxSommaireProfs.Avis">
+            <summary>
+            Type total Avis
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeTotauxSommaireProfs.RPPR">
+            <summary>
+            Type total Avis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag">
+            <summary>
+            Constantes pour les types de respects de pratique
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag.RESPE_AVIS">
+            <summary>
+            RESPE_AVIS_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag.RESPE_AVIS_SUSPD">
+            <summary>
+            RESPE_AVIS_SUSPD_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag.RESPE_DEROG_DPNAG">
+            <summary>
+            RESPE_DEROG_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag.RESPE_DEROG_IVN">
+            <summary>
+            RESPE_DEROG_PRC
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeRespectEngag.RESPEC_PPR">
+            <summary>
+            RESPEC_PPR_PRC
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours">
+            <summary>
+            DomaineValeurTypesJours
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.#ctor">
+            <summary>
+            Constructeur privé
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.Prem">
+            <summary>
+            Prem
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.Dpnag">
+            <summary>
+            Dpnag
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.IVN">
+            <summary>
+            IVN
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.HQ">
+            <summary>
+            HQ
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.Localite">
+            <summary>
+            Localité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.Avis">
+            <summary>
+            Avis
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.HorsAvis">
+            <summary>
+            Hors-Avis
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.PremDpnag">
+            <summary>
+            PremDpnag
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.PremDpnagLoc">
+            <summary>
+            PremDpnagLoc
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.DomaineValeurTypesJours.TotalPratiExcl">
+            <summary>
+            PremDpnagLoc
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeDerogation">
+            <summary>
+            Type de dérogation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeDerogation.Depannage">
+            <summary>
+            Type de dérogation en dépannage
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Constantes.TypeDerogation.InstanceVocationNational">
+            <summary>
+            Type de dérogation en instance à vocation national
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur">
+            <summary>
+            Classe de domaine de valeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur.Cache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur.#ctor(RAMQ.DomainesValeur.IAccesDomVal)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="clientAccesDomVal"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur.ObtenirNomRssDomaineValeur">
+            <summary>
+            Obtenir le nom RSS dans le domaine de valeur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur.ObtenirNomTypeDerogationDomaineValeur">
+            <summary>
+            Obtenir le nom du type de dérogation dans le domaine de valeur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur.ObtenirDescriptionCodeRaisonStatutEngagement">
+            <summary>
+            Permet d'obtenir les descriptions associé aux codes de raison du statut d'engagement
+            </summary>
+            <returns>Liste de description des codes de raison du statut d'engagement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.DomaineValeur.ObtenirDescriptionCodeRaisonStatutDerogation">
+            <summary>
+            Permet d'obtenir les descriptions associé aux codes de raison du statut d'une dérogation
+            </summary>
+            <returns>Liste de description des codes de raison du statut d'engagement</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur">
+            <summary>
+            Classe de domaine de valeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur.ObtenirNomRssDomaineValeur">
+            <summary>
+            Obtenir le nom RSS dans le domaine de valeur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur.ObtenirNomTypeDerogationDomaineValeur">
+            <summary>
+            Obtenir le nom du type de dérogation dans le domaine de valeur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur.ObtenirDescriptionCodeRaisonStatutEngagement">
+            <summary>
+            Permet d'obtenir les descriptions associé aux codes de raison du statut d'engagement
+            </summary>
+            <returns>Liste de description des codes de raison du statut d'engagement</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.ISecurite">
+            <summary>
+            Interface d'opération pour la recherche de règle d'accès dans la base de données d'AGS.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.ISecurite.RechercherContexteRegleAcces(RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre)">
+            <summary>
+            Cette méthode demande les contextes et règles d'accès pour un utilisateur.
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Journalisation">
+            <summary> 
+             Classe contenant des méthodes permettant la gestion et 
+             la journalisation d'erreurs
+            </summary>
+            <remarks>
+            </remarks>
+            
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Journalisation.JournaliserErreurTechnique(System.Exception,RAMQ.Enumeration.EnumCodSever,System.String,System.String,RAMQ.Enumeration.EnumNivInter,System.String,System.String)">
+            <summary>
+            Méthode permettant de journaliser une erreur technique
+            </summary>
+            <param name="excptionJournaliser">Exception à journaliser</param>
+            <param name="codeSeveriteErreur">Code de sévérité</param>
+            <param name="identifiantUtilisateur">Identifiant utilisateur</param>
+            <param name="informationComplementaire">Information complémentaire à journaliser</param>
+            <param name="niveauIntervention">Niveau d'intervention</param>
+            <param name="numeroMessageErreur">Numéro du message d'erreur</param>
+            <param name="nomUniteTraitement">Nom de l'unité de tâche</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement">
+            <summary>
+            Interface pour les messages de traitement
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement.ResoudreMessageTraitement(System.String,System.String[])">
+            <summary>
+            Permet de résoudre un message de traitement
+            </summary>
+            <param name="codeErreur">Code d'erreur</param>
+            <param name="parametres">Paramètres</param>
+            <returns>Message de traitement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement.NouveauMessageTraitement(System.String,System.String[])">
+            <summary>
+            Permet de créer un nouveau message de traitement
+            </summary>
+            <param name="codeErreur">Code d'erreur</param>
+            <param name="parametres">Paramètres</param>
+            <returns>Message de traitement</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement">
+            <summary>
+            Classe pour les messages de traitement
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.CodeSeverite">
+            <summary>
+            Code de sévérité.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.CodeSysteme">
+            <summary>
+            Code de système.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.IdMessage">
+            <summary>
+            Identifiant du message.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.MessageAnglais">
+            <summary>
+            Texte du message en anglais.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.MessageFrancais">
+            <summary>
+            Texte du message en français.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.CodeApplication">
+            <summary>
+            Code de l'application.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.#ctor(RAMQ.Message.IResolutionMessage)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="resolutionMessage"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.ResoudreMessageTraitement(System.String,System.String[])">
+            <summary>
+            Permet de résoudre un message de traitement
+            </summary>
+            <param name="codeErreur">Code d'erreur</param>
+            <param name="parametres">Paramètres</param>
+            <returns>Message de traitement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.NouveauMessageTraitement(System.String,System.String[])">
+            <summary>
+            Permet de créer un nouveau message de traitement
+            </summary>
+            <param name="codeErreur">Code d'erreur</param>
+            <param name="parametres">Paramètres</param>
+            <returns>Message de traitement</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.ValiderMessageTraitement(RAMQ.ClasseBase.ParamSorti,System.String[])">
+            <summary>
+             Valide que les paramêtres de sorties ne contient pas de message. S'il en contient,
+             une exception est lancée.
+            </summary>
+            <param name="parametreSortie">Paramêtre de sortie à valider</param>
+            <param name="messageIgnoner">Liste d'identifiant de message à ignorer</param>
+            <remarks>Exception de type ApplicationException</remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.ObtenirMessagesTraitement``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Obtenir une liste de messages de traitements de type COD1_V4.
+            </summary>
+            <typeparam name="T">Type du message de traitement à convertir.</typeparam>
+            <param name="messagesTraitements">Liste de messages de traitement de type "T".</param>
+            <returns>Liste de messages de traitement de type COD1_V4.</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.MapperVersMessageTraitement(System.Object)">
+            <summary>
+            Permet de convertir et d'obtenir, s'il y en a un, le MsgTrait COD1_V4 basé sur l'instance spécifiée.
+            </summary>
+            <param name="messageTraitement">Message de traitement.</param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.ObtenirValeurPropriete``1(System.Object,System.String)">
+            <summary>
+            Permet de récupérer la valeur d'une propriété en fonction de son nom.
+            </summary>
+            <typeparam name="T">Le type de la propriété recherchée.</typeparam>
+            <param name="cible">Objet dans lequel rechercher la propriété.</param>
+            <param name="nomPropriete">Nom de la propriété à rechercher (peut être partiel).</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.MessageTraitement.ObtenirValeurDefaut``1">
+            <summary>
+            Retourne la valeur par défaut pour un type spécifié.
+            </summary>
+            <typeparam name="T">Le type pour lequel obtenir la valeur par défaut.</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Securite">
+            <summary>
+            Classe d'opération pour la recherche de règle d'accès dans la base de données d'AGS.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Securite.#ctor(RAMQ.Message.IResolutionMessage)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="resolutionMessage"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Securite.RechercherContexteRegleAcces(RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre)">
+            <summary>
+            Cette méthode demande les contextes et règles d'accès pour un utilisateur.
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesDS.ags_regle_acces_util_DTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesDS.ags_regle_acces_util_DTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesDS.ags_regle_acces_util_DTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.CritrRechrDroitAcces">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.CritrRechrDroitAcces.IdUtil">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.CritrRechrDroitAcces.CodContx">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.CritrRechrDroitAcces.CodAppli">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.DroitAcces">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.DroitAcces.Des">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.MsgTrait">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.MsgTrait.CodSys">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.MsgTrait.IdMsg">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.MsgTrait.CodSever">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.MsgTrait.TxtMsgFran">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.MsgTrait.TxtMsgAngl">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSorti">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSorti.InfoMsgTrait">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortiDroitAcces">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortiDroitAcces.ColctDroitAcces">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDS.RegleAccesContxDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDS.RegleAccesContxDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDS.RegleAccesContxDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.RegleAccesContxDroitDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.RegleAccesContxDroitDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.RegleAccesContxDroitDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.ParamEntreeInfoSecuGranuDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.ParamEntreeInfoSecuGranuDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.ParamEntreeInfoSecuGranuDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.ParamSortieInfoSecuGranuDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.ParamSortieInfoSecuGranuDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.ParamSortieInfoSecuGranuDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdentSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdentSecuGranuDS.IdentSecuGranuDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdentSecuGranuDS.IdentSecuGranuDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdentSecuGranuDS.IdentSecuGranuDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.NumSeqRegleAccesDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.NumSeqRegleAccesDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.NumSeqRegleAccesDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdContxDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdContxDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdContxDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdContxDS.IdContxDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdContxDS.IdContxDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdContxDS.IdContxDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService">
+            <summary>
+            Classe utilitaire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.AppelerService``3(System.Func{``1,``2},System.Boolean,RAMQ.Enumeration.EnumNomInfra,RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe,System.String)">
+            <summary>
+             Appeler une fonction d'un service
+            </summary>
+            <typeparam name="TInterface">Interface générique</typeparam>
+            <typeparam name="TClient">Client générique</typeparam>
+            <typeparam name="TSorti">Type de l'objet de sortie</typeparam>
+            <param name="nomFonction">fonction à appeler</param>
+            <param name="doitEtreImpersonnaliser">Impersonalisatoin</param>
+            <param name="typeInfrastructure">Type d'infrastructure</param>
+            <param name="typeSecurite">Type de sécurité</param>
+            <param name="nomTerminaison">Nom du point de terminaison</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.AppelerService``2(System.Action{``1},System.Boolean,RAMQ.Enumeration.EnumNomInfra,RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe,System.String)">
+            <summary>
+             Appeler une méthode d'un service
+            </summary>
+            <typeparam name="TInterface">Interface géné</typeparam>
+            <typeparam name="TClient"></typeparam>
+            <param name="nomMethode">Méthode à appeler</param>
+            <param name="doitEtreImpersonnaliser">Boolean pour savoir si on doit impersonnalisé ou non</param>
+            <param name="typeInfrastructure">Type d'infrastructure</param>
+            <param name="typeSecurite">Type de sécurité</param>
+            <param name="nomTerminaison">Nom du point de terminaisons</param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.ObtenirClient``2(RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe,System.String)">
+            <summary>
+             Création et configuration du client
+            </summary>
+            <param name="typeSecurite">Type de sécurité à appliquer au client</param>
+            <param name="nomTerminaison">
+             Nom de la configuration du point de terminaison (endpoint)</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.ConvertirEnClientRamqBase``2(``1)">
+            <summary>
+            Convertir un client en client de base RAMQ
+            </summary>
+            <param name="client">Client</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.SecuriseEnveloppe``1(RAMQ.ServiceModel.ClientBaseRAMQ{``0}@,RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe)">
+            <summary>
+            Sécurisé enveloppe
+            </summary>
+            <param name="client">Client</param>
+            <param name="typeSecurite">type de sécurité</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.DefinirInfra(RAMQ.Enumeration.EnumNomInfra)">
+            <summary>
+            Définir l'infrastructure de l'appel
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.UtilitaireService.EstDansContxWeb">
+            <summary>
+            Défini si nous sommes dans un contexte web
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2">
+            <summary> 
+             Classe de base pour les références de services
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2._doitEtreImpersonnaliser">
+            <summary>
+             Indique si les appels de services doivent être impersonalisés
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2._typeInfrastructure">
+            <summary>
+            Type d'infrastructure RAMQ
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2._typeSecurite">
+            <summary>
+            Type de sécurité à appliquer sur le service
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2._nomTerminaison">
+            <summary>
+             Nom de la configuration du nom de terminaison
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2.#ctor(System.Boolean,RAMQ.Enumeration.EnumNomInfra,RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="doitEtreImpersonnaliser">Indique si l'appel de service doivt être impersonalisé</param>
+            <param name="typeInfrastructure">Type d'infrastructure dans lequel se trouve le service</param>
+            <param name="typeSecurite">Type de sécurité à appliquer sur le service</param>
+            <param name="nomTerminaison">Nom du point de terminaison</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2.AppelerServ``1(System.Func{`0,``0})">
+            <summary>
+            Appeler une fonction du service
+            </summary>
+            <typeparam name="TSorti">Type de l'objet de sortie</typeparam>
+            <param name="nomFonction">fonction à appeler</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.ClasseBaseReferenceService`2.AppelerServ(System.Action{`0})">
+            <summary>
+            Appeler une méthode du service
+            </summary>
+            <param name="nomMethode">Méthode à appeler</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe">
+            <summary> 
+             Énumération pour les types "Sécuriser Enveloppe"
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe.SecuriserEnveloppe">
+            <summary>
+            Sécuriser enveloppe
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe.SecuriserEnveloppeIntegre">
+            <summary>
+            Sécuriser enveloppe intégré
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.EnumerateurSecuriteEnveloppe.SecuriserEnveloppeIntegreWCF">
+            <summary>
+            Sécuriser enveloppe intégré WCF
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.Mappeur">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS)">
+            <summary>
+            Map un objet de type svcRechrRegleAcces.RegleAccesContxDS en 
+            RechercherContexteRegleAccesSorti
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_OutilComun_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre)">
+            <summary>
+            Map un objet de type RechercherContexteRegleAccesEntre en 
+            svcRechrRegleAcces.InfoRegleAccesContxDS
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+    </members>
+</doc>

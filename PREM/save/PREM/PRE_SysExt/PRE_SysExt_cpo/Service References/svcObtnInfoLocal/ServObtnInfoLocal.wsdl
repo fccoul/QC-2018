@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServObtnInfoLocal" targetNamespace="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointObtnInfoLocal_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd0" namespace="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd2" namespace="http://COD1_V4OutilBase_cpo/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirNomLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirNomLocal" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirNomLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirNomLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoPays_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoPays" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoPays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoPaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirTerriCLSCCP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirTerriCLSCCP" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirTerriCLSCCP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirTerriCLSCCPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirTerriCLSCCodLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirTerriCLSCCodLocal" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirTerriCLSCCodLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirTerriCLSCCodLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirCodRSS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirCodRSS" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirCodRSS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirCodRSSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoLocalPart_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoLocalPart" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoLocalPart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoLocalPartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoTau_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoTau" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoTau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoTauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoTerriRLS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoTerriRLS" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoTerriRLS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoTerriRLSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoTerriCLSC_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoTerriCLSC" />
+  </wsdl:message>
+  <wsdl:message name="IServObtnInfoLocal_ObtenirInfoTerriCLSC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInfoTerriCLSCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServObtnInfoLocal">
+    <wsdl:operation name="ObtenirNomLocal">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirNomLocal" message="tns:IServObtnInfoLocal_ObtenirNomLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirNomLocalResponse" message="tns:IServObtnInfoLocal_ObtenirNomLocal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoPays">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoPays" message="tns:IServObtnInfoLocal_ObtenirInfoPays_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoPaysResponse" message="tns:IServObtnInfoLocal_ObtenirInfoPays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirTerriCLSCCP">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirTerriCLSCCP" message="tns:IServObtnInfoLocal_ObtenirTerriCLSCCP_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirTerriCLSCCPResponse" message="tns:IServObtnInfoLocal_ObtenirTerriCLSCCP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirTerriCLSCCodLocal">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirTerriCLSCCodLocal" message="tns:IServObtnInfoLocal_ObtenirTerriCLSCCodLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirTerriCLSCCodLocalResponse" message="tns:IServObtnInfoLocal_ObtenirTerriCLSCCodLocal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirCodRSS">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirCodRSS" message="tns:IServObtnInfoLocal_ObtenirCodRSS_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirCodRSSResponse" message="tns:IServObtnInfoLocal_ObtenirCodRSS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoLocalPart">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoLocalPart" message="tns:IServObtnInfoLocal_ObtenirInfoLocalPart_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoLocalPartResponse" message="tns:IServObtnInfoLocal_ObtenirInfoLocalPart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoTau">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTau" message="tns:IServObtnInfoLocal_ObtenirInfoTau_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTauResponse" message="tns:IServObtnInfoLocal_ObtenirInfoTau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoTerriRLS">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTerriRLS" message="tns:IServObtnInfoLocal_ObtenirInfoTerriRLS_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTerriRLSResponse" message="tns:IServObtnInfoLocal_ObtenirInfoTerriRLS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoTerriCLSC">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTerriCLSC" message="tns:IServObtnInfoLocal_ObtenirInfoTerriCLSC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTerriCLSCResponse" message="tns:IServObtnInfoLocal_ObtenirInfoTerriCLSC_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointObtnInfoLocal" type="tns:IServObtnInfoLocal">
+    <wsp:PolicyReference URI="#EndPointObtnInfoLocal_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenirNomLocal">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirNomLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoPays">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoPays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirTerriCLSCCP">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirTerriCLSCCP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirTerriCLSCCodLocal">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirTerriCLSCCodLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirCodRSS">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirCodRSS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoLocalPart">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoLocalPart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoTau">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoTerriRLS">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTerriRLS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInfoTerriCLSC">
+      <soap:operation soapAction="http://www.ramq.gouv.qc.ca/SOB2_ObtnInfoLocal_svc/1/IServObtnInfoLocal/ObtenirInfoTerriCLSC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServObtnInfoLocal">
+    <wsdl:port name="EndPointObtnInfoLocal" binding="tns:EndPointObtnInfoLocal">
+      <soap:address location="http://nlb-unit-app4/GEOAPP/SO/SOB_ObtnLieuGeo/SOB2_ObtnInfoLocal_svc/ServObtnInfoLocal.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,116 @@
+﻿@model string
+@{
+    RouteValueDictionary htmlAttributes = new RouteValueDictionary();
+    string strlabel = "";
+    string gridInputClass = "";
+    string gridLabelClass = "";
+    string gridNomClass = "";
+
+
+    if ((ViewBag.classe) != null)
+    {
+        htmlAttributes.Add("class", ("form-control" + ViewBag.classe));
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control");
+    }
+    if ((ViewBag.type) != null)
+    {
+        htmlAttributes.Add("type", ViewBag.type);
+    }
+    if ((ViewBag.placeholder) != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+    if ((ViewBag.mask) != null)
+    {
+        htmlAttributes.Add("mask", ViewBag.mask);
+    }
+    if ((ViewBag.lectureSeule) != null)
+    {
+        htmlAttributes.Add("readonly", ViewBag.lectureSeule);
+    }
+
+    if ((ViewBag.disabled) != null)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+
+    if ((ViewBag.label) != null)
+    {
+        strlabel = ViewBag.label;
+    }
+
+    if (ViewBag.data_mask != null)
+    {
+        htmlAttributes.Add("data-mask", ViewBag.data_mask);
+    }
+    else
+    {
+        htmlAttributes.Add("data-mask", "000000");
+    }
+
+
+    if (ViewBag.gridInputClass != null)
+    {
+        gridInputClass = ViewBag.gridInputClass;
+    }
+    else
+    {
+        gridInputClass = "col-xs-6 col-sm-3 col-md-3";
+    }
+
+    if (ViewBag.gridLabelClass != null)
+    {
+        gridLabelClass = ViewBag.gridLabelClass;
+    }
+    else
+    {
+        gridLabelClass = "col-xs-6 col-sm-9 col-md-5";
+    }
+
+    if (ViewBag.gridNomClass != null)
+    {
+        gridNomClass = ViewBag.gridNomClass;
+    }
+    else
+    {
+        gridNomClass = "col-xs-6 col-sm-9 col-md-9";
+    }
+}
+<div class="form-group">
+
+    <div class="row">
+       
+        <div class="@gridLabelClass">
+            @if (String.IsNullOrWhiteSpace(strlabel))
+            {
+                @Html.LabelFor(x => x, new { @class = "control-label" })
+            }
+            else
+            {
+                @Html.LabelFor(x => x, strlabel, new { @class = "control-label" })
+            }
+        </div>
+    </div>
+
+    <div class="row centrer">
+        <div class="@gridInputClass">
+            <div class="input-group">
+                @Html.TextBoxFor(x => x, htmlAttributes)
+                <div class="input-group-btn">
+                    <button id="boutonRechercherProfessionnel" class="btn btn-defaut btn-primary" type="button">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="@gridNomClass" id="NomPrenomProfessionnel">
+            
+        </div>
+
+    </div>
+    @Html.ValidationMessageFor(x => x, null, new { @class = "help-block" })
+</div>
+

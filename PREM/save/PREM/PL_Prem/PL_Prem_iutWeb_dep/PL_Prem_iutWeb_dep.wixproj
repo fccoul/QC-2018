@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>f50882cf-61a7-4738-87ca-a8756a4e86ce</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>PL_Prem_iutWeb_dep</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <RamqWixTargetsPath Condition=" '$(RamqWixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\RAMQ\RAMQ.Wix.targets</RamqWixTargetsPath>
+    <RamqWixTargetsPath Condition=" '$(RamqWixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\RAMQ\RAMQ.Wix.targets</RamqWixTargetsPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Codes.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ProjetWix_Aide.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PL_PremMdl_cpo\PL_PremMdl_cpo.csproj">
+      <Name>PL_PremMdl_cpo</Name>
+      <Project>{5046617c-9fce-4a5d-846d-2562d1933aaa}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>
+      </DoNotHarvest>
+      <RefProjectOutputGroups>Content</RefProjectOutputGroups>
+      <RefTargetDir>BinFolder</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\PL_Prem_iut\PL_Prem_iut.csproj">
+      <Name>PL_Prem_iut</Name>
+      <Project>a964473f-00d6-4050-96c3-d0ddd06b9be6</Project>
+      <Private>True</Private>
+      <DoNotHarvest>
+      </DoNotHarvest>
+      <RefProjectOutputGroups>Content</RefProjectOutputGroups>
+      <RefTargetDir>SSFU</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <Import Project="$(RamqWixTargetsPath)" />
+  <PropertyGroup>
+    <EnableProjectHarvesting>True</EnableProjectHarvesting>
+  </PropertyGroup>
+</Project>

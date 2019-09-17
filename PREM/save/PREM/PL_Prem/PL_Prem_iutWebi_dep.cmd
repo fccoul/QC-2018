@@ -1,0 +1,1 @@
+installer PL_Prem_iutWebi_dep.msi CHEMINAPPLI="d:\inetpub\intranetroot" ENVIR="%envir%"

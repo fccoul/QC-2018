@@ -1,0 +1,2 @@
+C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\PLF1_TraiterEveneAutreSys_svcApp_dep\bin\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.msi
+C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\PLF1_TraiterEveneAutreSys_svcApp_dep\bin\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.wixpdb

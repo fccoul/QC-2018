@@ -1,0 +1,4533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PRE_Entites_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis">
+            <summary>
+            Entite absence avis
+            </summary>
+            <remarks>
+            Auteur : Florent Pollart
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.NumeroSequentielAvis">
+            <summary>
+            Numéro séquentiel de l'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.NumeroSequentielDerogation">
+            <summary>
+            Numéro séquentiel de la dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.NumeroSequentielAutorisation">
+            <summary>
+            Numéro séquentiel de l'autorisation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.DateFin">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.Statut">
+            <summary>
+            Statut de l'avis ou de la dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.CodeLieuGeographique">
+            <summary>
+            Code de lieu de l'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.TypeLieuGeographique">
+            <summary>
+            Type de lieu de l'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.NumeroSeqRegrAdmnLgeo">
+            <summary>
+            Code de regroupement de l’avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.CodeRss">
+            <summary>
+            Code de région de l’avis 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Entite.AbsenceAvis.TypeDerogation">
+            <summary>
+            Type de dérogation 
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre">
+            <summary>
+            Paramètres de sortie pour Obtenir les engagements et absences d'avis d'un professionnel
+            </summary>
+            <remarks>
+            Auteur : FLorent Pollart
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisEntre.TypeListe">
+            <summary>
+            Type liste à retourner
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti">
+            <summary>
+            Paramètres de sortie pour Obtenir les engagements et absences d'avis d'un professionnel
+            </summary>
+            <remarks>
+            Auteur : FLorent Pollart
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AbsencesAvis.Parametre.ObtenirListeEngagementsEtAbsencesAvisSorti.ListeEngagementsEtAbsencesAvis">
+            <summary>
+            Liste des engagements et/ou absences d'avis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite">
+            <summary> 
+            Entite des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.DateDebutEngagement">
+            <summary>
+            Date de début de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.DateFinEngagement">
+            <summary>
+            Date de fin de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.DateHeureOccurenceMAJ">
+            <summary>
+            Date et heure de la modification de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.DateHeureOccurenceInactive">
+            <summary>
+            Date et heure de l'inactivité de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite.ListeStatutAvisConformite">
+            <summary>
+            Liste des statuts des avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite">
+            <summary> 
+             Entité pour les statuts des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.StatutEngagement">
+            <summary>
+            Statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.IndicateurStatutEngagementAttente">
+            <summary>
+            Indicateur du statut de l'engagement en attente
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.DateDebutStatutEngagement">
+            <summary>
+            Date de début du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.CodeRaisonStatutEngagement">
+            <summary>
+            Code de raison du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.DateFinStatutEngagement">
+            <summary>
+            Date de fin du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.DateHeureOccurenceMAJ">
+            <summary>
+            Date et heure de la modification de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite.DateHeureOccurenceInactive">
+            <summary>
+            Date et heure de l'inactivité de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre">
+            <summary> 
+            Paramètre d'entrée pour la création d'un statut de l'engagement
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2017-01-23
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre.StatutEngagement">
+            <summary>
+            Statut de l'engagement 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur créeant le statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre.DateDebutStatutEngagement">
+            <summary>
+            Date de début du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre.CodeRaisonStatutEngagement">
+            <summary>
+            Code de raison du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteEntre.DateFinStatutEngagement">
+            <summary>
+            Date de fin du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre">
+            <summary> 
+            Paramètre d'entrée pour la création d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.DateDebutEngagement">
+            <summary>
+            Date de début de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.DateFinEngagement">
+            <summary>
+            Date de fin de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui a créé l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.TypeLieuGeographique">
+            <summary>
+            CType de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.StatutEngagement">
+            <summary>
+            Statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.IndicateurStatutEngagementAttente">
+            <summary>
+            Indicateur de statut de l'engagement en attente
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteEntre.CodeRaisonStatutEngagement">
+            <summary>
+            Code de raison du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti">
+            <summary> 
+            Paramètre de sortie pour la création d'un statut de l'engagement
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2017-01-23
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteSorti">
+            <summary> 
+            Paramètre de sortie pour la création d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteSorti.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre">
+            <summary> 
+            Paramètre d'entrée pour la modification d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteEntre.IndicateurInactivationOccurence">
+            <summary>
+            Indicateur d'inactivation d'occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteSorti">
+            <summary> 
+            Paramètre de sortie pour la modification d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre">
+            <summary> 
+            Paramètre d'entrée pour la modification d'une période d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.DateDebutActuelle">
+            <summary>
+            Date de début actuelle de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.DateFinActuelle">
+            <summary>
+            Date de fin actuelle de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.DateDebutNouvelle">
+            <summary>
+            Nouvelle date de début de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.DateFinNouvelle">
+            <summary>
+            Nouvelle date de fin de l'avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisEntre.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisSorti">
+            <summary> 
+            Paramètre de sortie pour la modification d'une période d'un avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau<br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre">
+            <summary> 
+             Paramètres d'entrée pour la modification d'un statut de l'engagement.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre.IndicateurStatutEngagementEnAttente">
+            <summary>
+            Indicateur de statut de l'engagement en attente
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre.DateFinStatutEngagement">
+            <summary>
+            Date de fin du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de l'utilisateur qui a modifié l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementEntre.IndicateurInactivationStatut">
+            <summary>
+            Indicateur d'inactivation du statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementSorti">
+            <summary> 
+             Paramètres de sortie pour la modification d'un statut de l'engagement.
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementSorti.DateHeureOccurence">
+            <summary>
+            Date et heure de l'occurence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementSorti.NumeroSequentielStatutEngagement">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre">
+            <summary> 
+            Paramètre d'entrée pour l'obtention des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.CodeRegion">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.IndicateurAttenteTransmission">
+            <summary>
+            Indicateur d'attente de transmission
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.DateRecherche">
+            <summary>
+            Date de recherche
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.IndicateurAvisInactive">
+            <summary>
+            Indicateur d'avis inactivé
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteEntre.Tri">
+            <summary>
+            Tri
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti">
+            <summary> 
+            Paramètre de sortie pour l'obtention des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti.ListeAvisConformite">
+            <summary>
+            Liste des avis de conformité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre">
+            <summary> 
+            Paramètre d'entrée pour le traitement des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.DatePrevue">
+            <summary>
+            Date prévue
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.Territoire">
+            <summary>
+            Territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.CodeRSS">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.Continuer">
+            <summary>
+            Continuer (lors d'une validation avec question)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.TypeAction">
+            <summary>
+            Type d'action
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.QuestionPose">
+            <summary>
+            Question posé
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.NumeroSequentielAvis">
+            <summary>
+            Numéro séquentiel de l'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.NumeroSequentielStatut">
+            <summary>
+            Numéro séquentiel de du statut
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.DateModifier">
+            <summary>
+            Indicateur pour si la date de l'avis a été modifié
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteEntre.TerritoireModifier">
+            <summary>
+            Indicateur pour si le territoire de l'avis a été modifié
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteSorti">
+            <summary> 
+            Paramètre de sortie pour le traitement des avis de conformité
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteSorti.NomCompletNumeroPratique">
+            <summary>
+            Nom complet avec numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteSorti.DateCreation">
+            <summary>
+            Date de création
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteSorti.NomTerritoire">
+            <summary>
+            Nom du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteSorti.QuestionPose">
+            <summary>
+            Question posé
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursEntre">
+            <summary> 
+            Paramètre d'entrée pour la validation d'avis et dérogations en cours
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-09-21
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursEntre.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursEntre.VerifierAvisEnAttente">
+            <summary>
+            Indicateur pour vérifier si un avis est enregistré
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursEntre.CodeRSS">
+            <summary>
+            Code RSS
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti">
+            <summary> 
+            Paramètre de sortie pour la validation d'avis et dérogations en cours
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.MessageAvertissement">
+            <summary>
+            Message d'avertissement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.DateDebutPratique">
+            <summary>
+            Date de début de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.TerritoireId">
+            <summary>
+            ID du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.TerritoireNom">
+            <summary>
+            Nom du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.AvisEnregistrer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.NumeroSequentielEngagement">
+            <summary>
+            Numéro séquentiel de l'engagement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.NumeroSequentielStatut">
+            <summary>
+            Numéro séquentiel du statut de l'engagement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Entite.CaracteristiquePratique">
+            <summary> 
+             Caractéristique Pratique
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Juin 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Entite.CaracteristiquePratique.CodeRss">
+            <summary>
+            Code RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Entite.CaracteristiquePratique.TypeCaracteristiquePratique">
+            <summary>
+             Type de caracteristique pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Entite.CaracteristiquePratique.DateDebut">
+            <summary>
+            Date de début de la caracteristique pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Entite.CaracteristiquePratique.DateCreation">
+            <summary>
+            Date de création de la caracteristique pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Entite.CaracteristiquePratique.DateFin">
+            <summary>
+            Date de fin de la caracteristique pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre">
+            <summary> 
+             Classe de paramètres d'entré pour l'obtention des caractéristiques pratique RSS
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre.CodeRss">
+            <summary>
+            Code RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre.CaracteristiquePratique">
+            <summary>
+            Caractéristique de pratique
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre.DateDeDebut">
+            <summary>
+            Date de début
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssEntre.DateDeFin">
+            <summary>
+            Date de fin
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssSorti">
+            <summary> 
+             Paramètres de sortie pour l'obtention des caractéristiques pratique RSS
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssSorti.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.CaracteristiquePratique.Parametre.ObtenirCaracteristiquePratiqueRssSorti.CaracteristiquesPratique">
+            <summary>
+            Liste des caractéristiques de pratique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterAnnulationDerogationEntre">
+            <summary>
+            Paramètre d'entré pour traiter l'annulation des dérogations
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterAnnulationDerogationEntre.NumeroSequentielDerogation">
+            <summary>
+            Numéro de séquence de la dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterAnnulationDerogationEntre.DateDebutDerogation">
+            <summary>
+            Date de début de la dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterAnnulationDerogationEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterSuspensionAvisConformiteEntre">
+            <summary>
+            Paramètre d'entré pour traiter l'ajout et la modification des suspensions.
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterSuspensionAvisConformiteEntre.Avis">
+            <summary>
+            Avis de conformite
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterSuspensionAvisConformiteEntre.NouvelleSuspension">
+            <summary>
+            Nouvelle suspension
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterSuspensionAvisConformiteEntre.TypeAction">
+            <summary>
+            Type de l'action
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteEntre">
+            <summary> 
+            Paramètre d'entré pour traiter la création d'une dérogation d'avis de conformité.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteEntre.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteEntre.DateDebut">
+            <summary>
+            Date de début de la dérogation.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteEntre.TypeDerogation">
+            <summary>
+            Type de la dérogation.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteEntre.Continuer">
+            <summary>
+            TODO SEB
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteEntre.QuestionPose">
+            <summary>
+            TODO SEB
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti">
+            <summary> 
+            Paramètre de sortie pour traiter la création d'une dérogation d'avis de conformité.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.NomCompletNumeroPratique">
+            <summary>
+            Nom complet avec numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.DescriptionTypeDerogation">
+            <summary>
+            Description du type de dérogation.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de création de l'occurence.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.DateDebut">
+            <summary>
+            Date de début.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.QuestionPose">
+            <summary>
+            Question posé
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.MessageFermetureEngagement">
+            <summary>
+            Message d'engagement fermé s'il y a lieu (soit Dérogation ou Avis de conformité).
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterAnnulationDerogationSorti">
+            <summary>
+            Paramètre de sortie pour traiter l'annulation des dérogations
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterSuspensionAvisConformiteSorti">
+            <summary>
+            Paramètre de sortie pour traiter l'ajout et la modification des suspensions.
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation">
+            <summary> 
+             Dérogation
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.NumeroSequentiel">
+            <summary>
+            Numéro séquentiel de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.Type">
+            <summary>
+             Type de dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.DateDebut">
+            <summary>
+            Date de début de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.DateRenouvellement">
+            <summary>
+            Date de renouvellement de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.Statut">
+            <summary>
+            Statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.DateFin">
+            <summary>
+            Date de fin de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de création de l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.IdentifiantCreationOccurence">
+            <summary>
+            Identifiant de l’utilisateur qui a créé l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.DateHeureInactivationOccurence">
+            <summary>
+            Date et heure d’inactivation de l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation.IdentifiantInactivationOccurence">
+            <summary>
+            Identifiant de l’utilisateur qui a inactivé l’occurrence
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre">
+            <summary> 
+             Paramètres d'entré pour la création d'une dérogation d'un professionnel de la santé.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre.Type">
+            <summary>
+            Type de la dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre.CodeRaisonStatutDerogation">
+            <summary>
+            Code de raison du statut de dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre.DateDebut">
+            <summary>
+            Date de début de la dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationEntre.IdentifiantCreation">
+            <summary>
+            Identifiant de l'utilisateur qui crée l'occurence.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre">
+            <summary> 
+             Paramètres d'entré pour la modification d'une dérogation d'un professionnel de la santé
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.NumeroSequentiel">
+            <summary>
+            Numéro séquantiel de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquantiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.Type">
+            <summary>
+            Type de dérogation
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.DateRenouvellement">
+            <summary>
+            Date de renouvellemenent de la dérogation
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.DateDebut">
+            <summary>
+            Date de début de la dérogation
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.DateFin">
+            <summary>
+            Date de fin de la dérogation
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.Statut">
+            <summary>
+            Statut de la dérogation
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.CodeRaisonStatut">
+            <summary>
+            Code de raison du statut
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationEntre.IdentifiantMAJ">
+            <summary>
+            Identifiant de la MAJ
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationSorti">
+            <summary> 
+             Paramètres de sortie pour la création d'une dérogation d'un professionnel de la santé.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages <br/>
+             Date   : Janvier 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationSorti.NumeroSequentielDerogation">
+            <summary>
+            Numéro séquentiel de la dérogation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.CreerDerogationSorti.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de la création de l'occurence.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti">
+            <summary> 
+             Paramètres de sortie pour la modification d'une dérogation d'un professionnel de la santé
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti.NouveauNumeroSequentiel">
+            <summary>
+            Nouveau numéro séquentiel de la dérogation
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre">
+            <summary> 
+             Paramètres d'entré pour l'obtention des dérogation d'un professionnel de la santé
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquantiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre.DateRecherche">
+            <summary>
+            Date de recherche
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre.IndicateurDerogationInactive">
+            <summary>
+            Indicateur d'une dérogation inactivé
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre.Tri">
+            <summary>
+            Tri
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteEntre.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti">
+            <summary> 
+             Paramètres de sortie pour l'obtention des dérogation d'un professionnel de la santé
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti.Derogations">
+            <summary>
+            Liste de dérogations
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif">
+            <summary> 
+             Entité pour les droits acquis actifs
+            </summary>
+            <remarks>
+             Auteur : Florent  Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.MessageTraitement">
+            <summary>
+            Message de traitement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.NumeroSequentielProfessionnel">
+            <summary>
+            Numéro séquentiel du professionnel
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.DateDebut">
+            <summary>
+            Date de début du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.DateFin">
+            <summary>
+            Date de fin du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.CodeRegionSocioSanitaire">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisActif.NumeroSequentielRegrAdmn">
+            <summary>
+            Numéro séquentiel de regroupement administratif
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif">
+            <summary> 
+             Entité pour les droits acquis inactifs
+            </summary>
+            <remarks>
+             Auteur : Florent  Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.NumeroSequentielProfessionnel">
+            <summary>
+            Numéro séquentiel du professionnel
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.DateDebut">
+            <summary>
+            Date de début du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.DateFin">
+            <summary>
+            Date de fin du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.CodeRegionSocioSanitaire">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Entite.DroitAcquisInactif.NumeroSequentielRegrAdmn">
+            <summary>
+            Numéro séquentiel de regroupement administratif
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre">
+            <summary> 
+            Paramètre d'entré pour obtenir les droits acquis d'un professionnel
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre.ListeNumeroSequentielProfs">
+            <summary>
+            Liste des numéros séquentiels des professionnels
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti">
+            <summary> 
+            Paramètre de sortie pour obtenir les droits acquis d'un professionnel
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2016-10-04
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti.ListeDroitsAcquisActifProfs">
+            <summary>
+            Liste des droits acquis actifs des professionnels
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti.ListeDroitsAcquisInactifProfs">
+            <summary>
+            Liste des droits acquis inactifs des professionnels
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique">
+            <summary> 
+             Entité d'un engagement de pratique
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.NumeroSequence">
+            <summary>
+            Numéro de séquence de l'engagement (Dérogation, Avis de conformité, Absence d'avis et autorisation)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.Description">
+            <summary>
+            Description
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.CodeRegion">
+            <summary>
+            Code de la région
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.Territoire">
+            <summary>
+            Nom du territoire
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.Periode">
+            <summary>
+            Période
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.Historiques">
+            <summary>
+            Liste d'historique de l'engagement
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique.Type">
+            <summary>
+            Type de dérogation ou d'autorisation
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique">
+            <summary> 
+             Historique d'un engagement de pratique
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.Periode">
+            <summary>
+            Période
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.Statut">
+            <summary>
+            Statut
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.RaisonStatut">
+            <summary>
+            Raison du statut
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.NombreJourEngagement">
+            <summary>
+            Nombre de jour d'engagement
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.TotalJourFacturer">
+            <summary>
+            Total des jours facturés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.PourcentageEffectuer">
+            <summary>
+            Pourcentage effectué
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Historique.EstNonRespectEntente">
+            <summary>
+            Permet de savoir si le pourcentage effectué ne respecte pas l'entente
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Periode">
+            <summary> 
+             Entité d'une période
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Periode.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.Periode.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.InformationTerritoire">
+            <summary> 
+             Entité contenant les information d'un territoire
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Septembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.InformationTerritoire.Nom">
+            <summary>
+            Nom du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.InformationTerritoire.Type">
+            <summary>
+            Type de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.InformationTerritoire.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.InformationTerritoire.NumeroSequentielRegroupement">
+            <summary>
+            Numéro séquentiel regroupement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre">
+            <summary> 
+             Paramètre d'entré de l'obtention des engagements de pratique
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-16
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre.EstDRMG">
+            <summary>
+            Boolean pour savoir si l'utilisateur est DRMG ou non
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueSorti">
+            <summary> 
+             Paramètre de sortir de l'obtention des engagements de pratique
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-16
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueSorti.EngagementPratiques">
+            <summary>
+            Liste d'engagement de pratiques
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Enumerations">
+            <summary>
+            Classes regroupant toutes les énumérations
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite">
+            <summary>
+            Énumération des type de traitement possible à faire pour un avis de conformité
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Transmettre">
+            <summary>
+            Traitement de type Transmettre
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Enregistrer">
+            <summary>
+            Traitement de type Enregistrer
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Modifier">
+            <summary>
+            Traitement de type Modifier
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Annuler">
+            <summary>
+            Traitement de type Annuler
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Inactiver">
+            <summary>
+            Traitement de type Inactiver
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Reporter">
+            <summary>
+            Traitement de type Reporter
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Revoquer">
+            <summary>
+            Traitement de type Révoquer
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementAvisConformite.Supprimer">
+            <summary>
+            Traitement de type Supprimer
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementSuspension">
+            <summary>
+            Énumération des type de traitement possible à faire pour les suspensions
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementSuspension.Ajouter">
+            <summary>
+            Traitement de type Ajouter
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementSuspension.Modifier">
+            <summary>
+            Traitement de type Modifier
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeTraitementSuspension.Annuler">
+            <summary>
+            Traitement de type Annuler
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport">
+            <summary>
+            Formats pris en charge pour l'exportation des rapports
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport.PDF">
+            <summary>
+            Fichier PDF
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Enumerations.TypeFichierSortieRapport.XML">
+            <summary>
+            Fichier XML
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique">
+            <summary> 
+            Informations du lieu géographique
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.NumeroSequence">
+            <summary>
+            Nunéro séquence regroupement administratif du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.NumeroSequenceRegroupement">
+            <summary>
+            Numéro séquence du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.DateDebut">
+            <summary>
+            Date de début du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.DateFin">
+            <summary>
+            Date de fin du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.NomLieuGeographique">
+            <summary>
+            Nom du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de création de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.IdentifiantUtilisateurCreation">
+            <summary>
+            Identifiant de l'utilisateur de la création de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.DateHeureInactivationOccurence">
+            <summary>
+            Date et heure de l'inactivation de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.LieuGeographique.IdUtilInact">
+            <summary>
+            Identifiant de l'utilisateur de l'inactivation de l'occurence
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement">
+            <summary> 
+            Informations du regroupement
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.NumeroSequenceRegroupement">
+            <summary>
+            Nunéro séquence regroupement administratif du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.NumeroSequenceDocumentOfficiel">
+            <summary>
+            Numéro séquance document officiel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.TypeRegroupement">
+            <summary>
+            Type de regroupement administratif du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.CodeRegroupement">
+            <summary>
+            Code de regroupement administratif du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.DateDebut">
+            <summary>
+            Date de début du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.Nom">
+            <summary>
+            Nom du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.NumeroNiveau">
+            <summary>
+            Numéro du niveau de regroupement administratif du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.TypeLieuGeographique">
+            <summary>
+            Type de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.CodeLieuGeographique">
+            <summary>
+            Code de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.NumeroSequenceResponsable">
+            <summary>
+            Numéro de séquence regroupement administratif du lieu géographique responsable
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.DateFin">
+            <summary>
+            Date de fin du regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.DateHeureCreationOccurence">
+            <summary>
+            Date et heure de création de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.IdentifiantUtilisateurCreation">
+            <summary>
+            Identifiant de l'utilisateur de la création de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.DateHeureInactivationOccurence">
+            <summary>
+            Date et heure de l'inactivation de l'occurence
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.Regroupement.IdUtilInact">
+            <summary>
+            Identifiant de l'utilisateur de l'inactivation de l'occurence
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.TerritoirePermis">
+            <summary> 
+            Informations d'un territoire permis
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.TerritoirePermis.Id">
+            <summary>
+            Id territoire permis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Entite.TerritoirePermis.Nom">
+            <summary>
+            Nom territoire permis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre">
+            <summary> 
+            Entité d'intrant pour l'obtention de l'information sur les territoire CLSC
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre.CodeTerritoireCLSC">
+            <summary>
+            Code territoire CLSC
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre.CodeRegionSocioSanitaire">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCSortie">
+            <summary> 
+            Entité d'extrant pour l'obtention de l'information sur les territoire CLSC
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCSortie.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCSortie.NomTerritoires">
+            <summary>
+            Liste des territoires
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSEntre">
+            <summary> 
+            Entité d'intrant pour l'obtention de l'information sur les territoire RLS
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSEntre.CodeTerritoireRLS">
+            <summary>
+            Code territoire RLS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSEntre.CodeRegionSocioSanitaire">
+            <summary>
+            Code de région socio-sanitaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSSorti">
+            <summary> 
+            Entité d'extrant pour l'obtention de l'information sur les territoire RLS
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSSorti.NomTerritoires">
+            <summary>
+            Liste des territoires
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre">
+            <summary> 
+            Entité d'intrant pour l'obtention du nom d'un territoire
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre.DateDebutPratique">
+            <summary>
+            Date de début de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre.NumeroSequentiel">
+            <summary>
+            Numéro séquentiel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre.Code">
+            <summary>
+            Code du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre.CodeRSS">
+            <summary>
+            Code de la région socio-sanitaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireSorti">
+            <summary> 
+            Entité d'extrant pour l'obtention du nom d'un territoire
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireSorti.NomTerritoire">
+            <summary>
+            Nom du territoire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre">
+            <summary> 
+            Paramètres d'entrés de la méthode ObtenirListeRegrLgeoRattaRss
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.TypeRegroupement">
+            <summary>
+            Type de regrouppement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.NumeroDocumentOfficiel">
+            <summary>
+            Numéro document officiel 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.DateRecherche">
+            <summary>
+            Date de recherche
+            </summary>
+            <remarks>Optionnelle</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.DateDebutRecherche">
+            <summary>
+            Date de début de recherche
+            </summary>
+            <remarks>Optionnelle</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.DateFinRecherche">
+            <summary>
+            Date de fin de recherche
+            </summary>
+            <remarks>Optionnelle</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.CodeRssRegionSocioSanitaire">
+            <summary>
+            Code RSS de la région socio-sanitaire  
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.NumeroSequenceRegrAdminLieuGeo">
+            <summary>
+            Numéro de séquence de regroupement administratif du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.IndObtentionLgeo">
+            <summary>
+            Indicateur d’obtention des regroupements parents au regroupement immédiat
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre.IndObtenirUniquementRegroupement">
+            <summary>
+            Indicateur pour obtenir uniquement le regroupement visé par la recherche.  
+            </summary>
+            <remarks>Les regroupements inférieurs et les lieux géographiques ne seront pas retournés</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti">
+            <summary> 
+            Paramètres de sorties de la méthode ObtenirListeRegrLgeoRattaRss
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-09
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti.Regroupements">
+            <summary>
+            Liste des regroupements obtenus 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti.LieuxGeographiques">
+            <summary>
+            Liste des lieux géographiques rattachés aux regroupements retournés:
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisEntre">
+            <summary> 
+            Entité d'intrant pour l'obtention des territoires permis
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisEntre.DateDebutPratique">
+            <summary>
+            Date de début de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisEntre.CodeRSS">
+            <summary>
+            Code de la région socio-sanitaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisSorti">
+            <summary> 
+            Entité d'intrant pour l'obtention des territoires permis
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisSorti.TerritoiresPermis">
+            <summary>
+            Territoires permis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre">
+            <summary> 
+             Paramètres d'entrées pour l'obtention des périodes de pratique d'un professionnel
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-16
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelEntre.NumeroTypePratique">
+            <summary>
+            Numéro du type  de pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti">
+            <summary> 
+             Paramètres de sortie pour l'obtention des périodes de pratique d'un professionnel
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : 2016-09-16
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.NumeroSequencePratique">
+            <summary>
+            Numéro séquentiel de la pratique 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.DatePremiereFacturation">
+            <summary>
+            Date de première facturation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.DateDerniereFacturation">
+            <summary>
+            Date de dernière facturation 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.NumeroTypePratique">
+            <summary>
+            Type de pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis">
+            <summary> 
+             JoursFactAvis
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.DateDebutEngag">
+            <summary>
+            Date de fin de l'engagment
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.DateFinEngag">
+            <summary>
+            Date de début de l'engagment
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.Statut">
+            <summary>
+            Statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.JoursAdmissibles">
+            <summary>
+            Nombre de jours admissibles
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.Pourcentage">
+            <summary>
+            Pourcentage
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.DateDebutStatut">
+            <summary>
+            Date de début du statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactAvis.DateFinStatut">
+            <summary>
+            Date de fin du statut
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis">
+            <summary> 
+             JoursFactDroitsAcquis
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.DateDebutDroitAcquis">
+            <summary>
+             Date de début du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.DateFinDroitAcquis">
+            <summary>
+             Date de fin du droit acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.DateDebutEngagement">
+            <summary>
+             Date de début de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.DateFinEngagement">
+            <summary>
+             Date de fin de l'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.RSS">
+            <summary>
+            Code RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.Pourcentage">
+            <summary>
+            Pourcentage
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.IndicateurRespectRPPR">
+            <summary>
+            Indicateur de respect RPPR
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactDroitsAcquis.TotalJoursPratique">
+            <summary>
+            Total des jours de pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactures">
+            <summary> 
+             JoursFactures
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactures.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactures.NombreJours">
+            <summary>
+            Nombre de jours
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactures.TypeJours">
+            <summary>
+            Type de jours
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS">
+            <summary> 
+             JoursFactRSS
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS.RSS">
+            <summary>
+            Le code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS.Pourcentage">
+            <summary>
+            Pourcentage
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS.Annee">
+            <summary>
+            Annee
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS.Mois">
+            <summary>
+            Mois
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire">
+            <summary> 
+             JoursFactTerritoire
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.NumeroSeqRegrAdmnLGEO">
+            <summary>
+            Regroupement administratif d'un lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.CodeRSS">
+            <summary>
+            Code RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.Pourcentage">
+            <summary>
+            Pourcentage
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.Annee">
+            <summary>
+            Annee
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire.Mois">
+            <summary>
+            Mois
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.Message">
+            <summary> 
+             PourcentageProf
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.Message.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.Message.NumeroMessage">
+            <summary>
+             Numéro de message
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.Message.ParamMsg1">
+            <summary>
+            Paramètre de message 1
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.Message.ParamMsg2">
+            <summary>
+            Paramètre de message 2
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs">
+            <summary> 
+             Respect d’engagement du médecin omnipraticien
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.DdEngagement">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.DfEngagement">
+            <summary>
+            Date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.IdentifiantPourcentage">
+            <summary>
+            Identifiant du pourcentage
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.NombreJours">
+            <summary>
+            Nombre de jours
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.JoursTotal">
+            <summary>
+            Nombre de jours total
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.Pourcentage">
+            <summary>
+            Pourcentage
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.RespectEngagementProfs.IndicateurRespectEngag">
+            <summary>
+            Indicateur de respect d'engagement
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion">
+            <summary> 
+             Pratique Région
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursPremDpnag">
+            <summary>
+            Nombre de jours PREM/DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursPrem">
+            <summary>
+            Nombre de jours PREM
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursDpnag">
+            <summary>
+            Nombre de jours DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursIvn">
+            <summary>
+            Nombre de jours IVN
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursLoc">
+            <summary>
+            Nombre de jours localité
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursHQ">
+            <summary>
+            Nombre de jours Hors-Quebec
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.NbJoursTotal">
+            <summary>
+            Nombre de jours total
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.Annee">
+            <summary>
+            Année de service
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.Mois">
+            <summary>
+            Mois de service
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueRegion.CodeRSS">
+            <summary>
+            Le code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire">
+            <summary> 
+             Pratique Territoire
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.NoSequentielDisp">
+            <summary>
+             Numéro séquentiel du dispensateur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.NbJoursPremDpnag">
+            <summary>
+            Nombre de jours PREM/DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.NbJoursPrem">
+            <summary>
+            Nombre de jours PREM
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.NbJoursDpnag">
+            <summary>
+            Nombre de jours DPNAG
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.NbJoursIvn">
+            <summary>
+            Nombre de jours IVN
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.CodeRSS">
+            <summary>
+            Le code de région socio-sanitaire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.NumeroSeqRegrAdmnLGEO">
+            <summary>
+            Numéro séquentiel de regroupement administratif d'un lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.CodeLieuGeographique">
+            <summary>
+            Code du lieu géographique
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.PratiqueTerritoire.DateService">
+            <summary>
+            Date de service
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.SommaireProf">
+            <summary> 
+             Sommaire d'un professionnel de la santé pour un avis
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.SommaireProf.TypeTotal">
+            <summary>
+            Type de total
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre">
+            <summary> 
+             Paramètres d'entré pour CalculerNbrJrsPratiProfs
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois<br/>
+             Date   : Juillet 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.NumerosSequentielsProfs">
+            <summary>
+            Liste de numéros séquentiels des professionnels de la santé 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.DateDebut">
+            <summary>
+            Date de début (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.DateFin">
+            <summary>
+            Date de fin (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.ObtenirListeIntra">
+            <summary>
+            Obtention de la liste par territoire (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.ObtenirListeInter">
+            <summary>
+            Obtention de la liste par RSS (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.ObtenirListeRespectEngag">
+            <summary>
+            Obtention de la liste des respects d'engagement (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre.ObtenirListeRPPR">
+            <summary>
+            Obtention de la liste par RPPR (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti">
+            <summary> 
+             Paramètres de sortie pour CalculerNbrJrsPratiProfs
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.Messages">
+            <summary>
+            Liste de messages
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.JourneesFactRSS">
+            <summary>
+            Liste de journées facturées des professionnels de la santé par RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.JourneesFactTerritoire">
+            <summary>
+            Liste de journées facturées des professionnels de la santé par territoire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.JourneesFactAvis">
+            <summary>
+            Liste de journées facturées des professionnels de la santé pour un avis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.JourneesFactDroitsAcquis">
+            <summary>
+            Liste de journées facturées des professionnels pour les droits acquis
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.SommairesProfs">
+            <summary>
+            Liste de sommaires des professionnels de la santé
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.RespectsEngagementProfs">
+            <summary>
+            Liste de respects d'engagement des professionnels de la santé
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre">
+            <summary> 
+             Paramètres d'entré pour le service du noyau « Obtenir les jours facturés de la pratique PREM par région ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre.NumerosSequentielsProfs">
+            <summary>
+            Liste de numéros séquentiels des professionnels de la santé 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre.IndicateurRegrMois">
+            <summary>
+            Indicateur de regroupement par mois
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre.DateDebut">
+            <summary>
+            Date de début (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre.DateFin">
+            <summary>
+            Date de fin (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre.CodeRSS">
+            <summary>
+            Code RSS (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionEntre.MontantparJournee">
+            <summary>
+            Montant par journée
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionSorti">
+            <summary> 
+             Paramètres de sortie pour le service du noyau « Obtenir les jours facturés de la pratique PREM par région ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiRegionSorti.ListeJourFactProfsRSS">
+            <summary>
+            Liste de journées facturées des professionnels de la santé par RSS
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre">
+            <summary> 
+             Paramètres d'entré pour le service du noyau « Obtenir les jours facturés de la pratique PREM par territoire ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.NumerosSequentielsProfs">
+            <summary>
+            Liste de numéros séquentiels des professionnels de la santé 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.DateDebut">
+            <summary>
+            Date de début (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.DateFin">
+            <summary>
+            Date de fin (Optionnelle)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.NumeroRegrLieuGeographique">
+            <summary>
+            Regroupement LGEO (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.TypeLieuGeographique">
+            <summary>
+            Type LGEO (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.CodeLieuGeographique">
+            <summary>
+            Code LGEO (Optionnel)
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriEntre.MontantparJournee">
+            <summary>
+            Montant par journée
+            </summary>
+            <remarks>Optionnel</remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriSorti">
+            <summary> 
+             Paramètres de sortie pour le service du noyau « Obtenir les jours facturés de la pratique PREM par territoire ».
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart<br/>
+             Date   : Février 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.ObtenirJoursFactPratiTerriSorti.ListeJourFactProfsTerri">
+            <summary>
+            Liste de journées facturées des professionnels de la santé par territoire
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer">
+            <summary>
+            Entité pour l'admissibilité à facturer d'un professionnel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer.StatutAdmissibilite">
+            <summary>
+            Statut d'admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer.DateDebutAdmissibilite">
+            <summary>
+            Date de début de l'admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer.DateFinAdmissibilite">
+            <summary>
+            Date de fin de l'admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer.CodeRaisonNonAdmissibilite">
+            <summary>
+            Code de raison de la non admissibilité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp">
+            <summary>
+            Information personnelle d'un dispensateur
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.CodeDeProfession">
+            <summary>
+            Code de profession
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.NumeroSeqDisp">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.PrenomDisp">
+            <summary>
+            Prénom du dispensateur  
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.NomDisp">
+            <summary>
+            Nom du dispensateur  
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.DateDeces">
+            <summary>
+            Date de décès 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.DateDebutSpec">
+            <summary>
+            Date de début de spécialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.DateObtentionPermis">
+            <summary>
+            Dates d'obtention de permis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.ClasseDispensateur">
+            <summary>
+            Classe du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.InfoPersonnelleslDisp.NumeroDispensateur">
+            <summary>
+            Numéro du Dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti">
+            <summary>
+            NomPrenomDispSorti
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.Nom">
+            <summary>
+            Nom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.Prenom">
+            <summary>
+            Prénom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.NumeroClasse">
+            <summary>
+            Numéro de classe
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.NumeroDispensateur">
+            <summary>
+            Numéro de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.Identifiant">
+            <summary>
+            Identifiant du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispSorti.TypeIdentifiant">
+            <summary>
+            Type Identifiant du dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NumeroEtClasseDisp">
+            <summary>
+            Numero et classe d'un dispensateur
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NumeroEtClasseDisp.ClasseDispensateur">
+            <summary>
+            Classe du Dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NumeroEtClasseDisp.NumeroDispensateur">
+            <summary>
+            Numéro du Dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel">
+            <summary>
+            Entite pour les informations d'un professionnel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.Nom">
+            <summary>
+            Nom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.Prenom">
+            <summary>
+            Prénom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.NumeroClasse">
+            <summary>
+            Numéro de classe
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.NumeroDispensateur">
+            <summary>
+            Numéro de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.NumeroSequentielIndividu">
+            <summary>
+            Numéro séquentiel d'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnel.NomAfficher">
+            <summary>
+            Nom afficher
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.ClasseDispensateur">
+            <summary>
+            Classe du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.NumeroDispensateur">
+            <summary>
+            Numéro du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.NumeroSeqDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.NumeroSeqIndividu">
+            <summary>
+            Numéro séquentiel individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.DateDebutSpecialisation">
+            <summary>
+            Date début spécialisation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.DateDebutPeriodeAdmissibilite">
+            <summary>
+            Date début période admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.DateFinPeriodeAdmissibilite">
+            <summary>
+            Date de fin période admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.StatutAdmissibilite">
+            <summary>
+            Statut admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.ProfessionnelNumEntente.CodeRaisonNonAdmissibilite">
+            <summary>
+            Code de raison de la non admissibilité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre">
+            <summary>
+            NomPrenomDispEntre
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.Nom">
+            <summary>
+            Nom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.Prenom">
+            <summary>
+            Prénom
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.NumeroClasse">
+            <summary>
+            Numéro de classe
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.NumeroDispensateur">
+            <summary>
+            Numéro de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.Identifiant">
+            <summary>
+            Identifiant du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.TypeIdentifiant">
+            <summary>
+            Type Identifiant du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.NomPrenomDispEntre.DateService">
+            <summary>
+            Date de service
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnels">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnels.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnels.LesProfessionnels">
+            <summary>
+            Liste de professionnels
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre">
+            <summary>
+             Paramètres d'entrée pour l'obtention des informations personnelles d'un dispensateur
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre.NumerosEtClassesDispensateurs">
+            <summary>
+            Liste des numeros et classes des dispensateurs
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre.NomDispensateur">
+            <summary>
+            Nom du Dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispEntre.PrenomDispensateur">
+            <summary>
+            Prenom du Dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispSorti">
+            <summary>
+            Paramètres de sortie pour l'obtention des informations personnelles d'un ou plusieurs dispensateur(s)
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirInfoPerslDispSorti.InformationsPersonnellesDisp">
+            <summary>
+            Liste des informations personnelles des dispensateurs
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirNomPrenomListeDispensateursEntree">
+            <summary> 
+             Paramètre d'entrée pour obtenir les noms, prenoms d'une liste de dispensateurs
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Juin 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirNomPrenomListeDispensateursEntree.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirNomPrenomListeDispensateursEntree.InfoDispensateurs">
+            <summary>
+            Liste des dispensateurs
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteEntre">
+            <summary> 
+             Paramètre d'entrée pour obtenir les dispensateurs selon un numéro d'entente
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteEntre.NumeroEntente">
+            <summary>
+            Numéro d'entente 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteEntre.DateDebutPeriode">
+            <summary>
+            Date de début de la période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteEntre.DateFinPeriode">
+            <summary>
+            Date de fin de la période
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre">
+            <summary> 
+             Paramètre d'entrée pour obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre.NumeroClasseDispensateur">
+            <summary>
+            Classe du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre.NumeroDispensateur">
+            <summary>
+            Numéro du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre.NumeroSequentielIndividu">
+            <summary>
+            Numéro séquentiel d'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuEntre.DateService">
+            <summary>
+            Date de service
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti">
+            <summary> 
+             Paramètre de sortie pour obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NumerosSequentielDispensateur">
+            <summary>
+            Liste de numéro séquentiel de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NumerosDispensateur">
+            <summary>
+            Liste de numéro de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NumerosSequentielIndividu">
+            <summary>
+            Liste de numéro séquentiel d'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NumerosClasseDispensateur">
+            <summary>
+            Liste de classe du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.TerritoiresPermis">
+            <summary>
+            Liste de territoire de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.ChiffresPreuveDispensateur">
+            <summary>
+            Liste de chiffre preuve
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.CodesProfession">
+            <summary>
+            Liste de code de profession
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesCreationDispensateur">
+            <summary>
+            Liste de date de création du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.IdentifiantsUtilisateurCreateur">
+            <summary>
+            Liste d'identifiant créateur du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesObtentionPermis">
+            <summary>
+            Liste de date d'obtention de permis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesInscriptionRamq">
+            <summary>
+            Liste de date d'inscription à la ramq
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.AnneesGraduation">
+            <summary>
+            Liste d'année de graduation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NumerosSequentielIntervenantGraduation">
+            <summary>
+            Liste de numéro séquentiel identifiant l'intervenant secondaire de type "université"
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.IndicateursDemandeCourrier">
+            <summary>
+            Liste d'indicateur de demande de courrier
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.IndicateursFacturationRecente">
+            <summary>
+            Liste d'indique si le dispensateur reçu paiement pour sa facturation dans la dernière année
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesPremiereSpecialite">
+            <summary>
+            Liste de date de première spécialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesDebutPratique">
+            <summary>
+            Liste de date de début de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NombresAnnneesExperienceHorsQuebec">
+            <summary>
+            Liste de nombre d'années d'expérience reconnues pour la pratique hors Québec
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NombresAnneesExperienceQuebecSpecialiste">
+            <summary>
+            Liste de nombre d'années d'expérience reconnues pour la pratique hors Québec pour spécialiste
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DroitsAcquisTarifHoraire">
+            <summary>
+            Liste d'indique si omni a droit au 5e échelon de l'échelle salariale de tarif horaire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesMAJDispensateur">
+            <summary>
+            Liste de date de mise à jour du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.IdentifiantsUtilisateurModificateur">
+            <summary>
+            Liste d'identifiant modificateur du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NomsTronqueIndividu">
+            <summary>
+            Liste de nom tronqué de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.PrenomsIndividu">
+            <summary>
+            Liste de prénom de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NomsIndividu">
+            <summary>
+            Liste de nom de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NumeroAssuranceSocialeIndividu">
+            <summary>
+            Liste de numéro d'assurance sociale
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesCreationIndividu">
+            <summary>
+            Liste de date de création de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.IdentifiantsUtilisteurCreateurIndividu">
+            <summary>
+            Liste d'identifiant créateur de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.LanguesIndividu">
+            <summary>
+            Liste de langue de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.TitreCiviliteIndividu">
+            <summary>
+            Liste de titre civilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.SexeIndividu">
+            <summary>
+            Liste de sexe de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesNaissanceIndividu">
+            <summary>
+            Liste de date de naissance de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.NomsNaissanceIndividu">
+            <summary>
+            Liste de nom de naissance de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.StatutsCivilIndividu">
+            <summary>
+            Liste de statut civil de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesDecesIndividu">
+            <summary>
+            Liste de date de décès de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.DatesModificationIndividu">
+            <summary>
+            Liste de date de mise à jour de l'individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.IdentifiantUtilisateurModificateurIndividu">
+            <summary>
+            Liste d'identifiant modificateur de l'individu
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursIndividusSorti">
+            <summary> 
+             Paramètre de sortie pour obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Octobre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursIndividusSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursIndividusSorti.DispensateursIndividus">
+            <summary>
+            Listes des dispensateurs
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirNomPrenomListeDispensateursSorti">
+            <summary> 
+             Paramètre de sortie pour obtenir les noms, prenoms d'une liste de dispensateurs
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirNomPrenomListeDispensateursSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirNomPrenomListeDispensateursSorti.InfoDispensateurs">
+            <summary>
+            Liste des dispensateurs
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre">
+            <summary> 
+             Paramètre d'entrée pour obtenir les informations sur l'admissibilité d'un professionnel à facturer
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre.NumeroClasse">
+            <summary>
+            Numéro de classe
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre.NumeroDispensateur">
+            <summary>
+            Numéro de dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre.DateDebutPeriode">
+            <summary>
+            Date de début d'admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre.DateFinPeriode">
+            <summary>
+            Date de fin d'admissibilité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteSorti">
+            <summary> 
+             Paramètre de sorti pour obtenir les dispensateurs selon un numéro d'entente
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : Avril 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateursSelonEntenteSorti.Dispensateurs">
+            <summary>
+            Liste des dispensateurs
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti">
+            <summary> 
+             Paramètre de sorti pour obtenir les informations sur l'admissibilité d'un professionnel à facturer
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti.IndicateurAdmissibilite">
+            <summary>
+            Indicateur d'admissibilité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti.PeriodesAdmissibilite">
+            <summary>
+            Liste de périodes d'admissibilité
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.ILigneRapport">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.NomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.PrenomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.JoursEffectues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.PourcentageEffectue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.NumeroPratique">
+            <summary>
+            Numéro de pratique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.NomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.PrenomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.StatutAvisConformite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.NumeroPratique">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.NomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.PrenomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.DateFinAvis">
+            <summary>
+            Date de fin de l'avis de conformité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.Raison">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.RegionOriginale">
+            <summary>
+            Région originale
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.RegionDestination">
+            <summary>
+            Région de destination
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.NumeroPratique">
+            <summary>
+            Numéro de pratique du dispensateur (classe + no_disp)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.Medecin">
+            <summary>
+            Nom + prénom du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.TypePratique">
+            <summary>
+            TypePratique dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.DatePriseEffet">
+            <summary>
+            DatePriseEffet dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.DateFin">
+            <summary>
+            DateFin dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.NombreJoursFactures">
+            <summary>
+            NombreJoursFactures
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.NombreJoursTotatuxFactures">
+            <summary>
+            NombreJoursTotatuxFactures
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.PourcentageEffectue">
+            <summary>
+            PourcentageEffectif
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.NumeroPratique">
+            <summary>
+            Numéro de pratique du dispensateur (classe + no_disp)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.Medecin">
+            <summary>
+            Nom + prénom du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.Region">
+            <summary>
+            Code de la région
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.DatePriseEffetAvis">
+            <summary>
+            Date de prise d'effet de l'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.DateFinAvis">
+            <summary>
+            Date de fin de l'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.PourcentageEffectue">
+            <summary>
+            Pourcentage de jours facturés dans l'avis
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.NumeroPratique">
+            <summary>
+            Numéro de pratique du dispensateur (classe + no_disp)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.Medecin">
+            <summary>
+            Nom + prénom du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.Region">
+            <summary>
+            Région
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.NombreJoursFactureRPPR">
+            <summary>
+            Jours facturés en RPPR*
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.NombreJoursTotauxFactures">
+            <summary>
+            Total jours facturés
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.PourcentageEffectue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.DateDebutPeriodeApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.DateFinPeriodeApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.NumeroPratique">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.NomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.PrenomMedecin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.DateObtentionPermis">
+            <summary>
+            Date d'obtention du permis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.DatePremiereFacturation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.NumeroPratique">
+            <summary>
+            Numéro de pratique du dispensateur (classe + no_disp)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.Medecin">
+            <summary>
+            Nom + prénom du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.Region">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.SousTerritoire">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.NombreJoursFactures">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.PourcentageEffectue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.IParamObtnrRapp">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAbsncAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAbsncAvisConf.Annee">
+            <summary>
+            Année utilisée pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAbsncAvisConf.Trimestre">
+            <summary>
+            Trimestre utilisé pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAbsncAvisConf.Region">
+            <summary>
+            Région utilisée pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAbsncAvisConf.SousTerritoire">
+            <summary>
+            Sous-territoire utilisé pour la recherche
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.Region">
+            <summary>
+            Région utilisée pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.SousTerritoire">
+            <summary>
+            Sous-territoire utilisé pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.StatutAvis">
+            <summary>
+            Statut recherché
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.DateRecherche">
+            <summary>
+            Date utilisée pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.IndicateurRetraiteExclus">
+            <summary>
+            Exclut ou non les médecins retraités
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.IndicateurDesengagesExclus">
+            <summary>
+            Exclut ou non les médecins désengagés
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfActifsParTerritoire.IndicateurHorsRAMQExclus">
+            <summary>
+            Exclut ou non le médecins hors RAMQ
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfTermines">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfTermines.Annee">
+            <summary>
+            Année de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfTermines.Raison">
+            <summary>
+            Raison rechercée
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfTermines.RegionOriginale">
+            <summary>
+            Région originale recherchée, uniquement pour le comité paritaire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappAvisConfTermines.RegionDestination">
+            <summary>
+            Région de destination recherchée, uniquement pour le comité paritaire
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappDerogPratiExclu">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappDerogPratiExclu.Annee">
+            <summary>
+            Annee Prem à rechercher
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappDerogPratiExclu.TypePratique">
+            <summary>
+            TypePratique recherché
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportWebSorti`1">
+            <summary>
+            Paramètre de sortie, utilisé pour renvoyer un rapport en tant que fichier (PDF, XML).
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportWebSorti`1.LignesRapport">
+            <summary>
+            Lignes du rapport généré
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportWebSorti`1.DateDebutPeriode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportWebSorti`1.DateFinPeriode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti">
+            <summary>
+            Paramètre de sortie, utilisé pour renvoyer un rapport en tant que fichier (PDF, XML).
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti.ContenuFichier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti.TypeContenu">
+            <summary>
+            Type "MIME", obtenu avec MimeMapping.GetMimeMapping(cheminFichier);
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti.NomFichier">
+            <summary>
+            Nom du fichier de sortie
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti.DateDebutPeriode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti.DateFinPeriode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNonRespAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNonRespAvisConf.Annee">
+            <summary>
+            Année de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNonRespAvisConf.Region">
+            <summary>
+            Région pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNonRespAvisConf.SousTerritoire">
+            <summary>
+            Sous-territoire pour la recherche
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappExerNonAutoRPPR">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappExerNonAutoRPPR.Annee">
+            <summary>
+            Année de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappExerNonAutoRPPR.Region">
+            <summary>
+            Région où rechercher
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNouvMedSansAvisConf">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNouvMedSansAvisConf.Annee">
+            <summary>
+            Année de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNouvMedSansAvisConf.Trimestre">
+            <summary>
+            Trimestre de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappNouvMedSansAvisConf.Region">
+            <summary>
+            Région où rechercher
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappRepartInterRegionPrati">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappRepartInterRegionPrati.Region">
+            <summary>
+            Région pour la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappRepartInterRegionPrati.SousTerritoire">
+            <summary>
+            Sous-territoire où rechercher
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnrRappRepartInterRegionPrati.Annee">
+            <summary>
+            Année de recherche
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction">
+            <summary>
+            Réduction
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.NumeroSequentiel">
+            <summary>
+            Numéro Séquentiel
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.DateFin">
+            <summary>
+            Date de fin
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.RaisonReduction">
+            <summary>
+            Raison de la réduction
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.Engagement">
+            <summary>
+            Engagement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.NombreJours">
+            <summary>
+            Nombre de jours
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.PourcentageEffectuer">
+            <summary>
+            Pourcentage effectué
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Entite.Reduction.CodeApplication">
+            <summary>
+            Code d'application
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Reduction.Parametre.ObtenirReductionsProfessionnelEntre">
+            <summary>
+            Paramètre d'entre pour l'obtention de la liste des réduction d'un professionnel
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Parametre.ObtenirReductionsProfessionnelEntre.NumeroSequentielMedecinOmnipraticien">
+            <summary>
+            Numéro séquentiel du médecin omnipraticien
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Parametre.ObtenirReductionsProfessionnelEntre.EstRPPRUniquement">
+            <summary>
+            Si est RPPR uniquement
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Reduction.Parametre.ObtenirReductionsProfessionnelSorti">
+            <summary>
+            Paramètre de sortie pour l'obtention de la liste des réduction d'un professionnel
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Reduction.Parametre.ObtenirReductionsProfessionnelSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Reduction.Parametre.ObtenirReductionsProfessionnelSorti.Reductions">
+            <summary>
+            Liste des réductions
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Securite.Entite.ContexteRegleAcces">
+            <summary> 
+             Contexte règle accès
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-11-02
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Securite.Entite.ContexteRegleAcces.CodeContexteDroitAcces">
+            <summary>
+            Code de contexte du droite d'accès.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Securite.Entite.ContexteRegleAcces.IdContexteRegleAcces">
+            <summary>
+            Id de contexte de la règle d'accès.
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Securite.Entite.ContexteRegleAcces.NumeroSequentielDroitAcces">
+            <summary>
+            Numéro séquentiel du droit d'accès
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre">
+            <summary> 
+             Paramètre d'entrée pour la recherche de règles d'accès.
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-11-02
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre.CodeApplication">
+            <summary>
+            Le code d'application
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre.IdentifiantUtilisateur">
+            <summary>
+            L'identifiant de l'utilisateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesSorti">
+            <summary> 
+             Paramètres de retour de la recherche de règles d'accès.
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : 2016-11-02
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesSorti.ContextesDroitAcces">
+            <summary>
+            Liste de code de contexte du droite d'accès.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Critere">
+            <summary>
+            Entité pour les critères de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Critere.Terme">
+            <summary>
+            Terme
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Critere.LimiteParPage">
+            <summary>
+            Limite par page
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Critere.Page">
+            <summary>
+            Page
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Resultat">
+            <summary>
+            Entité pour les résultats de recherche
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Resultat.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Resultat.TotalResultat">
+            <summary>
+            Total des résultats
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Resultat.ListeResultat">
+            <summary>
+            Liste de résultat
+            </summary>
+        </member>
+    </members>
+</doc>

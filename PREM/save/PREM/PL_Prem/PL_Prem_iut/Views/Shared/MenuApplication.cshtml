@@ -1,0 +1,154 @@
+﻿@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+@{
+    bool estDansZoneIntranet = Utilitaire.EstDansZoneIntranet();
+    bool estGroupeSupport = Utilitaire.EstDansGroupe(Configuration.GroupeSupport);
+    bool estGroupeDRMG = Utilitaire.EstDansGroupe(Configuration.GroupeDRMG);
+    bool estGroupeComiteParitaire = Utilitaire.EstDansGroupe(Configuration.GroupeComiteParitaire);
+    bool estGroupeConsultationProfilPrem = Utilitaire.EstDansGroupe(Configuration.GroupeConsultationProfilPrem);
+    bool estGroupeConsultationProfilPremDRMG = false;
+
+    bool estMenuPLA1Visible = Utilitaire.ConvertirStringEnBoolean(Configuration.AfficherPLA1) && !estDansZoneIntranet;
+    bool estMenuPLA2Visible = Utilitaire.ConvertirStringEnBoolean(Configuration.AfficherPLA2) && !estDansZoneIntranet;
+    bool estMenuPLC1Visible = Utilitaire.ConvertirStringEnBoolean(Configuration.AfficherPLC1) || estDansZoneIntranet;
+    bool estMenuPLC1RPPRVisible = Utilitaire.ConvertirStringEnBoolean(Configuration.AfficherPLC1RPPR) || estDansZoneIntranet;
+    bool estMenuPLC2Visible = Utilitaire.ConvertirStringEnBoolean(Configuration.AfficherPLC2) || estDansZoneIntranet;
+    bool estMenuPLE1Visible = estDansZoneIntranet || RAMQ.Utilitaires.ObtenirEnvir() == RAMQ.Environnement.Unitaire;
+
+
+
+    if (estGroupeSupport)
+    {
+        string typeProfil = Utilitaire.ObtenirCookie("TypeProfil");
+
+        switch (typeProfil)
+        {
+            case "DRMG":
+                estGroupeDRMG = true;
+                estGroupeConsultationProfilPremDRMG = true;
+                break;
+            case "Comité paritaire":
+                estGroupeComiteParitaire = true;
+                estGroupeConsultationProfilPrem = true;
+                break;
+            default:
+                estGroupeComiteParitaire = true;
+                estGroupeConsultationProfilPrem = true;
+                break;
+        }
+    }
+}
+
+@{ if (estGroupeSupport && !estDansZoneIntranet)
+    {
+        <!--Sélection d'un profil de professionnel-->
+        <ul class="nav">
+            <li>
+                <a href=@string.Format("{0}?Application={1}", System.Configuration.ConfigurationManager.AppSettings["UrlEPL4"], "PREM")>Choix du type d’utilisateur</a>
+            </li>
+        </ul>
+    }
+}
+@{ if (estGroupeDRMG && estMenuPLA1Visible)
+    {
+        <!--PLA1-->
+        <ul class="nav">
+            <li>
+                <a href="#" class="collapsed active" data-toggle="collapse" data-target="#menuAvisConformite">
+                    Gestion des avis de conformité
+                </a>
+                <ul class="nav sub collapse in" id="menuAvisConformite" aria-expanded="true">
+                    <li><a href="@Url.Action("PLA1_Transmettre", "AvisConformite")">Transmettre un avis</a></li>
+                    <li><a href="@Url.Action("PLA1_Modifier", "AvisConformite")">Modifier un avis transmis</a></li>
+                    <li><a href="@Url.Action("PLA1_Attente", "AvisConformite")">Avis non transmis<span class="badge">@ViewData[Constantes.CleNombreAvisAttente]</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+@{ if (estGroupeComiteParitaire && estMenuPLA2Visible)
+    {
+        <!--PLA2-->
+        <ul class="nav">
+            <li>
+                <a href="#" class="collapsed" data-toggle="collapse" data-target="#menuDecisionAvisConformite">
+                    Gestion des dérogations et des suspensions
+                </a>
+                <ul class="nav sub collapse in" id="menuDecisionAvisConformite" aria-expanded="true">
+                    <li><a href="@Url.Action("PLA2_TransmettreDerogation", "DecisionAvisConformite")">Transmettre une dérogation</a></li>
+                    <li><a href="@Url.Action("PLA2_AnnulerDerogation", "DecisionAvisConformite")">Annuler une dérogation</a></li>
+                    <li><a href="@Url.Action("PLA2_GererSuspension", "DecisionAvisConformite")">Gérer les suspensions</a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+@{ if (estGroupeConsultationProfilPrem || estGroupeDRMG || estGroupeComiteParitaire)
+    {
+        <!--PLA5-->
+        <!--Sélection d'un profil de professionnel-->
+        @*<ul class="nav">
+            <li>
+                <a href="@Url.Action("PLA5_TransmettreDerogation", "DecisionAvisConformite")">Gestion des autorisations pendant la résidence</a>
+            </li>
+        </ul>*@
+    }
+
+
+}
+
+@{ if ((estGroupeComiteParitaire || estGroupeDRMG) && estMenuPLC1Visible)
+    {
+        <!--PLC1-->
+        <ul class="nav">
+            <li>
+                <a href="#" class="collapsed" data-toggle="collapse" data-target="#menuRapports">
+                    Listes
+                </a>
+                <ul class="nav sub collapse in" id="menuRapports" aria-expanded="true">
+                    @{ 
+                        if (!estGroupeDRMG)
+                        {
+                            <li><a href="@Url.Action("PLC1_DerogPratiExclu", "Rapport")">Dérogation pour pratique exclusive</a></li> 
+                        }
+                    }
+                    <li><a href="@Url.Action("PLC1_NonRespectAvisConf", "Rapport")">Non-respect de l'avis de conformité</a></li>
+                    <li><a href="@Url.Action("PLC1_RepartInterRegionPrati", "Rapport")">Répartition inter/intra régionale de la pratique</a></li>
+                    @{
+                        if (estMenuPLC1RPPRVisible)
+                        {
+                            <li><a href="@Url.Action("PLC1_ExerNonAutoRPPR", "Rapport")">Exercice non autorisé en région à pratique partielle restreinte</a></li>
+                        }
+                    }
+                </ul>
+            </li>
+        </ul>
+    }
+}
+
+@{ if ((estGroupeConsultationProfilPrem || estGroupeConsultationProfilPremDRMG) && estMenuPLE1Visible)
+    {
+        <!--PLE1-->
+        <ul class="nav">
+            <li><a href="@Url.Action("PLE1_Reevaluation", "DemandeReevaluation")">Demande de réévaluation</a></li>
+        </ul>
+    }
+}
+
+
+@{ if ((estGroupeConsultationProfilPrem || estGroupeConsultationProfilPremDRMG) && estMenuPLC2Visible)
+    {
+        <!--PLC2-->
+        <ul class="nav">
+            <li><a href="@Url.Action("PLC2_Avis", "ProfilProfessionnel")">Profils de pratique</a></li>
+        </ul>
+    }
+}
+
+<ul Class="nav">
+    <li>
+        <a href="http://www.ramq.gouv.qc.ca/fr/nous-joindre/professionnels/Pages/nous-joindre.aspx"
+           target="_blank">
+            <span Class="glyphicon glyphicon-earphone"></span> Nous joindre <span class="sr-only">Cet hyperlien ouvrira une nouvelle fenêtre</span><i class="fa fa-external-link"></i>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Codes.wxi?>
+<?include RAMQ.GCD.Var.wxi?>
+<?include PL_Prem_iut.Var.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="$(var.RAMQ.GCD.BranchePrinc.ProductCode)"
+           Name="PL_Prem_iutWebi_dep"
+           Language="1036"
+           Version="$(var.PL_Prem_iut.Version)"
+           Manufacturer="RAMQ"
+           UpgradeCode="$(var.RAMQ.GCD.BranchePrinc.UpgradeCode)">
+
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Exemple de définition des répertoires cibles -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="CHEMINAPPLI" Name="CHEMINAPPLI" ComponentGuidGenerationSeed="4201ce6f-e5e9-4e19-89bf-7fffb25c6dd0">
+        <Directory Id="PPP" Name="PRE" ComponentGuidGenerationSeed="0f2b5faf-7053-427b-826d-c89e168f8291">
+          <Directory Id="SSFU" Name="PL_Prem">
+            <Directory Id="BinFolder" Name="bin"></Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <ComponentGroup Id="ProductComponentRef">
+
+      <!-- Copie des fichiers du bin -->
+      <Component Id="Bin" Directory="BinFolder">
+        <File Id="Bin.Output"
+              Name="$(var.PL_Prem_iut.TargetFileName)"
+              Source="$(var.PL_Prem_iut.TargetPath)" />
+      </Component>
+
+      <!-- Copie des fichiers du bin (CPO) -->
+      <Component Id="BinCpo" Directory="BinFolder">
+        <File Id="BinCpo.Output"
+              Name="$(var.PL_PremMdl_cpo.TargetFileName)"
+              Source="$(var.PL_PremMdl_cpo.TargetPath)" />
+      </Component>
+
+      <?define environementList=FONCT;INTEG;ACPTN;FORMA;PARTE;URG;PROD?>
+
+      <?foreach ENVIR in $(var.environementList)?>
+      <Component Id="Config$(var.ENVIR)" Directory="SSFU" Guid="1f65d8c4-176f-40d0-97bd-8a560c8fc428">
+        <Condition><![CDATA[ENVIR="$(var.ENVIR)"]]></Condition>
+        <File KeyPath="yes"
+              Id="$(var.ENVIR).appSettings.Config"
+              Name="appSettings.config"
+              Source="$(var.PL_Prem_iut.ProjectDir)Config\$(var.ENVIR)\$(var.ENVIR).appSettings.Config" />
+        <File Id="$(var.ENVIR).client.Config"
+              Name="client.config"
+              Source="$(var.PL_Prem_iut.ProjectDir)Config\$(var.ENVIR)\$(var.ENVIR).client.Config" />
+      </Component>
+      <?endforeach?>
+
+    </ComponentGroup>
+
+    <Feature Id="ProductFeature" Title="PL_Prem_iut" Level="1">
+      <!-- Copie des fichiers des projets -->
+      <ComponentGroupRef Id="ProductComponentRef" />
+      <!-- Copie des fichiers dont le Build Action est à "Content" -->
+      <ComponentGroupRef Id="PL_Prem_iut.Content" />
+      <!-- Pour les projets ayant des références NuGet, copie des fichiers en référence -->
+      <ComponentGroupRef Id="PL_Prem_iut.DllRefreNuget" /> 
+    </Feature>
+
+  </Product>
+
+</Wix>

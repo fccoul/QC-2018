@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Base.TestBase">
+            <summary>
+            Classe de base pour les classes des tests
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Base.TestBase.Fixture">
+            <summary>
+            Autofixture
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest">
+            <summary>
+            Classe de test pour les engagement de pratiques
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_PremierParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_DeuxiemeParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_TroisiemeParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_QuatriemeParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_cinquiemeParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_SixiemParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_AvantdernierParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.EngagementPratique_dernierParametreConstructeurManquant_Erreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirPeriodePratiqueProfessionnel_ObtenirPeriodePratique_DateRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirPeriodePratiqueProfessionnel_ObtenirPeriodePratique_DateNonTrouver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirPeriodePratiqueProfessionnel_ObtenirPeriodePratique_AvecErreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDerogations_ObtenirDerogations_DerogationsRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDerogations_ObtenirDerogation_AvecException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDerogations_ObtenirDerogation_ListeDerogationsVide">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirAvisConformite_AvecNumeroSequenceDispensateur_DerogationsRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirAutorisations_AvecNumeroSequenceDispensateur_AutorisationsRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirAutorisations_AvecNumeroSequenceDispensateur_AvecErreur">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDateDebutHistoriqueEngagement_DatePremFactAvantPremierEngag_DatePremFactRetour(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="numseqDispensateur"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDateDebutHistoriqueEngagement_DatePremFactApresPremierEngag_DateObtentionPermisRetour(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="numseqDispensateur"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDateDebutHistoriqueEngagement_AucunEngagementAbsence_DateObtenPermisRetour(System.Int64,System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="numseqDispensateur"></param>
+            <param name="datePremFac"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDateDebutHistoriqueEngagement_DateObtenionPernistAnterieurAnnePrem_DateAnnePremRetour(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="numseqDispensateur"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirlesPeriodesNonParticipation_periodeNonParticiation_Trouve(System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="numeroDispensateur"></param>
+            <param name="numeroClasseDispensateur"></param>
+            <param name="datePrevue"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirEngagementPratiquesFormate_ABsAvis_OK(RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueEntre,System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique})">
+            <summary>
+            
+            </summary>
+            <param name="intrant"></param>
+            <param name="engagementPratiqueFusionnes"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absSupprimeRG1_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+        </member>
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absSupprimeRG8_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})" -->
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absSupprimeRG9_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})" -->
+        <!-- Commentaire XML incorrect pour le membre "M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG2_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})" -->
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG3_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG4_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG5_1_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG5_2_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG6_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG7_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ConstruireChevauchementPeriodeAbsEtNonParticipation_absAjouteRG10_ok(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite.EngagementPratique},System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer})">
+            <summary>
+            
+            </summary>
+            <param name="lstAbs"></param>
+            <param name="lstNpar"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDateDebuthistoriqueDansAvis_DeuxavisPlusuneAbs_OK(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite)">
+            <summary>
+            
+            </summary>
+            <param name="intrantVue"></param>
+            <param name="statutAvis"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Professionnel.EngagementPratiqueTest.ObtenirDateDebuthistoriqueDansAvis_unAvisPlusAbsAnterieureEtPosterieure_OK(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite)">
+            <summary>
+            
+            </summary>
+            <param name="numSeq"></param>
+            <param name="statutAvis"></param>
+        </member>
+        <member name="T:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest">
+            <summary>
+            Classe de test pour les validations
+            </summary>
+            <remarks>
+            Auteur: Jean-Benoit Drouin-Cloutier
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest.ValiderProfessionnel_DecederAvantMars2004_CodeRetour148723">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest.ValiderProfessionnel_NonAdmissibleAvantMars2004_CodeRetour148723">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest.ValiderProfessionnel_DecederAvantDateDuJour_CodeRetour148724">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest.ValiderProfessionnel_NonSpecialisteAvantDateDuJour_CodeRetour148724">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.test.Validations.ValidationsTest.ValiderProfessionnel_NonParticipantAvantDateDuJour_CodeRetour148724">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

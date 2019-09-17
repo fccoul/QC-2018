@@ -1,0 +1,130 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLC1_ConsulterRappPrem.PLC1_ExerNonAutoRPPR
+@using OutilCommun = RAMQ.PRE.PRE_OutilComun_cpo;
+@using RAMQ.PRE.PL_Prem_iut.Helpers
+
+@Styles.Render("~/bundles/PLC1CSS")
+
+@{
+    ViewData["TitrePage"] = "Exercice non autorisé en région à pratique partielle restreinte";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div role="group" class="collection">
+        <div class="row">
+            <div class="col-md-2 col-lg-2 col-xl-1">
+                @Html.LabelFor(x => x.Annee)
+                @Html.DropDownListFor(x => x.Annee, Model.ListAnnees, new { @class = "form-control" })
+            </div>
+            @if (Model.EstDRMG == false)
+            {
+            <div class="col-md-5 col-sm-12 col-lg-4 col-xl-3">
+                @Html.LabelFor(x => x.Region)
+                @Html.DropDownListFor(x => x.Region, Model.ListRegions, new { @class = "form-control" })
+            </div>
+            }
+            <div class="col-md-2 col-lg-2 col-xl-2 col-btn">
+                <br />
+                <button id="AppliquerRecherche" name="TypeAction" class="btn btn-primary btn-success" type="submit" value="@OutilCommun.Constantes.TypeActionAvisConformite.Rechercher">
+                    <i class="fa fa-check" aria-hidden="true"></i>Appliquer
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                @{
+                    var dateDuJour = DateTime.Now;
+                    if (dateDuJour >= Model.DateDebutRapport && dateDuJour <= Model.DateFinRapport)
+                    {
+                        <h3>Du @Model.DateDebutRapport.Value.ToString("dd MMMM yyyy") au @dateDuJour.ToString("dd MMMM yyyy")</h3>
+                        <p>Liste présentée à titre indicatif uniquement. Ces informations ne sont pas définitives.</p>
+                    }
+                    else
+                    {
+                        <h3>Du @Model.DateDebutRapport.Value.ToString("dd MMMM yyyy") au @Model.DateFinRapport.Value.ToString("dd MMMM yyyy")</h3>
+                    }
+                }
+            </div>
+            <div class="col-md-3" id="liensEnregistrement">
+                <br />
+                <i class="fa fa-print" aria-hidden="true"></i>
+                <a href="#" id="BtnImprimer">Imprimer       </a>
+                <i class="fa fa-file" aria-hidden="true"></i>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enregistrer</a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Enregistrer en PDF", "PLC1_ExerNonAutoRPPR_Pdf", new { Annee = Model.Annee, Region = Model.Region })</li>
+                    <li>@Html.ActionLink("Enregistrer en XML", "PLC1_ExerNonAutoRPPR_Xml", new { Annee = Model.Annee, Region = Model.Region })</li>
+                </ul>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="table-responsive">
+            <table class="table table-striped dt-responsive tableRapport" id="DataTableAttente">
+                <thead>
+                    <tr>
+                        <th>
+                            Numéro de pratique
+                        </th>
+                        <th>
+                            Médecin
+                        </th>
+                        <th title="Il s’agit de la facturation dans la région de l’avis par rapport aux autres régions où le médecin a facturé, le cas échéant, pour une période donnée.">
+                            Jours facturés en RPPR
+                        </th>
+                        <th title="Il s’agit de la facturation totale de toutes les régions pour une période donnée.">
+                            Jours totaux facturés
+                        </th>
+                        <th title="Le calcul suivant est effectué : (nombre de jours facturés en RPPR divisé par le nombre de jours totaux facturés) multiplié par 100. Ce champ est en orange si le pourcentage effectué est de 5% ou moins.">
+                            % effectué
+                        </th>
+                        <th>
+                            Date de début
+                        </th>
+                        <th>
+                            Date de fin
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLC1")
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+    var donneesRapport = [];
+    @foreach (var ligne in Model.LignesRapport)
+    {
+        <text>
+        donneesRapport.push(["@ligne.NumeroPratique", "@ligne.Medecin", "@ligne.NombreJoursFactureRPPR", "@ligne.NombreJoursTotauxFactures", "@ligne.PourcentageEffectue%", "@(ligne.DateDebutPeriodeApplication.HasValue == true ? @ligne.DateDebutPeriodeApplication.Value.ToShortDateString() : "")", "@(ligne.DateFinPeriodeApplication.HasValue == true ? @ligne.DateFinPeriodeApplication.Value.ToShortDateString() : "")"]);
+        </text>
+    }
+
+    //Chargement des données
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var lienRedirection = "@Url.Action("PLC2_Avis", "ProfilProfessionnel", new { idProf = 12345 })";
+        window.optionsDataTable.rowCallback = function (row, data, index) {
+            if (data[0] != undefined) {
+                $('td:eq(0)', row).html("<a href='" + lienRedirection.replace("12345",data[0].replace("-", "")) + "'>" + $('td:eq(0)', row).html() + "</a>");
+            }
+            if (data[4] != undefined && Number(data[4].replace(",", ".")) <= 5) {
+                $('td:eq(4)', row).addClass("pourcentageOrange");
+            }
+        }
+        window.optionsDataTable.pageLength = 100;
+        var datatable = $('.tableRapport').DataTable(window.optionsDataTable);
+        datatable.clear();
+        datatable.rows.add(donneesRapport);
+        datatable.draw();
+    });
+
+
+
+    </script>
+}

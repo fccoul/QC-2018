@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfJoursFactAvis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoursFactAvis" nillable="true" type="tns:JoursFactAvis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJoursFactAvis" nillable="true" type="tns:ArrayOfJoursFactAvis" />
+  <xs:complexType name="JoursFactAvis">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:JoursFactures">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateDebutEngag" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateDebutStatut" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateFinEngag" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateFinStatut" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="JoursAdmissibles" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Pourcentage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JoursFactAvis" nillable="true" type="tns:JoursFactAvis" />
+  <xs:complexType name="JoursFactures">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NoSequentielDisp" type="xs:long" />
+      <xs:element minOccurs="0" name="NombreJours" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeJours" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JoursFactures" nillable="true" type="tns:JoursFactures" />
+  <xs:complexType name="ArrayOfJoursFactRSS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoursFactRSS" nillable="true" type="tns:JoursFactRSS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJoursFactRSS" nillable="true" type="tns:ArrayOfJoursFactRSS" />
+  <xs:complexType name="JoursFactRSS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:JoursFactures">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Annee" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Mois" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Pourcentage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RSS" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JoursFactRSS" nillable="true" type="tns:JoursFactRSS" />
+  <xs:complexType name="ArrayOfJoursFactTerritoire">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoursFactTerritoire" nillable="true" type="tns:JoursFactTerritoire" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJoursFactTerritoire" nillable="true" type="tns:ArrayOfJoursFactTerritoire" />
+  <xs:complexType name="JoursFactTerritoire">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:JoursFactures">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Annee" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeRSS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mois" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="NumeroSeqRegrAdmnLGEO" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Pourcentage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JoursFactTerritoire" nillable="true" type="tns:JoursFactTerritoire" />
+  <xs:complexType name="CalculRPPR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EngagementPresent" nillable="true" type="tns:ArrayOfEngagementProf" />
+      <xs:element minOccurs="0" name="HistoriqueEngagement" nillable="true" type="tns:ArrayOfEngagementProf" />
+      <xs:element minOccurs="0" name="JourneesDepassementRPPR" nillable="true" type="tns:ArrayOfJoursFactDroitsAcquisDepassement" />
+      <xs:element minOccurs="0" name="JourneesNonAutRPPR" nillable="true" type="tns:ArrayOfJoursFactDroitsAcquis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalculRPPR" nillable="true" type="tns:CalculRPPR" />
+  <xs:complexType name="ArrayOfEngagementProf">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EngagementProf" nillable="true" type="tns:EngagementProf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEngagementProf" nillable="true" type="tns:ArrayOfEngagementProf" />
+  <xs:complexType name="EngagementProf">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoSeqDisp" type="xs:long" />
+      <xs:element minOccurs="0" name="NoSeqEngagement" type="xs:long" />
+      <xs:element minOccurs="0" name="NomTerritoire" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EngagementProf" nillable="true" type="tns:EngagementProf" />
+  <xs:complexType name="ArrayOfJoursFactDroitsAcquisDepassement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoursFactDroitsAcquisDepassement" nillable="true" type="tns:JoursFactDroitsAcquisDepassement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJoursFactDroitsAcquisDepassement" nillable="true" type="tns:ArrayOfJoursFactDroitsAcquisDepassement" />
+  <xs:complexType name="JoursFactDroitsAcquisDepassement">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:JoursFactDroitsAcquis">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeRSSfacturation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndicateurRespectRPPR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NomTerritoirefacturation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JoursFactDroitsAcquisDepassement" nillable="true" type="tns:JoursFactDroitsAcquisDepassement" />
+  <xs:complexType name="JoursFactDroitsAcquis">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:JoursFactures">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnneePREM" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="CodeLieuGeographiqueAvis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeRSSAvis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DebutAvis" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DebutPeriode" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FinAvis" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FinPeriode" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NomTerritoireAvis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroSeqRegrAdmnLGEOAvis" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Pourcentage" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalJoursPratique" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JoursFactDroitsAcquis" nillable="true" type="tns:JoursFactDroitsAcquis" />
+  <xs:complexType name="ArrayOfJoursFactDroitsAcquis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JoursFactDroitsAcquis" nillable="true" type="tns:JoursFactDroitsAcquis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJoursFactDroitsAcquis" nillable="true" type="tns:ArrayOfJoursFactDroitsAcquis" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NoSequentielDisp" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamMsg1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamMsg2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="ArrayOfRespectEngagementProfs">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RespectEngagementProfs" nillable="true" type="tns:RespectEngagementProfs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRespectEngagementProfs" nillable="true" type="tns:ArrayOfRespectEngagementProfs" />
+  <xs:complexType name="RespectEngagementProfs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DdEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DfEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantPourcentage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurRespectEngag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JoursTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NoSequentielDisp" type="xs:long" />
+      <xs:element minOccurs="0" name="NombreJours" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Pourcentage" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespectEngagementProfs" nillable="true" type="tns:RespectEngagementProfs" />
+  <xs:complexType name="ArrayOfSommaireProf">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SommaireProf" nillable="true" type="tns:SommaireProf" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSommaireProf" nillable="true" type="tns:ArrayOfSommaireProf" />
+  <xs:complexType name="SommaireProf">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:JoursFactures">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TypeTotal" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SommaireProf" nillable="true" type="tns:SommaireProf" />
+</xs:schema>

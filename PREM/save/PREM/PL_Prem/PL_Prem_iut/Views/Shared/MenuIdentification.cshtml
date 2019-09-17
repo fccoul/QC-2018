@@ -1,0 +1,53 @@
+﻿@using RAMQ.Web.MVC.Vue
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+@{
+    const string action = "ObtenirNomTerritoireRSSUtilisateurCourant";
+    const string controlleur = "Commun";
+    const string nomComiteParitaire = "Comité paritaire";
+    const string nomDRMG = "DRMG";
+    const string tiretSeparateur = " - ";
+    const string nomCookieProfil = "TypeProfil";
+
+    string nomComplet = new PageVueBase<string>().NomCompletUsager();
+    string typeUtilisateur = string.Empty;
+
+    if (Utilitaire.EstDansGroupe(Configuration.GroupeSupport))
+    {
+        string typeProfil = Utilitaire.ObtenirCookie(nomCookieProfil);
+
+        switch (typeProfil)
+        {
+            case nomDRMG:
+                typeUtilisateur = nomDRMG + tiretSeparateur + Html.Action(action, controlleur);
+                break;
+            case nomComiteParitaire:
+                typeUtilisateur = nomComiteParitaire;
+                break;
+            default:
+                typeUtilisateur = nomComiteParitaire;
+                break;
+        }
+    }
+    else
+    {
+        if (Utilitaire.EstDansGroupe(Configuration.GroupeComiteParitaire))
+        {
+            typeUtilisateur = nomComiteParitaire;
+        }
+        else if (Utilitaire.EstDansGroupe(Configuration.GroupeDRMG))
+        {
+            typeUtilisateur = nomDRMG + tiretSeparateur + Html.Action(action, controlleur);
+        }
+    }
+
+    if (Utilitaire.EstDansZoneIntranet()) {
+        typeUtilisateur = "";
+    }
+}
+
+<ul class="nav">
+    <li class="sel-username">
+        @nomComplet <br />
+        <span class="typeUtilisateur">@typeUtilisateur</span>
+    </li>
+</ul>

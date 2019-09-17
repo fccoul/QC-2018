@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRE_Entites_cpo", "PRE_Entites_cpo\PRE_Entites_cpo.csproj", "{8FBDA067-E338-4A26-8BD2-F7762C0290AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5A218007-F40F-49A9-845A-2D305DF6D4C5}"
+	ProjectSection(SolutionItems) = preProject
+		PRE_Entites_cpo.nuspec = PRE_Entites_cpo.nuspec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FBDA067-E338-4A26-8BD2-F7762C0290AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FBDA067-E338-4A26-8BD2-F7762C0290AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FBDA067-E338-4A26-8BD2-F7762C0290AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FBDA067-E338-4A26-8BD2-F7762C0290AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://srv-tfs-appli.adprod.ramq.gov/tfs/ramq
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PRE_Entites_cpo\\PRE_Entites_cpo.csproj
+		SccProjectName1 = PRE_Entites_cpo
+		SccLocalPath1 = PRE_Entites_cpo
+	EndGlobalSection
+EndGlobal

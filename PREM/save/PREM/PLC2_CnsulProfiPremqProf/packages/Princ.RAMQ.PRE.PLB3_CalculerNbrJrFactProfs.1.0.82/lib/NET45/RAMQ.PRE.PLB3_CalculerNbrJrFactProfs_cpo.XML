@@ -1,0 +1,2019 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs">
+            <summary> 
+             CalculerNbrJrFactProfs
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Aout 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs.#ctor(RAMQ.PRE.PRE_OutilComun_cpo.IMessageTraitement,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRSS,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactTerri,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerSommaires,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactAvis,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerRespectEngagement,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR)">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs.CalculerNbrJrsPratiProfs(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Calculer le nmombre de jours facturés pour les professionnels
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Listes des journées facturées des professionnels</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs.ValiderParametres(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Valider les paramètres d'entrée
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs.ObtenirParametresProduction">
+            <summary>
+            Obtenir les paramètres de production RESPE_AVIS_PRC, RESPE_AVIS_SUSPD_PRC, 
+            RESPE_DEROG_PRC, RESPEC_PPR_PRC
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs.ObtenirVues">
+            <summary>
+            Récupération des vues
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.CalculerNbrJrFactProfs.ObtenirMoisAnneeRechr">
+            <summary>
+            Récupération de la liste des tuples mois-années inclus entre les dates recherchées
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis">
+            <summary>
+            Classe principale pour le calcul des journées facturées par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.JourneesParAvisDuDispensateur">
+            <summary>
+            Journées par avis pour le calcul du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.ConstruireJoursDistinctAvisHorsAvis">
+            <summary>
+            Calcul Liste séparé AVIS et HORS-AVIS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.ConstruireJoursAvisHorsAvis">
+            <summary>
+            Calcul Liste TOTAL AVIS + HORS-AVIS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.CalculerTotalFacturationHorsAvis(System.Int64,System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Decimal)">
+            <summary>
+            Calcul du total de la facturation Hors-Avis
+            </summary>
+            <param name="noSeqProf"></param>
+            <param name="listeFactDisp"></param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.CalculerTotalFacturationAvis(System.Int64,System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Decimal)">
+            <summary>
+             Calcul du total de la facturation Avis
+            </summary>
+            <param name="noSeqProf"></param>
+            <param name="listeFactDisp"></param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactAvis.CalculerTotalFacturation(System.Int64,System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Decimal)">
+            <summary>
+             Calcul du total de la facturation
+            </summary>
+            <param name="noSeqProf"></param>
+            <param name="listeFactDisp"></param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS">
+            <summary>
+            Classe principale pour le calcul des journées facturées en RSS
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.NumeroSequenceDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.MoisAnneeVise">
+            <summary>
+            Mois et Année visés par le calcul
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.JoursFactPratiRss">
+            <summary>
+            Jours facturés en RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.JoursFacturesDuMois">
+            <summary>
+            Jours facturés du mois
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.TotalFactRSS">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.TotalFactDisp">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.TotalFactDispReptnDerog">
+            <summary>
+            Total de facturation pour la repartition de la pratique en derogation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.TotalFactDispAvecIVN">
+            <summary>
+            Total de facturation du dispensateur avec IVN
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.TotalJoursSuspendus">
+            <summary>
+            Total des jours suspendus du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.JoursFactPratiAvis">
+            <summary>
+            Journées facturées selon la vue par Avis de conformité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.JoursFacturesDuDispensateurPourRSS">
+            <summary>
+            Journées facturées selon la vue par RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CodeRSS">
+            <summary>
+            Code RSS visé par le calcul
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalDpnagParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS})">
+            <summary>
+            Calculer Total Dpnag des RSS pour le mois visé
+            </summary>
+            <param name="sommairesMoisRSS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalPremParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS})">
+            <summary>
+            Calculer le Total Prem des RSS pour le mois visé
+            </summary>
+            <param name="sommairesMoisRSS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalPremDpnagParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS})">
+            <summary>
+            Total PremDpnagLoc des RSS pour le mois visé
+            </summary>
+            <param name="sommairesMoisRSS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.ObtenirTotalParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS},System.String)">
+            <summary>
+            Total PremDpnag des RSS pour le mois visé
+            </summary>
+            <param name="sommairesMoisRSS"></param>
+            <param name="typRepart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalPratiqueExclParMois">
+            <summary>
+            Calculer le total pour la pratique exclusive par mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotauxIVNHQLocParMois">
+            <summary>
+            Calculer totaux pour IVN, HQ, LOC pour le mois visé
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerJoursFacturesDpnagParMoisRSS">
+            <summary>
+            Calculer les jours Dpnag par mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerJoursFacturesPremParMoisRSS">
+            <summary>
+            Calculer les jours Prem par mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerJoursFacturesPremDpnagParMoisRSS">
+            <summary>
+            Calculer les jours PremDpnag par mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.ObtenirJoursFacturesParMoisRSS(System.String)">
+            <summary>
+            Calculer les jours PremDpnag par mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalMensuel">
+            <summary>
+            Calculer le total pour un mois (exclusion du IVN)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.AssemblerTotalMoisDpnag">
+            <summary>
+            Assembler le total RSS par mois pour Dpnag
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.AssemblerTotalMoisPrem">
+            <summary>
+            Assembler le total RSS par mois pour Prem
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.AssemblerTotalMoisPremDpnag">
+            <summary>
+            Assembler le total RSS par mois pour PremDpnagLoc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.AssemblerTotalMois(System.String)">
+            <summary>
+            Assembler le total RSS par mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalRSS">
+            <summary>
+            Calculer les totaux sommaires Prem, Dpnag et PremDpnagLoc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.ObtenirTotalRss(System.String)">
+            <summary>
+            Obtenir le total par RSS
+            </summary>
+            <param name="typRepart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotauxIVNHqLoc">
+            <summary>
+            Calculer les totaux sommaires IVN Hors-Québec et Localité
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotaux">
+            <summary>
+            Calculer les totaux sommaires Totaux pour Prem, Dpnag, PremDpnagLoc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalRSSDisp">
+            <summary>
+            Calculer le total RSS pour un dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalRSSDerogDisp">
+            <summary>
+            Calculer le total RSS pour un dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculerTotalRSSPratiExclDisp">
+            <summary>
+            Calculer le total RSS pour un dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.ObtenirDomaineValeurTypeRepartition(System.String)">
+            <summary>
+            Obtenir le domaine de valeur pour un type de répartition
+            </summary>
+            <param name="typRepart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactRSS.CalculJoursSuspendusProf(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee,System.String,System.String,System.String)">
+            <summary>
+            Calcul du nombre de jours suspendus du professionnel
+            </summary>
+            <param name="moisAnnee">Mois et Année</param>
+            <param name="typTotal">Optionnel TypeTotauxSommaireProfs</param>
+            <param name="typPrati">Optionnel DomValTypJrs</param>
+            <param name="code">Optionnel Code RSS ou LGEO</param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri">
+            <summary>
+             Classe principale pour le calcul des journées facturées par territoire
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.NumeroSequenceDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.MoisAnneeVise">
+            <summary>
+            Mois et Année visés par le calcul
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.Lieu">
+            <summary>
+            Code de territoire visé par le calcul
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.TotalJrsSusp">
+            <summary>
+            Total des jours suspendus
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.TotalFactDispAvecIVN">
+            <summary>
+            Total de facturation du dispensateur avec IVN
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.TotalFactDispReptnDerog">
+            <summary>
+            Total de facturation pour la repartition de la pratique en derogation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.TotalFactDisp">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.TotalFactTerri">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.NoSeqRegrAdmnLGEO">
+            <summary>
+            Numéro de séquence de regroupement administratif du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CodeRSS">
+            <summary>
+            Code RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.JoursFacturesDuDispensateurPourTerritoire">
+            <summary>
+            Jours facturés du dispensateur par territoires
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.JoursFacturesParMoisTerri">
+            <summary>
+            Jours facturés du dispensateur par territoires par Mois
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.JoursFactPratiAvis">
+            <summary>
+            Jours facturés par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.JoursFactPratiTerritoire">
+            <summary>
+            Jours facturés par territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalIVNHQLocMois">
+            <summary>
+             Calculer les totaux par IVN, HQ, LOC pour le mois visé
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalDpnagMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire})">
+            <summary>
+            Calculer Total Dpnag des Territoires pour le mois visé
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalPremMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire})">
+            <summary>
+            Calculer le total Prem des Territoires pour le mois visé
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalPremDpnagMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire})">
+            <summary>
+            Calculer le total PremDpnag pour le mois visé
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalMoisDispensateur">
+            <summary>
+            Calculer le total sommatif du dispensateur pour un mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.AssemblerTotalDpnagMois">
+            <summary>
+            Assembler le total Dpnag pour un mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.AssemblerTotalPremMois">
+            <summary>
+            Assembler le total Prem pour un mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.AssemblerTotalPremDpnagMois">
+            <summary>
+            Assembler le total PremDpnag pour un mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerJoursDpnagParTerritoireMois">
+            <summary>
+            Calculer les jours Dpnag pour un territoire/mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerJoursPremParTerritoireMois">
+            <summary>
+            Calculer les jours Prem pour un territoire/mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerJoursPremDpnagParTerritoireMois">
+            <summary>
+            Calculer les jours PremDpnag pour un territoire/mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.ObtenirJoursParTerritoireMois(System.String)">
+            <summary>
+            Calculer les jours pour un territoire/mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotauxParTerritoireDispensateur(System.Collections.Generic.List{RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo},System.Collections.Generic.List{System.Nullable{System.Int64}})">
+            <summary>
+            Calculer les totaux pour les Territoires
+            </summary>
+            <param name="lieuxGEO"></param>
+            <param name="nosSeqRegrLgeo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotauxIVNHQLocDispensateur">
+            <summary>
+            Calculer Totaux pour IVN, HQ et LOC
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalTerritoireDispensateur">
+            <summary>
+            Calculer Total Cumulé Terri pour le dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculerTotalTerritoireDerogDispensateur">
+            <summary>
+            Calculer Total Cumulé Terri pour le dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.ObtenirDomaineValeurTypeMontant(System.String)">
+            <summary>
+            Obtenir le domaine de valeur pour un type de répartition
+            </summary>
+            <param name="typRepart"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.ObtenirTotalMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire},System.String)">
+            <summary>
+            Calculer le total pour le mois visé
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <param name="typMontant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.AssemblerTotalMois(System.String)">
+            <summary>
+            Assembler le total pour un mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.ObtenirTotalTerritoireDispensateur(System.String,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo,System.Nullable{System.Int64})">
+            <summary>
+            Obtenir le total par territoire
+            </summary>
+            <param name="typRepart"></param>
+            <param name="lieu"></param>
+            <param name="noSeqRegrAdmnLGEO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculJournFactTerri.CalculJoursSuspendusProf(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee,System.String,System.String,System.String)">
+            <summary>
+            Calcul du nombre de jours suspendus du professionnel
+            </summary>
+            <param name="moisAnnee">Mois et Année</param>
+            <param name="typTotal">Optionnel TypeTotauxSommaireProfs</param>
+            <param name="typRepart">Optionnel DomValTypJrs</param>
+            <param name="code">Optionnel Code RSS ou LGEO</param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement">
+            <summary>
+            Classe englobant les calculs du respect d'engagement d'un dispensateur
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.NumeroSequenceDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.DateDebut">
+            <summary>
+            Date de début de période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.DateFin">
+            <summary>
+            Date de fin de période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.EngagementsDesDispensateurs">
+            <summary>
+            Engagements des dispensateurs
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.JoursFactPratiAvis">
+            <summary>
+            Jours facturés par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.JoursFactPratiRSS">
+            <summary>
+            Jours facturés par territoire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.CalculerRespectAvisSuspendus">
+            <summary>
+            Calcul du respect d'engagement pour les avis suspendus (RESPE_AVIS_SUSPD_PRC)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.DecouperEngagementEnAnneesPrem(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Engagement)">
+            <summary>
+            Découpage d'une période d'engagement en années PREM
+            </summary>
+            <param name="periodeEngagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.ObtenirDenominateur(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Engagement,System.Tuple{System.DateTime,System.DateTime})">
+            <summary>
+            Obtention du dénominateur pour une période de suspension
+            </summary>
+            <param name="periodeEngagement"></param>
+            <param name="periodePrem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.ObtenirAviSuspendusFusionnes">
+            <summary>
+            Obtenir les avis suspendus fusionnés pour un dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.CalculerRespectAvis">
+            <summary>
+            Calcul du respect d'engagement pour les avis (RESPE_AVIS_PRC)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.CalculerRespectPratiqueExclusiveDpnag">
+            <summary>
+            Calcul du respect d'engagement pour la pratique exclusive (RESPE_DEROG_PRC)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.CalculerRespectPratiqueExclusiveIVN">
+            <summary>
+            Calcul du respect d'engagement pour la pratique exclusive (RESPE_DEROG_PRC)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculRespectEngagement.ObtenirJoursTotal">
+            <summary>
+            Obtention du dénominateur pour le respect des engagements
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires">
+            <summary>
+            Classe qui englobe les calculs pour les sommaires d'un dispensateur
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.JoursPratiAvis">
+            <summary>
+            Jours facturés par avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.JoursPratiRSS">
+            <summary>
+            Jours facturés par RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.JoursPratiTerritoire">
+            <summary>
+            Jours facturés par territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.NombreJoursSuspendus">
+            <summary>
+            Nombre de jours suspendus
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.CalculerSommaireRSS">
+            <summary>
+            Obtenir le sommaire RSS pour un professionel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.CalculerSommaireTerri">
+            <summary>
+            Obtenir le sommaire Territoire pour un professionel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.CalculSommaires.CalculerSommaireAvis">
+            <summary>
+            Obtenir le sommaire par Avis pour un professionnel
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires">
+            <summary>
+            Interface pour la classe de calculs des sommaires
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.JoursPratiAvis">
+            <summary>
+            Jours Facturés par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.JoursPratiRSS">
+            <summary>
+            Jours Facturés par RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.JoursPratiTerritoire">
+            <summary>
+            Jours Facturés par Territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.NombreJoursSuspendus">
+            <summary>
+            Nombre de jours en suspension
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.CalculerSommaireAvis">
+            <summary>
+            Calcul du sommaire par Avis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.CalculerSommaireRSS">
+            <summary>
+            Calcul du sommaire par RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires.CalculerSommaireTerri">
+            <summary>
+            Calcul du sommaire par Territoire
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis">
+            <summary>
+            Interface pour les calculs des journées facturées par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.JourneesParAvisDuDispensateur">
+            <summary>
+            Journées par Avis pour un dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.DateDebut">
+            <summary>
+            Date de début
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.CalculerTotalFacturation(System.Int64,System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Decimal)">
+            <summary>
+            Obtenir le total de facturation
+            </summary>
+            <param name="noSeqProf"></param>
+            <param name="listeFactDisp"></param>
+            <param name="totalJrs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.CalculerTotalFacturationAvis(System.Int64,System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Decimal)">
+            <summary>
+            Obtenir le total de facturation Avis
+            </summary>
+            <param name="noSeqProf"></param>
+            <param name="listeFactDisp"></param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.CalculerTotalFacturationHorsAvis(System.Int64,System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Decimal)">
+            <summary>
+            Obtenir le total de facturation Hors-Avis
+            </summary>
+            <param name="noSeqProf"></param>
+            <param name="listeFactDisp"></param>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.ConstruireJoursAvisHorsAvis">
+            <summary>
+            Construction des avis par-rapport à leur statut
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis.ConstruireJoursDistinctAvisHorsAvis">
+            <summary>
+            Construction des avis par-rapport à leur Type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS">
+            <summary>
+            Interface pour la classe de calculs de journées facturées en RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CodeRSS">
+            <summary>
+            Code RSS pour le calcul
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.JoursFactPratiAvis">
+            <summary>
+            Journées facturées par avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.JoursFactPratiRss">
+            <summary>
+            Journées facturées par RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.JoursFacturesDuDispensateurPourRSS">
+            <summary>
+            Journées facturées du dispensateur pour les RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.JoursFacturesDuMois">
+            <summary>
+            Journées facturées du mois
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.MoisAnneeVise">
+            <summary>
+            Mois et Année à calculer
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.TotalFactDisp">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.TotalFactDispReptnDerog">
+            <summary>
+            Total de facturation pour la repartition de la pratique en derogation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.TotalFactRSS">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.TotalJoursSuspendus">
+            <summary>
+            Total des jours suspendus du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.TotalFactDispAvecIVN">
+            <summary>
+            Total de facturation du dispensateur avec IVN
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.AssemblerTotalMoisDpnag">
+            <summary>
+            Assembler le total pour le calcul par mois DPNAG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.AssemblerTotalMoisPrem">
+            <summary>
+            Assembler le total pour le calcul par mois PREM
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.AssemblerTotalMoisPremDpnag">
+            <summary>
+            Assembler le total pour le calcul par mois PREMDPNAG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerJoursFacturesDpnagParMoisRSS">
+            <summary>
+            Calcul des jours facturés en DPNAG par Mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerJoursFacturesPremDpnagParMoisRSS">
+            <summary>
+            Calcul des jours facturés en PREMDPNAG par Mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerJoursFacturesPremParMoisRSS">
+            <summary>
+            Calcul des jours facturés en PREM par Mois pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalDpnagParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS})">
+            <summary>
+            Calcul des jours facturés en DPNAG par Mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalMensuel">
+            <summary>
+            Calcul des jours facturés par Mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalPremDpnagParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS})">
+            <summary>
+            Calcul des jours facturés en PREMDPNAG par Mois
+            </summary>
+            <param name="sommairesMoisRSS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalPremParMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactRSS})">
+            <summary>
+            Calcul des jours facturés en PREM par Mois
+            </summary>
+            <param name="sommairesMoisRSS"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalRSS">
+            <summary>
+            Calcul des jours facturés totaux pour un RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalRSSDisp">
+            <summary>
+            Calcul des jours facturés totaux pour les RSS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotauxIVNHqLoc">
+            <summary>
+            Calcul des jours facturés totaux pour les IVN, Hors-Québec et Localité
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotaux">
+            <summary>
+            Calcul des jours facturés totaux pour Dpnag, Prem, PremDpnag
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalRSSDerogDisp">
+            <summary>
+            Calculer le total RSS pour un dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalRSSPratiExclDisp">
+            <summary>
+            Calculer le total en pratique exclusive pour un dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotalPratiqueExclParMois">
+            <summary>
+            Calculer le total pour la pratique exclusive par mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS.CalculerTotauxIVNHQLocParMois">
+            <summary>
+            Calcul des jours facturés totaux pour les IVN, Hors-Québec et Localité par mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri">
+            <summary>
+            Interface pour les calculs des journées facturées par territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.Lieu">
+            <summary>
+            Code de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.JoursFactPratiAvis">
+            <summary>
+            Journée facturées par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.JoursFactPratiTerritoire">
+            <summary>
+            Journées facturées par territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.JoursFacturesDuDispensateurPourTerritoire">
+            <summary>
+            Journées facturées par territoire pour le dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.JoursFacturesParMoisTerri">
+            <summary>
+            Journées facturées par territoire par mois pour le dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.MoisAnneeVise">
+            <summary>
+            Mois concerné pour le calcul
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.NoSeqRegrAdmnLGEO">
+            <summary>
+            Numéro de séquence du regroupement administratif LGEO
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.TotalFactDisp">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CodeRSS">
+            <summary>
+            Code RSS
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.TotalFactDispAvecIVN">
+            <summary>
+            Total de facturation du dispensateur avec IVN
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.TotalFactDispReptnDerog">
+            <summary>
+            Total de facturation pour la repartition de la pratique en derogation du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.TotalJrsSusp">
+            <summary>
+            Total des jours suspendus
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.TotalFactTerri">
+            <summary>
+            Total de facturation du dispensateur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.AssemblerTotalDpnagMois">
+            <summary>
+            Assembler le total par mois pour DPNAG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.AssemblerTotalPremDpnagMois">
+            <summary>
+            Assembler le total par mois pour PREMDPNAG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.AssemblerTotalPremMois">
+            <summary>
+            Assembler le total par mois pour PREM
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerJoursDpnagParTerritoireMois">
+            <summary>
+            Calculer le total par territoire et mois pour DPNAG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerJoursPremDpnagParTerritoireMois">
+            <summary>
+            Calculer le total par territoire et mois pour PREMDPNAG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerJoursPremParTerritoireMois">
+            <summary>
+            Calculer le total par territoire et mois pour PREM
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalIVNHQLocMois">
+            <summary>
+            Calculer les totaux IVN, Hors-Québec et Localité pour un mois
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalMoisDispensateur">
+            <summary>
+            Calculer le total de facturation pour le mois du dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalPremDpnagMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire})">
+            <summary>
+            Calculer le total par mois pour PREMDPNAG
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalPremMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire})">
+            <summary>
+            Calculer le total par mois pour PREM
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalDpnagMois(System.Collections.Generic.List{RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite.JoursFactTerritoire})">
+            <summary>
+            Calculer le total par mois pour DPNAG
+            </summary>
+            <param name="sommaireParMoisDuProfessionnel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalTerritoireDispensateur">
+            <summary>
+            Calculer le total territoire pour le dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotauxIVNHQLocDispensateur">
+            <summary>
+            Calculer les totaux IVN, Hors-Québec et Localité pour le dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotauxParTerritoireDispensateur(System.Collections.Generic.List{RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo},System.Collections.Generic.List{System.Nullable{System.Int64}})">
+            <summary>
+            Calculer les totaux par territoires du dispensateur
+            </summary>
+            <param name="lieuxGEO"></param>
+            <param name="nosSeqRegrLgeo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculerTotalTerritoireDerogDispensateur">
+            <summary>
+            Calculer Total Cumulé Terri pour le dispensateur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri.CalculJoursSuspendusProf(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee,System.String,System.String,System.String)">
+            <summary>
+            Calcul des journées suspendues
+            </summary>
+            <param name="moisAnnee"></param>
+            <param name="typTotal"></param>
+            <param name="typPrati"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement">
+            <summary>
+            Interface regroupement les méthodes pour les calculs de respect d'engagement d'un dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.EngagementsDesDispensateurs">
+            <summary>
+            Engagements des dispensateurs
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.JoursFactPratiAvis">
+            <summary>
+            Jours facturés par Avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.JoursFactPratiRSS">
+            <summary>
+            Jours facturés par territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.DateDebut">
+            <summary>
+            Date de début de période
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.DateFin">
+            <summary>
+            Date de fin de période
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.CalculerRespectAvis">
+            <summary>
+            Calcul du respect d'engagement pour les avis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.CalculerRespectAvisSuspendus">
+            <summary>
+            Calcul du respect d'engagement pour les suspensions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.CalculerRespectPratiqueExclusiveDpnag">
+            <summary>
+            Calcul du respect d'engagement pour la pratique exclusive
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.CalculerRespectPratiqueExclusiveIVN">
+            <summary>
+            Calcul du respect d'engagement pour la pratique exclusive (RESPE_DEROG_PRC)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.DecouperEngagementEnAnneesPrem(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Engagement)">
+            <summary>
+            Découper un engagement selon son étalement dans les années PREM
+            </summary>
+            <param name="periodeEngagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.ObtenirAviSuspendusFusionnes">
+            <summary>
+            Obtention des avis suspendus fusionnés
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement.ObtenirDenominateur(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Engagement,System.Tuple{System.DateTime,System.DateTime})">
+            <summary>
+            Obtention du dénominateur pour les avis suspendus
+            </summary>
+            <param name="periodeEngagement"></param>
+            <param name="periodePrem"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables">
+            <summary>
+            Constantes et variables
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.TypesDeJoursComptabilises">
+            <summary>
+            Type de jours comptabilises
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.ValeurRESPE_AVIS_PRC">
+            <summary>
+            Pourcentage de production pour le respect d'avis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.ValeurRESPE_AVIS_SUSPD_PRC">
+            <summary>
+            Pourcentage de production pour le respect suspension
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.ValeurRESPE_DEROG_PRC">
+            <summary>
+            Pourcentage de production pour le respect  en dérogation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.ValeurRESPEC_PPR_PRC">
+            <summary>
+            Pourcentage de production pour le respect en pratique partielle restreinte
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.NON_PARTICIPATION">
+            <summary>
+            Non-Participation
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Constantes.ConstantesEtVariables.TotalJoursDisp">
+            <summary>
+            Jours totaux pour dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur">
+            <summary>
+            Classe représentant l'information d'un dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur.NoSeqDisp">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur.DateObtnPermis">
+            <summary>
+            Date d'obtention du permis
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur.ClasseDisp">
+            <summary>
+            Classe du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur.DateDeces">
+            <summary>
+            Date de décès
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur.DateDebutSpec">
+            <summary>
+            Date début de spécialité
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur.NoDisp">
+            <summary>
+            Numéro du dispensateur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo">
+            <summary>
+            Classe représentant un lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo.CodeLGEO">
+            <summary>
+            Code du lieu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo.TypeLGEO">
+            <summary>
+            Type du lieu
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.LieuGeo.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee">
+            <summary>
+            Classe représentant un mois et une année
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee.Mois">
+            <summary>
+            Mois
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee.Annee">
+            <summary>
+            Annee
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.MoisAnnee.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementSorti">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementSorti.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementSorti.RespectsEngagements">
+            <summary>
+            Liste de journées facturées
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre.#ctor">
+            <summary>
+            Paramêtre d'entrée commun pour construire les listes 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre.NumerosSequenceProfs">
+            <summary>
+            Liste de numéros de séquences des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre.VueJoursFactParRss">
+            <summary>
+            Liste de jours par RSS (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre.VueJoursFactParAvis">
+            <summary>
+            Liste de jours par Avis (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre.VueJoursFactParTerri">
+            <summary>
+            Liste de jours par Terri (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisEntre">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisEntre.#ctor">
+            <summary>
+            Paramêtre d'entrée commun pour construire les listes 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisEntre.NumerosSequenceProfs">
+            <summary>
+            Liste de numéros de séquences des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisEntre.VueJoursFactParAvis">
+            <summary>
+            Liste de jours par Avis (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre.#ctor">
+            <summary>
+            Paramêtre d'entrée commun pour construire les listes 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre.NumerosSequenceProfs">
+            <summary>
+            Liste de numéros de séquences des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre.MoisAnneeRecherche">
+            <summary>
+            Liste des mois-années recherchés
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre.VueJoursFactParRss">
+            <summary>
+            Liste de jours par RSS (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre.VueJoursFactParAvis">
+            <summary>
+            Liste de jours par Avis (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre.#ctor">
+            <summary>
+            Paramêtre d'entrée commun pour construire les listes 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre.NumerosSequenceProfs">
+            <summary>
+            Liste de numéros de séquences des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre.MoisAnneeRecherche">
+            <summary>
+            Liste des mois-années recherchés
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre.VueJoursFactParAvis">
+            <summary>
+            Liste de jours par Avis (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre.VueJoursFactParTerri">
+            <summary>
+            Liste de jours par Terri (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.#ctor">
+            <summary>
+            Paramêtre d'entrée commun pour construire les listes 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.NumerosSequenceProfs">
+            <summary>
+            Liste de numéros de séquences des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.EngagementsSusp">
+            <summary>
+            Liste des périodes d'engagements suspendus
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.VueJoursFactParAvis">
+            <summary>
+            Liste de jours par Avis (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.VueJoursFactParRSS">
+            <summary>
+            Liste de jours par Terri (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.DateDebut">
+            <summary>
+            Date de début de période reçu en entrée
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre.DateFin">
+            <summary>
+            Date de fin de période reçu en entrée
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPRSorti">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPRSorti.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPRSorti.Messages">
+            <summary>
+            Liste de messages
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPRSorti.JoursFactRPPR">
+            <summary>
+            Liste de journées facturées
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre">
+            <summary>
+             Paramêtre d'entrée pour construire la liste des jours en RPPR 
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre.NumerosSequenceProfs">
+            <summary>
+            Liste de numéros de séquences des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre.VueJoursFactParRPPR">
+            <summary>
+            Liste de jours par RPPR (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre.VueJoursFactParTerri">
+            <summary>
+            Liste de jours par Terri (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre.VueJoursFactParAvis">
+            <summary>
+            Liste de jours par Terri (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre.VueListeEngagements">
+            <summary>
+            Liste de jours par Terri (Provenant de la vue)
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisSorti">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisSorti.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisSorti.Messages">
+            <summary>
+            Liste de messages
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactAvisSorti.JoursFactAvis">
+            <summary>
+            Liste de journées facturées
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesSorti">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesSorti.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesSorti.Messages">
+            <summary>
+            Liste de messages
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesSorti.Sommaires">
+            <summary>
+            Liste de journées facturées
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriSorti">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriSorti.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriSorti.Messages">
+            <summary>
+            Liste de messages
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriSorti.JoursFactTerri">
+            <summary>
+            Liste de journées facturées
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSSorti">
+            <summary>
+            
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSSorti.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSSorti.Messages">
+            <summary>
+            Liste de messages
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSSorti.JoursFactRSS">
+            <summary>
+            Liste de journées facturées
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.ICalculerNbrJrFactProfs">
+            <summary> 
+             Interface CalculerNbrJrFactProfs
+            </summary>
+            <remarks>
+             Auteur : Maxime Comtois <br/>
+             Date   : Aout 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.ICalculerNbrJrFactProfs.CalculerNbrJrsPratiProfs(RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsEntre)">
+            <summary>
+            Calculer le nombre de jours facturés pour les professionnels
+            </summary>
+            <Parametre name="intrant">Paramètre d'entré</Parametre>
+            <returns>Listes des journées facturées des professionnels</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.ICalculerNbrJrFactProfs.ObtenirParametresProduction">
+            <summary>
+            Obtention des paramètres de production pour les pourcentages effectifs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerSommaires">
+            <summary>
+            Interface pour la génération d'un liste de sommaires
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerSommaires.ConstruireListeSommaireMedOmni(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre)">
+            <summary>
+            Obtenir une liste de sommaires des dispensateurs
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactAvis">
+            <summary>
+            Interface de la classe TraitementConstruireListeJournFactAvis
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactAvis.ConstruireListeJournFactAvis(System.Collections.Generic.List{System.Int64},System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Nullable{System.DateTime})">
+            <summary>
+            Méthode principale permettant d'obtenir une liste de journées facturées par avis
+            </summary>
+            <param name="numerosSequencesProfessionels"></param>
+            <param name="joursFacturesParAvis"></param>
+            <param name="dateDebut"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRSS">
+            <summary>
+            Interface pour la classe TraitementConstruireListeJournFactRSS
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRSS.ConstruireListeJournFactRSS(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre)">
+            <summary>
+            Construire la liste de jours facturés par RSS
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactTerri">
+            <summary>
+            Interface pour la classe TraitementConstruireListeJournFactTerri
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactTerri.ConstruireListeJournFactTerri(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre)">
+            <summary>
+            Construire la liste des journées facturées par territoire
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerRespectEngagement">
+            <summary>
+            Interface pour le traitement du calcul du respect d'engagement
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerRespectEngagement.ConstruireListeRespectEngagements(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre)">
+            <summary>
+            Construire la liste de respect d'engagements des médecins omnipraticiens
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR">
+            <summary>
+            Interface pour le traitement du calcul de la liste de journées facturées par RPPR
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.ConstruireListeJournFactRPPR(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre)">
+            <summary>
+            Construire la liste des journées facturées par RPPR
+            </summary>
+            <param name="calculerJournFactRPPREntre"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.ObtenirDonneesTraitement(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre)">
+            <summary>
+            Obtention des données nécessaires au traitement
+            </summary>
+            <param name="calculerJournFactRPPREntre"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.ObtenirInfoDispensateur">
+            <summary>
+            Obtention des informations des dispensateurs
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.ObtenirNonParticipationProf(System.Collections.Generic.IEnumerable{System.Nullable{System.DateTime}},RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur)">
+            <summary>
+            Obtention des périodes de non-participation
+            </summary>
+            <param name="perRechr"></param>
+            <param name="infoDisp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.ObtenirPeriodesEngagements">
+            <summary>
+            Obtention des périodes d'engagements
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.ObtenirTerritoiresRPPR">
+            <summary>
+            Obtention des territoires RPPR
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.Interface.ITraitementCalculerJournFactRPPR.VerifierVingtAnsPratique">
+            <summary>
+            Récupération des messages pour les médecins ayant 20 ans de pratique
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR">
+            <summary>
+            Classe pour le traitement du calcul de journées facturées par avis
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.#ctor(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ConstruireListeJournFactRPPR(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre)">
+            <summary>
+            Construire la liste de journées facturées par Avis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.VerifierVingtAnsPratique">
+            <summary>
+            Obtenir les messages de retour pour les médecins qui ont 20 ans de pratique à leurs actifs 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ObtenirInfoDispensateur">
+            <summary>
+            Obtention des information pour les dispensateurs
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ObtenirJoursFactAvis">
+            <summary>
+            Obtention de l'ensemble des journées facturées pour les dispensateurs
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ObtenirDonneesTraitement(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRPPREntre)">
+            <summary>
+            Obtention des données nécessaires au calcul des journées en RPPR
+            </summary>
+            <param name="calculerJournFactRPPREntre"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ObtenirTerritoiresRPPR">
+            <summary>
+            Obtention des territoires RPPR
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ObtenirPeriodesEngagements">
+            <summary>
+            Obtention des périodes d'engagement (Vue Liste d'engagements V_LIST_ENGA_PROF_SANT)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.ObtenirNonParticipationProf(System.Collections.Generic.IEnumerable{System.Nullable{System.DateTime}},RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Entite.InformationDispensateur)">
+            <summary>
+            Obtenir les périodes de non-participation d'un professionnel
+            </summary>
+            <param name="perRechr"></param>
+            <param name="infoDisp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.DecouperEngagementEnAnneesPrem(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.Engagement)">
+            <summary>
+            Découpage d'une période d'engagement en années PREM
+            </summary>
+            <param name="periodeEngagement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRPPR.DecouperEngagementPeriodeEnAnneesPrem(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.EngagementPeriode)">
+            <summary>
+            Découpage d'une période d'engagement en années PREM
+            </summary>
+            <param name="periodeEngagement"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerRespectEngagement">
+            <summary>
+            Traitement pour les calculs des respects d'engagement
+            </summary>
+            <remarks>
+            Maxime Comtois
+            Novembre 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerRespectEngagement.#ctor(RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal,RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculRespectEngagement)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="accesDonnePlanRegionMedical"></param>
+            <param name="calculRespectEngagement"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerRespectEngagement.ConstruireListeRespectEngagements(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerRespectEngagementEntre)">
+            <summary>
+            Construire la liste de respect d'engagements des médecins omnipraticiens
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerSommaires">
+            <summary>
+             Traitement pour les calculs des sommaires
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerSommaires.#ctor(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculSommaires)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="calculSommaires"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerSommaires.ConstruireListeSommaireMedOmni(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerSommairesEntre)">
+            <summary>
+            Construire la liste des médecins omnipraticiens
+            </summary>
+            <returns>Liste de sommaires des professionnels de la santé</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactAvis">
+            <summary>
+            Classe pour le traitement du calcul de journées facturées par avis
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactAvis.#ctor(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactAvis)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactAvis.ConstruireListeJournFactAvis(System.Collections.Generic.List{System.Int64},System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.Entite.JoursFactParAvis},System.Nullable{System.DateTime})">
+            <summary>
+            Construire la liste de journées facturées par Avis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactTerri">
+            <summary>
+            Classe pour le traitement du calcul de journées facturées par territoire
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactTerri.#ctor(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactTerri)">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactTerri.ConstruireListeJournFactTerri(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactTerriEntre)">
+            <summary>
+            Construire la liste de journées facturées par Territoires
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRSS">
+            <summary>
+            Classe pour le traitement du calcul de journées facturées par RSS
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRSS.#ctor(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Calcul.ICalculJournFactRSS,RAMQ.PRE.PRE_AccesDonne_cpo.PlanRegnMdcal.IPlanRegnMdcal)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="calculJournFactRSS"></param>
+            <param name="accesDonnePlanRegionMedical"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Traitement.TraitementCalculerJournFactRSS.ConstruireListeJournFactRSS(RAMQ.PRE.PLB3_CalculerNbrJrFactProfs_cpo.Parametre.TraitementCalculerJournFactRSSEntre)">
+            <summary>
+            Construire la liste de journées facturées par RSS
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

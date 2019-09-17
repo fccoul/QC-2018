@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PLC2_CnsulProfiPremqProf_svc/1" elementFormDefault="qualified" targetNamespace="http://PLC2_CnsulProfiPremqProf_svc/1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre" />
+  <xs:element name="ObtenirLesEngagementsPratiquesProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre" minOccurs="0" name="intrant" nillable="true" type="q1:ObtenirEngagementPratiqueEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirLesEngagementsPratiquesProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre" minOccurs="0" name="ObtenirLesEngagementsPratiquesProfessionnelResult" nillable="true" type="q2:ObtenirEngagementPratiqueSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirPeriodePratiqueProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre" minOccurs="0" name="intrant" nillable="true" type="q3:ObtenirPeriodePratiqueProfessionnelEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirPeriodePratiqueProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre" minOccurs="0" name="ObtenirPeriodePratiqueProfessionnelResult" nillable="true" type="q4:ObtenirPeriodePratiqueProfessionnelSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirDerogationsProfessionnelSante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" minOccurs="0" name="intrant" nillable="true" type="q5:ObtenirDerogationsProfessionnelSanteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirDerogationsProfessionnelSanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" minOccurs="0" name="ObtenirDerogationsProfessionnelSanteResult" nillable="true" type="q6:ObtenirDerogationsProfessionnelSanteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifierAdmissibiliteProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="intrant" nillable="true" type="q7:VerifierAdmissibiliteProfessionnelFacturerEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerifierAdmissibiliteProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="VerifierAdmissibiliteProfessionnelResult" nillable="true" type="q8:VerifierAdmissibiliteProfessionnelFacturerSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierDerogation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" minOccurs="0" name="intrant" nillable="true" type="q9:ModifierDerogationEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierDerogationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" minOccurs="0" name="ModifierDerogationResult" nillable="true" type="q10:ModifierDerogationSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValiderProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" minOccurs="0" name="informationProfessionnel" nillable="true" type="q11:ValiderProfessionnelEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValiderProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" minOccurs="0" name="ValiderProfessionnelResult" nillable="true" type="q12:ValiderProfessionnelSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculerNombreJourneeFacturation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre" minOccurs="0" name="intrant" nillable="true" type="q13:CalculerNbrJrFactProfsEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculerNombreJourneeFacturationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre" minOccurs="0" name="CalculerNombreJourneeFacturationResult" nillable="true" type="q14:CalculerNbrJrFactProfsSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirReductionRemuneration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" minOccurs="0" name="intrant" nillable="true" type="q15:ReductionRemunerationEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirReductionRemunerationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" minOccurs="0" name="ObtenirReductionRemunerationResult" nillable="true" type="q16:ReductionRemunerationSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirPourcentageMaximum">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirPourcentageMaximumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" minOccurs="0" name="ObtenirPourcentageMaximumResult" nillable="true" type="q17:ObtenirPourcentageMaximumSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirInformationProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="intrant" nillable="true" type="q18:ObtenirDispensateurIndividuEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirInformationProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="ObtenirInformationProfessionnelResult" nillable="true" type="q19:ObtenirDispensateurIndividuSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirPeriodeEngagementsAbsenceProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="intrant" nillable="true" type="q20:ObtenirVuePeriodeEngagementEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirPeriodeEngagementsAbsenceProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="ObtenirPeriodeEngagementsAbsenceProfessionnelResult" nillable="true" type="q21:ObtenirVuePeriodeEngagementSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

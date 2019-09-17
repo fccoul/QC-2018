@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Entite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Entite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDemandeReevaluation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DemandeReevaluation" nillable="true" type="tns:DemandeReevaluation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDemandeReevaluation" nillable="true" type="tns:ArrayOfDemandeReevaluation" />
+  <xs:complexType name="DemandeReevaluation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategorieDemande" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CodeSourceDemande" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="DateDebutReeva" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinReeva" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureInact" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifiantInact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielDemande" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielDispensateur" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DemandeReevaluation" nillable="true" type="tns:DemandeReevaluation" />
+</xs:schema>

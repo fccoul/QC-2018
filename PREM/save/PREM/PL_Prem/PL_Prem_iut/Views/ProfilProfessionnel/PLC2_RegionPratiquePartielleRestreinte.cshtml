@@ -1,0 +1,155 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RegionPratiquePartielleRestreinte
+
+<div class="row">
+    <div class="col-md-12 droitAcquisTitre">
+        <h4>Droit d’exercice en région à pratique partielle restreinte</h4>
+    </div>
+</div>
+@{ if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <!-- Div contenant le messages informatif -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="MessageInformation" class="alert alert-info" role="alert">
+                    @Model.Message
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        if (Model.DroitsExercices.Count > 0)
+        {
+            <table class="table table-striped table-header-rotated">
+                <thead>
+                    <tr>
+                        <th>Région à la pratique partielle restreinte</th>
+                        <th>Période effective</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var droitsExercices in Model.DroitsExercices)
+                        {
+
+                            <tr>
+                                <td>@droitsExercices.Territoire</td>
+                                <td>À compter du @droitsExercices.DateDebutPeriode.Value.ToLongDateString()</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+                            }
+                        }
+}
+
+
+@{ 
+
+    if (Model.HistoriqueDroitExercice.Count > 0)
+    {
+        <div class="row">
+            <div class="col-md-12 droitAcquisTitre">
+                <h4>Historique du droit d’exercice en région à pratique partielle restreinte</h4>
+            </div>
+        </div>
+        <table class="table table-striped table-header-rotated">
+            <thead>
+                <tr>
+                    <th>Région à la pratique partielle restreinte</th>
+                    <th>Période effective</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var historiqueDroitExercice in Model.HistoriqueDroitExercice)
+                    {
+
+                        <tr>
+                            <td>@historiqueDroitExercice.Territoire</td>
+                            <td>
+                                Du @historiqueDroitExercice.DateDebutPeriode.Value.ToLongDateString() au
+                                @historiqueDroitExercice.DateFinPeriode.Value.ToLongDateString()
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+                        }
+                        
+
+}
+
+
+@{ if (Model.PeriodesExercices.Count > 0)
+    {
+        <div class="row">
+            <div class="col-md-12 droitAcquisTitre">
+                <h4>Périodes d’exercices en région à pratique partielle restreinte sans y être autorisé par un avis de conformité</h4>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Périodes</th>
+                    <th>Engagement actif pour la période</th>
+                    <th>Nombre de jours en pratique partielle restreinte sans y être autorisé</th>
+                    <th>% effectué</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var periodesExercices in Model.PeriodesExercices)
+                    {
+                        <tr>
+                            <td>@periodesExercices.Periode</td>
+                            <td>@periodesExercices.EngagementActif</td>
+                            <td>@string.Format("{0}", Math.Round(periodesExercices.NombreJourPratique, 2, MidpointRounding.AwayFromZero))</td>
+                            <td>@string.Format("{0}%", Math.Round(periodesExercices.PourcentageEffectuer, 2, MidpointRounding.AwayFromZero))</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+                    }
+}
+
+
+@{ if (Model.DepassementPeriodesExercices.Count > 0)
+    {
+        <div class="row">
+            <div class="col-md-12 droitAcquisTitre">
+                <h4>@string.Format("Dépassement du maximum de {0}% autorisé par un droit d’exercice en région à pratique partielle restreinte", Model.PourcentageMaximum)</h4>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Périodes</th>
+                    <th>Engagement actif pour la période</th>
+                    <th>Région du droit d'exercice</th>
+                    <th>Jours effectués en pratique partielle restreinte</th>
+                    <th>% effectué</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var depassementPeriodesExercices in Model.DepassementPeriodesExercices)
+                    {
+                        <tr>
+                            <td>@depassementPeriodesExercices.Periode</td>
+                            <td>@depassementPeriodesExercices.EngagementActif</td>
+                            <td>@depassementPeriodesExercices.Region</td>
+                            <td>@string.Format("{0}", Math.Round(depassementPeriodesExercices.NombreJourPratique, 2, MidpointRounding.AwayFromZero))</td>
+                            <td>@string.Format("{0}%", Math.Round(depassementPeriodesExercices.PourcentageEffectuer, 2, MidpointRounding.AwayFromZero))</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+                    }
+}

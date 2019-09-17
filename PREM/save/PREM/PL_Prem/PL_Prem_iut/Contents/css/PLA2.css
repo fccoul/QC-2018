@@ -1,0 +1,17 @@
+﻿.modal {
+    text-align: center;
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.cacher {
+    display: none;
+}

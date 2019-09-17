@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://PLC2_CnsulProfiPremqProf_svc/1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServCnsulProfiPremqProf" targetNamespace="http://PLC2_CnsulProfiPremqProf_svc/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://PLC2_CnsulProfiPremqProf_svc/1/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd0" namespace="http://PLC2_CnsulProfiPremqProf_svc/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Parametres" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Pratique.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLC2_CnsulProfiPremqProf_cpo.Entites" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd15" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirLesEngagementsPratiquesProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirLesEngagementsPratiquesProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirLesEngagementsPratiquesProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirLesEngagementsPratiquesProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirLesEngagementsPratiquesProfessionnel_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://COD1_V4OutilBase_cpo/2" name="detail" element="q1:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPeriodePratiqueProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirPeriodePratiqueProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPeriodePratiqueProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirPeriodePratiqueProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPeriodePratiqueProfessionnel_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://COD1_V4OutilBase_cpo/2" name="detail" element="q2:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirDerogationsProfessionnelSante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirDerogationsProfessionnelSante" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirDerogationsProfessionnelSante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirDerogationsProfessionnelSanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirDerogationsProfessionnelSante_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://COD1_V4OutilBase_cpo/2" name="detail" element="q3:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_VerifierAdmissibiliteProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifierAdmissibiliteProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_VerifierAdmissibiliteProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifierAdmissibiliteProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_VerifierAdmissibiliteProfessionnel_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://COD1_V4OutilBase_cpo/2" name="detail" element="q4:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ModifierDerogation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierDerogation" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ModifierDerogation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierDerogationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ModifierDerogation_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://COD1_V4OutilBase_cpo/2" name="detail" element="q5:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ValiderProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValiderProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ValiderProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValiderProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ValiderProfessionnel_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://COD1_V4OutilBase_cpo/2" name="detail" element="q6:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_CalculerNombreJourneeFacturation_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculerNombreJourneeFacturation" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_CalculerNombreJourneeFacturation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculerNombreJourneeFacturationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_CalculerNombreJourneeFacturation_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://COD1_V4OutilBase_cpo/2" name="detail" element="q7:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirReductionRemuneration_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirReductionRemuneration" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirReductionRemuneration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirReductionRemunerationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirReductionRemuneration_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://COD1_V4OutilBase_cpo/2" name="detail" element="q8:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPourcentageMaximum_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirPourcentageMaximum" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPourcentageMaximum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirPourcentageMaximumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPourcentageMaximum_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://COD1_V4OutilBase_cpo/2" name="detail" element="q9:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirInformationProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInformationProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirInformationProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInformationProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirInformationProfessionnel_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://COD1_V4OutilBase_cpo/2" name="detail" element="q10:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPeriodeEngagementsAbsenceProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirPeriodeEngagementsAbsenceProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPeriodeEngagementsAbsenceProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirPeriodeEngagementsAbsenceProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulProfiPremqProf_ObtenirPeriodeEngagementsAbsenceProfessionnel_ExceptionRamqFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://COD1_V4OutilBase_cpo/2" name="detail" element="q11:ExceptionRamq" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IServCnsulProfiPremqProf">
+    <wsdl:operation name="ObtenirLesEngagementsPratiquesProfessionnel">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirLesEngagementsPratiquesProfessionnel" message="tns:IServCnsulProfiPremqProf_ObtenirLesEngagementsPratiquesProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirLesEngagementsPratiquesProfessionnelResponse" message="tns:IServCnsulProfiPremqProf_ObtenirLesEngagementsPratiquesProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirLesEngagementsPratiquesProfessionnelExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirLesEngagementsPratiquesProfessionnel_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirPeriodePratiqueProfessionnel">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodePratiqueProfessionnel" message="tns:IServCnsulProfiPremqProf_ObtenirPeriodePratiqueProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodePratiqueProfessionnelResponse" message="tns:IServCnsulProfiPremqProf_ObtenirPeriodePratiqueProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodePratiqueProfessionnelExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirPeriodePratiqueProfessionnel_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDerogationsProfessionnelSante">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirDerogationsProfessionnelSante" message="tns:IServCnsulProfiPremqProf_ObtenirDerogationsProfessionnelSante_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirDerogationsProfessionnelSanteResponse" message="tns:IServCnsulProfiPremqProf_ObtenirDerogationsProfessionnelSante_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirDerogationsProfessionnelSanteExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirDerogationsProfessionnelSante_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifierAdmissibiliteProfessionnel">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/VerifierAdmissibiliteProfessionnel" message="tns:IServCnsulProfiPremqProf_VerifierAdmissibiliteProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/VerifierAdmissibiliteProfessionnelResponse" message="tns:IServCnsulProfiPremqProf_VerifierAdmissibiliteProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/VerifierAdmissibiliteProfessionnelExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_VerifierAdmissibiliteProfessionnel_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierDerogation">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ModifierDerogation" message="tns:IServCnsulProfiPremqProf_ModifierDerogation_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ModifierDerogationResponse" message="tns:IServCnsulProfiPremqProf_ModifierDerogation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ModifierDerogationExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ModifierDerogation_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValiderProfessionnel">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ValiderProfessionnel" message="tns:IServCnsulProfiPremqProf_ValiderProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ValiderProfessionnelResponse" message="tns:IServCnsulProfiPremqProf_ValiderProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ValiderProfessionnelExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ValiderProfessionnel_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculerNombreJourneeFacturation">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/CalculerNombreJourneeFacturation" message="tns:IServCnsulProfiPremqProf_CalculerNombreJourneeFacturation_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/CalculerNombreJourneeFacturationResponse" message="tns:IServCnsulProfiPremqProf_CalculerNombreJourneeFacturation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/CalculerNombreJourneeFacturationExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_CalculerNombreJourneeFacturation_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirReductionRemuneration">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirReductionRemuneration" message="tns:IServCnsulProfiPremqProf_ObtenirReductionRemuneration_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirReductionRemunerationResponse" message="tns:IServCnsulProfiPremqProf_ObtenirReductionRemuneration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirReductionRemunerationExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirReductionRemuneration_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirPourcentageMaximum">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPourcentageMaximum" message="tns:IServCnsulProfiPremqProf_ObtenirPourcentageMaximum_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPourcentageMaximumResponse" message="tns:IServCnsulProfiPremqProf_ObtenirPourcentageMaximum_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPourcentageMaximumExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirPourcentageMaximum_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInformationProfessionnel">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirInformationProfessionnel" message="tns:IServCnsulProfiPremqProf_ObtenirInformationProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirInformationProfessionnelResponse" message="tns:IServCnsulProfiPremqProf_ObtenirInformationProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirInformationProfessionnelExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirInformationProfessionnel_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirPeriodeEngagementsAbsenceProfessionnel">
+      <wsdl:input wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodeEngagementsAbsenceProfessionnel" message="tns:IServCnsulProfiPremqProf_ObtenirPeriodeEngagementsAbsenceProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodeEngagementsAbsenceProfessionnelResponse" message="tns:IServCnsulProfiPremqProf_ObtenirPeriodeEngagementsAbsenceProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodeEngagementsAbsenceProfessionnelExceptionRamqFault" name="ExceptionRamqFault" message="tns:IServCnsulProfiPremqProf_ObtenirPeriodeEngagementsAbsenceProfessionnel_ExceptionRamqFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointService" type="tns:IServCnsulProfiPremqProf">
+    <wsp:PolicyReference URI="#EndPointService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenirLesEngagementsPratiquesProfessionnel">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirLesEngagementsPratiquesProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirPeriodePratiqueProfessionnel">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodePratiqueProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDerogationsProfessionnelSante">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirDerogationsProfessionnelSante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="VerifierAdmissibiliteProfessionnel">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/VerifierAdmissibiliteProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierDerogation">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ModifierDerogation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValiderProfessionnel">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ValiderProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CalculerNombreJourneeFacturation">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/CalculerNombreJourneeFacturation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirReductionRemuneration">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirReductionRemuneration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirPourcentageMaximum">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPourcentageMaximum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirInformationProfessionnel">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirInformationProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirPeriodeEngagementsAbsenceProfessionnel">
+      <soap:operation soapAction="http://PLC2_CnsulProfiPremqProf_svc/1/IServCnsulProfiPremqProf/ObtenirPeriodeEngagementsAbsenceProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqFault">
+        <soap:fault use="literal" name="ExceptionRamqFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServCnsulProfiPremqProf">
+    <wsdl:port name="EndPointService" binding="tns:EndPointService">
+      <soap:address location="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

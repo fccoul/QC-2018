@@ -1,0 +1,38 @@
+﻿@using System.Collections
+@model Boolean?
+@{
+    RouteValueDictionary htmlAttributes = new RouteValueDictionary();
+    string labelText = "";
+
+    if (ViewData.ModelMetadata.IsRequired)
+    {
+        htmlAttributes.Add("required", "required");
+    }
+    if ((ViewBag.classe) != null)
+    {
+        htmlAttributes.Add("class", ViewBag.classe);
+    }
+    if ((ViewBag.Disabled) != null)
+    {
+        htmlAttributes.Add("disabled", "");
+    }
+
+    if ((ViewBag.label) != null)
+    {
+        labelText = ViewBag.label;
+    }
+
+}
+<div class="form-group checkbox">
+    <label>
+        @Html.CheckBox("", Model.HasValue && Model.Value, htmlAttributes)
+
+        @if (String.IsNullOrWhiteSpace(labelText))
+        {
+            @Html.LabelFor(x => x, new {@class = "control-label"})
+        }else{
+            @Html.LabelFor(x => x, labelText, new {@class = "control-label"})
+        }
+    </label>
+    @Html.ValidationMessageFor(x => x, null, new {@class = "help-block"})
+</div>

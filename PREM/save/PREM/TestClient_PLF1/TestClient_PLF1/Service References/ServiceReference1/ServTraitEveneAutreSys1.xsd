@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PerAdmis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodRaisNonAdmis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Df" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerAdmis" nillable="true" type="tns:PerAdmis" />
+  <xs:complexType name="Individu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateDeces" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Dc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Dm" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdUtilCreat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUtilMaj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Langue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSeq" type="xs:long" />
+      <xs:element minOccurs="0" name="Sexe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatutCivil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitreCivilite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Individu" nillable="true" type="tns:Individu" />
+  <xs:complexType name="Dispensateur">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnneeGraduation" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="ChiffrePreuve" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Classe" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="DateInscriptionRAMQ" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateObtentionPermis" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Dc" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DdPratique" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DdSpecialite" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdUtilCreat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndEnvoiCourrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndFacturationRecente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSeq" type="xs:long" />
+      <xs:element minOccurs="0" name="NoSeqIndiv" type="xs:long" />
+      <xs:element minOccurs="0" name="NoSeqUniversite" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NombreAnPratiqueHq" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="Profession" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerritoirePermis" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dispensateur" nillable="true" type="tns:Dispensateur" />
+  <xs:complexType name="PerAdmisBizTalk">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodRaisNonAdmis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Df" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Statut" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerAdmisBizTalk" nillable="true" type="tns:PerAdmisBizTalk" />
+  <xs:complexType name="IndividuBizTalk">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateDeces" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUtilCreat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUtilMaj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Langue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSeq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sexe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatutCivil" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitreCivilite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndividuBizTalk" nillable="true" type="tns:IndividuBizTalk" />
+  <xs:complexType name="DispensateurBizTalk">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnneeGraduation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChiffrePreuve" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Classe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateInscriptionRAMQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateObtentionPermis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DdPratique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DdSpecialite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUtilCreat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndEnvoiCourrier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndFacturationRecente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSeq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSeqIndiv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoSeqUniversite" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAnPratiqueHq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Profession" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerritoirePermis" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispensateurBizTalk" nillable="true" type="tns:DispensateurBizTalk" />
+</xs:schema>

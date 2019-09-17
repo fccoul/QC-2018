@@ -1,0 +1,10 @@
+C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\PLF1_TraiterEveneAutreSys_svcApp_dep\bin\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.msi
+C:\Travail\PRE\Devl\NET45\PL\PLF1_TraiterEveneAutreSys\PLF1_TraiterEveneAutreSys_svcApp_dep\bin\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.wixpdb
+obj\Debug\_PLF1_TraiterEveneAutreSys_svc.wxs
+obj\Debug\Product.wixobj
+obj\Debug\RAMQ.GCD.Nuget.wixobj
+obj\Debug\Product.Generated.wixobj
+obj\Debug\_PLF1_TraiterEveneAutreSys_svc.wixobj
+obj\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.wixproj.BindContentsFileListnull.txt
+obj\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.wixproj.BindOutputsFileListnull.txt
+obj\Debug\PLF1_TraiterEveneAutreSys_svcApp_dep.wixproj.BindBuiltOutputsFileListnull.txt

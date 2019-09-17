@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Enumerations.TypeTraitementAvisConformite">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Transmettre" />
+      <xs:enumeration value="Enregistrer" />
+      <xs:enumeration value="Modifier" />
+      <xs:enumeration value="Annuler" />
+      <xs:enumeration value="Inactiver" />
+      <xs:enumeration value="Reporter" />
+      <xs:enumeration value="Revoquer" />
+      <xs:enumeration value="Supprimer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enumerations.TypeTraitementAvisConformite" nillable="true" type="tns:Enumerations.TypeTraitementAvisConformite" />
+</xs:schema>

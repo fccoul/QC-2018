@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" />
+  <xs:complexType name="CreerAvisConformiteEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeRaisonStatutEngagement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebutEngagement" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurStatutEngagementAttente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielDispensateur" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielRegroupement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="StatutEngagement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreerAvisConformiteEntre" nillable="true" type="tns:CreerAvisConformiteEntre" />
+  <xs:complexType name="CreerAvisConformiteSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://COD1_V4OutilBase_cpo/2" base="q1:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateHeureOccurence" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumeroSequentielEngagement" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreerAvisConformiteSorti" nillable="true" type="tns:CreerAvisConformiteSorti" />
+  <xs:complexType name="CreerStatutAvisConformiteEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRaisonStatutEngagement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebutStatutEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinStatutEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" type="xs:long" />
+      <xs:element minOccurs="0" name="StatutEngagement" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreerStatutAvisConformiteEntre" nillable="true" type="tns:CreerStatutAvisConformiteEntre" />
+  <xs:complexType name="CreerStatutAvisConformiteSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://COD1_V4OutilBase_cpo/2" base="q2:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateHeureOccurence" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumeroSequentielStatutEngagement" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreerStatutAvisConformiteSorti" nillable="true" type="tns:CreerStatutAvisConformiteSorti" />
+  <xs:complexType name="ModifierAvisConformiteEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifiantMAJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurInactivationOccurence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielDispensateur" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielRegroupement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifierAvisConformiteEntre" nillable="true" type="tns:ModifierAvisConformiteEntre" />
+  <xs:complexType name="ModifierAvisConformiteSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://COD1_V4OutilBase_cpo/2" base="q3:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateHeureOccurence" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifierAvisConformiteSorti" nillable="true" type="tns:ModifierAvisConformiteSorti" />
+  <xs:complexType name="ObtenirLesAvisConformiteEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateRecherche" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IndicateurAttenteTransmission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurAvisInactive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielDispensateur" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Tri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObtenirLesAvisConformiteEntre" nillable="true" type="tns:ObtenirLesAvisConformiteEntre" />
+  <xs:complexType name="ObtenirLesAvisConformiteSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://COD1_V4OutilBase_cpo/2" base="q4:ParamSorti">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite" minOccurs="0" name="ListeAvisConformite" nillable="true" type="q5:ArrayOfAvisConformite" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObtenirLesAvisConformiteSorti" nillable="true" type="tns:ObtenirLesAvisConformiteSorti" />
+  <xs:complexType name="ModifierPeriodeAvisEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRaisonStatut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebutActuelle" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateDebutNouvelle" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinActuelle" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinNouvelle" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantMAJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifierPeriodeAvisEntre" nillable="true" type="tns:ModifierPeriodeAvisEntre" />
+  <xs:complexType name="ModifierPeriodeAvisSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://COD1_V4OutilBase_cpo/2" base="q6:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateHeureOccurence" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifierPeriodeAvisSorti" nillable="true" type="tns:ModifierPeriodeAvisSorti" />
+  <xs:complexType name="TraiterAvisConformiteEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Continuer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DateDebut" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModifier" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DatePrevue" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumeroPratique" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielAvis" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielStatut" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="QuestionPose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Territoire" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerritoireModifier" type="xs:boolean" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" minOccurs="0" name="TypeAction" type="q7:Enumerations.TypeTraitementAvisConformite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TraiterAvisConformiteEntre" nillable="true" type="tns:TraiterAvisConformiteEntre" />
+  <xs:complexType name="TraiterAvisConformiteSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://COD1_V4OutilBase_cpo/2" base="q8:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateCreation" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NomCompletNumeroPratique" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NomTerritoire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuestionPose" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TraiterAvisConformiteSorti" nillable="true" type="tns:TraiterAvisConformiteSorti" />
+  <xs:complexType name="ValiderAvisDerogationEnCoursEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRSS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroPratique" type="xs:long" />
+      <xs:element minOccurs="0" name="VerifierAvisEnAttente" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValiderAvisDerogationEnCoursEntre" nillable="true" type="tns:ValiderAvisDerogationEnCoursEntre" />
+  <xs:complexType name="ValiderAvisDerogationEnCoursSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://COD1_V4OutilBase_cpo/2" base="q9:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AvisEnregistrer" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DateDebutPratique" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MessageAvertissement" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NumeroSequentielEngagement" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="NumeroSequentielStatut" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TerritoireId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TerritoireNom" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValiderAvisDerogationEnCoursSorti" nillable="true" type="tns:ValiderAvisDerogationEnCoursSorti" />
+  <xs:complexType name="ModifierStatutEngagementEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateFinStatutEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantMAJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurInactivationStatut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurStatutEngagementEnAttente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielStatutEngagement" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifierStatutEngagementEntre" nillable="true" type="tns:ModifierStatutEngagementEntre" />
+  <xs:complexType name="ModifierStatutEngagementSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://COD1_V4OutilBase_cpo/2" base="q10:ParamSorti">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateHeureOccurence" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="NumeroSequentielStatutEngagement" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ModifierStatutEngagementSorti" nillable="true" type="tns:ModifierStatutEngagementSorti" />
+</xs:schema>

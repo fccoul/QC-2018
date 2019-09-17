@@ -1,0 +1,67 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLA2CSS")
+}
+
+@{
+    ViewData["TitrePage"] = "Transmettre une dérogation";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "TransmettreDerogationForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="collection clearfix">
+        <!-- Div contenant le message informatif sur l'engagement actif -->
+        <div id="MessageInformation" class="alert alert-info cacher" role="alert"></div>
+
+        @Html.Hidden("NumeroSequentielDispensateur")
+        <!-- Numéro de pratique -->
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel")
+
+        <!-- Type de dérogation -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                @Html.Hidden("IdTypeDDL")
+                @Html.Hidden("TextTypeDDL")
+                @Html.EditorFor(x => x.Type, "DropDownList", new { disabled = true, data = Model.Types, classe = "select2derogation" })
+            </div>
+        </div>
+
+        <!-- Date de début -->
+        @Html.EditorFor(x => x.DateDebut, "DatePicker", new { disabled = true, placeholder = "AAAA-MM-JJ" })
+
+        <!-- Confirmation (case à cocher) -->
+        <div class="row">
+            <div class="col-md-12">
+                @Html.EditorFor(x => x.EstRenseignementConfirmer, "Boolean", new { disabled = true, label = "Je confirme que les renseignements transmis réflètent la décision prise." })
+            </div>
+        </div>
+
+        <!-- Transmettre (bouton) -->
+        <div class="row">
+            <div class="form-group col-md-12">
+                <button id="Transmettre" name="TypeAction" class="btn btn-primary btn-success" type="submit">
+                    <i class="fa fa-check" aria-hidden="true"></i> Transmettre
+                </button>
+            </div>
+        </div>
+
+        <!-- Boîte de dialogue pour l'affichage d'une demande de confirmation -->
+        @Html.DisplayFor(x => x.Message, "ModalConfirmation")
+
+        <input type="hidden" id="Continuer" name="Continuer" value="@Html.Raw(Model.Continuer)" />
+        <input type="hidden" id="QuestionPose" name="QuestionPose" value="@Html.Raw(Model.QuestionPose)" />
+        <input type="hidden" id="Valider" name="Valider" value="@Html.Raw(Model.Valider)" />
+        <input type="hidden" id="MessageInformation" name="MessageInformation" value="@Html.Raw(Model.MessageInformation)" />
+
+    </div>
+}
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA2_TransmettreDerogation")
+}

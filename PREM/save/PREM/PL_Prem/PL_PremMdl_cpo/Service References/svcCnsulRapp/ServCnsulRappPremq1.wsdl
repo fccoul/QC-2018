@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd0" namespace="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd4" namespace="http://COD1_V4OutilBase_cpo/2" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportNonRespAvisConfFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportNonRespAvisConfFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportNonRespAvisConfFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportNonRespAvisConfFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportNonRespAvisConfFichier_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://COD1_V4OutilBase_cpo/2" name="detail" element="q1:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportNonRespAvisConfWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportNonRespAvisConfWeb" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportNonRespAvisConfWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportNonRespAvisConfWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportNonRespAvisConfWeb_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://COD1_V4OutilBase_cpo/2" name="detail" element="q2:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportDerogPratiExcluFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportDerogPratiExcluFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportDerogPratiExcluFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportDerogPratiExcluFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportDerogPratiExcluFichier_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://COD1_V4OutilBase_cpo/2" name="detail" element="q3:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportDerogPratiExcluWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportDerogPratiExcluWeb" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportDerogPratiExcluWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportDerogPratiExcluWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportDerogPratiExcluWeb_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://COD1_V4OutilBase_cpo/2" name="detail" element="q4:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportExerNonAutoRPPRFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportExerNonAutoRPPRFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRFichier_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://COD1_V4OutilBase_cpo/2" name="detail" element="q5:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportExerNonAutoRPPRWeb" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportExerNonAutoRPPRWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRWeb_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://COD1_V4OutilBase_cpo/2" name="detail" element="q6:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiFichier_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportRepartInterRegionPratiFichier" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiFichier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportRepartInterRegionPratiFichierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiFichier_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://COD1_V4OutilBase_cpo/2" name="detail" element="q7:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiWeb_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportRepartInterRegionPratiWeb" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiWeb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirRapportRepartInterRegionPratiWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiWeb_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://COD1_V4OutilBase_cpo/2" name="detail" element="q8:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IServCnsulRappPremq">
+    <wsdl:operation name="ObtenirRapportNonRespAvisConfFichier">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportNonRespAvisConfFichier" message="tns:IServCnsulRappPremq_ObtenirRapportNonRespAvisConfFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportNonRespAvisConfFichierResponse" message="tns:IServCnsulRappPremq_ObtenirRapportNonRespAvisConfFichier_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportNonRespAvisConfFichierExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportNonRespAvisConfFichier_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportNonRespAvisConfWeb">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportNonRespAvisConfWeb" message="tns:IServCnsulRappPremq_ObtenirRapportNonRespAvisConfWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportNonRespAvisConfWebResponse" message="tns:IServCnsulRappPremq_ObtenirRapportNonRespAvisConfWeb_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportNonRespAvisConfWebExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportNonRespAvisConfWeb_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportDerogPratiExcluFichier">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportDerogPratiExcluFichier" message="tns:IServCnsulRappPremq_ObtenirRapportDerogPratiExcluFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportDerogPratiExcluFichierResponse" message="tns:IServCnsulRappPremq_ObtenirRapportDerogPratiExcluFichier_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportDerogPratiExcluFichierExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportDerogPratiExcluFichier_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportDerogPratiExcluWeb">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportDerogPratiExcluWeb" message="tns:IServCnsulRappPremq_ObtenirRapportDerogPratiExcluWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportDerogPratiExcluWebResponse" message="tns:IServCnsulRappPremq_ObtenirRapportDerogPratiExcluWeb_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportDerogPratiExcluWebExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportDerogPratiExcluWeb_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportExerNonAutoRPPRFichier">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportExerNonAutoRPPRFichier" message="tns:IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportExerNonAutoRPPRFichierResponse" message="tns:IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRFichier_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportExerNonAutoRPPRFichierExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRFichier_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportExerNonAutoRPPRWeb">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportExerNonAutoRPPRWeb" message="tns:IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportExerNonAutoRPPRWebResponse" message="tns:IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRWeb_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportExerNonAutoRPPRWebExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportExerNonAutoRPPRWeb_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportRepartInterRegionPratiFichier">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportRepartInterRegionPratiFichier" message="tns:IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiFichier_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportRepartInterRegionPratiFichierResponse" message="tns:IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiFichier_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportRepartInterRegionPratiFichierExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiFichier_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirRapportRepartInterRegionPratiWeb">
+      <wsdl:input wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportRepartInterRegionPratiWeb" message="tns:IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiWeb_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportRepartInterRegionPratiWebResponse" message="tns:IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiWeb_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif/IServCnsulRappPremq/ObtenirRapportRepartInterRegionPratiWebExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServCnsulRappPremq_ObtenirRapportRepartInterRegionPratiWeb_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

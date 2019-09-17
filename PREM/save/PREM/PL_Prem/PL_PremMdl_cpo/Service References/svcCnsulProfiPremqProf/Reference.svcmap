@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2c992f9d-5889-4b98-b79e-a6a51590a058" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="RAMQ.PRE.PRE_Entites_cpo" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServCnsulProfiPremqProf.wsdl" MetadataType="Wsdl" ID="2537663b-5af7-419f-8a03-f0060dc542ff" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?wsdl" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf.xsd" MetadataType="Schema" ID="ada3f396-e878-4b60-bbd7-2ff6ea12ee2c" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd11" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf1.xsd" MetadataType="Schema" ID="b960561e-7f30-48da-98c7-52c1524b5607" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf2.xsd" MetadataType="Schema" ID="eaae19c9-efcb-43f0-b250-ecfa05a0a7f5" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf3.xsd" MetadataType="Schema" ID="a8c407db-7070-4630-8dfd-ed2629bb6f27" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf4.xsd" MetadataType="Schema" ID="649f5afd-6aed-41a5-ae0d-a8cf2d048669" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf5.xsd" MetadataType="Schema" ID="f889a819-1b04-4446-90be-6ce8c08be857" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf6.xsd" MetadataType="Schema" ID="5ff59a43-b1a5-44c9-82f4-f21e02cd6347" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf7.xsd" MetadataType="Schema" ID="893e7be8-6ca1-4db5-814b-a228caa752e0" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf8.xsd" MetadataType="Schema" ID="2678ca70-37b0-4400-b039-301c73f14d51" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf.disco" MetadataType="Disco" ID="f908926d-7d09-4c5e-b89c-f227b62caec7" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?disco" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf9.xsd" MetadataType="Schema" ID="64eea891-9117-4889-bf57-d16c18830fc3" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd10" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf10.xsd" MetadataType="Schema" ID="29969d3b-4d1d-4b64-a5e5-9941f5cbc6c2" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd15" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf11.xsd" MetadataType="Schema" ID="eb85bd2e-9e18-4962-909e-f1e1e02f74dd" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd8" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf12.xsd" MetadataType="Schema" ID="60e92436-0dde-4d61-a897-b90c8bdb5a94" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd9" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf13.xsd" MetadataType="Schema" ID="2f31c4b5-8d77-49b1-95b1-c47d88cdf7cf" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd12" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf14.xsd" MetadataType="Schema" ID="9092d19e-31aa-4b5d-874b-82613b65d5b2" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd14" />
+    <MetadataFile FileName="ServCnsulProfiPremqProf15.xsd" MetadataType="Schema" ID="db9c0949-cc0e-4090-a305-67042b949f52" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd13" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

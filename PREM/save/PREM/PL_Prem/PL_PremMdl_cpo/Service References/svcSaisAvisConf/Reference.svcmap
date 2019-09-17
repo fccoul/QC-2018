@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="78a1e003-efdc-4043-b39d-abd28fb2cbe0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="RAMQ.PRE.PRE_Entites_cpo" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServSaisAvisConf.xsd" MetadataType="Schema" ID="f68a61bb-0c60-498b-a1d5-81b86ee1142b" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServSaisAvisConf1.xsd" MetadataType="Schema" ID="af52a153-a1c5-475f-ab26-75e6b2919c7d" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServSaisAvisConf.wsdl" MetadataType="Wsdl" ID="11f07692-1867-48ec-8498-106f55017485" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?wsdl" />
+    <MetadataFile FileName="ServSaisAvisConf.disco" MetadataType="Disco" ID="da4bf594-eb0f-4a20-8dd6-ce7b89ca2455" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?disco" />
+    <MetadataFile FileName="ServSaisAvisConf2.xsd" MetadataType="Schema" ID="889397a8-de3d-436a-a7ef-4b2c9d71ed6f" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServSaisAvisConf62.xsd" MetadataType="Schema" ID="f70216bf-e0f7-4418-8797-49e0067d4c45" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServSaisAvisConf3.xsd" MetadataType="Schema" ID="8ec34e9a-8c9f-471b-bdb2-504a8d2f8cbf" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServSaisAvisConf4.xsd" MetadataType="Schema" ID="11cefe96-4ed4-4fb4-b3d4-4f8be2c680a7" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServSaisAvisConf63.xsd" MetadataType="Schema" ID="5f7fdecb-67b4-4c0e-99b4-fd849090c6ab" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServSaisAvisConf5.xsd" MetadataType="Schema" ID="b97c3cfb-9956-4bb5-a9b0-6e0e4a51c898" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

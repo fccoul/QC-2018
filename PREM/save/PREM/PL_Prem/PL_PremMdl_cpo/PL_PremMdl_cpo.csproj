@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5046617C-9FCE-4A5D-846D-2562D1933AAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PL_PremMdl_cpo</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PL_PremMdl_cpo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Debug\RAMQ.PRE.PL_PremMdl_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Release\RAMQ.PRE.PL_PremMdl_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.AGS.YRY3_FournCleChifm_cpo, Version=2.1.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.AGS.YRY3_FournCleChifm.2.1.1\lib\NET45\RAMQ.AGS.YRY3_FournCleChifm_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC1_V4DonneComne_cpo, Version=2.2.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.2.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC2_V4FournAccesDonne_cpo, Version=2.3.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_JetonAuthn_cpo, Version=1.2.3.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.8.6.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.6\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD2_V4GestCache_cpo, Version=2.2.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.2.1\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_Entites_cpo, Version=1.0.152.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.152\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_OutilComun_cpo, Version=1.0.58.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_OutilComun.1.0.58\lib\NET45\RAMQ.PRE.PRE_OutilComun_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autorisation\AutorisationFactory.cs" />
+    <Compile Include="Autorisation\AutorisationReferentiel.cs" />
+    <Compile Include="Autorisation\AutorisationSimulation.cs" />
+    <Compile Include="Autorisation\Entites\Autorisation.cs" />
+    <Compile Include="Autorisation\IAutorisation.cs" />
+    <Compile Include="Autorisation\Mappeur\AutorisationMappeur.cs" />
+    <Compile Include="Autorisation\Mappeur\IAutorisationMappeur.cs" />
+    <Compile Include="Autorisation\Parametres\AnnulerAutorisationPREMQEntre.cs" />
+    <Compile Include="Autorisation\Parametres\AnnulerAutorisationPREMQSorti.cs" />
+    <Compile Include="Autorisation\Parametres\CreerAutorisationPREMQEntre.cs" />
+    <Compile Include="Autorisation\Parametres\CreerAutorisationPREMQSorti.cs" />
+    <Compile Include="Autorisation\Parametres\ObtenirLesAutorisationsProfessionnelEntre.cs" />
+    <Compile Include="Autorisation\Parametres\ObtenirLesAutorisationsProfessionnelSorti.cs" />
+    <Compile Include="Autorisation\Parametres\ProlongerAutorisationPREMQEntre.cs" />
+    <Compile Include="Autorisation\Parametres\ProlongerAutorisationPREMQSorti.cs" />
+    <Compile Include="AvisConformite\AvisConformiteFactory.cs" />
+    <Compile Include="AvisConformite\AvisConformiteReferentiel.cs" />
+    <Compile Include="AvisConformite\AvisConformiteSimulation.cs" />
+    <Compile Include="AvisConformite\IAvisConformite.cs" />
+    <Compile Include="AvisConformite\IAvisConformiteFactory.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="DecisionAvisConformite\DecisionAvisConformiteFactory.cs" />
+    <Compile Include="DecisionAvisConformite\DecisionAvisConformiteReferentiel.cs" />
+    <Compile Include="DecisionAvisConformite\DecisionAvisConformiteSimulation.cs" />
+    <Compile Include="DecisionAvisConformite\IDecisionAvisConformite.cs" />
+    <Compile Include="DecisionAvisConformite\IDecisionAvisConformiteFactory.cs" />
+    <Compile Include="DemandeReevaluation\DemandeReevaluationFactory.cs" />
+    <Compile Include="DemandeReevaluation\DemandeReevaluationReferentiel.cs" />
+    <Compile Include="DemandeReevaluation\DemandeReevaluationSimulation.cs" />
+    <Compile Include="DemandeReevaluation\IDemandeReevaluation.cs" />
+    <Compile Include="DemandeReevaluation\IDemandeReevaluationFactory.cs" />
+    <Compile Include="GabaritPDFConfirmation\GabaritPDFConfirmationFactory.cs" />
+    <Compile Include="GabaritPDFConfirmation\GabaritPDFConfirmationRepository.cs" />
+    <Compile Include="GabaritPDFConfirmation\GabaritPDFConfirmationSimulation.cs" />
+    <Compile Include="GabaritPDFConfirmation\IGabaritPDFConfirmation.cs" />
+    <Compile Include="GabaritPDFConfirmation\IGabaritPDFConfirmationFactory.cs" />
+    <Compile Include="GabaritPDFConfirmation\MappeurTypeActionAvisConformite.cs" />
+    <Compile Include="GabaritPDFConfirmation\MappeurTypeActionSuspension.cs" />
+    <Compile Include="GabaritPDFConfirmation\Param\ObtnConfirmationPDFDerogationEntre.cs" />
+    <Compile Include="GabaritPDFConfirmation\Param\ObtnConfirmationPDFDerogationSortie.cs" />
+    <Compile Include="GabaritPDFConfirmation\Param\ObtnConfirmationPDFSuspensionEntre.cs" />
+    <Compile Include="GabaritPDFConfirmation\Param\ObtnConfirmationPDFSuspensionSortie.cs" />
+    <Compile Include="GabaritPDFConfirmation\Param\ObtnConfirmationPDFAvisConformiteSortie.cs" />
+    <Compile Include="GabaritPDFConfirmation\Param\ObtnConfirmationPDFAvisConformiteEntre.cs" />
+    <Compile Include="LieuGeographique\ILieuGeographique.cs" />
+    <Compile Include="LieuGeographique\ILieuGeographiqueFactory.cs" />
+    <Compile Include="LieuGeographique\LieuGeographiqueFactory.cs" />
+    <Compile Include="LieuGeographique\LieuGeographiqueReferentiel.cs" />
+    <Compile Include="LieuGeographique\LieuGeographiqueSimulation.cs" />
+    <Compile Include="Professionel\IProfessionnel.cs" />
+    <Compile Include="Professionel\IProfessionnelFactory.cs" />
+    <Compile Include="Professionel\ProfessionnelFactory.cs" />
+    <Compile Include="Professionel\ProfessionnelReferentiel.cs" />
+    <Compile Include="Professionel\ProfessionnelSimulation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapport\IRapport.cs" />
+    <Compile Include="Rapport\IRapportFactory.cs" />
+    <Compile Include="Rapport\RapportFactory.cs" />
+    <Compile Include="Rapport\RapportReferentiel.cs" />
+    <Compile Include="Rapport\RapportSimulation.cs" />
+    <Compile Include="Service References\svcCnsulProfiPremqProf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcCnsulRapp\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcCreerDemReeva\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcLieuxGeographiques\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcRechrProf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcSaisAutorActivMdcal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcSaisAvisConf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcSaisDecisAvisConf\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Autorisation.Parametre.ObtenirLesAutorisationsProfessionnelSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.CreerStatutAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierPeriodeAvisSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ModifierStatutEngagementSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ObtenirLesAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.TraiterAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre.ValiderAvisDerogationEnCoursSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConf.Parametre.TraiterDerogAvisConfSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConf.Parametre.ValiderSituProfSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterAnnulationDerogationSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterDerogationAvisConformiteSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre.TraiterSuspensionAvisConformiteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.AnnulerDemandeReevaluationSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.ObtenirDemandeReevaluationSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DemandeReevaluation.Parametre.SaisirDemandeReevaluationSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ModifierDerogationSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre.ObtenirDerogationsProfessionnelSanteSorti3.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.EngagementPratique.Parametre.ObtenirEngagementPratiqueSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCSortie.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirTerritoiresPermisSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.PeriodePratique.Parametre.ObtenirPeriodePratiqueProfessionnelSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Pratique.Parametre.CalculerNbrJrFactProfsSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.Professionnels.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirDispensateurIndividuSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.ObtenirVuePeriodeEngagementSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti1.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerSorti2.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAbsncAvisConf.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfActifsParTerritoire.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportAvisConfTermines.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportDerogPratiExclu.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNonRespAvisConf.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportExerNonAutoRPPR.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportNouvMedSansAvisConf.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Entite.LigneRapportRepartInterRegionPrati.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre.ParamObtnRapportFichierSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite.Resultat.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesSorti.datasource" />
+    <None Include="Properties\DataSources\RAMQ.PRE.PRE_Entites_cpo.ServiceEnLigne.Parametre.VerifierDisponibiliteBandeauSorti.datasource" />
+    <None Include="RAMQ.snk" />
+    <None Include="Service References\svcCnsulProfiPremqProf\RAMQ.PRE.PL_PremMdl_cpo.svcCnsulProfiPremqProf.ObtenirPourcentageMaximumSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\RAMQ.PRE.PL_PremMdl_cpo.svcCnsulProfiPremqProf.ReductionRemunerationSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\RAMQ.PRE.PL_PremMdl_cpo.svcCnsulProfiPremqProf.ValiderProfessionnelSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf.wsdl" />
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq.wsdl" />
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq1.wsdl" />
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\RAMQ.PRE.PL_PremMdl_cpo.svcCreerDemReeva.ValiderProfessionnelSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva.wsdl" />
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\RAMQ.PRE.PL_PremMdl_cpo.svcLieuxGeographiques.ObtenirInformationTerritoireCLSCSortie.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\RAMQ.PRE.PL_PremMdl_cpo.svcLieuxGeographiques.ObtenirInformationTerritoireRLSSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\RAMQ.PRE.PL_PremMdl_cpo.svcLieuxGeographiques.ObtenirNomTerritoireSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\RAMQ.PRE.PL_PremMdl_cpo.svcLieuxGeographiques.ObtenirRegroupementsLgeoRssSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\RAMQ.PRE.PL_PremMdl_cpo.svcLieuxGeographiques.ObtenirTerritoiresPermisSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques.wsdl" />
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf.wsdl" />
+    <None Include="Service References\svcRechrProf\ServRechrProf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcRechrProf\ServRechrProf8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\RAMQ.PRE.PL_PremMdl_cpo.svcSaisAutorActivMdcal.AnnulerAutorisationPREMQSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\RAMQ.PRE.PL_PremMdl_cpo.svcSaisAutorActivMdcal.CreerAutorisationPREMQSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\RAMQ.PRE.PL_PremMdl_cpo.svcSaisAutorActivMdcal.ObtenirLesAutorisationsProfessionnelSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\RAMQ.PRE.PL_PremMdl_cpo.svcSaisAutorActivMdcal.ProlongerAutorisationPREMQSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\ServSaisAutorActivMdcal.wsdl" />
+    <None Include="Service References\svcSaisAutorActivMdcal\ServSaisAutorActivMdcal.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\ServSaisAutorActivMdcal1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\ServSaisAutorActivMdcal2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\ServSaisAutorActivMdcal3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAutorActivMdcal\ServSaisAutorActivMdcal4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\RAMQ.PRE.PL_PremMdl_cpo.svcSaisAvisConf.ObtnGabaritSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf.wsdl" />
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\RAMQ.PRE.PL_PremMdl_cpo.svcSaisDecisAvisConf.ObtnConfirmationDerogPDFSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\RAMQ.PRE.PL_PremMdl_cpo.svcSaisDecisAvisConf.ObtnConfirmationSuspPDFSorti.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf1.wsdl" />
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf11.wsdl" />
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf610.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf611.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf612.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf613.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf614.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf615.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf616.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf617.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf618.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf619.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf620.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf621.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf622.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf623.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf67.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf68.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf69.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\svcCnsulProfiPremqProf\" />
+    <WCFMetadataStorage Include="Service References\svcCnsulRapp\" />
+    <WCFMetadataStorage Include="Service References\svcCreerDemReeva\" />
+    <WCFMetadataStorage Include="Service References\svcLieuxGeographiques\" />
+    <WCFMetadataStorage Include="Service References\svcRechrProf\" />
+    <WCFMetadataStorage Include="Service References\svcSaisAutorActivMdcal\" />
+    <WCFMetadataStorage Include="Service References\svcSaisAvisConf\" />
+    <WCFMetadataStorage Include="Service References\svcSaisDecisAvisConf\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcLieuxGeographiques\ServLieuxGeographiques.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcLieuxGeographiques\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcLieuxGeographiques\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcLieuxGeographiques\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrProf\ServRechrProf.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrProf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrProf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrProf\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisDecisAvisConf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisDecisAvisConf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisDecisAvisConf\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisAvisConf\ServSaisAvisConf.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisAvisConf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisAvisConf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisAvisConf\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcSaisDecisAvisConf\ServSaisDecisAvisConf11.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCnsulRapp\configuration.svcinfo" />
+    <None Include="Service References\svcCnsulRapp\configuration91.svcinfo" />
+    <None Include="Service References\svcCnsulRapp\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\svcCnsulRapp\ServCnsulRappPremq.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCreerDemReeva\ServCreerDemReeva.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCreerDemReeva\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCreerDemReeva\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCreerDemReeva\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCnsulProfiPremqProf\ServCnsulProfiPremqProf.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCnsulProfiPremqProf\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCnsulProfiPremqProf\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCnsulProfiPremqProf\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

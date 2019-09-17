@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b4d9045f-cab8-4cc8-856b-247803cfd727" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ParamSortieInfoSecuGranuDS.xsd" MetadataType="Schema" ID="7d6bf394-2afb-4bb0-9ddc-67b057b24840" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=ParamSortieInfoSecuGranuDS" />
+    <MetadataFile FileName="InfoIdentSecuGranuDS.xsd" MetadataType="Schema" ID="62ebb33a-861b-4e89-b21d-da6a42cc50bd" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoIdentSecuGranuDS" />
+    <MetadataFile FileName="RegleAccesContxDroitDS.xsd" MetadataType="Schema" ID="bb237556-e8f0-42ff-82b9-af53ece1fb42" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=RegleAccesContxDroitDS" />
+    <MetadataFile FileName="ParamEntreeInfoSecuGranuDS.xsd" MetadataType="Schema" ID="2f6d945b-ede9-47c3-b535-797fdb87cec8" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=ParamEntreeInfoSecuGranuDS" />
+    <MetadataFile FileName="InfoIdContxDS.xsd" MetadataType="Schema" ID="96fc085d-d02f-4f7a-834f-12693f754ac0" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoIdContxDS" />
+    <MetadataFile FileName="InfoRegleAccesDS.xsd" MetadataType="Schema" ID="5611106a-8d36-4087-8a2f-6976bb522d57" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoRegleAccesDS" />
+    <MetadataFile FileName="IdentSecuGranuDS.xsd" MetadataType="Schema" ID="5d9c9ced-f554-4c56-93b9-3cbfb4468638" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=IdentSecuGranuDS" />
+    <MetadataFile FileName="RegleAccesContxDS.xsd" MetadataType="Schema" ID="2715ce52-3765-47c8-9f0e-a66fa4a702f0" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=RegleAccesContxDS" />
+    <MetadataFile FileName="RegleAccesDS.xsd" MetadataType="Schema" ID="b842048c-0b16-4398-80b1-56db4e311cf5" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=RegleAccesDS" />
+    <MetadataFile FileName="RechrRegleAcces.wsdl" MetadataType="Wsdl" ID="ee10e83a-36fd-496a-bec7-a7329c832fb0" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?wsdl" />
+    <MetadataFile FileName="InfoRegleAccesContxDS.xsd" MetadataType="Schema" ID="73606224-4e23-4cd5-9212-dce5bfd0a057" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoRegleAccesContxDS" />
+    <MetadataFile FileName="RechrRegleAcces.disco" MetadataType="Disco" ID="675aa63c-db5a-4644-af1b-3d75c3a9f95c" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?disco" />
+    <MetadataFile FileName="IdContxDS.xsd" MetadataType="Schema" ID="742a6045-6d6c-4e47-aaaf-5c01afb2a8a5" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=IdContxDS" />
+    <MetadataFile FileName="InfoNumSeqRegleAccesDS.xsd" MetadataType="Schema" ID="82d5193c-a74a-4328-89cc-7f39e2c89a8b" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoNumSeqRegleAccesDS" />
+    <MetadataFile FileName="NumSeqRegleAccesDS.xsd" MetadataType="Schema" ID="6c1d8a49-cc56-45a7-990d-fdbc514ebed4" SourceId="1" SourceUrl="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=NumSeqRegleAccesDS" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

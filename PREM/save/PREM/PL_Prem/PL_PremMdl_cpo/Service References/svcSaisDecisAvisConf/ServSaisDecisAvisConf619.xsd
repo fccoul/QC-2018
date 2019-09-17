@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PLA2_SaisDecisAvisConf_svc/1" elementFormDefault="qualified" targetNamespace="http://PLA2_SaisDecisAvisConf_svc/1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation.Param" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationSuspension.Param" />
+  <xs:element name="TraiterDerogationAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q1:TraiterDerogationAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterDerogationAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" minOccurs="0" name="TraiterDerogationAvisConformiteResult" nillable="true" type="q2:TraiterDerogationAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterSuspensionAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q3:TraiterSuspensionAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterSuspensionAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" minOccurs="0" name="TraiterSuspensionAvisConformiteResult" nillable="true" type="q4:TraiterSuspensionAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterAnnulationDerogation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q5:TraiterAnnulationDerogationEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterAnnulationDerogationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" minOccurs="0" name="TraiterAnnulationDerogationResult" nillable="true" type="q6:TraiterAnnulationDerogationSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirDerogations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" minOccurs="0" name="intrant" nillable="true" type="q7:ObtenirDerogationsProfessionnelSanteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirDerogationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" minOccurs="0" name="ObtenirDerogationsResult" nillable="true" type="q8:ObtenirDerogationsProfessionnelSanteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirGabaritConfirmationDerog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation.Param" minOccurs="0" name="parametreEntre" nillable="true" type="q9:ObtnConfirmationDerogPDFEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirGabaritConfirmationDerogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation.Param" minOccurs="0" name="ObtenirGabaritConfirmationDerogResult" nillable="true" type="q10:ObtnConfirmationDerogPDFSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirGabaritConfirmationSusp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationSuspension.Param" minOccurs="0" name="parametreEntre" nillable="true" type="q11:ObtnConfirmationSuspPDFEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirGabaritConfirmationSuspResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationSuspension.Param" minOccurs="0" name="ObtenirGabaritConfirmationSuspResult" nillable="true" type="q12:ObtnConfirmationSuspPDFSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

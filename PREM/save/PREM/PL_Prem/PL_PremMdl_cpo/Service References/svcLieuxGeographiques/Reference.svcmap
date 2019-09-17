@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b2ee4195-eb8e-4bb5-803b-db20cf414e1a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="RAMQ.PRE.PRE_Entites_cpo" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServLieuxGeographiques.xsd" MetadataType="Schema" ID="fb9d05ba-54d3-4b4d-a5c0-44769b6cd474" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServLieuxGeographiques1.xsd" MetadataType="Schema" ID="30e3d7c8-07a8-4d8d-8c54-0e6e80737baf" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServLieuxGeographiques.disco" MetadataType="Disco" ID="8d7d615f-5c91-4067-b68a-890d931113f0" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?disco" />
+    <MetadataFile FileName="ServLieuxGeographiques.wsdl" MetadataType="Wsdl" ID="5057a47d-ba3d-480b-b028-382d212c3472" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?wsdl" />
+    <MetadataFile FileName="ServLieuxGeographiques2.xsd" MetadataType="Schema" ID="fc8fd9a8-993e-4689-aadb-9e58edbdff43" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServLieuxGeographiques3.xsd" MetadataType="Schema" ID="34b12cd9-c48c-4ee8-b528-d185d669f191" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServLieuxGeographiques4.xsd" MetadataType="Schema" ID="f951abb1-8470-48ce-b43d-7a3b1e8149d1" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServLieuxGeographiques5.xsd" MetadataType="Schema" ID="5e94e682-5a99-49cc-8bbb-ce98badfc7ff" SourceId="1" SourceUrl="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServLieuxGeographiques.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

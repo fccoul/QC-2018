@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://PLA1_ETR_RechrProf_svc/1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServRechrProf" targetNamespace="http://PLA1_ETR_RechrProf_svc/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://PLA1_ETR_RechrProf_svc/1/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd0" namespace="http://PLA1_ETR_RechrProf_svc/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServRechrProf_ObtenirInformationProfessionnel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInformationProfessionnel" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirInformationProfessionnel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirInformationProfessionnelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirInformationProfessionnel_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://COD1_V4OutilBase_cpo/2" name="detail" element="q1:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirProfessionnelsParClasse_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirProfessionnelsParClasse" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirProfessionnelsParClasse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirProfessionnelsParClasseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirProfessionnelsParClasse_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://COD1_V4OutilBase_cpo/2" name="detail" element="q2:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirNumerosPratiqueFiltre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirNumerosPratiqueFiltre" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirNumerosPratiqueFiltre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirNumerosPratiqueFiltreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServRechrProf_ObtenirNumerosPratiqueFiltre_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://COD1_V4OutilBase_cpo/2" name="detail" element="q3:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IServRechrProf">
+    <wsdl:operation name="ObtenirInformationProfessionnel">
+      <wsdl:input wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirInformationProfessionnel" message="tns:IServRechrProf_ObtenirInformationProfessionnel_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirInformationProfessionnelResponse" message="tns:IServRechrProf_ObtenirInformationProfessionnel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirInformationProfessionnelExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServRechrProf_ObtenirInformationProfessionnel_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirProfessionnelsParClasse">
+      <wsdl:input wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirProfessionnelsParClasse" message="tns:IServRechrProf_ObtenirProfessionnelsParClasse_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirProfessionnelsParClasseResponse" message="tns:IServRechrProf_ObtenirProfessionnelsParClasse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirProfessionnelsParClasseExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServRechrProf_ObtenirProfessionnelsParClasse_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNumerosPratiqueFiltre">
+      <wsdl:input wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirNumerosPratiqueFiltre" message="tns:IServRechrProf_ObtenirNumerosPratiqueFiltre_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirNumerosPratiqueFiltreResponse" message="tns:IServRechrProf_ObtenirNumerosPratiqueFiltre_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirNumerosPratiqueFiltreExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServRechrProf_ObtenirNumerosPratiqueFiltre_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointService" type="tns:IServRechrProf">
+    <wsp:PolicyReference URI="#EndPointService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenirInformationProfessionnel">
+      <soap:operation soapAction="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirInformationProfessionnel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirProfessionnelsParClasse">
+      <soap:operation soapAction="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirProfessionnelsParClasse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirNumerosPratiqueFiltre">
+      <soap:operation soapAction="http://PLA1_ETR_RechrProf_svc/1/IServRechrProf/ObtenirNumerosPratiqueFiltre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServRechrProf">
+    <wsdl:port name="EndPointService" binding="tns:EndPointService">
+      <soap:address location="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

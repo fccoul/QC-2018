@@ -1,0 +1,68 @@
+﻿@model RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_Derogation
+@using RAMQ.PRE.PL_Prem_iut.Utilitaires;
+
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLA2CSS")
+}
+
+@{
+    ViewData["TitrePage"] = "Annuler la dérogation active";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "AnnulerDerogationForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div role="group" class="collection">
+        <!-- Div contenant le messages informatif -->
+        <div class="row">
+            <div class="col-md-8">
+                <div id="MessageInformation" class="alert alert-info cacher" role="alert">
+                </div>
+            </div>
+        </div>
+        @Html.Hidden("NumeroSequentielDispensateur")
+        @Html.HiddenFor(x => x.IdentiteMedecin)
+        @Html.EditorFor(x => x.NumeroPratique, "TextboxRechercheProfessionnel")
+
+        <dl>
+            <dt>@Html.Label("Type de dérogation")</dt>
+            <dd>
+                @Html.HiddenFor(x=>x.NumeroSequentiel)
+                @Html.HiddenFor(x=>x.Type)
+                <p id="TypeDerogation"></p>
+                <br />
+            </dd>
+            <dt>@Html.Label("DateDebut")</dt>
+            <dd>
+                @Html.HiddenFor(x=>x.DateDebut)
+                <p id="DateDebutDerogation"></p>
+                <br />
+            </dd>
+        </dl>
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.EditorFor(x => x.EstRenseignementConfirmer, "Boolean", new { label = "Je confirme que les renseignements transmis réflète la décision prise." })
+            </div>
+        </div>
+
+        <!-- Bouton -->
+        <div class="row">
+            <div class="form-group col-md-12">
+                <button id="AnnulerDerogation" name="singlebutton" class="btn btn-primary btn-success" type="submit">
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                     Annuler la dérogation
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA2_AnnulerDerogation")
+}
+
+       

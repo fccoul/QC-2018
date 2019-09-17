@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://COD1_V4OutilBase_cpo/2" elementFormDefault="qualified" targetNamespace="http://COD1_V4OutilBase_cpo/2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC2_CnsulProfiPremqProf_svc/ServCnsulProfiPremqProf.svc?xsd=xsd12" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ParamSorti">
+    <xs:sequence>
+      <xs:element name="InfoMsgTrait" nillable="true" type="tns:ArrayOfMsgTrait" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParamSorti" nillable="true" type="tns:ParamSorti" />
+  <xs:complexType name="ArrayOfMsgTrait">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MsgTrait" nillable="true" type="tns:MsgTrait" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMsgTrait" nillable="true" type="tns:ArrayOfMsgTrait" />
+  <xs:complexType name="MsgTrait">
+    <xs:sequence>
+      <xs:element name="CodAppli" nillable="true" type="xs:string" />
+      <xs:element name="IdMsg" nillable="true" type="xs:string" />
+      <xs:element name="CodSever" nillable="true" type="xs:string" />
+      <xs:element name="TxtMsgFran" nillable="true" type="xs:string" />
+      <xs:element name="TxtMsgAngl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MsgTrait" nillable="true" type="tns:MsgTrait" />
+  <xs:complexType name="ExceptionRamq">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="strMessage" nillable="true" type="xs:string" />
+      <xs:element name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExceptionRamq" nillable="true" type="tns:ExceptionRamq" />
+  <xs:complexType name="ParametreSorti">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="InfoMsgTrait" nillable="true" type="q1:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParametreSorti" nillable="true" type="tns:ParametreSorti" />
+</xs:schema>

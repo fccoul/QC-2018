@@ -1,0 +1,93 @@
+﻿@using System.Collections
+@model DateTime?
+@{
+    RouteValueDictionary htmlAttributes = new RouteValueDictionary();
+    string strlabel = "";
+    string gridInputClass = "";
+    string gridLabelClass = "";
+
+    if ((ViewBag.classe) != null)
+    {
+        htmlAttributes.Add("class", ("form-control" + ViewBag.classe));
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control");
+    }
+    if ((ViewBag.type) != null)
+    {
+        htmlAttributes.Add("type", ViewBag.type);
+    }
+    if ((ViewBag.placeholder) != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+    if ((ViewBag.mask) != null)
+    {
+        htmlAttributes.Add("mask", ViewBag.mask);
+    }
+    if ((ViewBag.lectureSeule) != null)
+    {
+        htmlAttributes.Add("readonly", ViewBag.lectureSeule);
+    }
+
+    if ((ViewBag.disabled) != null)
+    {
+        htmlAttributes.Add("disabled", ViewBag.disabled);
+    }
+
+    if ((ViewBag.label) != null)
+    {
+        strlabel = ViewBag.label;
+    }
+
+    string formatedDate = "";
+    if (!string.IsNullOrEmpty(ViewData.TemplateInfo.FormattedModelValue.ToString()))
+    {
+        formatedDate = ((DateTime)ViewData.TemplateInfo.FormattedModelValue).ToString("yyyy-MM-dd");
+    }
+
+    if (ViewBag.gridInputClass != null)
+    {
+        gridInputClass = ViewBag.gridClass;
+    }
+    else
+    {
+        gridInputClass = "col-xs-7 col-sm-3 col-md-3";
+    }
+
+    if (ViewBag.gridLabelClass != null)
+    {
+        gridLabelClass = ViewBag.gridLabelClass;
+    }
+    else
+    {
+        gridLabelClass = "col-xs-7 col-sm-5 col-md-5";
+    }
+
+    // Empêche la liste d'historique de s'afficher
+    htmlAttributes.Add("autocomplete", "off");
+}
+<div class="form-group">
+    <div class="row">
+        <div class="@gridLabelClass">
+            @if (String.IsNullOrWhiteSpace(strlabel))
+            {
+                @Html.LabelFor(x => x, new { @class = "control-label" })
+            }
+            else
+            {
+                @Html.LabelFor(x => x, strlabel, new { @class = "control-label" })
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="@gridInputClass">
+            <div class="input-group date datepicker">
+                @Html.TextBox("", formatedDate, htmlAttributes)
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+            @Html.ValidationMessageFor(x => x, null, new { @class = "help-block" })
+        </div>
+    </div>
+</div>

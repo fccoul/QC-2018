@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" elementFormDefault="qualified" targetNamespace="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" />
+  <xs:element name="AjusterAvisConformiteMedResidents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objParamEntree" nillable="true" type="q1:ParamEntreAjusterAvisConformiteMedResidents" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterAvisConformiteMedResidentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="AjusterAvisConformiteMedResidentsResult" nillable="true" type="q2:ParamSortiAjusterAvisConformiteMedResidents" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterAdmissibiliteDuProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objParamEntree" nillable="true" type="q3:ParamEntreTraiterAdmissProf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterAdmissibiliteDuProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="TraiterAdmissibiliteDuProfessionnelResult" nillable="true" type="q4:ParamSortiTraiterAdmissProf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagAjouNonPartn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="param" nillable="true" type="q5:AjusEngagAjouNonPartnEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagAjouNonPartnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="AjusterEngagAjouNonPartnResult" nillable="true" type="q6:AjusEngagAjouNonPartnSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagModifNonPartn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="param" nillable="true" type="q7:AjusEngagModifNonPartnEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagModifNonPartnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="AjusterEngagModifNonPartnResult" nillable="true" type="q8:AjusEngagModifNonPartnSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagAnnuNonPartn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="param" nillable="true" type="q9:AjusEngagAnnuNonPartnEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagAnnuNonPartnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="AjusterEngagAnnuNonPartnResult" nillable="true" type="q10:AjusEngagAnnuNonPartnSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagDeces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="param" nillable="true" type="q11:AjusEngagDecesEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagDecesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="AjusterEngagDecesResult" nillable="true" type="q12:AjusEngagDecesSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagDdSpecInscr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="param" nillable="true" type="q13:AjusEngagDdSpecInscrEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AjusterEngagDdSpecInscrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" minOccurs="0" name="AjusterEngagDdSpecInscrResult" nillable="true" type="q14:AjusEngagDdSpecInscrSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

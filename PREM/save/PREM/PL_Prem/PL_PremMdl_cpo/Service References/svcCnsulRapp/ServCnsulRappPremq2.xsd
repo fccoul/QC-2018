@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" elementFormDefault="qualified" targetNamespace="http://www.ramq.gouv.qc.ca/PRE/NomSignificatif" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLC_EffectuerSuiviPremq/PLC1_CnsulRappPremq_svc/ServCnsulRappPremq.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" />
+  <xs:element name="ObtenirRapportNonRespAvisConfFichier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q1:ParamObtnrRappNonRespAvisConf" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" minOccurs="0" name="enumTypeFichier" type="q2:Enumerations.TypeFichierSortieRapport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportNonRespAvisConfFichierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportNonRespAvisConfFichierResult" nillable="true" type="q3:ParamObtnRapportFichierSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportNonRespAvisConfWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q4:ParamObtnrRappNonRespAvisConf" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportNonRespAvisConfWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportNonRespAvisConfWebResult" nillable="true" type="q5:ParamObtnRapportWebSortiOfLigneRapportNonRespAvisConf9P3lnhZo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportDerogPratiExcluFichier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q6:ParamObtnrRappDerogPratiExclu" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" minOccurs="0" name="enumTypeFichier" type="q7:Enumerations.TypeFichierSortieRapport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportDerogPratiExcluFichierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportDerogPratiExcluFichierResult" nillable="true" type="q8:ParamObtnRapportFichierSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportDerogPratiExcluWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q9:ParamObtnrRappDerogPratiExclu" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportDerogPratiExcluWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportDerogPratiExcluWebResult" nillable="true" type="q10:ParamObtnRapportWebSortiOfLigneRapportDerogPratiExclu9P3lnhZo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportExerNonAutoRPPRFichier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q11:ParamObtnrRappExerNonAutoRPPR" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" minOccurs="0" name="enumTypeFichier" type="q12:Enumerations.TypeFichierSortieRapport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportExerNonAutoRPPRFichierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportExerNonAutoRPPRFichierResult" nillable="true" type="q13:ParamObtnRapportFichierSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportExerNonAutoRPPRWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q14:ParamObtnrRappExerNonAutoRPPR" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportExerNonAutoRPPRWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportExerNonAutoRPPRWebResult" nillable="true" type="q15:ParamObtnRapportWebSortiOfLigneRapportExerNonAutoRPPR9P3lnhZo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportRepartInterRegionPratiFichier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q16:ParamObtnrRappRepartInterRegionPrati" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" minOccurs="0" name="enumTypeFichier" type="q17:Enumerations.TypeFichierSortieRapport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportRepartInterRegionPratiFichierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportRepartInterRegionPratiFichierResult" nillable="true" type="q18:ParamObtnRapportFichierSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportRepartInterRegionPratiWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="intrant" nillable="true" type="q19:ParamObtnrRappRepartInterRegionPrati" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirRapportRepartInterRegionPratiWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Rapport.Parametre" minOccurs="0" name="ObtenirRapportRepartInterRegionPratiWebResult" nillable="true" type="q20:ParamObtnRapportWebSortiOfLigneRapportRepartInterRegionPrati9P3lnhZo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

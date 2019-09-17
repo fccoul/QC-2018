@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PLA1_ETR_RechrProf_svc/1" elementFormDefault="qualified" targetNamespace="http://PLA1_ETR_RechrProf_svc/1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite" />
+  <xs:element name="ObtenirInformationProfessionnel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="intrant" nillable="true" type="q1:ObtenirDispensateurIndividuEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirInformationProfessionnelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre" minOccurs="0" name="ObtenirInformationProfessionnelResult" nillable="true" type="q2:ObtenirDispensateurIndividuSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirProfessionnelsParClasse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="classe" nillable="true" type="q3:ArrayOfint" />
+        <xs:element minOccurs="0" name="filtreSpecialPourCreationAvis" type="xs:boolean" />
+        <xs:element minOccurs="0" name="miseAJour" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirProfessionnelsParClasseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite" minOccurs="0" name="ObtenirProfessionnelsParClasseResult" nillable="true" type="q4:Professionnels" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirNumerosPratiqueFiltre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="classe" nillable="true" type="q5:ArrayOfint" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite" minOccurs="0" name="filtre" nillable="true" type="q6:Critere" />
+        <xs:element minOccurs="0" name="filtreSpecialPourCreationAvis" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirNumerosPratiqueFiltreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Recherche.Entite" minOccurs="0" name="ObtenirNumerosPratiqueFiltreResult" nillable="true" type="q7:Resultat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

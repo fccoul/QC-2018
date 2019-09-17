@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PRE_FournAccesDonne_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne">
+            <summary>
+             Classe pour qui encapsuler les appels à la COC2_AccesDonne.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne._clientFuncAccesDonnesOra">
+            <summary>
+            Fonction permettant la création de l'AccesDonnesOra
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ClientAccesDonnesOra">
+            <summary>
+             Propriete servant à faire les appels à la base de données.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne._codeApplication">
+            <summary>
+             Code de l'application.
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne._codeRetourErreurImprevu">
+            <summary>
+             Code de retour lors d'un erreur imprévu.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.#ctor(System.Func{RAMQ.AccesDonnees.BDOracle.IAccesDonnesOra},System.String,System.String)">
+            <summary>
+             Constructeur permettant de créer une nouvelle instance de l'accès au données.
+            </summary>
+            <param name="clientFuncAccesDonneOracle">Objet de connexion à la base de données.</param>
+            <param name="codeApplication">Code de l'application, utilise "PRE" par défaut.</param>
+            <param name="codeRetourImprevu">Code de retour pour une erreur imprévue, "40758" par défaut.</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ExecuterProcedure``2(``0,System.String,System.String)">
+            <summary>
+             Permet de lancer l'exécution de la procédure par le biais de COC2.
+            </summary>
+            <typeparam name="TEntre">Type de la classe d'entrée.</typeparam>
+            <typeparam name="TSorti">Type de la classe de sortie.</typeparam>
+            <param name="parametreEntrer">Instance de la classe d'entrée.</param>
+            <param name="nomProcedure">Nom de la procédure à appeler.</param>
+            <param name="nomParametreRetour">
+             Nom du paramètre de code de retour (par défaut "pVchrCodRetou").</param>
+            <returns>Instance de la classe de sortie.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ExecuterProcedure``1(System.String,System.String)">
+            <summary>
+             Permet de lancer l'exécution de la procédure par le biais de COC2.
+            </summary>
+            <typeparam name="TSorti">Type de la classe de sortie.</typeparam>
+            <param name="nomProcedure">Nom de la procédure à appeler.</param>
+            <param name="nomParametreRetour">
+             Nom du paramètre de code de retour (par défaut "pVchrCodRetou").</param>
+            <returns>Instance de la classe de sortie.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ExecuterRequeteSQL``1(System.String)">
+            <summary>
+             Permet de lancer une requête SQL.
+            </summary>
+            <typeparam name="T">Type de la liste d'objet métier en sortie.</typeparam>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ExecuterRequeteSQL``1(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+             Permet de lancer une requête SQL avec paramètre.
+            </summary>
+            <typeparam name="T">Type de la liste d'objet métier en sortie.</typeparam>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <param name="parametres">Collection de paramètres.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ExecuterRequeteSQLAvecRetour``1(System.String)">
+            <summary>
+             Permet de lancer une requête SQL qui retourne une seul ligne possédant qu'une colonne.
+            </summary>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.AccesDonne.ExecuterRequeteSQLAvecRetour``1(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+             Permet de lancer une requête SQL qui retourne une seul ligne possédant qu'une colonne.
+            </summary>
+            <param name="requeteSQL">Requête sql en format texte.</param>
+            <param name="parametres">Collection de paramètres.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_FournAccesDonne_cpo.Constantes">
+            <summary>
+             Classe de constantes.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.Constantes.#ctor">
+            <summary>
+             Constructeur privé qui empêche l'instantiation.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_FournAccesDonne_cpo.Constantes.CodeApplication">
+            <summary>
+             Code d'application (PPP) du programme.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_FournAccesDonne_cpo.Constantes.NomParametreRetourDefaut">
+            <summary>
+             Nom du paramètre de retour généralement utilisé par les méthodes Oracle.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_FournAccesDonne_cpo.Constantes.ErreurImprevu">
+            <summary>
+             Code d'erreur imprévue de PRE.
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne">
+            <summary>
+             Interface pour qui encapsule les appels à la COC2_AccesDonne.
+            </summary>
+            <remarks>
+             Auteur : Sébastien Bourdages
+             Date   : Décembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne.ExecuterProcedure``2(``0,System.String,System.String)">
+            <summary>
+             Permet de lancer l'exécution de la procédure par le biais de COC2.
+            </summary>
+            <typeparam name="TEntre">Type de la classe d'entrée.</typeparam>
+            <typeparam name="TSorti">Type de la classe de sortie.</typeparam>
+            <param name="parametreEntre">Instance de la classe d'entrée.</param>
+            <param name="nomProcedure">Nom de la procédure à appeler.</param>
+            <param name="nomParametreRetour">
+             Nom du paramètre de code de retour (par défaut "pVchrCodRetou").</param>
+            <returns>Instance de la classe de sortie.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne.ExecuterProcedure``1(System.String,System.String)">
+            <summary>
+             Permet de lancer l'exécution de la procédure par le biais de COC2.
+            </summary>
+            <typeparam name="TSorti">Type de la classe de sortie.</typeparam>
+            <param name="nomProcedure">Nom de la procédure à appeler.</param>
+            <param name="nomParametreRetour">
+             Nom du paramètre de code de retour (par défaut "pVchrCodRetou").</param>
+            <returns>Instance de la classe de sortie.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne.ExecuterRequeteSQL``1(System.String)">
+            <summary>
+             Permet de lancer une requête SQL.
+            </summary>
+            <typeparam name="T">Type de la liste d'objet métier en sortie.</typeparam>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne.ExecuterRequeteSQL``1(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+             Permet de lancer une requête SQL avec paramètre.
+            </summary>
+            <typeparam name="T">Type de la liste d'objet métier en sortie.</typeparam>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <param name="parametres">Collection de paramètres.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne.ExecuterRequeteSQLAvecRetour``1(System.String)">
+            <summary>
+             Permet de lancer une requête SQL qui retourne une seul ligne possédant qu'une colonne.
+            </summary>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.IAccesDonne.ExecuterRequeteSQLAvecRetour``1(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+             Permet de lancer une requête SQL qui retourne une seul ligne possédant qu'une colonne.
+            </summary>
+            <param name="requeteSQL">Requête SQL en format texte.</param>
+            <param name="parametres">Collection de paramètres.</param>
+            <returns>Résultat de la requête.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_FournAccesDonne_cpo.SingletonAccesDonnesOra">
+            <summary>
+            Classe permettant d'avoir une seul instance d'AccesDonnesOra
+            </summary>
+            <remarks>
+            Cette classe devra être détruite lorsqu'une solution plus élégante sera mise en place
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_FournAccesDonne_cpo.SingletonAccesDonnesOra.ConnexionOracle">
+            <summary>
+            Connexion Oracle
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.SingletonAccesDonnesOra.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_FournAccesDonne_cpo.SingletonAccesDonnesOra.Instance">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

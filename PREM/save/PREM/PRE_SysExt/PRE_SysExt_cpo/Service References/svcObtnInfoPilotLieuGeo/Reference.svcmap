@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="410c64c8-b5ba-4471-8765-6995897059bd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo.xsd" MetadataType="Schema" ID="8b146305-83b8-445a-9844-4c01f74519eb" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo1.xsd" MetadataType="Schema" ID="c261b463-0923-4d9d-91fe-385d712d48bc" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo.wsdl" MetadataType="Wsdl" ID="a9c8a452-5a8d-4ad5-900a-3bca23fd5dda" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?wsdl" />
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo2.xsd" MetadataType="Schema" ID="6dce5615-8f54-430b-b4e8-a19c8f0701b4" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo3.xsd" MetadataType="Schema" ID="a471c6fc-d952-46a3-99b4-1dadb6bc795f" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo4.xsd" MetadataType="Schema" ID="e89b6e22-cbfa-4d61-a07f-a5679b0f6683" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServObtnInfoPilotLieuGeo.disco" MetadataType="Disco" ID="5075eed9-6c7e-4f99-a62e-ea0ed7d2db31" SourceId="1" SourceUrl="http://nlb-unit-app4/GEOAPP/SO/SOD_ObtnInfoPilotLieuGeo/SOD1_ObtnInfoPilotLieuGeo_svc/ServObtnInfoPilotLieuGeo.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

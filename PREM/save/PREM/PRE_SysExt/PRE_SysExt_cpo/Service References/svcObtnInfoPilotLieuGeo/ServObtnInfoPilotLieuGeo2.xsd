@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.GEO.SOD1_ObtnInfoPilotLieuGeo_cpo.Entite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.GEO.SOD1_ObtnInfoPilotLieuGeo_cpo.Entite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRegroupement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Regroupement" nillable="true" type="tns:Regroupement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegroupement" nillable="true" type="tns:ArrayOfRegroupement" />
+  <xs:complexType name="Regroupement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeRegroupement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebut" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureCreationOccurence" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureInactivationOccurence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdUtilInact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifiantUtilisateurCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroNiveau" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroSequenceDocumentOfficiel" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequenceRegroupement" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequenceResponsable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeRegroupement" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Regroupement" nillable="true" type="tns:Regroupement" />
+  <xs:complexType name="ArrayOfLieuGeographique">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LieuGeographique" nillable="true" type="tns:LieuGeographique" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLieuGeographique" nillable="true" type="tns:ArrayOfLieuGeographique" />
+  <xs:complexType name="LieuGeographique">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebut" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureCreationOccurence" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureInactivationOccurence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdUtilInact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifianUtilisateurCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NomLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequence" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequenceRegroupement" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LieuGeographique" nillable="true" type="tns:LieuGeographique" />
+</xs:schema>

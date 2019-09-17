@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{04096528-6575-4AF2-8B44-D09930339465}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PL_LogiqueAffaire_cpo</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PL_LogiqueAffaire_cpo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Debug\RAMQ.PRE.PL_LogiqueAffaire_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Release\RAMQ.PRE.PL_LogiqueAffaire_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.AGS.YRY3_FournCleChifm_cpo, Version=2.1.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.AGS.YRY3_FournCleChifm.2.1.1\lib\NET45\RAMQ.AGS.YRY3_FournCleChifm_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC1_V4DonneComne_cpo, Version=2.2.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.2.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC2_V4FournAccesDonne_cpo, Version=2.3.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_JetonAuthn_cpo, Version=1.2.3.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.8.6.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.6\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD2_V4GestCache_cpo, Version=2.2.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.2.1\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COE1_V4Documents_cpo, Version=2.0.22.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COE1_V4Documents.2.0.22\lib\NET45\RAMQ.COM.COE1_V4Documents_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_AccesDonne_cpo, Version=1.0.136.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_AccesDonne.1.0.136\lib\NET45\RAMQ.PRE.PRE_AccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_Entites_cpo, Version=1.0.152.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.152\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_FournAccesDonne_cpo, Version=1.0.12.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_FournAccesDonne.1.0.12\lib\NET45\RAMQ.PRE.PRE_FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_OutilComun_cpo, Version=1.0.58.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_OutilComun.1.0.58\lib\NET45\RAMQ.PRE.PRE_OutilComun_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_SysExt_cpo, Version=1.0.37.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_SysExt.1.0.37\lib\NET45\RAMQ.PRE.PRE_SysExt_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbsenceAvis\AbsenceAvis.cs" />
+    <Compile Include="AbsenceAvis\IAbsenceAvis.cs" />
+    <Compile Include="Admissibilite\Admissibilite.cs" />
+    <Compile Include="Admissibilite\IAdmissibilite.cs" />
+    <Compile Include="Autorisation\Autorisation.cs" />
+    <Compile Include="Autorisation\IAutorisation.cs" />
+    <Compile Include="Autorisation\IAutorisationExtensions.cs" />
+    <Compile Include="AvisConformite\AvisConformite.cs" />
+    <Compile Include="AvisConformite\IAvisConformite.cs" />
+    <Compile Include="CaracteristiquePratique\CaracteristiquePratique.cs" />
+    <Compile Include="CaracteristiquePratique\ICaracteristiquePratique.cs" />
+    <Compile Include="DemandeReevaluation\DemandeReevaluation.cs" />
+    <Compile Include="DemandeReevaluation\IDemandeReevaluation.cs" />
+    <Compile Include="Derogation\Derogation.cs" />
+    <Compile Include="Derogation\IDerogation.cs" />
+    <Compile Include="Entites\Autorisation.cs" />
+    <Compile Include="GenerationPDF\GenerationGabaritXSL\GenerateurGabaritXSL.cs" />
+    <Compile Include="GenerationPDF\GenerationGabaritXSL\IGenerateurGabaritXSL.cs" />
+    <Compile Include="GenerationPDF\GenerateurPDF.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ChaineXmlBrute.cs" />
+    <Compile Include="GenerationPDF\IGenerateurPDF.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationAvisConformite\ConfirmationAvisConformiteXmlBuilder.cs" />
+    <Compile Include="GenerationPDF\CheminReseauGabarit\CheminGabarit.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationAvisConformite\GabaritConfirmationAvisConformite.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationModificationSuspension\GabaritConfirmationModificationSuspension.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationSuspension\GabaritConfirmationSuspension.cs" />
+    <Compile Include="GenerationPDF\CheminReseauGabarit\ICheminGabarit.cs" />
+    <Compile Include="GenerationPDF\CheminReseauGabarit\ILecteurConfiguration.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ISerialiseurXml.cs" />
+    <Compile Include="GenerationPDF\CheminReseauGabarit\LecteurConfiguration.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationAvisConformite\PageConfirmationAvisConformite.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationModificationSuspension\PageConfirmationModificationSuspension.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationSuspension\PageConfirmationSuspension.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Colonne1.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationDerogation\ConfirmationDerogationXmlBuilder.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationDerogation\GabaritConfirmationDerogation.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\IXmlBuilderFactory.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\IXmlBuilder.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Ligne1.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationModificationSuspension\ConfirmationModificationSuspensionXmlBuilder.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationDerogation\PageConfirmationDerogation.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite1.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite2.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite3.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite4.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite5.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite6.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite7.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite8.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\Priorite\Priorite9.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\SerialiseurXml.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\Gabarits\ConfirmationSuspension\ConfirmationSuspensionXmlBuilder.cs" />
+    <Compile Include="GenerationPDF\TypeGabarit.cs" />
+    <Compile Include="GenerationPDF\GenerationXmlGabarit\XmlBuilderFactory.cs" />
+    <Compile Include="GenerationPDF\ValidateurParametreObligatoire.cs" />
+    <Compile Include="Parametres\ObtenirLesAutorisationsProfessionnelEntre.cs" />
+    <Compile Include="Parametres\ObtenirLesAutorisationsProfessionnelSorti.cs" />
+    <Compile Include="Professionnel\EngagementAbsence.cs" />
+    <Compile Include="Professionnel\IEngagementAbence.cs" />
+    <Compile Include="Professionnel\IRechercherProfessionnel.cs" />
+    <Compile Include="Professionnel\RechercherProfessionnel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapport\IRapport.cs" />
+    <Compile Include="Rapport\Rapport.cs" />
+    <Compile Include="Utilitaire\Mappeur.cs" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="RAMQ.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

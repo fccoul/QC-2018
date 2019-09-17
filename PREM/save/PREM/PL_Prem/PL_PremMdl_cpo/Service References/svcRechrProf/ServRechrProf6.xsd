@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Collections.Generic" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_ETR_RechrProf_svc/ServRechrProf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfKeyValuePairOfNullableOflongstringRDHGY3MA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValuePairOfNullableOflongstringRDHGY3MA" type="tns:KeyValuePairOfNullableOflongstringRDHGY3MA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValuePairOfNullableOflongstringRDHGY3MA" nillable="true" type="tns:ArrayOfKeyValuePairOfNullableOflongstringRDHGY3MA" />
+  <xs:complexType name="KeyValuePairOfNullableOflongstringRDHGY3MA">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="KeyValuePairOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="NullableOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System">
+            <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="key" nillable="true" type="xs:long" />
+      <xs:element name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyValuePairOfNullableOflongstringRDHGY3MA" nillable="true" type="tns:KeyValuePairOfNullableOflongstringRDHGY3MA" />
+</xs:schema>

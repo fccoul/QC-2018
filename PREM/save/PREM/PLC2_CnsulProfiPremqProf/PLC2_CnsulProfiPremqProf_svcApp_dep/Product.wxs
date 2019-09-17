@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Codes.wxi?>
+<?include RAMQ.GCD.Var.wxi?>
+<?include PLC2_CnsulProfiPremqProf_svc.Var.wxi?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="$(var.RAMQ.GCD.BranchePrinc.ProductCode)"
+           Name="PLC2_CnsulProfiPremqProf_svcApp_dep"
+           Language="1036"
+           Version="$(var.PLC2_CnsulProfiPremqProf_svc.Version)"
+           Manufacturer="RAMQ"
+           UpgradeCode="$(var.RAMQ.GCD.BranchePrinc.UpgradeCode)">
+
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Exemple de définition des répertoires cibles -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="CHEMINAPPLI" Name="CHEMINAPPLI" ComponentGuidGenerationSeed="5d272994-2b7e-42b1-b560-353c8c3cb89e">
+        <Directory Id="PPP" Name="PREAPP" ComponentGuidGenerationSeed="fb764a1a-2aee-480a-9ef6-497a1cc07acd">
+          <Directory Id="SS" Name="PL" ComponentGuidGenerationSeed="76baece0-73b0-4b9f-8e13-d0ff79d55fd5">
+            <Directory Id="SSF" Name="PLC_EffectuerSuiviPremq">
+              <Directory Id="SSFU" Name="PLC2_CnsulProfiPremqProf_svc">
+                <Directory Id="BinFolder" Name="bin"></Directory>
+              </Directory>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <ComponentGroup Id="ProductComponentRef">
+
+      <!-- Copie des fichiers du bin (SVC) -->
+      <Component Id="BinSvc" Directory="BinFolder">
+        <File Id="BinSvc.Output"
+              Name="$(var.PLC2_CnsulProfiPremqProf_svc.TargetFileName)"
+              Source="$(var.PLC2_CnsulProfiPremqProf_svc.TargetPath)" />
+      </Component>
+
+      <!-- Copie des fichiers du bin (CPO) -->
+      <Component Id="BinCpo" Directory="BinFolder">
+        <File Id="BinCpo.Output"
+              Name="$(var.PLC2_CnsulProfiPremqProf_cpo.TargetFileName)"
+              Source="$(var.PLC2_CnsulProfiPremqProf_cpo.TargetPath)" />
+      </Component>
+      
+    </ComponentGroup>
+
+    <Feature Id="ProductFeature" Title="PLC2_CnsulProfiPremqProf_svc" Level="1">
+      <!-- Copie des fichiers des projets -->
+      <ComponentGroupRef Id="ProductComponentRef" />
+      <!-- Copie des fichiers dont le Build Action est à "Content" -->
+      <ComponentGroupRef Id="PLC2_CnsulProfiPremqProf_svc.Content" />
+      <!-- Pour les projets ayant des références NuGet, copie des fichiers en référence -->
+      <ComponentGroupRef Id="PLC2_CnsulProfiPremqProf_svc.DllRefreNuget" />
+    </Feature>
+
+  </Product>
+
+</Wix>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://PLA2_SaisDecisAvisConf_svc/1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServSaisDecisAvisConf" targetNamespace="http://PLA2_SaisDecisAvisConf_svc/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://PLA2_SaisDecisAvisConf_svc/1/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd0" namespace="http://PLA2_SaisDecisAvisConf_svc/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.DecisionAvisConformite.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation.Param" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationSuspension.Param" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationSuspension" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterDerogationAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterDerogationAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterDerogationAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterDerogationAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterDerogationAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://COD1_V4OutilBase_cpo/2" name="detail" element="q1:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterSuspensionAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterSuspensionAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterSuspensionAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterSuspensionAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterSuspensionAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://COD1_V4OutilBase_cpo/2" name="detail" element="q2:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterAnnulationDerogation_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterAnnulationDerogation" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterAnnulationDerogation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterAnnulationDerogationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_TraiterAnnulationDerogation_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://COD1_V4OutilBase_cpo/2" name="detail" element="q3:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirDerogations_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirDerogations" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirDerogations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirDerogationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirDerogations_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://COD1_V4OutilBase_cpo/2" name="detail" element="q4:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirGabaritConfirmationDerog_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirGabaritConfirmationDerog" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirGabaritConfirmationDerog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirGabaritConfirmationDerogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirGabaritConfirmationDerog_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://COD1_V4OutilBase_cpo/2" name="detail" element="q5:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirGabaritConfirmationSusp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirGabaritConfirmationSusp" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirGabaritConfirmationSusp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirGabaritConfirmationSuspResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisDecisAvisConf_ObtenirGabaritConfirmationSusp_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://COD1_V4OutilBase_cpo/2" name="detail" element="q6:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IServSaisDecisAvisConf">
+    <wsdl:operation name="TraiterDerogationAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterDerogationAvisConformite" message="tns:IServSaisDecisAvisConf_TraiterDerogationAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterDerogationAvisConformiteResponse" message="tns:IServSaisDecisAvisConf_TraiterDerogationAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterDerogationAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisDecisAvisConf_TraiterDerogationAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraiterSuspensionAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterSuspensionAvisConformite" message="tns:IServSaisDecisAvisConf_TraiterSuspensionAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterSuspensionAvisConformiteResponse" message="tns:IServSaisDecisAvisConf_TraiterSuspensionAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterSuspensionAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisDecisAvisConf_TraiterSuspensionAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraiterAnnulationDerogation">
+      <wsdl:input wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterAnnulationDerogation" message="tns:IServSaisDecisAvisConf_TraiterAnnulationDerogation_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterAnnulationDerogationResponse" message="tns:IServSaisDecisAvisConf_TraiterAnnulationDerogation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterAnnulationDerogationExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisDecisAvisConf_TraiterAnnulationDerogation_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDerogations">
+      <wsdl:input wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirDerogations" message="tns:IServSaisDecisAvisConf_ObtenirDerogations_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirDerogationsResponse" message="tns:IServSaisDecisAvisConf_ObtenirDerogations_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirDerogationsExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisDecisAvisConf_ObtenirDerogations_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirGabaritConfirmationDerog">
+      <wsdl:input wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationDerog" message="tns:IServSaisDecisAvisConf_ObtenirGabaritConfirmationDerog_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationDerogResponse" message="tns:IServSaisDecisAvisConf_ObtenirGabaritConfirmationDerog_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationDerogExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisDecisAvisConf_ObtenirGabaritConfirmationDerog_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirGabaritConfirmationSusp">
+      <wsdl:input wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationSusp" message="tns:IServSaisDecisAvisConf_ObtenirGabaritConfirmationSusp_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationSuspResponse" message="tns:IServSaisDecisAvisConf_ObtenirGabaritConfirmationSusp_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationSuspExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisDecisAvisConf_ObtenirGabaritConfirmationSusp_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointService" type="tns:IServSaisDecisAvisConf">
+    <wsp:PolicyReference URI="#EndPointService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TraiterDerogationAvisConformite">
+      <soap:operation soapAction="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterDerogationAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TraiterSuspensionAvisConformite">
+      <soap:operation soapAction="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterSuspensionAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TraiterAnnulationDerogation">
+      <soap:operation soapAction="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/TraiterAnnulationDerogation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirDerogations">
+      <soap:operation soapAction="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirDerogations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirGabaritConfirmationDerog">
+      <soap:operation soapAction="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationDerog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirGabaritConfirmationSusp">
+      <soap:operation soapAction="http://PLA2_SaisDecisAvisConf_svc/1/IServSaisDecisAvisConf/ObtenirGabaritConfirmationSusp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServSaisDecisAvisConf">
+    <wsdl:port name="EndPointService" binding="tns:EndPointService">
+      <soap:address location="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA2_SaisDecisAvisConf_svc/ServSaisDecisAvisConf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

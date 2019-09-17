@@ -1,0 +1,32 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLC2_ProfilProfessionnel.PLC2_RepartitionPratique
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.EditorFor(x => x.AnneeRepartition, "DropDownList", new { classe = "select2dropdownlist", label = "Année", data = Model.AnneesRepartition })
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        @Html.EditorFor(x => x.EngagementPratiqueRepartition, "DropDownList", new { classe = "select2dropdownlist", label = "Engagement" })
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+       @Html.EditorFor(x => x.Pratique, "DropDownList", new { classe = "select2dropdownlist", label = "Pratique", data = Model.Pratiques })
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="InformationEngagementRepartitionPratique">
+        
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12" id="ZoneTableauRepartition">
+    </div>
+    <div class="col-md-12" id="ZoneMessage">
+    </div>
+</div>
+
+
+

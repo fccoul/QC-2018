@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://PLA5_SaisAutorActivMdcal_svc/1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServSaisAutorActivMdcal" targetNamespace="http://PLA5_SaisAutorActivMdcal_svc/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://PLA5_SaisAutorActivMdcal_svc/1/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd0" namespace="http://PLA5_SaisAutorActivMdcal_svc/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" />
+      <xsd:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Entites" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServSaisAutorActivMdcal_ObtenirListeAutorisation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirListeAutorisation" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_ObtenirListeAutorisation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirListeAutorisationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_ObtenirListeAutorisation_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://COD1_V4OutilBase_cpo/2" name="detail" element="q1:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_CreerAutorisationPREMQ_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreerAutorisationPREMQ" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_CreerAutorisationPREMQ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreerAutorisationPREMQResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_CreerAutorisationPREMQ_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://COD1_V4OutilBase_cpo/2" name="detail" element="q2:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_AnnulerAutorisationPREMQ_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnnulerAutorisationPREMQ" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_AnnulerAutorisationPREMQ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnnulerAutorisationPREMQResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_AnnulerAutorisationPREMQ_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://COD1_V4OutilBase_cpo/2" name="detail" element="q3:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_ProlongerAutorisationPREMQ_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProlongerAutorisationPREMQ" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_ProlongerAutorisationPREMQ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProlongerAutorisationPREMQResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAutorActivMdcal_ProlongerAutorisationPREMQ_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://COD1_V4OutilBase_cpo/2" name="detail" element="q4:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IServSaisAutorActivMdcal">
+    <wsdl:operation name="ObtenirListeAutorisation">
+      <wsdl:input wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ObtenirListeAutorisation" message="tns:IServSaisAutorActivMdcal_ObtenirListeAutorisation_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ObtenirListeAutorisationResponse" message="tns:IServSaisAutorActivMdcal_ObtenirListeAutorisation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ObtenirListeAutorisationExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAutorActivMdcal_ObtenirListeAutorisation_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreerAutorisationPREMQ">
+      <wsdl:input wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/CreerAutorisationPREMQ" message="tns:IServSaisAutorActivMdcal_CreerAutorisationPREMQ_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/CreerAutorisationPREMQResponse" message="tns:IServSaisAutorActivMdcal_CreerAutorisationPREMQ_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/CreerAutorisationPREMQExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAutorActivMdcal_CreerAutorisationPREMQ_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnnulerAutorisationPREMQ">
+      <wsdl:input wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/AnnulerAutorisationPREMQ" message="tns:IServSaisAutorActivMdcal_AnnulerAutorisationPREMQ_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/AnnulerAutorisationPREMQResponse" message="tns:IServSaisAutorActivMdcal_AnnulerAutorisationPREMQ_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/AnnulerAutorisationPREMQExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAutorActivMdcal_AnnulerAutorisationPREMQ_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProlongerAutorisationPREMQ">
+      <wsdl:input wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ProlongerAutorisationPREMQ" message="tns:IServSaisAutorActivMdcal_ProlongerAutorisationPREMQ_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ProlongerAutorisationPREMQResponse" message="tns:IServSaisAutorActivMdcal_ProlongerAutorisationPREMQ_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ProlongerAutorisationPREMQExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAutorActivMdcal_ProlongerAutorisationPREMQ_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointService" type="tns:IServSaisAutorActivMdcal">
+    <wsp:PolicyReference URI="#EndPointService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenirListeAutorisation">
+      <soap:operation soapAction="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ObtenirListeAutorisation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreerAutorisationPREMQ">
+      <soap:operation soapAction="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/CreerAutorisationPREMQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AnnulerAutorisationPREMQ">
+      <soap:operation soapAction="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/AnnulerAutorisationPREMQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProlongerAutorisationPREMQ">
+      <soap:operation soapAction="http://PLA5_SaisAutorActivMdcal_svc/1/IServSaisAutorActivMdcal/ProlongerAutorisationPREMQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServSaisAutorActivMdcal">
+    <wsdl:port name="EndPointService" binding="tns:EndPointService">
+      <soap:address location="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

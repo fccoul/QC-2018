@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://PLA1_SaisAvisConf_svc/1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServSaisAvisConf" targetNamespace="http://PLA1_SaisAvisConf_svc/1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="EndPointService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://PLA1_SaisAvisConf_svc/1/Imports">
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd0" namespace="http://PLA1_SaisAvisConf_svc/1" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA1_SaisAvisConf_cpo.Gabarit.Param" />
+      <xsd:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA1_SaisAvisConf_cpo.Gabarit" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServSaisAvisConf_CreerAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreerAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_CreerAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreerAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_CreerAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://COD1_V4OutilBase_cpo/2" name="detail" element="q1:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_CreerStatutAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreerStatutAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_CreerStatutAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreerStatutAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_CreerStatutAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://COD1_V4OutilBase_cpo/2" name="detail" element="q2:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://COD1_V4OutilBase_cpo/2" name="detail" element="q3:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ObtenirLesAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirLesAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ObtenirLesAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirLesAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ObtenirLesAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://COD1_V4OutilBase_cpo/2" name="detail" element="q4:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierPeriodeAvis_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierPeriodeAvis" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierPeriodeAvis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierPeriodeAvisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierPeriodeAvis_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://COD1_V4OutilBase_cpo/2" name="detail" element="q5:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_TraiterAvisConformite_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterAvisConformite" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_TraiterAvisConformite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraiterAvisConformiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_TraiterAvisConformite_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://COD1_V4OutilBase_cpo/2" name="detail" element="q6:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ValidationAvisDerogationEnCours_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidationAvisDerogationEnCours" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ValidationAvisDerogationEnCours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidationAvisDerogationEnCoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ValidationAvisDerogationEnCours_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://COD1_V4OutilBase_cpo/2" name="detail" element="q7:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierStatutEngagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierStatutEngagement" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierStatutEngagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifierStatutEngagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ModifierStatutEngagement_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://COD1_V4OutilBase_cpo/2" name="detail" element="q8:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ObtenirGabaritConfirmation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirGabaritConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ObtenirGabaritConfirmation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenirGabaritConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServSaisAvisConf_ObtenirGabaritConfirmation_ExceptionRamqIntrnFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://COD1_V4OutilBase_cpo/2" name="detail" element="q9:ExceptionRamqIntrn" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IServSaisAvisConf">
+    <wsdl:operation name="CreerAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerAvisConformite" message="tns:IServSaisAvisConf_CreerAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerAvisConformiteResponse" message="tns:IServSaisAvisConf_CreerAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_CreerAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreerStatutAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerStatutAvisConformite" message="tns:IServSaisAvisConf_CreerStatutAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerStatutAvisConformiteResponse" message="tns:IServSaisAvisConf_CreerStatutAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerStatutAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_CreerStatutAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierAvisConformite" message="tns:IServSaisAvisConf_ModifierAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierAvisConformiteResponse" message="tns:IServSaisAvisConf_ModifierAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_ModifierAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirLesAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirLesAvisConformite" message="tns:IServSaisAvisConf_ObtenirLesAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirLesAvisConformiteResponse" message="tns:IServSaisAvisConf_ObtenirLesAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirLesAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_ObtenirLesAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierPeriodeAvis">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierPeriodeAvis" message="tns:IServSaisAvisConf_ModifierPeriodeAvis_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierPeriodeAvisResponse" message="tns:IServSaisAvisConf_ModifierPeriodeAvis_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierPeriodeAvisExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_ModifierPeriodeAvis_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraiterAvisConformite">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/TraiterAvisConformite" message="tns:IServSaisAvisConf_TraiterAvisConformite_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/TraiterAvisConformiteResponse" message="tns:IServSaisAvisConf_TraiterAvisConformite_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/TraiterAvisConformiteExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_TraiterAvisConformite_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidationAvisDerogationEnCours">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ValidationAvisDerogationEnCours" message="tns:IServSaisAvisConf_ValidationAvisDerogationEnCours_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ValidationAvisDerogationEnCoursResponse" message="tns:IServSaisAvisConf_ValidationAvisDerogationEnCours_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ValidationAvisDerogationEnCoursExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_ValidationAvisDerogationEnCours_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifierStatutEngagement">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierStatutEngagement" message="tns:IServSaisAvisConf_ModifierStatutEngagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierStatutEngagementResponse" message="tns:IServSaisAvisConf_ModifierStatutEngagement_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierStatutEngagementExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_ModifierStatutEngagement_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirGabaritConfirmation">
+      <wsdl:input wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirGabaritConfirmation" message="tns:IServSaisAvisConf_ObtenirGabaritConfirmation_InputMessage" />
+      <wsdl:output wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirGabaritConfirmationResponse" message="tns:IServSaisAvisConf_ObtenirGabaritConfirmation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirGabaritConfirmationExceptionRamqIntrnFault" name="ExceptionRamqIntrnFault" message="tns:IServSaisAvisConf_ObtenirGabaritConfirmation_ExceptionRamqIntrnFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EndPointService" type="tns:IServSaisAvisConf">
+    <wsp:PolicyReference URI="#EndPointService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreerAvisConformite">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreerStatutAvisConformite">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/CreerStatutAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierAvisConformite">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirLesAvisConformite">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirLesAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierPeriodeAvis">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierPeriodeAvis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TraiterAvisConformite">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/TraiterAvisConformite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ValidationAvisDerogationEnCours">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ValidationAvisDerogationEnCours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ModifierStatutEngagement">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ModifierStatutEngagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenirGabaritConfirmation">
+      <soap:operation soapAction="http://PLA1_SaisAvisConf_svc/1/IServSaisAvisConf/ObtenirGabaritConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionRamqIntrnFault">
+        <soap:fault use="literal" name="ExceptionRamqIntrnFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServSaisAvisConf">
+    <wsdl:port name="EndPointService" binding="tns:EndPointService">
+      <soap:address location="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

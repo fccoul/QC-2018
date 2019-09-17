@@ -1,0 +1,110 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLA2_DecisionAvisConformite.PLA2_ConfirmationSuspension
+@using RAMQ.PRE.PL_Prem_iut.Entite;
+@using Enum = RAMQ.PRE.PRE_Entites_cpo.Enumerations;
+
+@{
+    var etatTransmission = String.Empty;
+    switch (Model.ModeAffichage)
+    {
+        case Enum.TypeTraitementSuspension.Ajouter:
+            ViewData["TitrePage"] = "Confirmation de transmission – Suspension d’un avis de conformité";
+            break;
+        case Enum.TypeTraitementSuspension.Annuler:
+            ViewData["TitrePage"] = "Confirmation d’annulation – Suspension d’un avis de conformité";
+            break;
+        case Enum.TypeTraitementSuspension.Modifier:
+            ViewData["TitrePage"] = "Confirmation de modification – Suspension d’un avis de conformité";
+            break;
+    }
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "ConfirmationSuspensionForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="collection clearfix">
+        <div class="alert alert-success" role="alert">
+            <i class="fa fa-check" aria-hidden="true"></i> @Model.MessageConfirmation
+        </div>
+
+        <dl>
+            <dt>@Html.Label("Identification du médecin")</dt>
+            <dd>
+                @Html.Raw(Model.IdentiteMedecin)
+                <br />
+                <br />
+            </dd>
+            <dt>@Html.Label("Avis de conformité")</dt>
+            <dd>
+                @Html.Raw(Model.DescriptionAvisConformite)
+                <br />
+                <br />
+            </dd>
+            <dt>@Html.Label("Type de suspension")</dt>
+            <dd>
+                @Html.Raw(Model.TypeSuspension)
+                <br />
+                <br />
+            </dd>
+
+            <dd>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        @Html.Label("Date de début")
+                        <br />
+                        @Html.Raw(Model.DateDebutAffichage)
+                    </div>
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        @Html.Label("Date de fin")
+                        <br />
+                        @Html.Raw(Model.DateFinAffichage)
+                    </div>
+                </div>
+
+            </dd>
+            @if (Model.ModeAffichage == Enum.TypeTraitementSuspension.Modifier)
+            {
+                <dd>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            @Html.Label("Période de suspension modifiée")
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            @Html.Label("Date de début")
+                            <br />
+                            @Html.Raw(Model.DateDebutAffichage)
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            @Html.Label("Date de fin")
+                            <br />
+                            @Html.Raw(Model.NouvelleDateFinAffichage)
+                        </div>
+                    </div>
+                </dd>
+            }
+
+        </dl>
+
+        <!-- Bouton -->
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <button id="enregistrerPDF" name="enregistrerPDF" class="btn btn-default btn-block" type="submit"><i class="fa glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Enregistrer en PDF</button>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <a href="@Url.Action("PLA2_GererSuspension", "DecisionAvisConformite")" class="btn btn-primary btn-block" role="button">Gérer les suspensions</a>
+            </div>
+        </div>
+
+        @Html.HiddenFor(x => x.MessageConfirmation)
+        @Html.HiddenFor(x => x.IdentiteMedecin)
+        @Html.HiddenFor(x => x.DescriptionAvisConformite)
+        @Html.HiddenFor(x => x.TypeSuspension)
+        @Html.HiddenFor(x => x.DateFin)
+        @Html.HiddenFor(x => x.DateDebut)
+        @Html.HiddenFor(x => x.NouvelleDateFin)
+        @Html.HiddenFor(x => x.ModeAffichage)
+    </div>
+}

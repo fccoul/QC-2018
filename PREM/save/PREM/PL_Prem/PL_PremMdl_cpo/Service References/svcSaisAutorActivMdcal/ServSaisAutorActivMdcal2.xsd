@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PLA5_SaisAutorActivMdcal_svc/1" elementFormDefault="qualified" targetNamespace="http://PLA5_SaisAutorActivMdcal_svc/1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLA_GererAutor/PLA5_SaisAutorActivMdcal_svc/ServSaisAutorActivMdcal.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" />
+  <xs:element name="ObtenirListeAutorisation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="paramEntree" nillable="true" type="q1:ObtenirLesAutorisationsProfessionnelEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirListeAutorisationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="ObtenirListeAutorisationResult" nillable="true" type="q2:ObtenirLesAutorisationsProfessionnelSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreerAutorisationPREMQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="intrant" nillable="true" type="q3:CreerAutorisationPREMQEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreerAutorisationPREMQResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="CreerAutorisationPREMQResult" nillable="true" type="q4:CreerAutorisationPREMQSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnulerAutorisationPREMQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="intrant" nillable="true" type="q5:AnnulerAutorisationPREMQEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnnulerAutorisationPREMQResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="AnnulerAutorisationPREMQResult" nillable="true" type="q6:AnnulerAutorisationPREMQSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProlongerAutorisationPREMQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="intrant" nillable="true" type="q7:ProlongerAutorisationPREMQEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProlongerAutorisationPREMQResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Param" minOccurs="0" name="ProlongerAutorisationPREMQResult" nillable="true" type="q8:ProlongerAutorisationPREMQSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

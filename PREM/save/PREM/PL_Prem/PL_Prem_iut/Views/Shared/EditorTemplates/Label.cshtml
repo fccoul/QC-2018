@@ -1,0 +1,70 @@
+﻿@using System.Collections
+@model string
+@{
+    RouteValueDictionary htmlAttributes = new RouteValueDictionary();
+    string labelText = "";
+
+    if ((ViewBag.asterisk) != null)
+    {
+        htmlAttributes.Add("required", "required");
+    }
+    if ((ViewBag.classe) != null)
+    {
+        htmlAttributes.Add("class", ("form-control " + ViewBag.classe));
+    }
+    else
+    {
+        htmlAttributes.Add("class", "form-control");
+    }
+    if ((ViewBag.type) != null)
+    {
+        htmlAttributes.Add("type", ViewBag.type);
+    }
+    if ((ViewBag.placeholder) != null)
+    {
+        htmlAttributes.Add("placeholder", ViewBag.placeholder);
+    }
+    if ((ViewBag.mask) != null)
+    {
+        htmlAttributes.Add("mask", ViewBag.mask);
+    }
+    if ((ViewBag.lectureSeule) != null)
+    {
+        htmlAttributes.Add("readonly", ViewBag.lectureSeule);
+    }
+    if ((ViewBag.Maxlength) != null)
+    {
+        htmlAttributes.Add("maxlength", ViewBag.Maxlength);
+    }
+    if ((ViewBag.name) != null)
+    {
+        htmlAttributes.Add("name", ViewBag.name);
+    }
+    if ((ViewBag.id) != null)
+    {
+        htmlAttributes.Add("id", ViewBag.id);
+    }
+
+    if ((ViewBag.label) != null)
+    {
+        labelText = ViewBag.label;
+    }
+}
+<div class="form-group">
+    @if (String.IsNullOrWhiteSpace(labelText))
+    {
+        @Html.LabelFor(x => x, new { classe = "control-label" })
+    }
+    else
+    {
+        @Html.LabelFor(x => x, labelText, new { classe = "control-label" })
+    }
+    @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, htmlAttributes)
+
+    @*@Html.LabelFor(x => x, htmlAttributes)*@
+</div >
+
+
+
+    @*@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, htmlAttributes)*@
+    @*@Html.ValidationMessageFor(x => x, null, new {@class = "help-block"})*@

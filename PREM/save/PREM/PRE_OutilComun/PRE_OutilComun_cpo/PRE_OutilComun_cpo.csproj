@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCA64FDE-B3C2-41CE-80AD-AA1AC2D12642}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PRE_OutilComun_cpo</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PRE_OutilComun_cpo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Debug\RAMQ.PRE.PRE_OutilComun_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Release\RAMQ.PRE.PRE_OutilComun_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.AGS.YRY3_FournCleChifm_cpo, Version=2.0.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.AGS.YRY3_FournCleChifm.2.0.2\lib\NET45\RAMQ.AGS.YRY3_FournCleChifm_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC1_V4DonneComne_cpo, Version=2.2.2.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC1_V4DonneComne.2.2.2\lib\NET45\RAMQ.COM.COC1_V4DonneComne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COC2_V4FournAccesDonne_cpo, Version=2.3.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_JetonAuthn_cpo, Version=1.2.3.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.8.4.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.4\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD2_V4GestCache_cpo, Version=2.2.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD2_V4GestCache.2.2.1\lib\NET45\RAMQ.COM.COD2_V4GestCache_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_Entites_cpo, Version=1.0.135.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_Entites.1.0.135\lib\NET45\RAMQ.PRE.PRE_Entites_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\AppFabricCache.cs" />
+    <Compile Include="Cache\CacheBase.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\MemoireCache.cs" />
+    <Compile Include="Cache\NullCache.cs" />
+    <Compile Include="Composante.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="DomaineValeur\DomaineValeur.cs" />
+    <Compile Include="DomaineValeur\IDomaineValeur.cs" />
+    <Compile Include="Securite\ISecurite.cs" />
+    <Compile Include="Journalisation.cs" />
+    <Compile Include="Message\IMessageTraitement.cs" />
+    <Compile Include="Message\MessageTraitement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Securite\Securite.cs" />
+    <Compile Include="Service References\svcRechrRegleAcces\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UtilitaireService.cs" />
+    <Compile Include="Utilitaire\ClasseBaseReferenceService.cs" />
+    <Compile Include="Utilitaire\EnumerateurSecuriteEnveloppe.cs" />
+    <Compile Include="Utilitaire\Mappeur.cs" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="RAMQ.snk" />
+    <None Include="Service References\svcRechrRegleAcces\IdContxDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\IdentSecuGranuDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\InfoIdContxDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\InfoIdentSecuGranuDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\InfoNumSeqRegleAccesDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\InfoRegleAccesContxDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\InfoRegleAccesDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\NumSeqRegleAccesDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\ParamEntreeInfoSecuGranuDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\ParamSortieInfoSecuGranuDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdContxDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.IdentSecuGranuDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdContxDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.InfoRegleAccesDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnContxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnDroitContxRegleAccesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnIdContxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnIdentSecuGranuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnInfoSecuGranuResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnNumSeqRegleAccesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ObtnRegleAccesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortiDroitAcces.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesContxDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RAMQ.PRE.PRE_OutilComun_cpo.svcRechrRegleAcces.RegleAccesDS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcRechrRegleAcces\RechrRegleAcces.wsdl" />
+    <None Include="Service References\svcRechrRegleAcces\RegleAccesContxDroitDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\RegleAccesContxDS.xsd" />
+    <None Include="Service References\svcRechrRegleAcces\RegleAccesDS.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\svcRechrRegleAcces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrRegleAcces\RechrRegleAcces.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrRegleAcces\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrRegleAcces\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcRechrRegleAcces\Reference.svcmap">
+      <Generator>WCF Proxy Generator RAMQ</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

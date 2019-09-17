@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PL_LogiqueAffaire_cpo.test</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.AdmissibiliteTest">
+            <summary>
+            Classe de Test pour Admissibilite
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.AdmissibiliteTest.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.AdmissibiliteTest.VerifierAdmissibiliteProfessionnel_AvecParametreEntre_Succes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.Base.TestBase">
+            <summary> 
+              Classe de base pour les essais unitaires
+            </summary>
+            <remarks>
+             Auteur : Autre <br/>
+             Date   : 
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.Base.TestBase.Fixture">
+            <summary>
+            Autofixture
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.DerogationTest">
+            <summary>
+            Classe de Test pour Derogation
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.DerogationTest.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.DerogationTest.ModifierDerogation_AvecParametreEntrer_NouveauNumeroSequentielDifferentZero">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.DerogationTest.ObtenirDerogationsProfessionnel_AvecParametreEntrer_DerogationRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.EngagementAbsenceTest">
+            <summary>
+            Classe de Test pour EngagementAbsence
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.EngagementAbsenceTest.#ctor">
+            <summary>
+            constructeur
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationGabaritXSL.GenerateurGabaritXSLTest">
+            <summary> 
+             Essais unitaire sur la classe "GenerateurGabaritXSL"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerateurPDFTest">
+            <summary> 
+             Essais unitaire sur la classe "GenerationPDF"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationAvisConformite.ConfirmationAvisConformiteXmlBuilderTest">
+            <summary> 
+             Essais unitaire sur la classe "ConfirmationAvisConformiteXmlBuilder"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationDerogation.ConfirmationDerogationXmlBuilderTest">
+            <summary> 
+             Essais unitaire sur la classe "ConfirmationDerogationXmlBuilder"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.ConfirmationModificationSuspension.ConfirmationModificationSuspensionXmlBuilderTest">
+            <summary> 
+             Essais unitaire sur la classe "ConfirmationModificationSuspensionXmlBuilder"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Colonne1Test">
+            <summary> 
+             Essais unitaire sur la classe "Colonne1"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Ligne1Test">
+            <summary> 
+             Essais unitaire sur la classe "Ligne1"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite1Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite1"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite2Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite2"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite3Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite3"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite4Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite4"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite5Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite5"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite6Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite6"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite7Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite7"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite8Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite8"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.Priorite.Priorite9Test">
+            <summary> 
+             Essais unitaire sur la classe "Priorite9"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.SerialiseurXmlTest">
+            <summary> 
+             Essais unitaire sur la classe "SerialiseurXml"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.XmlBuilderTestBase">
+            <summary> 
+             Classe de base pour les essais sur les XML builder
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.Gabarits.XmlBuilderTestBase.CreerPriorites(System.Int32)">
+            <summary>
+            Créer les priorités
+            </summary>
+            <param name="nombrePrioriteACreer">Nombre de priorité</param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.GenerationXmlGabarit.XmlBuilderFactoryTest">
+            <summary> 
+             Essais unitaire sur la classe "XmlBuilderFactory"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.CheminReseauGabarit.CheminGabaritTest">
+            <summary> 
+             Essais unitaire sur la classe "CheminGabarit"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.CheminReseauGabarit.LecteurConfigurationTest">
+            <summary> 
+             Essais unitaire sur la classe "LecteurConfiguration"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.Gabarits.GenerationXmlGabarit.ConfirmationSuspensionXmlBuilderTest">
+            <summary> 
+             Essais unitaire sur la classe "ConfirmationSuspensionXmlBuilder"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.GenerationPDF.ValidateurParametreObligatoireTest">
+            <summary> 
+             Essais unitaire sur la classe "ValidateurParametreObligatoire"
+            </summary>
+            <remarks>
+             Auteur : Alexis Garon-Michaud <br/>
+             Date   : Mars 2017
+            </remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.RechercherProfessionnelTest">
+            <summary>
+            Classe de Test pour RechercherProfessionnel
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.RechercherProfessionnelTest.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.RechercherProfessionnelTest.ObtenirInformationProfessionnel_AvecParametreEntrer_InformationProfessionnelRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.AvisConformiteTest">
+            <summary>
+            Classe de Test pour AvisConformite
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.AvisConformiteTest.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_LogiqueAffaire_cpo.test.AvisConformiteTest.ObtenirLesAvisConformite_AvecParametreEntrer_AvisConformiteRetourner">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

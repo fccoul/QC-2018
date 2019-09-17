@@ -1,0 +1,67 @@
+﻿@model  RAMQ.PRE.PL_Prem_iut.Models.PLA5_SaisirAutorActivMdcal.PLA5_SaisirAutorisation
+
+@section HautDepage
+{
+    @Styles.Render("~/bundles/PLACSS")
+}
+
+@{
+    ViewData["TitrePage"] = "Saisir une autorisation";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div role="group" class="collection" id="ZoneGroup">
+        <!-- Div contenant le messages informatif -->
+        <div id="MessageInformation" class="alert alert-info cacher" role="alert"></div>
+
+        <!--Identification du médecin-->
+        <div class="row">
+            <div class="col-md-8">
+                @Html.EditorFor(m => m.NumeroPratique,
+                     "AutoComplete", new
+                     {
+                         data = Model.NumeroPratique,
+                         label = "Identification du médecin",
+                         classe = "input-md",
+                         classesProfessionnelUtilise = "1",
+                         filtreSpecialPourCreationAvis = false
+                     })
+            </div>
+        </div>
+
+        <!--Date de début et de fin d'autorisation-->
+        <div class="row">
+            <div class="col-md-6">
+                @Html.EditorFor(m => m.DateDebutAutorisation, "DatePicker", new { placeholder = "AAAA-MM-JJ" })
+            </div>
+            <div class="col-md-6">
+                @Html.EditorFor(m => m.DateFinAutorisation, "DatePicker", new { placeholder = "AAAA-MM-JJ" })
+            </div>
+        </div>
+
+        <!-- Case à cocher confirmation-->
+        <div class="row">
+            <div class="col-md-12">
+                @Html.EditorFor(m => m.EstRenseignementConfirmer, "Boolean")
+            </div>
+
+        </div>
+
+        <!-- Transmettre (bouton) -->
+        <div class="row">
+            <div class="form-group col-md-12">
+                <button id="Transmettre" name="TypeAction" class="btn btn-primary btn-success" disabled="disabled" type="submit">
+                    <i class="fa fa-check" aria-hidden="true"></i> Transmettre
+                </button>
+            </div>
+        </div>
+    </div>
+
+}
+@section ScriptsBasDepage
+{
+    @Scripts.Render("~/bundles/PLA5_JS")
+}

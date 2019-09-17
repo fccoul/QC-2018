@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="89902132-aa58-4642-87cd-4a1817c82399" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServTraitEveneAutreSys.wsdl" MetadataType="Wsdl" ID="ef1d45c5-8cd0-4ebb-a494-a792416170f3" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?wsdl" />
+    <MetadataFile FileName="ServTraitEveneAutreSys.xsd" MetadataType="Schema" ID="f6df5a82-4604-42a5-aa0c-dec14dc8e15b" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServTraitEveneAutreSys1.xsd" MetadataType="Schema" ID="511d7c03-df16-42f6-a41d-4055f1d7712c" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServTraitEveneAutreSys2.xsd" MetadataType="Schema" ID="66711976-df74-4558-9925-9b7d374cf800" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServTraitEveneAutreSys.disco" MetadataType="Disco" ID="b814c9fb-5e8c-49ad-bdb7-238630b51fb3" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?disco" />
+    <MetadataFile FileName="ServTraitEveneAutreSys1.wsdl" MetadataType="Wsdl" ID="44b08802-500e-4f0d-9430-6a8454ff73d8" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ServTraitEveneAutreSys3.xsd" MetadataType="Schema" ID="26efad00-5059-4ba2-a3a2-27583aff00e2" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServTraitEveneAutreSys4.xsd" MetadataType="Schema" ID="b8d3e2ff-9180-483f-8e09-5f555d0e31c3" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServTraitEveneAutreSys5.xsd" MetadataType="Schema" ID="f3afac0b-6e69-4b54-a425-550de17c306f" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServTraitEveneAutreSys6.xsd" MetadataType="Schema" ID="7174d1f7-211c-4135-9790-000e627cca5f" SourceId="1" SourceUrl="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

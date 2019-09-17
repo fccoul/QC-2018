@@ -1,0 +1,577 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RAMQ.COM.COA2_V4SiteMVCBase_cpo
+</name>
+</assembly>
+<members>
+<member name="T:RAMQ.Web.MVC.My.Resources.Resources">
+<summary>
+  Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.ResourceManager">
+<summary>
+  Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.Culture">
+<summary>
+  Remplace la propriété CurrentUICulture du thread actuel pour toutes
+  les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.ActiveXIdClasse">
+<summary>
+  Recherche une chaîne localisée semblable à CLSID:331A19F7-520E-4dae-9F2B-834664C7FF8C.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.AnneeCreation">
+<summary>
+  Recherche une chaîne localisée semblable à 2015.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleActiverOptimisation">
+<summary>
+  Recherche une chaîne localisée semblable à ActiverOptimisation.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleActiverOptimisation1">
+<summary>
+  Recherche une chaîne localisée semblable à ActiverOptimisation.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleAnneeCreation">
+<summary>
+  Recherche une chaîne localisée semblable à AnneeCreation.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleCodeVolet">
+<summary>
+  Recherche une chaîne localisée semblable à CleCodeVolet.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleCodeVoletDSQ">
+<summary>
+  Recherche une chaîne localisée semblable à DSQ.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CleLienLogoRAMQ">
+<summary>
+  Recherche une chaîne localisée semblable à LienLogoRAMQ.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.CookieSignatureIntervenant">
+<summary>
+  Recherche une chaîne localisée semblable à CookieSignatureIntervenant.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.LienLogoRAMQ">
+<summary>
+  Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca.
+</summary>
+</member>
+<member name="P:RAMQ.Web.MVC.My.Resources.Resources.ParamObligatoire">
+<summary>
+  Recherche une chaîne localisée semblable à Le paramètre est obligatoire..
+</summary>
+</member>
+<member name="T:RAMQ.Web.MVC.CheminVirtuelFour">
+ <summary> 
+  Classe pour récupérer des ressources à partir d'un système de fichiers virtuel.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.CheminVirtuelFour.#ctor(System.Web.Hosting.VirtualPathProvider,System.Reflection.Assembly,System.String,System.String)">
+ <summary>
+ Constructeur la classe.
+ </summary>
+ <param name="_objChVirFour">Objet chemin virtuel fournisseur</param>
+ <param name="_objAssembly">objet assembly</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.CheminVirtuelFour.FileExists(System.String)">
+ <summary>
+ Obtient une valeur qui indique si un fichier existe dans le système de fichiers
+ </summary>
+ <param name="_strChemin">Chemin d'accès au fichier virtuel.</param>
+ <returns>true si le fichier existe dans le système de fichiers virtuel ; sinon, false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.CheminVirtuelFour.GetCacheDependency(System.String,System.Collections.IEnumerable,System.DateTime)">
+ <summary>
+ Crée une dépendance de cache basée sur les chemins d'accès virtuels spécifiés.
+ </summary>
+ <param name="_strChemin">Chemin d'accès au fichier virtuel.</param>
+ <param name="_arrDependances">Tableau de chemins d'accès à d'autres ressources requises par la ressource virtuelle principale.</param>
+ <param name="_datUTC">Heure UTC à laquelle les ressources virtuelles ont été lues.</param>
+ <returns>Objet System.Web.Caching.CacheDependency pour les ressources virtuelles spécifiées.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.CheminVirtuelFour.DirectoryExists(System.String)">
+ <summary>
+ Vérifier si un répertoire existe dans le système de fichiers virtuel.
+ </summary>
+ <param name="_strChemin">Chemin d'accès au fichier virtuel.</param>
+ <returns>true si  un répertoire existe dans le système de fichiers virtuel ; sinon, false.</returns>
+</member>
+<member name="M:RAMQ.Web.MVC.CheminVirtuelFour.GetFile(System.String)">
+ <summary>
+ Obtient un fichier virtuel à partir du système de fichiers virtuel.
+ </summary>
+ <param name="_strChemin">Chemin d'accès au fichier virtuel.</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.CheminVirtuelFour.EstResIncorporee(System.String)">
+ <summary>
+ Fonction qui permet d’indiquer si le chemin en paramètre est ressource incorporée.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:RAMQ.Web.MVC.CssUrlConvertisseur">
+ <summary> 
+ Réécrit les URL pour qu'elles soient absolues de façon à ce qu'il soit encore possible de 
+ trouver des ressources après regroupement(bundle).
+ Celle est une correction de la classe System.Web.Optimization.CssRewriteUrlTransform,
+ qui ne marche pas bien avec les URI data.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.CssUrlConvertisseur.Process(System.String,System.String)">
+ <summary>
+ Convertit toutes les URL de l'entrée en URL absolues, en utilisant le répertoire de base du chemin d'accès virtuel include.
+ </summary>
+ <param name="_strChemin">Chemin d'accès au fichier virtuel.</param>
+ <param name="_strEntree">L'entrée </param>
+ <returns></returns>
+ <exception cref="T:System.ArgumentNullException">_strChemin</exception>
+</member>
+<member name="M:RAMQ.Web.MVC.CssUrlConvertisseur.ConvertirUrl(System.String,System.String)">
+ <summary>
+ Convertir url en utilisant le répertoire de base du chemin d'accès virtuel
+ </summary>
+ <param name="_strUrlBase">Le répertoire de base du chemin d'accès virtuel</param>
+ <param name="_strContent">Contenue css.</param>
+ <returns></returns>
+</member>
+<member name="T:RAMQ.Web.MVC.FichierVirtuel">
+ <summary> 
+  Représente un fichier objet dans un fichier virtuel ou un espace de ressources.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.FichierVirtuel.#ctor(System.String,System.IO.Stream)">
+ <summary>
+ Initialise une nouvelle instance de la classe <see cref="T:RAMQ.Web.MVC.FichierVirtuel"/>.
+ </summary>
+ <param name="_strChemin">Chemin d'accès virtuel à la ressource représentée par cette instance.</param>
+ <param name="_objStream">Flux de données au fichier virtuel</param>
+</member>
+<member name="M:RAMQ.Web.MVC.FichierVirtuel.Open">
+ <summary>
+ Chercher un flux de données en lecture seule à la ressource virtuelle.
+ </summary>
+ <returns>
+ Flux de données en lecture seule au fichier virtuel.
+ </returns>
+</member>
+<member name="T:RAMQ.Web.MVC.RessourceHttpHandle">
+ <summary> 
+  Classe pour traiter une requête des ressources incorporées pour un modèle d'itinéraire correspondant.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.RessourceHttpHandle.#ctor(System.Reflection.Assembly,System.Web.Routing.RouteData,System.String)">
+ <summary>
+ Initialise une nouvelle instance de la classe <see cref="T:RAMQ.Web.MVC.RessourceRouteHandle"/>.
+ </summary>
+ <param name="_objAssembly"></param>
+</member>
+<member name="P:RAMQ.Web.MVC.RessourceHttpHandle.IsReusable">
+ <summary>
+ Obtient une valeur indiquant si une autre demande peut utiliser l'instance System.Web.IHttpHandler.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.RessourceHttpHandle.EstTestUnitaire">
+ <summary>
+ Obtient ou défini s'il s'agit d'un test unitaire ou pas.
+ </summary>
+ <remarks>Pour les essais unitaires.</remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.RessourceHttpHandle.ProcessRequest(System.Web.HttpContext)">
+ <summary>
+ Active le traitement des demandes Web HTTP par un HttpHandler personnalisé qui implémente l'interface System.Web.IHttpHandler.
+ </summary>
+ <param name="_objContexte"> Objet System.Web.HttpContext qui fournit les références à des objets serveur intrinsèques utilisés pour traiter des demandes HTTP.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.Controleurs.ControleurBase">
+ <summary> 
+ Classe de base pour les contrôleurs MVC RAMQ. Contient les fonctionnalités supplémentaires
+ à la classe de contrôleurs par défaut.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurBase.AjouterMsg(RAMQ.Web.MVC.Enumerations.TypeMessage,System.String)">
+ <summary>
+ Méthode qui permet d’ajouter un message d’erreur ou d’information à la collection d’erreur 
+ afin que ceux-ci puissent être affichés dans la section de la page maître prévue à cet effet.
+ </summary>
+ <param name="_typeMsg">Type de message.</param>
+ <param name="_strMsg">contenue du message.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurBase.Initialize(System.Web.Routing.RequestContext)">
+ <summary>
+ Initialiser la culture par défaut afin d'afficher correctement les libellés en français
+ </summary>
+ <param name="requestContext"></param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurBase.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+ <summary>
+ Obtenir la culture à partir de l’url et changer la CurrentCulture et la CurrentUICulture du thread courant. 
+ </summary>
+ <param name="objFilterContext">Informations sur les requête et action actuelles.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurBase.OnActionExecuted(System.Web.Mvc.ActionExecutedContext)">
+ <summary>
+ Ajouter la recuperation de Messages du tempData
+ </summary>
+ <param name="objFilterContext">Informations sur les requête et action actuelles.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.Controleurs.ControleurAsyncBase">
+ <summary> 
+ Classe de base pour les contrôleurs MVC RAMQ. Contient les fonctionnalités supplémentaires à la classe 
+ de contrôleurs par défaut.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurAsyncBase.AjouterMsg(RAMQ.Web.MVC.Enumerations.TypeMessage,System.String)">
+ <summary>
+ Méthode qui permet d’ajouter un message d’erreur ou d’information à la collection d’erreur 
+ afin que ceux-ci puissent être affichés dans la section de la page maître prévue à cet effet.
+ </summary>
+ <param name="_typeMsg">Type de message.</param>
+ <param name="_strMsg">Contenue du message.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurAsyncBase.Initialize(System.Web.Routing.RequestContext)">
+ <summary>
+ Initialiser la culture par défaut afin d'afficher correctement les libellés en français
+ </summary>
+ <param name="requestContext"></param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurAsyncBase.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+ <summary>
+ Méthode qui est appelée avant la méthode d'action.
+ </summary>
+ <param name="objFilterContext">Informations sur les requête et action actuelles.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.Controleurs.ControleurBaseDSQ">
+ <summary> 
+ Classe de base pour les contrôleurs MVC RAMQ DSQ. Contient les fonctionnalités supplémentaires
+ à la classe de contrôleurBase par défaut.
+ </summary>
+ <remarks>
+  Auteur : Hernan Botache<br/>
+  Date   : 2016-06-26
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.Controleurs.ControleurBaseDSQ.SignatureIntervenant">
+ <summary>
+ properties signatureIntervenant
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurBaseDSQ.ObtenirCookieSignatureIntervenant">
+ <summary>
+ Méthode qui permet d'obtenir la signatureIntervenant à partir du cookie
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.Controleurs.ControleurBaseDSQ.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+ <summary>
+ Obtenir la culture à partir de l’url et changer la CurrentCulture et la CurrentUICulture du thread courant. 
+ Obtenir la signatureIntervenant à partir du tempData. 
+ </summary>
+ <param name="objFilterContext">Informations sur les requête et action actuelles.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.Controleurs.IControleurBase">
+ <summary> 
+ Interface pour les classe de contrôleurs de base RAMQ.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:RAMQ.Web.MVC.Fournisseur.MetdnModele">
+ <summary> 
+  Implémente le fournisseur de métadonnées de modèle pour ASP.NET MVC.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Fournisseur.MetdnModele.CreateMetadata(System.Collections.Generic.IEnumerable{System.Attribute},System.Type,System.Func{System.Object},System.Type,System.String)">
+ <summary>
+ Obtient les métadonnées de la propriété spécifiée
+ </summary>
+ <param name="_colctAttr">Attributs</param>
+ <param name="_objContainerType">Type du conteneur.</param>
+ <param name="_functModelAccessor">Accesseur modèle.</param>
+ <param name="_objModelType">Type du modèle.</param>
+ <param name="_strNomProp">Nom de la propriété.</param>
+ <returns></returns>
+</member>
+<member name="T:RAMQ.Web.MVC.Vue.PageVueBase`1">
+ <summary> 
+ Classe de base pour les vues MVC RAMQ.  Contient les fonctionnalités supplémentaires à la classe de vues par défaut.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.InitPageVue">
+ <summary>
+ Fonction qui permet d’initiliser les paramètres de la vue.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.VueExiste(System.Object)">
+ <summary>
+ Fonction qui permet d’indiquer si la vue passée en paramètre est présente dans le contexte courant.
+ </summary>
+ <returns>boolean</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.ObtenirVue(System.Object)">
+ <summary>
+ Fonction qui permet d’obtenir une instance de vue présente dans le contexte courant.
+ </summary>
+ <returns>System.Web.MVC.IView</returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.NomCompletUsager">
+ <summary>
+ Retourne le prénom et le nom de l'usager. On obtient l'information à partir de l'active directory.
+ La valeur est conservé dans un cookie pour les prochains accès.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.NomCompletUsagerDSQ">
+ <summary>
+ Retourne le prénom et le nom de l'usager. 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.NomCompletUsagerAssureur">
+ <summary>
+ Retourne le prénom et le nom de l'usager. On obtient l'information à partir de l'active directory.
+ La valeur est conservé dans un cookie pour les prochains accès.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.Execute">
+ <summary>
+ Exécute le code serveur dans la page Web actuelle marquée à l'aide de la syntaxe Razor.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.ObtnNomApp">
+ <summary>
+ Obtenir le nom de l'application.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.ObtnAttributHtml(System.Boolean)">
+ <summary>
+ Obtenir l'attributs HTML
+ </summary>
+ <param name="_blnClaDefau">Classe CSS par défaut: "form-control".</param>
+ <returns></returns>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.NomCompletAD(System.String,System.String)">
+ <summary>
+ Obtenir l'information de l'active directory en utilisant les composantes d'AGS.
+ </summary>
+ <param name="_strIdUsager">Identifiant de l'utilisateur</param>
+ <param name="_strIdDomaine">Nom du domaine</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.ObtnZoneSignature">
+ <summary>
+     Cette méthode permet d'obtenir l'objet de l'activeX.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.ObtnMethdSignatrue">
+ <summary>
+     Cette méthode permet d'efectuer une signature avec l'ActiveX à chaque fois que la forme est soumise.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Vue.PageVueBase`1.InitParametre(System.String,System.String)">
+ <summary>
+ Initialiser les paramètres de la page vue
+ </summary>
+</member>
+<member name="T:RAMQ.Web.MVC.RessourceRouteHandle">
+ <summary> 
+  Classe pour traiter une requête des ressources incorporées pour un modèle d'itinéraire correspondant.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.RessourceRouteHandle.#ctor(System.Reflection.Assembly,System.String)">
+ <summary>
+ Initialise une nouvelle instance de la classe <see cref="T:RAMQ.Web.MVC.RessourceRouteHandle"/>.
+ </summary>
+ <param name="_objAssembly"></param>
+</member>
+<member name="M:RAMQ.Web.MVC.RessourceRouteHandle.GetHttpHandler(System.Web.Routing.RequestContext)">
+ <summary>
+ Fournit l'objet qui traite la requête.
+ </summary>
+ <param name="_objContexte">Objet qui encapsule des informations sur la requête.</param>
+</member>
+<member name="T:RAMQ.Web.MVC.SiteDemarrageBase">
+ <summary> 
+ Classe de base pour le démarrage des applications MVC RAMQ
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="P:RAMQ.Web.MVC.SiteDemarrageBase.NomApplication">
+ <summary>
+ Nom de l'application.
+ </summary>
+</member>
+<member name="P:RAMQ.Web.MVC.SiteDemarrageBase.LienLogoRAMQ">
+ <summary>
+ Lien de logo de la page.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.SiteDemarrageBase.Application_Start">
+ <summary>
+ Fonction pour le démarrage des applications.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.SiteDemarrageBase.ObtenirMsg(System.String)">
+ <summary>
+ Retourne une chaîne de caractères vide.
+ </summary>
+ <param name="_strNoMsg">Numéro du message.</param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.SiteDemarrageBase.ObtnAssembly">
+ <summary>
+ Obtient l'assembly qui contient le code en cours d'exécution.
+ </summary>
+ <remarks>System.Reflection.Assembly</remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.SiteDemarrageBase.EnregistrerBundles">
+ <summary>
+ Enregistrer les bundles.
+ </summary>
+</member>
+<member name="M:RAMQ.Web.MVC.SiteDemarrageBase.EnregistrerRoutes">
+ <summary>
+ Enregistrer les routes MVC.
+ </summary>
+</member>
+<member name="T:RAMQ.Web.MVC.Constantes">
+ <summary> 
+ Classe de constantes.
+ </summary>
+ <remarks>
+  Auteur : u5169 <br/>
+  Date   : 2014-03-27
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : [Auteur]<br/>
+  Date   : [aaaa-mm-jj]<br/>
+  Description:<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="T:RAMQ.Web.MVC.Enumerations.TypeMessage">
+ <summary> 
+ Énumération pour les types de message.
+ </summary>
+ <remarks>
+ </remarks>
+</member>
+<member name="T:RAMQ.Web.MVC.Utilitaires">
+ <summary> 
+ Classe d'utilitaires pour COA2_V4SiteMVCBase_cpo.
+ </summary>
+ <remarks>
+  Auteur : u5169 <br/>
+  Date   : 2014-03-28
+ <br/>
+  Historique des modifications<br/>
+  ------------------------------------------------------------------------------<br/>
+  Auteur : Pascal Hamel<br/>
+  Date   : 2015-06-04<br/>
+  Description: Corrections diverses pour essais unitaires, analyseur de code et bonnes pratiques.<br/>
+ <br/>
+ </remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Utilitaires.AjouterMsg(RAMQ.Web.MVC.Enumerations.TypeMessage,System.String,System.Web.Mvc.ViewDataDictionary@)">
+ <summary>
+ Méthode qui permet d’ajouter un message d’erreur ou d’information à la collection d’erreur 
+ afin que ceux-ci puissent être affichés dans la section de la page maître prévue à cet effet.
+ </summary>
+ <param name="_enuTypeMsg">Type de message.</param>
+ <param name="_strMsg">Contenu du message.</param>
+ <param name="_objViewData">Dictionnaire de vue de données.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Utilitaires.AppliquerCulture(System.Web.Mvc.ActionExecutingContext)">
+ <summary>
+ Obtenir la culture à partir de l’url et changer la CurrentCulture et la CurrentUICulture du thread courant.
+ </summary>
+ <param name="_objFilterContext">Informations sur les requête et action actuelles.</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Utilitaires.LangueValide(System.String)">
+ <summary>
+ Vérifier si la langue fait parti des langues supportées (fr, en)
+ </summary>
+ <param name="_strLang"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Utilitaires.InitCulture(System.String)">
+ <summary>
+ Initialiser la culture du thread courant selon la langue.
+ Permet de s'assurer que les ressources utilisés soit conforme à la langue et que
+ l'affichage des dates, champs monétaires soit conforme au pays.
+ </summary>
+ <param name="_strLang"></param>
+ <remarks></remarks>
+</member>
+<member name="M:RAMQ.Web.MVC.Utilitaires.CopierRecupererMessages(System.Web.Mvc.ActionExecutedContext)">
+ <summary>
+ copier et récupérer les messages d'erreur et information dans le tempdata
+ </summary>
+ <param name="_objFilterContext">Informations sur les requête et action actuelles</param>
+</member>
+<member name="M:RAMQ.Web.MVC.Utilitaires.RecupererTempDataToModelState(System.Web.Mvc.ModelStateDictionary,System.Web.Mvc.TempDataDictionary)">
+ <summary>
+ Ajouter les messages d'erreur dans le modelstate
+ </summary>
+ <param name="_objModelState"></param>
+ <param name="_objTempData">tempData </param>
+</member>
+</members>
+</doc>

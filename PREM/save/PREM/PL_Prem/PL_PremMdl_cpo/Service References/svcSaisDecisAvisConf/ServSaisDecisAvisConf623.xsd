@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA2_SaisDecisAvisConf_cpo.ConfirmationDerogation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="TypeActionDerogtion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Autre" />
+      <xs:enumeration value="Transmettre" />
+      <xs:enumeration value="Annule" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TypeActionDerogtion" nillable="true" type="tns:TypeActionDerogtion" />
+</xs:schema>

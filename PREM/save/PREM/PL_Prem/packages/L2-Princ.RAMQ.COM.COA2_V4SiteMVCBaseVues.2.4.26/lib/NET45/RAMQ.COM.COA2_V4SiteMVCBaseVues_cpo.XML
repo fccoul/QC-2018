@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.COM.COA2_V4SiteMVCBaseVues_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.Web.MVC.Site.SiteDemarrage">
+            <summary> 
+            Classe de base pour le démarrage des applications MVC RAMQ
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.Web.MVC.Site.SiteDemarrage.ObtnAssembly">
+            <summary>
+            Obtient l'assembly qui contient le code en cours d'exécution.
+            </summary>
+            <returns>System.Reflection.Assembly</returns>
+        </member>
+        <member name="T:RAMQ.Web.MVC.Ressources.Ressources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.AccesInformation">
+            <summary>
+              Recherche une chaîne localisée semblable à Accès à l&apos;information.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Accessibilite">
+            <summary>
+              Recherche une chaîne localisée semblable à Accessibilité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Accueil">
+            <summary>
+              Recherche une chaîne localisée semblable à Accueil.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Aide">
+            <summary>
+              Recherche une chaîne localisée semblable à Aide.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.AssistanceTele">
+            <summary>
+              Recherche une chaîne localisée semblable à Assistance téléphonique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.CleCodeVolet">
+            <summary>
+              Recherche une chaîne localisée semblable à CleCodeVolet.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.CleCodeVoletDSQ">
+            <summary>
+              Recherche une chaîne localisée semblable à DSQ.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.ConfigurationRequise">
+            <summary>
+              Recherche une chaîne localisée semblable à Configuration requise.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.DeclarationServices">
+            <summary>
+              Recherche une chaîne localisée semblable à Déclaration de services.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Deconnexion">
+            <summary>
+              Recherche une chaîne localisée semblable à Déconnexion.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.ErreurTechniqueExpire">
+            <summary>
+              Recherche une chaîne localisée semblable à Le délai d&apos;expiration de votre transaction est atteint..
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.ErreuTtechnique">
+            <summary>
+              Recherche une chaîne localisée semblable à Erreur technique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Insatisfaction">
+            <summary>
+              Recherche une chaîne localisée semblable à Insatisfaction.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienAccesInformation">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/regie/Pages/acces-information.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienAccessibilite">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/Pages/accessibilite.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienDeclarationServices">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/regie/Pages/declaration-services-citoyens.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienInsatisfaction">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/regie/Pages/insatisfaction.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienPolitiqueConfidentialite">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/Pages/politique-confidentialite.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienPolitiqueLinguistique">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/regie/Pages/politique-linguistique.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LienSecurite">
+            <summary>
+              Recherche une chaîne localisée semblable à http://www.ramq.gouv.qc.ca/fr/Pages/securite.aspx.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LogoQuebec">
+            <summary>
+              Recherche une chaîne localisée semblable à Logo du Gouvernement du Québec.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.LogoRAMQ">
+            <summary>
+              Recherche une chaîne localisée semblable à Logo de la Régie de l&apos;assurance maladie du Québec.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Menu">
+            <summary>
+              Recherche une chaîne localisée semblable à Menu.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.MsgErrSupplementaire">
+            <summary>
+              Recherche une chaîne localisée semblable à &lt;p&gt;Si le problème persiste, communiquez avec la Régie.&lt;/p&gt;.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.MsgErrTech">
+            <summary>
+              Recherche une chaîne localisée semblable à &lt;p&gt;Désolé, une erreur technique est survenue lors du traitement de votre demande.&lt;/p&gt;
+               &lt;p&gt;Réessayez plus tard.&lt;/p&gt;
+               .
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.MsgErrTechExpire">
+            <summary>
+              Recherche une chaîne localisée semblable à &lt;p&gt;Retournez à votre page et recommencez votre transaction..&lt;/p&gt;.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.MsgNavigateurObsolete">
+            <summary>
+              Recherche une chaîne localisée semblable à Vous utilisez un navigateur d&apos;une version obsolète. Pour que l&apos;affichage de ce site soit optimal, veuillez mettre à jour votre navigateur..
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.NomApplication">
+            <summary>
+              Recherche une chaîne localisée semblable à Mon application.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.NousJoindre">
+            <summary>
+              Recherche une chaîne localisée semblable à Nous joindre.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.OuvriraFenetre">
+            <summary>
+              Recherche une chaîne localisée semblable à Cet hyperlien ouvrira une nouvelle fenêtre..
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.ParaCompte">
+            <summary>
+              Recherche une chaîne localisée semblable à Paramètres du compte.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Parametres">
+            <summary>
+              Recherche une chaîne localisée semblable à Paramêtres.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.PolitiqueConfidentialite">
+            <summary>
+              Recherche une chaîne localisée semblable à Politique de confidentialité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.PolitiqueLinguistique">
+            <summary>
+              Recherche une chaîne localisée semblable à Politique linguistique.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.PolitiquesReglement">
+            <summary>
+              Recherche une chaîne localisée semblable à Politiques.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.RaccourciPrinc">
+            <summary>
+              Recherche une chaîne localisée semblable à Raccourci vers le contenu principal.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.Securite">
+            <summary>
+              Recherche une chaîne localisée semblable à Sécurité.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources.ServiceEnLigne">
+            <summary>
+              Recherche une chaîne localisée semblable à Services en ligne.
+            </summary>
+        </member>
+        <member name="T:RAMQ.Web.MVC.Ressources.Ressources_en">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources_en.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:RAMQ.Web.MVC.Ressources.Ressources_en.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+    </members>
+</doc>

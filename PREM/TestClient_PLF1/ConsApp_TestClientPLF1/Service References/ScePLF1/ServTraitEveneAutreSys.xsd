@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Param" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" />
+  <xs:import schemaLocation="http://nlb-unit-app4.ramq.gov/PREAPP/PL/PLF_TraitPremAutreAppli/PLF1_TraiterEveneAutreSys_svc/ServTraitEveneAutreSys.svc?xsd=xsd3" namespace="http://COD1_V4OutilBase_cpo/2" />
+  <xs:complexType name="AjusEngagAjouNonPartnEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DmAdmis" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoSeqIntervenant" type="xs:long" />
+      <xs:element minOccurs="0" name="NoSeqPerAdmis" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="NouvPerAdmis" nillable="true" type="q1:PerAdmis" />
+      <xs:element minOccurs="0" name="TypeIntervenant" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AjusEngagAjouNonPartnEntre" nillable="true" type="tns:AjusEngagAjouNonPartnEntre" />
+  <xs:complexType name="AjusEngagAjouNonPartnSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://COD1_V4OutilBase_cpo/2" base="q2:ParametreSorti">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AjusEngagAjouNonPartnSorti" nillable="true" type="tns:AjusEngagAjouNonPartnSorti" />
+  <xs:complexType name="AjusEngagModifNonPartnEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DmAdmis" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoSeqIntervenant" type="xs:long" />
+      <xs:element minOccurs="0" name="NoSeqPerAdmis" type="xs:long" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="PerAdmisModif" nillable="true" type="q3:PerAdmis" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="PerAdmisOrign" nillable="true" type="q4:PerAdmis" />
+      <xs:element minOccurs="0" name="TypeIntervenant" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AjusEngagModifNonPartnEntre" nillable="true" type="tns:AjusEngagModifNonPartnEntre" />
+  <xs:complexType name="AjusEngagModifNonPartnSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://COD1_V4OutilBase_cpo/2" base="q5:ParametreSorti">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AjusEngagModifNonPartnSorti" nillable="true" type="tns:AjusEngagModifNonPartnSorti" />
+  <xs:complexType name="AjusEngagAnnuNonPartnEntre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DmAdmis" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoSeqIntervenant" type="xs:long" />
+      <xs:element minOccurs="0" name="NoSeqPerAdmis" type="xs:long" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="PerAdmisAnnu" nillable="true" type="q6:PerAdmis" />
+      <xs:element minOccurs="0" name="TypeIntervenant" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AjusEngagAnnuNonPartnEntre" nillable="true" type="tns:AjusEngagAnnuNonPartnEntre" />
+  <xs:complexType name="AjusEngagAnnuNonPartnSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://COD1_V4OutilBase_cpo/2" base="q7:ParametreSorti">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AjusEngagAnnuNonPartnSorti" nillable="true" type="tns:AjusEngagAnnuNonPartnSorti" />
+  <xs:complexType name="AjusEngagDecesEntre">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="InfoModifIndiv" nillable="true" type="q8:Individu" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="InfoOrignIndiv" nillable="true" type="q9:Individu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AjusEngagDecesEntre" nillable="true" type="tns:AjusEngagDecesEntre" />
+  <xs:complexType name="AjusEngagDecesSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://COD1_V4OutilBase_cpo/2" base="q10:ParametreSorti">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AjusEngagDecesSorti" nillable="true" type="tns:AjusEngagDecesSorti" />
+  <xs:complexType name="AjusEngagDdSpecInscrEntre">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="InfoDispModif" nillable="true" type="q11:Dispensateur" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLF1_TraiterEveneAutreSys_cpo.AjusterEngagement.Entite" minOccurs="0" name="InfoDispOrign" nillable="true" type="q12:Dispensateur" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AjusEngagDdSpecInscrEntre" nillable="true" type="tns:AjusEngagDdSpecInscrEntre" />
+  <xs:complexType name="AjusEngagDdSpecInscrSorti">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://COD1_V4OutilBase_cpo/2" base="q13:ParametreSorti">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AjusEngagDdSpecInscrSorti" nillable="true" type="tns:AjusEngagDdSpecInscrSorti" />
+</xs:schema>

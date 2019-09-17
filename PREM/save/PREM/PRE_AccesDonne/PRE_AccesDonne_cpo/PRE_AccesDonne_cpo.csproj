@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62D86C27-2095-46B7-B1B9-A20E9D532B51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PRE_AccesDonne_cpo</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PRE_AccesDonne_cpo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Debug\RAMQ.PRE.PRE_AccesDonne_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Release\RAMQ.PRE.PRE_AccesDonne_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RAMQ.COM.COC2_V4FournAccesDonne_cpo, Version=2.3.1.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COC2_V4FournAccesDonne.2.3.1\lib\NET45\RAMQ.COM.COC2_V4FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_JetonAuthn_cpo, Version=1.2.3.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.8.4.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.4\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.PRE.PRE_FournAccesDonne_cpo, Version=1.0.12.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.PRE.PRE_FournAccesDonne.1.0.12\lib\NET45\RAMQ.PRE.PRE_FournAccesDonne_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constantes.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\AbsenceAvis.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\DemandeReeva.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\Engagement.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\CaracteristiquePratique.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\Exemption.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\Correspondance.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\JoursFactParRPPR.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\JoursFactParTerri.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\JoursFactParRSS.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\JoursFactParAvis.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\ParametreProduction.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\EngagementPeriode.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\PrctJrfacRPPR.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\PrctJrfacTerri.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\PrctJrfacDerog.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\PrctJrfacAvis.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\TerriRPPR.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\PratiqueTerritoire.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\PratiqueRegion.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\ReductionRemuneration.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\StatutEngagementPratiqueRSS.cs" />
+    <Compile Include="PlanRegnMdcal\IPlanRegnMdcal.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\Autorisation.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\AvisConformite.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\Derogation.cs" />
+    <Compile Include="PlanRegnMdcal\Entite\StatutAvisConformite.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerDemReevaPREMEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerDemReevaPREMSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierAutorisationEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierAutorisationSorti .cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierAvisConformiteEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierAvisConformiteSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierDemReevaPREMSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierDemReevaPREMEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\AnnulerDemandeReevaPREMQSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\AnnulerDemandeReevaPREMQEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierRaisFermStatutEngagEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierRaisFermStatutEngagSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirInfosExecutionJournalierSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirInfosExecutionMensuelSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirInfosExecutionMassiveSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\AnnulerAutorisationPREMQEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\AnnulerAutorisationPREMQSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerAutorisationPREMQEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerAutorisationPREMQSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerAvisConformiteEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierCommandeCorrespondancesEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirCaracteristiquePratiqueRssEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirCaracteristiquePratiqueRssSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirTerriRPPREntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirTerriRPPRSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacRPPREntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeDemReevaEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacTerriEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacDerogEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacAvisEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacRPPRSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeDemReevaSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacTerriSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacDerogSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListPrctJrfacAvisSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVuePeriodesEngagementsSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVuePeriodesEngagementsEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListeEngagementsEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueListeEngagementsSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiRPPREntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiRPPRSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiTerriEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiTerriSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiRssSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiRssEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiAvisEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirVueJoursFactPratiAvisSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeCmndCorreEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeEngagementsEtAbsencesAvisEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeEngagementsEtAbsencesAvisSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeExemptionsSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeCmndCorreSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirListeExemptionsEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirParametresProductionSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerAvisConformiteSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierAvisConformiteStatutEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierAvisConformiteStatutSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerDerogationEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierDerogationEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerDerogationSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierDerogationSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierPeriodeAvisEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierPeriodeAvisSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerStatutAvisConformiteEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierStatutEngagementEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\CreerStatutAvisConformiteSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ModifierStatutEngagementSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirAutorisationsEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirAutorisationsSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirJoursFactPratiTerriEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirJoursFactPratiRegionEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirJoursFactPratiTerriSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirJoursFactPratiRegionSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirLesAvisConformiteEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirLesAvisConformiteSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirDerogationsProfessionnelSanteEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirDerogationsProfessionnelSanteSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirParametresProductionEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirReductionsRemunerationEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirReductionsRemunerationSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirStatutsEngagementPratiqueRSSEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ObtenirStatutsEngagementPratiqueRSSSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ProlongerAutorisationPREMQEntre.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\ProlongerAutorisationPREMQSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\PurgerTablePratiqueProfessionnelSorti.cs" />
+    <Compile Include="PlanRegnMdcal\PlanRegnMdcal.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\TraiterRepartitionJournalierSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\TraiterRepartitionMensuelMassifSorti.cs" />
+    <Compile Include="PlanRegnMdcal\Parametre\TraiterRepartitionMensuelMassifEntre.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="RAMQ.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

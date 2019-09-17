@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Entites" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA5_SaisAutorActivMdcal_cpo.Entites" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAutorisation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Autorisation" nillable="true" type="tns:Autorisation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAutorisation" nillable="true" type="tns:ArrayOfAutorisation" />
+  <xs:complexType name="Autorisation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebut" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureCreation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureInactivation" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdUtilisateurCreateur" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUtilisateurInactivation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequenceAutorisation" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequenceDispensateur" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequenceRegroupementAdministratif" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeAutorisation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Autorisation" nillable="true" type="tns:Autorisation" />
+</xs:schema>

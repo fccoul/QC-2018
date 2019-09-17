@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLC2_CnsulProfiPremqProf_svc", "PLC2_CnsulProfiPremqProf_svc\PLC2_CnsulProfiPremqProf_svc.csproj", "{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "PLC2_CnsulProfiPremqProf_svcApp_dep", "PLC2_CnsulProfiPremqProf_svcApp_dep\PLC2_CnsulProfiPremqProf_svcApp_dep.wixproj", "{E91B0639-53E5-4103-8199-6CD44F6AAB3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52A2B4E2-BB79-4211-A293-7B37F6BEC37C}"
+	ProjectSection(SolutionItems) = preProject
+		PLC2_CnsulProfiPremqProf_svcApp_dep.cmd = PLC2_CnsulProfiPremqProf_svcApp_dep.cmd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLC2_CnsulProfiPremqProf_cpo", "PLC2_CnsulProfiPremqProf_cpo\PLC2_CnsulProfiPremqProf_cpo.csproj", "{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLC2_CnsulProfiPremqProf_cpo.test", "PLC2_CnsulProfiPremqProf_cpo.test\PLC2_CnsulProfiPremqProf_cpo.test.csproj", "{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC8AC37F-538E-4B2A-9905-CA7E5A606DED}.Release|x86.Build.0 = Release|Any CPU
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Debug|x86.ActiveCfg = Debug|x86
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Debug|x86.Build.0 = Debug|x86
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Release|Any CPU.ActiveCfg = Release|x86
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Release|Any CPU.Build.0 = Release|x86
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Release|x86.ActiveCfg = Release|x86
+		{E91B0639-53E5-4103-8199-6CD44F6AAB3D}.Release|x86.Build.0 = Release|x86
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A2B3D4AE-D43E-420A-80D1-5EB710A5DB1D}.Release|x86.Build.0 = Release|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Debug|x86.Build.0 = Debug|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Release|x86.ActiveCfg = Release|Any CPU
+		{02ED8C32-F924-4F32-BCCE-4E5B0234E9D6}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://srv-tfs-appli.adprod.ramq.gov/tfs/ramq
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PLC2_CnsulProfiPremqProf_svc\\PLC2_CnsulProfiPremqProf_svc.csproj
+		SccProjectName1 = PLC2_CnsulProfiPremqProf_svc
+		SccLocalPath1 = PLC2_CnsulProfiPremqProf_svc
+		SccProjectUniqueName2 = PLC2_CnsulProfiPremqProf_svcApp_dep\\PLC2_CnsulProfiPremqProf_svcApp_dep.wixproj
+		SccProjectName2 = PLC2_CnsulProfiPremqProf_svcApp_dep
+		SccLocalPath2 = PLC2_CnsulProfiPremqProf_svcApp_dep
+		SccProjectUniqueName3 = PLC2_CnsulProfiPremqProf_cpo\\PLC2_CnsulProfiPremqProf_cpo.csproj
+		SccProjectName3 = PLC2_CnsulProfiPremqProf_cpo
+		SccLocalPath3 = PLC2_CnsulProfiPremqProf_cpo
+		SccProjectUniqueName4 = PLC2_CnsulProfiPremqProf_cpo.test\\PLC2_CnsulProfiPremqProf_cpo.test.csproj
+		SccProjectName4 = PLC2_CnsulProfiPremqProf_cpo.test
+		SccLocalPath4 = PLC2_CnsulProfiPremqProf_cpo.test
+	EndGlobalSection
+EndGlobal

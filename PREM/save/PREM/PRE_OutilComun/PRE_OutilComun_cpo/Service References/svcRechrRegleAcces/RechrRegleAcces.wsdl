@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service web pour effectuer la recherche de règle d'accès.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces">
+      <s:import namespace="http://tempuri.org/InfoRegleAccesDS.xsd" />
+      <s:import namespace="http://tempuri.org/RegleAccesDS.xsd" />
+      <s:import namespace="http://tempuri.org/InfoRegleAccesContxDS.xsd" />
+      <s:import namespace="http://tempuri.org/RegleAccesContxDS.xsd" />
+      <s:import namespace="http://tempuri.org/RegleAccesContxDroitDS.xsd" />
+      <s:import namespace="http://tempuri.org/ParamEntreeInfoSecuGranuDS.xsd" />
+      <s:import namespace="http://tempuri.org/ParamSortieInfoSecuGranuDS.xsd" />
+      <s:import namespace="http://tempuri.org/InfoIdentSecuGranuDS.xsd" />
+      <s:import namespace="http://tempuri.org/IdentSecuGranuDS.xsd" />
+      <s:import namespace="http://tempuri.org/InfoNumSeqRegleAccesDS.xsd" />
+      <s:import namespace="http://tempuri.org/NumSeqRegleAccesDS.xsd" />
+      <s:import namespace="http://tempuri.org/InfoIdContxDS.xsd" />
+      <s:import namespace="http://tempuri.org/IdContxDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=RegleAccesDS" namespace="http://tempuri.org/RegleAccesDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=ParamSortieInfoSecuGranuDS" namespace="http://tempuri.org/ParamSortieInfoSecuGranuDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=RegleAccesContxDS" namespace="http://tempuri.org/RegleAccesContxDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoIdentSecuGranuDS" namespace="http://tempuri.org/InfoIdentSecuGranuDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoRegleAccesDS" namespace="http://tempuri.org/InfoRegleAccesDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoIdContxDS" namespace="http://tempuri.org/InfoIdContxDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoNumSeqRegleAccesDS" namespace="http://tempuri.org/InfoNumSeqRegleAccesDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=ParamEntreeInfoSecuGranuDS" namespace="http://tempuri.org/ParamEntreeInfoSecuGranuDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=IdentSecuGranuDS" namespace="http://tempuri.org/IdentSecuGranuDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=IdContxDS" namespace="http://tempuri.org/IdContxDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=NumSeqRegleAccesDS" namespace="http://tempuri.org/NumSeqRegleAccesDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=InfoRegleAccesContxDS" namespace="http://tempuri.org/InfoRegleAccesContxDS.xsd" />
+      <s:import schemaLocation="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx?schema=RegleAccesContxDroitDS" namespace="http://tempuri.org/RegleAccesContxDroitDS.xsd" />
+      <s:element name="ObtnRegleAcces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsInfoRegleAcces">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/InfoRegleAccesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsRegleAcces">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/RegleAccesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnRegleAccesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsRegleAcces">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/RegleAccesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnDroitAcces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_objCritrRechrDroitAcces" type="tns:CritrRechrDroitAcces" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CritrRechrDroitAcces">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdUtil" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodContx" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodAppli" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtnDroitAccesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtnDroitAccesResult" type="tns:ParamSortiDroitAcces" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ParamSortiDroitAcces">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ParamSorti">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ColctDroitAcces" type="tns:ArrayOfDroitAcces" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ParamSorti">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InfoMsgTrait" type="tns:MsgTrait" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MsgTrait">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodSys" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodSever" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxtMsgFran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxtMsgAngl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDroitAcces">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DroitAcces" nillable="true" type="tns:DroitAcces" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DroitAcces">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Des" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtnContx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsInfoRegleAccesContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/InfoRegleAccesContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsRegleAccesContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/RegleAccesContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnContxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsRegleAccesContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/RegleAccesContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnDroitContxRegleAcces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsInfoRegleAccesContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/InfoRegleAccesContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsRegleAccesContxDroit">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/RegleAccesContxDroitDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnDroitContxRegleAccesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsRegleAccesContxDroit">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/RegleAccesContxDroitDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnInfoSecuGranu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsParamEntreeInfoSecuGranu">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/ParamEntreeInfoSecuGranuDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsParamSortieInfoSecuGranu">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/ParamSortieInfoSecuGranuDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnInfoSecuGranuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsParamSortieInfoSecuGranu">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/ParamSortieInfoSecuGranuDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnIdentSecuGranu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsInfoIdentSecuGranu">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/InfoIdentSecuGranuDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsIdentSecuGranu">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/IdentSecuGranuDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnIdentSecuGranuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsIdentSecuGranu">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/IdentSecuGranuDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnNumSeqRegleAcces">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsInfoNumSeqRegleAcces">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/InfoNumSeqRegleAccesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsNumSeqRegleAcces">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/NumSeqRegleAccesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnNumSeqRegleAccesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsNumSeqRegleAcces">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/NumSeqRegleAccesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnIdContx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsInfoIdContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/InfoIdContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsIdContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/IdContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtnIdContxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_dsIdContx">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/IdContxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtnRegleAccesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnRegleAcces" />
+  </wsdl:message>
+  <wsdl:message name="ObtnRegleAccesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnRegleAccesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnDroitAccesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnDroitAcces" />
+  </wsdl:message>
+  <wsdl:message name="ObtnDroitAccesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnDroitAccesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnContxSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnContx" />
+  </wsdl:message>
+  <wsdl:message name="ObtnContxSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnContxResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnDroitContxRegleAccesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnDroitContxRegleAcces" />
+  </wsdl:message>
+  <wsdl:message name="ObtnDroitContxRegleAccesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnDroitContxRegleAccesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoSecuGranuSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnInfoSecuGranu" />
+  </wsdl:message>
+  <wsdl:message name="ObtnInfoSecuGranuSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnInfoSecuGranuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnIdentSecuGranuSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnIdentSecuGranu" />
+  </wsdl:message>
+  <wsdl:message name="ObtnIdentSecuGranuSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnIdentSecuGranuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnNumSeqRegleAccesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnNumSeqRegleAcces" />
+  </wsdl:message>
+  <wsdl:message name="ObtnNumSeqRegleAccesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnNumSeqRegleAccesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtnIdContxSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtnIdContx" />
+  </wsdl:message>
+  <wsdl:message name="ObtnIdContxSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtnIdContxResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RechrRegleAccesSoap">
+    <wsdl:operation name="ObtnRegleAcces">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demander les règles d'accès pour un utilisateur et un code de contexte en particulier.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnRegleAccesSoapIn" />
+      <wsdl:output message="tns:ObtnRegleAccesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnDroitAcces">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demander les descriptions des droits d'accès pour un utilisateur, un application et un code de contexte en particulier.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnDroitAccesSoapIn" />
+      <wsdl:output message="tns:ObtnDroitAccesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnContx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demander les contextes et règles d'accès pour un utilisateur.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnContxSoapIn" />
+      <wsdl:output message="tns:ObtnContxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnDroitContxRegleAcces">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demander les droits, contextes et règles d'accès pour un utilisateur.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnDroitContxRegleAccesSoapIn" />
+      <wsdl:output message="tns:ObtnDroitContxRegleAccesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSecuGranu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demander les informations concernant la sécurité granulaire d'un utilisateur.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnInfoSecuGranuSoapIn" />
+      <wsdl:output message="tns:ObtnInfoSecuGranuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnIdentSecuGranu">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Demander la liste des utilisateurs qui correspondent à une sécurité granulaire spécifique.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnIdentSecuGranuSoapIn" />
+      <wsdl:output message="tns:ObtnIdentSecuGranuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnNumSeqRegleAcces">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cette opération permet de retourner le numéro séquentiel d'une règle d'accès pour un utilisateur, un ou plusieurs identifiants de contexte et un ou plusieurs numéros séquentiel de droit d'accès donnés.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnNumSeqRegleAccesSoapIn" />
+      <wsdl:output message="tns:ObtnNumSeqRegleAccesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtnIdContx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cette opération permet de retourner l'identifiant de contexte pour un numéro séquentiel d'une règle d'accès donnés.</wsdl:documentation>
+      <wsdl:input message="tns:ObtnIdContxSoapIn" />
+      <wsdl:output message="tns:ObtnIdContxSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RechrRegleAccesSoap" type="tns:RechrRegleAccesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtnRegleAcces">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnRegleAcces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnDroitAcces">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnDroitAcces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnContx">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnContx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnDroitContxRegleAcces">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnDroitContxRegleAcces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSecuGranu">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnInfoSecuGranu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnIdentSecuGranu">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnIdentSecuGranu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnNumSeqRegleAcces">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnNumSeqRegleAcces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnIdContx">
+      <soap:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnIdContx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RechrRegleAccesSoap12" type="tns:RechrRegleAccesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtnRegleAcces">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnRegleAcces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnDroitAcces">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnDroitAcces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnContx">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnContx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnDroitContxRegleAcces">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnDroitContxRegleAcces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnInfoSecuGranu">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnInfoSecuGranu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnIdentSecuGranu">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnIdentSecuGranu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnNumSeqRegleAcces">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnNumSeqRegleAcces" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtnIdContx">
+      <soap12:operation soapAction="http://tempuri.org/YRD1_RechrRegleAcces_ws/RechrRegleAcces/ObtnIdContx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RechrRegleAcces">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Service web pour effectuer la recherche de règle d'accès.</wsdl:documentation>
+    <wsdl:port name="RechrRegleAccesSoap" binding="tns:RechrRegleAccesSoap">
+      <soap:address location="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RechrRegleAccesSoap12" binding="tns:RechrRegleAccesSoap12">
+      <soap12:address location="http://nlb-fonct-app4/agsapp/YR/YRD_ModulComunExptn/YRD1_RechrRegleAcces_ws/RechrRegleAcces.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

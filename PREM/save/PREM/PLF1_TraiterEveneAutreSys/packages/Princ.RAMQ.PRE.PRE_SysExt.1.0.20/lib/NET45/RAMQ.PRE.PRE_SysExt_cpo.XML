@@ -1,0 +1,1024 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PRE_SysExt_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.AGS.YRD1.IRechrRegleAcces">
+            <summary> 
+             Interface de la classe d'opération pour la recherche de règle d'accès dans la base de données d'AGS.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.AGS.YRD1.IRechrRegleAcces.RechercherContexteRegleAcces(RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre)">
+            <summary>
+            Cette méthode demande les contextes et règles d'accès pour un utilisateur.
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.AGS.YRD1.RechrRegleAcces">
+            <summary> 
+            Classe d'opération pour la recherche de règle d'accès dans la base de données d'AGS.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.AGS.YRD1.RechrRegleAcces.#ctor(RAMQ.Message.IResolutionMessage)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="resolutionMessage"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.AGS.YRD1.RechrRegleAcces.RechercherContexteRegleAcces(RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre)">
+            <summary>
+            Cette méthode demande les contextes et règles d'accès pour un utilisateur.
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.Constantes">
+            <summary> 
+            Classe de constantes.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.Constantes.FIP">
+            <summary>
+             Constantes spécifiques au système FIP
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_SysExt_cpo.Constantes.FIP.CodeApplication">
+            <summary>
+             Code de l'application FIP
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_SysExt_cpo.Constantes.FIP.ErreurImprevu">
+            <summary>
+             Code d'erreur imrévue utilisé par FIP
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_SysExt_cpo.Constantes.FIP.ObtenirRelationDispensateurIndividu">
+            <summary>
+            Nom de la procédure ObtenirRelDispIndiv dans EPZ3
+            </summary>
+        </member>
+        <member name="F:RAMQ.PRE.PRE_SysExt_cpo.Constantes.FIP.ObtenirPeriodePratiqueProfessionnel">
+            <summary>
+            Nom de la procédure pour obtenir les information sur la période de pratique d'un professionnel
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul">
+            <summary> 
+            Interface d'encapsulation des appels à "EPZ3_InfoDispCnsul"
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul.ObtenirRelDispIndiv(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre)">
+            <summary>
+            Obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Un objet contenant la liste des informations sur la relation dispensateur/individu</returns>
+            <remarks>
+            À cause de la limitation de l'index des tableaux de sortie dans COC2_V4 lorsqu'on passe une classe de paramètres,
+            les tableaux sont déclarés manuellement et on utilise l'ancienne façon d'appeler Oracle.
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul.ObtenirPeriodePratiqueProfessionnel(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre)">
+            <summary>
+            Permet d'obtenir les périodes de pratique d'un professionnel
+            </summary>
+            <param name="intrant">Pramètres d'entrées</param>
+            <returns>Un objet contenant la liste des périodes de pratique d'un professionnel</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul.VerifierAdmissibiliteProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Permet d'obtenir les information sur l'admissibilité d'un professionnel à facturer
+            </summary>
+            <param name="intrant">Paramètre d'entrées</param>
+            <returns>Un objet contenant les informations d'admissibilité</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul">
+            <summary> 
+             Encapsulation des appels à "EPZ3_InfoDispCnsul"
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul.ClientAccesDonnesOra">
+            <summary>
+             Propriete servant à faire les appels à la base de données.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul.#ctor(System.Func{RAMQ.AccesDonnees.BDOracle.IAccesDonnesOra})">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul.ObtenirRelDispIndiv(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre)">
+            <summary>
+            Obtenir les informations sur la relation dispensateur individu
+            </summary>
+            <param name="intrant">Paramètres d'entrées</param>
+            <returns>Un objet contenant la liste des informations sur la relation dispensateur/individu</returns>
+            <remarks>
+            À cause de la limitation de l'index des tableaux de sortie dans COC2_V4 lorsqu'on passe une classe de paramètres,
+            les tableaux sont déclarés manuellement et on utilise l'ancienne façon d'appeler Oracle.
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul.ObtenirPeriodePratiqueProfessionnel(RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre)">
+            <summary>
+            Permet d'obtenir les périodes de pratique d'un professionnel
+            </summary>
+            <param name="intrant">Pramètres d'entrées</param>
+            <returns>Un objet contenant la liste des périodes de pratique d'un professionnel</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.InfoDispCnsul.VerifierAdmissibiliteProfessionnel(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Permet d'obtenir les information sur l'admissibilité d'un professionnel à facturer
+            </summary>
+            <param name="intrant">Paramètre d'entrées</param>
+            <returns>Un objet contenant les informations d'admissibilité</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre">
+            <summary> 
+             Paramètre d'entrée pour obtenir les périodes de pratiques des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre.NumeroSequenceDispensateur">
+            <summary>
+            Numéro de séquence du dispensateur
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelEntre.NumeroTypePratique">
+            <summary>
+            Numéro du type de la pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti">
+            <summary> 
+             Paramètre de sortie pour obtenir les périodes de pratiques des professionnels
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.NumeroSequencePratique">
+            <summary>
+            Numéro séquentiel de la pratique 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.DatePremiereFacturation">
+            <summary>
+            Date de première facturation
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.DateDerniereFacturation">
+            <summary>
+            Date de dernière facturation 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtenirPeriodePratiqueProfessionnelSorti.NumeroTypePratique">
+            <summary>
+            Type de pratique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre">
+            <summary> 
+             Paramètre d'entrée pour obtenir les informations sur la relation dispensateur individu
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre.NumeroClasseDispensateur">
+            <summary>
+            Classe du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre.NumeroDispensateur">
+            <summary>
+            Numéro du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre.NumeroSequentielDispensateur">
+            <summary>
+            Numéro séquentiel du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre.NumeroSequentielIndividu">
+            <summary>
+            Numéro séquentiel d'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivEntre.DateService">
+            <summary>
+            Date de service
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti">
+            <summary> 
+             Paramètre de sortie pour obtenir les informations sur la relation dispensateur individu
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NumerosSequentielDispensateur">
+            <summary>
+            Liste de numéro séquentiel de dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NumerosDispensateur">
+            <summary>
+            Liste de numéro de dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NumerosSequentielIndividu">
+            <summary>
+            Liste de numéro séquentiel d'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NumerosClasseDispensateur">
+            <summary>
+            Liste de classe du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.TerritoiresPermis">
+            <summary>
+            Liste de territoire de pratique
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.ChiffresPreuveDispensateur">
+            <summary>
+            Liste de chiffre preuve
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.CodesProfession">
+            <summary>
+            Liste de code de profession
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesCreationDispensateur">
+            <summary>
+            Liste de date de création du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.IdentifiantsUtilisateurCreateur">
+            <summary>
+            Liste d'identifiant créateur du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesObtentionPermis">
+            <summary>
+            Liste de date d'obtention de permis
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesInscriptionRamq">
+            <summary>
+            Liste de date d'inscription à la ramq
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.AnneesGraduation">
+            <summary>
+            Liste d'année de graduation
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NumerosSequentielIntervenantGraduation">
+            <summary>
+            Liste de numéro séquentiel identifiant l'intervenant secondaire de type "université"
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.IndicateursDemandeCourrier">
+            <summary>
+            Liste d'indicateur de demande de courrier
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.IndicateursFacturationRecente">
+            <summary>
+            Liste d'indique si le dispensateur reçu paiement pour sa facturation dans la dernière année
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesPremiereSpecialite">
+            <summary>
+            Liste de date de première spécialité
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesDebutPratique">
+            <summary>
+            Liste de date de début de pratique
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NombresAnnneesExperienceHorsQuebec">
+            <summary>
+            Liste de nombre d'années d'expérience reconnues pour la pratique hors Québec
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NombresAnneesExperienceQuebecSpecialiste">
+            <summary>
+            Liste de nombre d'années d'expérience reconnues pour la pratique hors Québec pour spécialiste
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DroitsAcquisTarifHoraire">
+            <summary>
+            Liste d'indique si omni a droit au 5e échelon de l'échelle salariale de tarif horaire
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesMAJDispensateur">
+            <summary>
+            Liste de date de mise à jour du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.IdentifiantsUtilisateurModificateur">
+            <summary>
+            Liste d'identifiant modificateur du dispensateur
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NomsTronqueIndividu">
+            <summary>
+            Liste de nom tronqué de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.PrenomsIndividu">
+            <summary>
+            Liste de prénom de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NomsIndividu">
+            <summary>
+            Liste de nom de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NumeroAssuranceSocialeIndividu">
+            <summary>
+            Liste de numéro d'assurance sociale
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesCreationIndividu">
+            <summary>
+            Liste de date de création de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.IdentifiantsUtilisteurCreateurIndividu">
+            <summary>
+            Liste d'identifiant créateur de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.LanguesIndividu">
+            <summary>
+            Liste de langue de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.TitreCiviliteIndividu">
+            <summary>
+            Liste de titre civilité
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.SexeIndividu">
+            <summary>
+            Liste de sexe de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesNaissanceIndividu">
+            <summary>
+            Liste de date de naissance de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.NomsNaissanceIndividu">
+            <summary>
+            Liste de nom de naissance de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.StatutsCivilIndividu">
+            <summary>
+            Liste de statut civil de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesDecesIndividu">
+            <summary>
+            Liste de date de décès de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.DatesModificationIndividu">
+            <summary>
+            Liste de date de mise à jour de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.Parametre.ObtnRelDispIndivSorti.IdentifiantUtilisateurModificateurIndividu">
+            <summary>
+            Liste d'identifiant modificateur de l'individu
+            </summary>
+            <value></value>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.IObtnInfoLocal">
+            <summary> 
+             Interface d'encapsulation des appels à SOB2
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.IObtnInfoLocal.ObtenirLesNomsTerritoireCLSC(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre)">
+            <summary>
+            Permet d'obtenir les informations des territoire CLSC
+            </summary>
+            <param name="intrant">Entité contenant les paramètre de recherche</param>
+            <returns>Liste de nom des territoire</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.IObtnInfoLocal.ObtenirLesNomsTerritoireRLS(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSEntre)">
+            <summary>
+            Permet d'obtenir les informations des territoire RLS
+            </summary>
+            <param name="intrant">Entité contenant les paramètre de recherche</param>
+            <returns>Liste de nom des territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.ObtnInfoLocal">
+            <summary> 
+             Encapsulation des appels à SOB2
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.ObtnInfoLocal.ObtenirLesNomsTerritoireCLSC(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre)">
+            <summary>
+            Permet d'obtenir les informations des territoire CLSC
+            </summary>
+            <param name="intrant">Entité contenant les paramètre de recherche</param>
+            <returns>Liste de nom des territoire</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.ObtnInfoLocal.ObtenirLesNomsTerritoireRLS(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSEntre)">
+            <summary>
+            Permet d'obtenir les informations des territoire RLS
+            </summary>
+            <param name="intrant">Entité contenant les paramètre de recherche</param>
+            <returns>Liste de nom des territoire</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOD1.IObtnInfoPilotLieuGeo">
+            <summary> 
+             Interface d'encapsulation des appels à SOD1
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOD1.IObtnInfoPilotLieuGeo.ObtenirRegroupementsLieuxGeographiquesRSS(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre)">
+            <summary>
+            Permet d'obtenir les regroupements et lieux géographique RSS
+            </summary>
+            <param name="intrant">Entité contenant les paramètre de recherche</param>
+            <returns>Liste des informations des territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOD1.ObtnInfoPilotLieuGeo">
+            <summary> 
+             Encapsulation des appels à SOD1
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.GEO.SOD1.ObtnInfoPilotLieuGeo.ObtenirRegroupementsLieuxGeographiquesRSS(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre)">
+            <summary>
+            Permet d'obtenir les regroupements et lieux géographique RSS
+            </summary>
+            <param name="intrant">Entité contenant les paramètre de recherche</param>
+            <returns>Liste des informations des territoire</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesDS.ags_regle_acces_util_DTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesDS.ags_regle_acces_util_DTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesDS.ags_regle_acces_util_DTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.CritrRechrDroitAcces">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.CritrRechrDroitAcces.IdUtil">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.CritrRechrDroitAcces.CodContx">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.CritrRechrDroitAcces.CodAppli">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.DroitAcces">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.DroitAcces.Des">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.MsgTrait">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.MsgTrait.CodSys">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.MsgTrait.IdMsg">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.MsgTrait.CodSever">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.MsgTrait.TxtMsgFran">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.MsgTrait.TxtMsgAngl">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSorti">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSorti.InfoMsgTrait">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSortiDroitAcces">
+            <remarks/>
+        </member>
+        <member name="P:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSortiDroitAcces.ColctDroitAcces">
+            <remarks/>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoRegleAccesContxDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDS.RegleAccesContxDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDS.RegleAccesContxDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDS.RegleAccesContxDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.RegleAccesContxDroitDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.RegleAccesContxDroitDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS.RegleAccesContxDroitDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.ParamEntreeInfoSecuGranuDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.ParamEntreeInfoSecuGranuDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamEntreeInfoSecuGranuDS.ParamEntreeInfoSecuGranuDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.ParamSortieInfoSecuGranuDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.ParamSortieInfoSecuGranuDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.ParamSortieInfoSecuGranuDS.ParamSortieInfoSecuGranuDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdentSecuGranuDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdentSecuGranuDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdentSecuGranuDS.IdentSecuGranuDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdentSecuGranuDS.IdentSecuGranuDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdentSecuGranuDS.IdentSecuGranuDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoNumSeqRegleAccesDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.NumSeqRegleAccesDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.NumSeqRegleAccesDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.NumSeqRegleAccesDS.NumSeqRegleAccesDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdContxDS.ParamDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdContxDS.ParamDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.InfoIdContxDS.ParamDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdContxDS">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdContxDS.IdContxDTDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdContxDS.IdContxDTRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.IdContxDS.IdContxDTRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur">
+            <summary>
+            Classe de mappagge
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.AccesDonnees.BDOracle.IAccesDonnesOra)">
+            <summary>
+             Map un objet RAMQ.AccesDonnees.BDOracle.IAccesDonnesOra en FIP.EPZ3.Param.ObtnRelDispIndivSorti
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre)">
+            <summary>
+            Map un objet de type RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCEntre en 
+            svcObtnInfoLocal.EntreObtnInfoTerriCLSC
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoTerriCLSC)">
+            <summary>
+            Map un objet de type svcObtnInfoLocal.SortieObtnInfoTerriCLSC en 
+            RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireCLSCSorti
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssEntre)">
+            <summary>
+            Map un objet de type Parametre.ObtenirRegroupementsLgeoRssEntre en svcObtnInfoPilotLieuGeo.ObtnListeRegrLgeoRattaRssEntre
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirInformationTerritoireRLSEntre)">
+            <summary>
+            Map un objet de type Parametre.ObtenirInformationTerritoireRLSEntre en svcObtnInfoLocal.EntreObtnInfoTerriRLS
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoLocal.SortieObtnInfoTerriRLS)">
+            <summary>
+            Map un objet de type svcObtnInfoLocal.SortieObtnInfoTerriRLS en Parametre.ObtenirInformationTerritoireRLSSorti
+            </summary>
+            <param name="source">Objet source</param>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoPilotLieuGeo.ObtnListeRegrLgeoRattaRssSorti)">
+            <summary>
+            Map un objet de type svcObtnInfoPilotLieuGeo.ObtnListeRegrLgeoRattaRssSorti en 
+            RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoPilotLieuGeo.LieuGeographique)">
+            <summary>
+            Map un objet de type svcObtnInfoPilotLieuGeo.Regroupement en Entite.Regroupement
+            </summary>
+            <param name="source">Objet source</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcObtnInfoPilotLieuGeo.Regroupement)">
+            <summary>
+            Map un objet de type svcObtnInfoPilotLieuGeo.Regroupement en Entite.Regroupement
+            </summary>
+            <param name="source">Objet source</param>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcRechrRegleAcces.RegleAccesContxDroitDS)">
+            <summary>
+            Map un objet de type svcRechrRegleAcces.RegleAccesContxDS en 
+            RechercherContexteRegleAccesSorti
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Securite.Parametre.RechercherContexteRegleAccesEntre)">
+            <summary>
+            Map un objet de type RechercherContexteRegleAccesEntre en 
+            svcRechrRegleAcces.InfoRegleAccesContxDS
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_Entites_cpo.Professionnel.Parametre.VerifierAdmissibiliteProfessionnelFacturerEntre)">
+            <summary>
+            Map un objet de type VerifierAdmissibiliteProfessionnelFacturerEntre en 
+            svcInfoDispCnsul.ParamDeterminerAdmisFactuDispEntre
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.ParamDeterminerAdmisFactuDispSortie)">
+            <summary>
+            Map un objet de type svcInfoDispCnsul.ParamDeterminerAdmisFactuDispSortie en 
+            VerifierAdmissibiliteProfessionnelFacturerSorti
+            </summary>
+            <param name="source">Objet source</param>
+            <returns>Objet cible</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PRE_SysExt_cpo.Utilitaire.Mappeur.Mapper(RAMQ.PRE.PRE_SysExt_cpo.svcInfoDispCnsul.AdmisFact)">
+            <summary>
+            Map un objet de type svcInfoDispCnsul.ParamDeterminerAdmisFactuDispSortie en 
+            VerifierAdmissibiliteProfessionnelFacturerSorti
+            </summary>
+            <param name="source"></param>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

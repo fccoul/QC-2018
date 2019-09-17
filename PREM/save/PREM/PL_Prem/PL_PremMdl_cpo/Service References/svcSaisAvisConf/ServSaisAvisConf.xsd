@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://PLA1_SaisAvisConf_svc/1" elementFormDefault="qualified" targetNamespace="http://PLA1_SaisAvisConf_svc/1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" />
+  <xs:import schemaLocation="http://nlb-unit-app4/PREAPP/PL/PLA_GererAvisConf/PLA1_SaisAvisConf_svc/ServSaisAvisConf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA1_SaisAvisConf_cpo.Gabarit.Param" />
+  <xs:element name="CreerAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q1:CreerAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreerAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="CreerAvisConformiteResult" nillable="true" type="q2:CreerAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreerStatutAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q3:CreerStatutAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreerStatutAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="CreerStatutAvisConformiteResult" nillable="true" type="q4:CreerStatutAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q5:ModifierAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="ModifierAvisConformiteResult" nillable="true" type="q6:ModifierAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirLesAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q7:ObtenirLesAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirLesAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="ObtenirLesAvisConformiteResult" nillable="true" type="q8:ObtenirLesAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierPeriodeAvis">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q9:ModifierPeriodeAvisEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierPeriodeAvisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="ModifierPeriodeAvisResult" nillable="true" type="q10:ModifierPeriodeAvisSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterAvisConformite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q11:TraiterAvisConformiteEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraiterAvisConformiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="TraiterAvisConformiteResult" nillable="true" type="q12:TraiterAvisConformiteSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidationAvisDerogationEnCours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q13:ValiderAvisDerogationEnCoursEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidationAvisDerogationEnCoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="ValidationAvisDerogationEnCoursResult" nillable="true" type="q14:ValiderAvisDerogationEnCoursSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierStatutEngagement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="intrant" nillable="true" type="q15:ModifierStatutEngagementEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifierStatutEngagementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Parametre" minOccurs="0" name="ModifierStatutEngagementResult" nillable="true" type="q16:ModifierStatutEngagementSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirGabaritConfirmation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA1_SaisAvisConf_cpo.Gabarit.Param" minOccurs="0" name="parametreEntre" nillable="true" type="q17:ObtnGabaritEntre" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenirGabaritConfirmationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PLA1_SaisAvisConf_cpo.Gabarit.Param" minOccurs="0" name="ObtenirGabaritConfirmationResult" nillable="true" type="q18:ObtnGabaritSorti" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

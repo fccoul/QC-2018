@@ -1,0 +1,772 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.PRE.PL_RegleAffaiComne_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.PLC1_ETR_ObtnDroitAcqProf.IObtnDroitAcqProf">
+            <summary> 
+             Interface d'obtention des droits acquis des professionnels
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2017-06-27
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.PLC1_ETR_ObtnDroitAcqProf.IObtnDroitAcqProf.ObtenirDroitsAcquisProfs(RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre)">
+            <summary>
+            Permet d'obtenir une liste des avis de conformité et de leurs statuts
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.PLC1_ETR_ObtnDroitAcqProf.ObtnDroitAcqProf">
+            <summary> 
+             Obtention des droits acquis des professionnels
+            </summary>
+            <remarks>
+             Auteur : Florent Pollart <br/>
+             Date   : 2017-06-27
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.PLC1_ETR_ObtnDroitAcqProf.ObtnDroitAcqProf.#ctor(RAMQ.Message.IResolutionMessage,RAMQ.PRE.PL_LogiqueAffaire_cpo.AvisConformite.IAvisConformite,RAMQ.PRE.PL_LogiqueAffaire_cpo.CaracteristiquePratique.ICaracteristiquePratique,RAMQ.PRE.PL_LogiqueAffaire_cpo.Professionnel.IRechercherProfessionnel,RAMQ.PRE.PRE_SysExt_cpo.FIP.EPZ3.IInfoDispCnsul)">
+            <summary>
+            Constructeur pour l'obtention des droits acquis 
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.PLC1_ETR_ObtnDroitAcqProf.ObtnDroitAcqProf.ObtenirDroitsAcquisProfs(RAMQ.PRE.PRE_Entites_cpo.DroitAcquis.Parametre.ObtenirDroitsAquisProfessionnelsEntre)">
+            <summary>
+            Permet d'obtenir une liste des avis de conformité et de leurs statuts
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Une liste des avis de conformité avec leurs statuts</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.NomTerritoire">
+            <summary> 
+             Entité des nom de territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.NomTerritoire.Nom">
+            <summary>
+            Nom du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.NomTerritoire.TypeLieuGeographique">
+            <summary>
+            Type du lieu géographique
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire">
+            <summary>
+            Entite d'un territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire.Id">
+            <summary>
+            Id généré pour utilisation dans une liste déroulante
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire.Type">
+            <summary>
+            Type du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire.Code">
+            <summary>
+            Code de lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire.Nom">
+            <summary>
+            Nom du lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire.NumeroSequenceResponsable">
+            <summary>
+            Numéro de séquence de regroupement administratif du lieu géographique responsable
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.IObtenirNomTerritoire">
+            <summary> 
+             Interface permettant d'obtenir le nom d'un territoire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.IObtenirNomTerritoire.ObtenirNomTerritoire(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre)">
+            <summary>
+            Permet d'obtenir le nom d'un territoir
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Nom du territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.IObtenirNomTerritoireFactory">
+            <summary>
+            Interface qui permet d'instancier la bonne classe à appeler
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.IObtenirNomTerritoireFactory.Instancier(System.String)">
+            <summary>
+            Permet d'instancier la méthode
+            </summary>
+            <param name="typeTerritoire">Type de territoire</param>
+            <returns>La bonne classe</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomCLSC">
+            <summary> 
+             Permet d'obtenir le nom d'un territoire d'un CLSC
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomCLSC.#ctor(RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.IObtnInfoLocal)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="clientObtnInfoLocal"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomCLSC.RAMQ#PRE#PL_RegleAffaiComne_cpo#Territoire#Factory#IObtenirNomTerritoire#ObtenirNomTerritoire(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre)">
+            <summary>
+            Permet d'obtenir le nom d'un territoire d'un CLSC
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Nom du territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRegroupement">
+            <summary> 
+              Permet d'obtenir le nom d'un territoire d'un Regroupement
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRegroupement.#ctor(RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.ITerritoiresRegles)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="clientTerritoiresRegles"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRegroupement.RAMQ#PRE#PL_RegleAffaiComne_cpo#Territoire#Factory#IObtenirNomTerritoire#ObtenirNomTerritoire(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre)">
+            <summary>
+             Permet d'obtenir le nom d'un territoire d'un Regroupement
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Nom du territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRLS">
+            <summary> 
+             Permet d'obtenir le nom d'un territoire d'un RLS
+            </summary>
+            <remarks>
+             Auteur : Jean-Benoit Drouin-Cloutier <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRLS.#ctor(RAMQ.PRE.PRE_SysExt_cpo.GEO.SOB2.IObtnInfoLocal)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="clientObtnInfoLocal"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRLS.RAMQ#PRE#PL_RegleAffaiComne_cpo#Territoire#Factory#IObtenirNomTerritoire#ObtenirNomTerritoire(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre)">
+            <summary>
+             Permet d'obtenir le nom d'un territoire d'un RLS
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Nom du territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRSS">
+            <summary> 
+             Permet d'obtenir le nom d'un territoire d'un RSS
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRSS.#ctor(RAMQ.PRE.PRE_OutilComun_cpo.IDomaineValeur)">
+            <summary>
+            Constructeur par défaut.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomRSS.RAMQ#PRE#PL_RegleAffaiComne_cpo#Territoire#Factory#IObtenirNomTerritoire#ObtenirNomTerritoire(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirNomTerritoireEntre)">
+            <summary>
+             Permet d'obtenir le nom d'un territoire d'un RSS
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Nom du territoire</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomTerritoireFactory">
+            <summary>
+            Permet d'instancier la bonne classe à appeler
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomTerritoireFactory.#ctor(System.Func{System.String,RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.IObtenirNomTerritoire})">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Factory.ObtenirNomTerritoireFactory.Instancier(System.String)">
+            <summary>
+            Permet d'instancier la méthode
+            </summary>
+            <param name="typeTerritoire">Type de territoire</param>
+            <returns>La bonne classe</returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.ITerritoiresRegles">
+            <summary> 
+            Interface regroupant les fonctions de logique d'affaire pour les territoires.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.ITerritoiresRegles.ObtenirTerritoires(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti)">
+            <summary>
+            Permet d'obtenir une seule liste de territoires regroupant les lieu géographique et les regroupements
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Liste des regroupement des territoire</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.ITerritoiresRegles.ObtenirTerritoire(RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre)">
+            <summary>
+            Permet d'obtenir les information d'un territoire
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Un territoire</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.ITerritoiresRegles.GenererTerritoireID(RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.GenererTerritoireIDEntre)">
+            <summary>
+            Générer l'ID du territoire pour être utilisé dans une liste déroulante
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.GenererTerritoireIDEntre">
+            <summary>
+            Permet de genérer l'identifiant du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.GenererTerritoireIDEntre.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.GenererTerritoireIDEntre.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.GenererTerritoireIDEntre.NumeroSequence">
+            <summary>
+            Numéro de séquence
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre">
+            <summary> 
+             Paramètres d'entrés pour l'obtention du territoire
+            </summary>
+            <remarks>
+             Auteur : Danick Nadeau <br/>
+             Date   : Novembre 2016
+            </remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.DateRecherche">
+            <summary>
+            Date de la recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.DateDebutRecherche">
+            <summary>
+            Date de début de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.DateFinRecherche">
+            <summary>
+            Date de fin de recherche
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.TerritoireId">
+            <summary>
+            Identifiant du territoire
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.CodeRSS">
+            <summary>
+            Code RSS 
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.IndicateurObtentionLieuGeographique">
+            <summary>
+            Indicateur obtention lieu géographique
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.IndicateurObtenirUniquementRegroupement">
+            <summary>
+            Indicateur obtenir uniquement regroupement
+            </summary>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre.NumeroSequentielRegroupment">
+            <summary>
+            Numéro séquentiel de regroupement administratif des lieux géographiques
+            </summary>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoiresSorti">
+            <summary>
+            Paramètre de sortie de l'obtention du nom du territoire
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoiresSorti.#ctor">
+            <summary>
+            Constructeur
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoiresSorti.Territoires">
+            <summary>
+            Liste des territoires (lieux géographiques et regroupements)
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.TerritoiresRegles">
+            <summary> 
+            Classe regroupant la logique d'affaire pour les territoires.
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.TerritoiresRegles.#ctor(RAMQ.PRE.PRE_SysExt_cpo.GEO.SOD1.IObtnInfoPilotLieuGeo)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="clientObtnInfoPilotLieuGeo"></param>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.TerritoiresRegles.ObtenirTerritoires(RAMQ.PRE.PRE_Entites_cpo.LieuGeographique.Parametre.ObtenirRegroupementsLgeoRssSorti)">
+            <summary>
+            Permet d'obtenir une seule liste de territoires regroupant les lieu géographique et les regroupements
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Liste des regroupement des territoire</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.TerritoiresRegles.ObtenirTerritoire(RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.ObtenirTerritoireEntre)">
+            <summary>
+            Permet d'obtenir les information d'un territoire
+            </summary>
+            <param name="intrant">Paramètre d'entré</param>
+            <returns>Un territoire</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.TerritoiresRegles.GenererTerritoireID(RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Parametre.GenererTerritoireIDEntre)">
+            <summary>
+            Générer l'ID du territoire pour être utilisé dans une liste déroulante
+            </summary>
+            <param name="intrant"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisActifAvecDateFin(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si un avis est actif avec une date de fin
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisAutoriserSuspenduActive(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si l'avis est actif autorisé ou suspendu
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisSuspenduActif(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si l'avis est suspendu et actif
+            </summary>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisTerritoireIdentique(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si l'avis est dans le même territoire
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="lieu">Les information du territoire</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDeces(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de vérifier si le professionnel est décédé à la date demandée
+            </summary>
+            <param name="dateDecesIndividu">La date de décès (s'il y en a une)</param>
+            <param name="dateDebutPrevu">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDerogationActive(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si la dérogation est active
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDerogationActiveAvecDateFin(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si la dérogation est active avec une date de fin
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDerogationFuture(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si la dérogation est dans le future
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDerogationTerminer(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Permet de vérifier si date de début de la nouvelle est avant 
+            la date de fin d’une dérogation existante Terminée.
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierMemeAvisAutoriserSuspenduFuture(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir le même avis est existe dans le future
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierNonAdmissible(System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel est non admissible à facturer à la date demandée
+            </summary>
+            <param name="periodesAdmissibilite">Les périodes d'admissibilité du professionnel</param>
+            <param name="dateDebutPrevu">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierSpecialiste(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel est spécialiste à la date demandée
+            </summary>
+            <param name="datePremiereSpecialite">Date de spécialité (s'il y en a une)</param>
+            <param name="dateDebutPrevu">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisActif(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le statut est transmis et autorisé
+            </summary>
+            <param name="avis">Avis de conformités.</param>
+            <param name="statut">Statut.</param>
+            <param name="datePrevue">Date prévue.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierVingtAnneePratique(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel à au moins vingt année de pratique en date de l'avis
+            </summary>
+            <param name="anneeObtentionPermis">Date d'obtention de son permis</param>
+            <param name="dateDebutAvis">Date de début de l'avis</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisTermineLaVeille(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir s'il y a un avis se terminant la veille du début d'un autre avis
+            </summary>
+            <param name="avis">Avis</param>
+            <param name="statut">Statut</param>
+            <param name="dateDebut">Date de début</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDerogationTermineLaVeille(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir s'il y a une dérogation se terminant la veille du début d'un avis
+            </summary>
+            <param name="derogation">Dérogation</param>
+            <param name="dateDebut">Date de début</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierObtentionPermis(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel a obtenu sont permis à la date prévu
+            </summary>
+            <param name="anneeObtentionPermis">Date d'obtention de son permis</param>
+            <param name="datePrevue">Date de début de l'avis</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDerogationActiveMemeType(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime,System.String)">
+            <summary>
+            Fonction permettant de vérifier la présence d’une dérogation active du même type 
+            que la dérogation qu’on veut créer.
+            </summary>
+            <param name="derogation">Information de la dérogation.</param>
+            <param name="dateDebut">La date début de la dérogation.</param>
+            <param name="typeDerogation">Type de la dérogation.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDateFinInferieurDateDebut(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de valider que la date de fin est inférieur à la date de début
+            </summary>
+            <param name="dateFin">Date de fin</param>
+            <param name="dateDebut">Date de début</param>
+            <returns>Vrai si la date de fin est inférieur sinon faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDateReportInferieurEgaleDateDebut(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de valider que la date de report est inférieur ou égale à la date de début
+            </summary>
+            <param name="dateReport">Date de fin</param>
+            <param name="dateDebut">Date de début</param>
+            <returns>Vrai si la date de fin est inférieur ou égale sinon faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDatePrevuePlusDeSixMois(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de valider que la date de début est plus de 6 mois que la date de début de l'avis
+            </summary>
+            <param name="datePrevue">Date de fin</param>
+            <param name="dateDebut">Date de début</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierClasseProfessionel(System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Permet de valider le numéro de classe du professionnel
+            </summary>
+            <param name="numeroClasse">Numéro de classe à valider</param>
+            <param name="classeValideur">Numéro de classe validateur</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierAvisEnAttenteRegion(System.String,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite)">
+            <summary>
+            Permet de valider si l'avis est en attente pour la région spécifié
+            </summary>
+            <param name="codeRSS">Code de région socio-sanitaire</param>
+            <param name="avis">Avis de conformité</param>
+            <param name="statut">Statut de l'avis de conformité</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.IReglesValidations.VerifierDateChevauchementSuspension(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Permet de valider si la date chevauche une période de suspension d'avis
+            </summary>
+            <param name="statut">Statut de l'avis de conformité</param>
+            <param name="date">Date à vérifier</param>
+            <returns></returns>
+        </member>
+        <member name="T:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierSpecialiste(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel est spécialiste à la date demandée
+            </summary>
+            <param name="datePremiereSpecialite">Date de spécialité (s'il y en a une)</param>
+            <param name="dateDebutPrevu">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDeces(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de vérifier si le professionnel est décédé à la date demandée
+            </summary>
+            <param name="dateDecesIndividu">La date de décès (s'il y en a une)</param>
+            <param name="dateDebutPrevu">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierNonAdmissible(System.Collections.Generic.IEnumerable{RAMQ.PRE.PRE_Entites_cpo.Professionnel.Entite.AdmissibiliteFacturer},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel est non admissible à facturer à la date demandée
+            </summary>
+            <param name="periodesAdmissibilite">Les périodes d'admissibilité du professionnel</param>
+            <param name="dateDebutPrevu">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDerogationActive(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si la dérogation est active
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDerogationFuture(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si la dérogation est dans le future
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDerogationActiveAvecDateFin(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si la dérogation est active avec une date de fin
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDerogationTerminer(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Permet de vérifier si date de début de la nouvelle est avant 
+            la date de fin d’une dérogation existante Terminée.
+            </summary>
+            <param name="derogation">Information de la dérogation</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisAutoriserSuspenduActive(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si l'avis est actif autorisé ou suspendu
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisTerritoireIdentique(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,RAMQ.PRE.PL_RegleAffaiComne_cpo.Territoire.Entite.Territoire,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si l'avis est dans le même territoire
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="lieu">Les information du territoire</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierMemeAvisAutoriserSuspenduFuture(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir le même avis est existe dans le future
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisSuspenduActif(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si l'avis est suspendu et actif
+            </summary>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisActifAvecDateFin(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si un avis est actif avec une date de fin
+            </summary>
+            <param name="avis">Les informations de l'avis</param>
+            <param name="statut">Les information du statut</param>
+            <param name="datePrevue">La date prévue</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisActif(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le statut est transmis et autorisé
+            </summary>
+            <param name="avis">Avis de conformités.</param>
+            <param name="statut">Statut.</param>
+            <param name="datePrevue">Date prévue.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierVingtAnneePratique(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel à au moins vingt année de pratique en date de l'avis
+            </summary>
+            <param name="anneeObtentionPermis">Date d'obtention de son permis</param>
+            <param name="dateDebutAvis">Date de début de l'avis</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisTermineLaVeille(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir s'il y a un avis se terminant la veille du début d'un autre avis
+            </summary>
+            <param name="avis">Avis</param>
+            <param name="statut">Statut</param>
+            <param name="dateDebut">Date de début</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDerogationTermineLaVeille(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime)">
+            <summary>
+            Fonction permettant de savoir s'il y a une dérogation se terminant la veille du début d'un avis
+            </summary>
+            <param name="derogation">Dérogation</param>
+            <param name="dateDebut">Date de début</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierObtentionPermis(System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Fonction permettant de savoir si le professionnel a obtenu sont permis à la date prévu
+            </summary>
+            <param name="anneeObtentionPermis">Date d'obtention de son permis</param>
+            <param name="datePrevue">Date de début de l'avis</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDerogationActiveMemeType(RAMQ.PRE.PRE_Entites_cpo.Derogation.Entite.Derogation,System.DateTime,System.String)">
+            <summary>
+            Fonction permettant de vérifier la présence d’une dérogation active du même type 
+            que la dérogation qu’on veut créer.
+            </summary>
+            <param name="derogation">Information de la dérogation.</param>
+            <param name="dateDebut">La date début de la dérogation.</param>
+            <param name="typeDerogation">Type de la dérogation.</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDateFinInferieurDateDebut(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de valider que la date de fin est inférieur à la date de début
+            </summary>
+            <param name="dateFin">Date de fin</param>
+            <param name="dateDebut">Date de début</param>
+            <returns>Vrai si la date de fin est inférieur sinon faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDateReportInferieurEgaleDateDebut(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de valider que la date de report est inférieur ou égale à la date de début
+            </summary>
+            <param name="dateReport">Date de fin</param>
+            <param name="dateDebut">Date de début</param>
+            <returns>Vrai si la date de fin est supérieur ou égal sinon faux</returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDatePrevuePlusDeSixMois(System.DateTime,System.DateTime)">
+            <summary>
+            Permet de valider que la date de début est plus de 6 mois que la date de début de l'avis
+            </summary>
+            <param name="datePrevue">Date de fin</param>
+            <param name="dateDebut">Date de début</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierClasseProfessionel(System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Permet de valider le numéro de classe du professionnel
+            </summary>
+            <param name="numeroClasse">Numéro de classe à valider</param>
+            <param name="classeValideur">Numéro de classe validateur</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierAvisEnAttenteRegion(System.String,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.AvisConformite,RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite)">
+            <summary>
+            Permet de valider si l'avis est en attente pour la région spécifié
+            </summary>
+            <param name="codeRSS">Code de région socio-sanitaire</param>
+            <param name="avis">Avis de conformité</param>
+            <param name="statut">Statut de l'avis de conformité</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.PRE.PL_RegleAffaiComne_cpo.Validations.ReglesValidations.VerifierDateChevauchementSuspension(RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite.StatutAvisConformite,System.DateTime)">
+            <summary>
+            Permet de valider si la date chevauche une période de suspension d'avis
+            </summary>
+            <param name="statut">Statut de l'avis de conformité</param>
+            <param name="date">Date à vérifier</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

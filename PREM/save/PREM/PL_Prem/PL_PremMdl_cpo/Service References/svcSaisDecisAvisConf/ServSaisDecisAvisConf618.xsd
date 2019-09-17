@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RAMQ.PRE.PRE_Entites_cpo.AvisConformite.Entite" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AvisConformite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeLieuGeographique" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodeRegion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebutEngagement" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurenceInactive" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurenceMAJ" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifiantMAJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListeStatutAvisConformite" nillable="true" type="tns:ArrayOfStatutAvisConformite" />
+      <xs:element minOccurs="0" name="NumeroSequentielDispensateur" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielRegroupement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeLieuGeographique" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AvisConformite" nillable="true" type="tns:AvisConformite" />
+  <xs:complexType name="ArrayOfStatutAvisConformite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatutAvisConformite" nillable="true" type="tns:StatutAvisConformite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatutAvisConformite" nillable="true" type="tns:ArrayOfStatutAvisConformite" />
+  <xs:complexType name="StatutAvisConformite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeRaisonStatutEngagement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateDebutStatutEngagement" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateFinStatutEngagement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurence" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurenceInactive" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateHeureOccurenceMAJ" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdentifiantCreation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentifiantMAJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IndicateurStatutEngagementAttente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSequentielEngagement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroSequentielStatutEngagement" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="StatutEngagement" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatutAvisConformite" nillable="true" type="tns:StatutAvisConformite" />
+</xs:schema>

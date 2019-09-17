@@ -1,0 +1,527 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RAMQ.COM.COD1_JetonAuthn_cpo</name>
+    </assembly>
+    <members>
+        <member name="T:RAMQ.IdentityModel.Tokens.Cache.ICacheClient">
+            <summary>
+            Interface devant être implémentée par les cache client injecté à la cache de jeton (CacheJeton)
+            </summary>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.Cache.ICacheClient.Enregistrer``1(System.String,``0,System.DateTime)">
+            <summary>
+            Permet d'enregistrer une valeur dans la cache
+            </summary>
+            <typeparam name="T">Type de la valeur</typeparam>
+            <param name="clef">Clef d'accès</param>
+            <param name="valeur">Valeur à enregistrer</param>
+            <param name="dateExpiration">date d'expiration de la valeur</param>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.Cache.ICacheClient.Obtenir``1(System.String)">
+            <summary>
+            Permet d'obtenir une valeur de la cache
+            </summary>
+            <typeparam name="T">Type de la valeur</typeparam>
+            <param name="clef">Clef d'accès</param>
+            <returns>la valeur dans la cache</returns>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.Cache.CacheJeton">
+            <summary>
+            Classe permettant d'agir en tant que cache de jeton d'authentification
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.Cache.CacheJeton.#ctor(RAMQ.IdentityModel.Tokens.Cache.ICacheClient)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="cacheClient">Objet permettant la mise en cache du jeton et/ou l'obtention d'un jeton de la cache</param>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.Cache.CacheJeton.TryAdd(System.String,System.DateTime)">
+            <summary>
+            Ajouter le jeton dans la cache
+            </summary>
+            <param name="securityToken">Jeton à ajouter dans la cache</param>
+            <param name="expiresOn">date d'expiration du jeton</param>
+            <returns></returns>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.Cache.CacheJeton.TryFind(System.String)">
+            <summary>
+            Vérifier l'existance du jeton dans la cache
+            </summary>
+            <param name="securityToken">jeton à vérifier</param>
+            <returns>si oui ou non le jeton est présent dans la cache</returns>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.CreateurJetonJWT">
+            <summary>
+            Classe permettant d'effectuer la création 
+            d'un jeton d'authentification
+            de format JWT (JSON Web Token)
+            </summary>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.CreateurJetonJWT.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="certificatProvider">Fournisseur de certificat</param>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.CreateurJetonJWT.Creer(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Permet d'effectuer la création d'un jeton d'authentification
+            </summary>
+            <param name="usager">Usager du jeton d'authentification</param>
+            <returns>le jeton d'authentification</returns>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.CreateurJetonJWT.Creer(System.Security.Claims.ClaimsIdentity,RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificat)">
+            <summary>
+            Permet d'effectuer la création d'un jeton d'authentification
+            </summary>
+            <param name="usager">Usager du jeton d'authentification</param>
+            <param name="actionErreurObtentionCertificat">Action a effectuer lorsqu'une erreur survient lors de l'obtention du certificat</param>
+            <returns>le jeton d'authentification</returns>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.ICreateurJetonJWT">
+            <summary>
+            Interface implémentée par la classe permettant
+            d'effectuer la création d'un jeton d'authentification
+            de format JWT (JSON Web Token)
+            </summary>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.ICreateurJeton">
+            <summary>
+            Interface implémentée par les classe permettant
+            d'effectuer la création d'un jeton d'authentification
+            </summary>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.ICreateurJeton.Creer(System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            Permet d'effectuer la création d'un jeton d'authentification
+            </summary>
+            <param name="usager">Usager du jeton d'authentification</param>
+            <returns>le jeton d'authentification</returns>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.ICreateurJeton.Creer(System.Security.Claims.ClaimsIdentity,RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificat)">
+            <summary>
+            Permet d'effectuer la création d'un jeton d'authentification
+            </summary>
+            <param name="usager">Usager du jeton d'authentification</param>
+            <param name="actionErreurObtentionCertificat">Action a effectuer lorsqu'une erreur survient lors de l'obtention du certificat</param>
+            <returns>le jeton d'authentification</returns>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.IValidateurJeton">
+            <summary>
+            Interface implémentée par les classes 
+            permettant de valider des jetons d'autentification
+            </summary>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.IValidateurJeton.Valider(System.String)">
+            <summary>
+            Permet de valider le jeton d'authentification reçu
+            </summary>
+            <param name="jeton">jeton d'authentification à valider</param>
+            <returns>Le jeton validé</returns>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.IValidateurJetonJwt">
+            <summary>
+            Interface implémentée par la classe 
+            permettant de valider des jetons d'autentification 
+            de format JWT (JSON Web Token)
+            </summary>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:RAMQ.IdentityModel.Tokens.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:RAMQ.IdentityModel.Tokens.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:RAMQ.IdentityModel.Tokens.Properties.Resources.MsgErrConfigurationAppSettings">
+            <summary>
+              Recherche une chaîne localisée semblable à La clef de configuration (appsettings) &quot;{0}&quot; est requise!.
+            </summary>
+        </member>
+        <member name="T:RAMQ.IdentityModel.Tokens.ValidateurJetonJwt">
+            <summary>
+            Classe permettant de valider des jetons d'autentification 
+            de format JWT (JSON Web Token)
+            </summary>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.ValidateurJetonJwt.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider,System.IdentityModel.Tokens.ITokenReplayCache)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="certificatProvider">Fournisseur de certificat</param>
+            <param name="replayCache">Objet utilisé pour détecter les "replay"</param>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.ValidateurJetonJwt.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IObteneurCertificatsAutorises,System.IdentityModel.Tokens.ITokenReplayCache)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="obteneurCertificatsAutorises">Obteneur de certificats autorisés</param>
+            <param name="replayCache">Objet utilisé pour détecter les "replay"</param>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.ValidateurJetonJwt.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IObteneurCertificatsAutorises,System.IdentityModel.Tokens.ITokenReplayCache,RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificatAutorise)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="obteneurCertificatsAutorises">Obteneur de certificats autorisés</param>
+            <param name="replayCache">Objet utilisé pour détecter les "replay"</param>
+            <param name="actionErreurObtenirCertificatsAutorises">action a effectuer en cas d'erreur lors de l'obtention des certificats autorisés</param>
+        </member>
+        <member name="M:RAMQ.IdentityModel.Tokens.ValidateurJetonJwt.Valider(System.String)">
+            <summary>
+            Permet de valider le jeton JWT reçu
+            </summary>
+            <param name="jeton">jeton jwt à valider</param>
+            <returns>Le jeton validé</returns>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProvider">
+            <summary>
+            Classe permettant d'obtenir un certificat en fonction de la configuration
+            </summary>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProvider.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfig)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="config">configuration permettant d'identifier le certificat</param>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProvider.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfigEx)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="configEx">configuration permettant d'identifier le certificat</param>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProvider.Obtenir">
+            <summary>
+            Méthode permettant d'obtenir le certificat
+            </summary>
+            <returns> le certificat</returns>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProvider.Obtenir(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificat)">
+            <summary>
+            Méthode permettant d'obtenir le certificat
+            </summary>
+            <param name="actionErreur">Action a effectuer en cas d'erreur</param>
+            <returns> le certificat</returns>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfigEx">
+            <summary>
+            Configuration permettant d'identifier un certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfigEx.Nom">
+            <summary>
+            Nom du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfigEx.NomMagasin">
+            <summary>
+            Nom du magasin du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfigEx.EmplacementMagasin">
+            <summary>
+            Emplacement du magasin du certificat
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfig">
+            <summary>
+            Configuration permettant d'identifier un certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfig.Emplacement">
+            <summary>
+            Emplacement du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfig.Magasin">
+            <summary>
+            Magasin du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.CertificatProviderConfig.Nom">
+            <summary>
+            Nom du certificat
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.EmplacementMagasin">
+            <summary>
+            Emplacement du magasin de certificat
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.EmplacementMagasin.UsagerCourant">
+            <summary>
+            Magasin de certificat de l'usager courant
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.EmplacementMagasin.MachineLocale">
+            <summary>
+            Magasin de certificat de l'ordinateur local
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificat">
+            <summary>
+            Action a effectuer en cas d'erreur d'obtention d'un certificat
+            </summary>
+            <param name="ex">erreur survenue</param>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider">
+            <summary>
+            Interface implémentée par la classe permettant d'obtenir un certificat en fonction de la configuration
+            </summary>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider.Obtenir">
+            <summary>
+            Méthode permettant d'obtenir le certificat
+            </summary>
+            <returns> le certificat</returns>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider.Obtenir(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificat)">
+            <summary>
+            Méthode permettant d'obtenir le certificat
+            </summary>
+            <param name="actionErreur">Action a effectuer en cas d'erreur</param>
+            <returns> le certificat</returns>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfigEx">
+            <summary>
+            Configuration permettant d'identifier un certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfigEx.EmplacementMagasin">
+            <summary>
+            Emplacement du magasin du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfigEx.NomMagasin">
+            <summary>
+            Magasin du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfigEx.Nom">
+            <summary>
+            Nom du magasin du certificat
+            </summary>
+            <summary>
+            Nom du certificat
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfig">
+            <summary>
+            Configuration permettant d'identifier un certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfig.Emplacement">
+            <summary>
+            Emplacement du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfig.Magasin">
+            <summary>
+            Magasin du certificat
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfig.Nom">
+            <summary>
+            Nom du certificat
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IConfigObteneurCertificatsAutorisesEx">
+            <summary>
+            Configuration permettant d'obtenir les certificats autorisées 
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IConfigObteneurCertificatsAutorisesEx.CertificatsAutorises">
+            <summary>
+            Configurations des certificats autorisées
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IConfigObteneurCertificatsAutorises">
+            <summary>
+            Configuration permettant d'obtenir les certificats autorisées 
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IConfigObteneurCertificatsAutorises.CertificatsAutorises">
+            <summary>
+            Configurations des certificats autorisées
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificatAutorise">
+            <summary>
+            Action a effectuer en cas d'erreur d'obtention d'un /des certificat(s) autorisé(s)
+            </summary>
+            <param name="ex">erreur survenue</param>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IObteneurCertificatsAutorises">
+            <summary>
+            Interface implémentée par la classe permettant d'obtenir 
+            les certificats autorisées en fonction de la configuration
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IObteneurCertificatsAutorises.Obtenir">
+            <summary>
+            Permet d'obtenir la liste des certificats autorisés
+            </summary>
+            <returns>la liste des certificats autorisés</returns>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IObteneurCertificatsAutorises.Obtenir(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificatAutorise)">
+            <summary>
+            Permet d'obtenir la liste des certificats autorisés
+            </summary>
+            <param name="actionErreur">Action a exécuté en cas d'erreur</param>
+            <returns>la liste des certificats autorisés</returns>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin">
+            <summary>
+            Nom du magasin de certificat
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.AddressBook">
+            <summary>
+            Magasin de certificats pour d'autres utilisateurs 
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.AuthRoot">
+            <summary>
+            Magasin de certificats pour les autorités de certification tierces
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.CertificateAuthority">
+            <summary>
+            Magasin de certificats pour les autorités de certification intermédiaire
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.Disallowed">
+            <summary>
+            Magasin de certificats pour les certificats révoqués 
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.My">
+            <summary>
+            Magasin de certificats pour les certificats personnels 
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.Root">
+            <summary>
+            Magasin de certificats pour les autorités de certification racine
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.TrustedPeople">
+            <summary>
+            Magasin de certificats pour les personnes et les ressources directement approuvés
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.TrustedPublisher">
+            <summary>
+            Magasin de certificats pour les éditeurs directement approuvés
+            </summary>
+        </member>
+        <member name="F:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.NomMagasin.ClientAuthIssuer">
+            <summary>
+            Magasin de certificats pour les émetteurs d'authentification client
+            </summary>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ObteneurCertificatsAutorises">
+            <summary>
+            Classe permettant d'obtenir les certificats autorisées en fonction de la configuration
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ObteneurCertificatsAutorises.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IConfigObteneurCertificatsAutorises,System.Func{RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfig,RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider})">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="config">configuration des certificats autorisées</param>
+            <param name="obtenirCertificatProvider">permet d'obtenir une instance de fournisseur de certificat</param>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ObteneurCertificatsAutorises.#ctor(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.IConfigObteneurCertificatsAutorisesEx,System.Func{RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProviderConfigEx,RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ICertificatProvider})">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="configEx">configuration des certificats autorisées</param>
+            <param name="obtenirCertificatProviderEx">permet d'obtenir une instance de fournisseur de certificat</param>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ObteneurCertificatsAutorises.Obtenir">
+            <summary>
+            Permet d'obtenir la liste des certificats autorisés
+            </summary>
+            <returns>la liste des certificats autorisés</returns>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ObteneurCertificatsAutorises.Obtenir(RAMQ.COM.COD1_JetonAuthn_cpo.Certificats.ActionErreurObtentionCertificatAutorise)">
+            <summary>
+            Permet d'obtenir la liste des certificats autorisés
+            </summary>
+            <param name="actionErreur">Action a exécuté en cas d'erreur</param>
+            <returns>la liste des certificats autorisés</returns>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.ConfigEnvirProvider">
+            <summary>
+            Classe permettant d'obtenir des valeur de la configuration
+            </summary>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.ConfigEnvirProvider.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="appSettings">Collection de clef/valeur contenant les configuration</param>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.ConfigEnvirProvider.Envir">
+            <summary>
+            Environnement courant
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.ConfigEnvirProvider.Item(System.String)">
+            <summary>
+            Permet d'obtenir la valeur d'une clef en remplacant le jeton {0} par l'envir courant
+            </summary>
+            <param name="clef">Nom de la clef de la valeur à obtenir</param>
+            <returns>la valeur d'une clef en remplacant le jeton {0} par l'envir courant</returns>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.ConfigEnvirProvider.ContientClef(System.String)">
+            <summary>
+            Permet de savoir si oui ou non la clef existe dans les configurations
+            </summary>
+            <param name="clef">Clef à vérifier</param>
+            <returns>si oui ou non la clef existe dans les configurations</returns>
+        </member>
+        <member name="T:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.IConfigEnvirProvider">
+            <summary>
+            Interface implémentée par la classe permettant d'obtenir des valeur de la configuration
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.IConfigEnvirProvider.Envir">
+            <summary>
+            Environnement courant
+            </summary>
+        </member>
+        <member name="P:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.IConfigEnvirProvider.Item(System.String)">
+            <summary>
+            Permet d'obtenir la valeur d'une clef en remplacant le jeton {0} par l'envir courant
+            </summary>
+            <param name="clef">Nom de la clef de la valeur à obtenir</param>
+            <returns>la valeur d'une clef en remplacant le jeton {0} par l'envir courant</returns>
+        </member>
+        <member name="M:RAMQ.COM.COD1_JetonAuthn_cpo.Configuration.IConfigEnvirProvider.ContientClef(System.String)">
+            <summary>
+            Permet de savoir si oui ou non la clef existe dans les configurations
+            </summary>
+            <param name="clef">Clef à vérifier</param>
+            <returns>si oui ou non la clef existe dans les configurations</returns>
+        </member>
+    </members>
+</doc>

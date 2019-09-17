@@ -1,0 +1,5 @@
+﻿<%@ ServiceHost Language="C#" 
+                Debug="false" 
+                Service="RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc.ServTraitEveneAutreSys, RAMQ.PRE.PLF1_TraiterEveneAutreSys_svc" 
+                Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf"
+                CodeBehind="ServTraitEveneAutreSys.svc.cs" %>

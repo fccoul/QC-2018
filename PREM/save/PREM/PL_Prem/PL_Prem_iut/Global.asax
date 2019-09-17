@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="RAMQ.PRE.PL_Prem_iut.MvcApplication" Language="C#" %>

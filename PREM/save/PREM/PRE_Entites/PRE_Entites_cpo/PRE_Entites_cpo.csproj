@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FBDA067-E338-4A26-8BD2-F7762C0290AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RAMQ.PRE.PRE_Entites_cpo</RootNamespace>
+    <AssemblyName>RAMQ.PRE.PRE_Entites_cpo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Debug\RAMQ.PRE.PRE_Entites_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Release\RAMQ.PRE.PRE_Entites_cpo.XML</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>RAMQ.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RAMQ.COM.COD1_JetonAuthn_cpo, Version=1.2.3.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Princ.RAMQ.COM.COD1_JetonAuthn.1.2.3\lib\NET45\RAMQ.COM.COD1_JetonAuthn_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RAMQ.COM.COD1_V4OutilBase_cpo, Version=2.8.6.0, Culture=neutral, PublicKeyToken=55a03a2af569717d, processorArchitecture=MSIL">
+      <HintPath>..\packages\L2-Princ.RAMQ.COM.COD1_V4OutilBase.2.8.6\lib\NET45\RAMQ.COM.COD1_V4OutilBase_cpo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbsencesAvis\Entite\AbsenceAvis.cs" />
+    <Compile Include="AbsencesAvis\Parametre\ObtenirListeEngagementsEtAbsencesAvisEntre.cs" />
+    <Compile Include="AbsencesAvis\Parametre\ObtenirListeEngagementsEtAbsencesAvisSorti.cs" />
+    <Compile Include="Autorisation\Entite\Autorisation.cs" />
+    <Compile Include="Autorisation\Parametre\ModifierAutorisationEntre.cs" />
+    <Compile Include="Autorisation\Parametre\ModifierAutorisationSorti.cs" />
+    <Compile Include="AvisConformite\Entite\AvisConformite.cs" />
+    <Compile Include="AvisConformite\Entite\StatutAvisConformite.cs" />
+    <Compile Include="AvisConformite\Parametre\CreerStatutAvisConformiteEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\CreerAvisConformiteEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\CreerStatutAvisConformiteSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\CreerAvisConformiteSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierAvisConfEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierAvisConformiteEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierAvisConformiteSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierAvisConformiteStatutEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierAvisConformiteStatutSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierAvisConfSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierPeriodeAvisEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierPeriodeAvisSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierRaisFermStatutEngagEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierRaisFermStatutEngagSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierStatutEngagementEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ModifierStatutEngagementSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ObtenirLesAvisConformiteEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ObtenirLesAvisConformiteSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ObtenirStatutsEngagementPratiqueRSSEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ObtenirStatutsEngagementPratiqueRSSSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\StatutEngagementPratiqueRSS.cs" />
+    <Compile Include="AvisConformite\Parametre\TraiterAvisConformiteEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\TraiterAvisConformiteSorti.cs" />
+    <Compile Include="AvisConformite\Parametre\ValiderAvisDerogationEnCoursEntre.cs" />
+    <Compile Include="AvisConformite\Parametre\ValiderAvisDerogationEnCoursSorti.cs" />
+    <Compile Include="CaracteristiquePratique\Entite\CaracteristiquePratique.cs" />
+    <Compile Include="CaracteristiquePratique\Parametre\ObtenirCaracteristiquePratiqueRssEntre.cs" />
+    <Compile Include="CaracteristiquePratique\Parametre\ObtenirCaracteristiquePratiqueRssSorti.cs" />
+    <Compile Include="DecisionAvisConformite\Parametre\TraiterAnnulationDerogationEntre.cs" />
+    <Compile Include="DecisionAvisConformite\Parametre\TraiterSuspensionAvisConformiteEntre.cs" />
+    <Compile Include="DecisionAvisConformite\Parametre\TraiterDerogationAvisConformiteEntre.cs" />
+    <Compile Include="DecisionAvisConformite\Parametre\TraiterDerogationAvisConformiteSorti.cs" />
+    <Compile Include="DecisionAvisConformite\Parametre\TraiterAnnulationDerogationSorti.cs" />
+    <Compile Include="DecisionAvisConformite\Parametre\TraiterSuspensionAvisConformiteSorti.cs" />
+    <Compile Include="DemandeReevaluation\Entite\DemandeReevaluation.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\AnnulerDemandeReevaluationEntre.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\AnnulerDemandeReevaluationSorti.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\SaisirDemandeReevaluationEntre.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\CreerDemandeReevaluationEntre.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\SaisirDemandeReevaluationSorti.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\CreerDemandeReevaluationSorti.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\ModifierDemandeReevaluationSorti.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\ObtenirDemandeReevaluationEntre.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\ModifierDemandeReevaluationEntre.cs" />
+    <Compile Include="DemandeReevaluation\Parametre\ObtenirDemandeReevaluationSorti.cs" />
+    <Compile Include="Derogation\Entite\Derogation.cs" />
+    <Compile Include="Derogation\Parametre\CreerDerogationEntre.cs" />
+    <Compile Include="Derogation\Parametre\ModifierDerogationEntre.cs" />
+    <Compile Include="Derogation\Parametre\CreerDerogationSorti.cs" />
+    <Compile Include="Derogation\Parametre\ModifierDerogationSorti.cs" />
+    <Compile Include="Derogation\Parametre\ObtenirDerogationsProfessionnelSanteEntre.cs" />
+    <Compile Include="Derogation\Parametre\ObtenirDerogationsProfessionnelSanteSorti.cs" />
+    <Compile Include="DroitAcquis\Entite\DroitAcquisActif.cs" />
+    <Compile Include="DroitAcquis\Entite\DroitAcquisInactif.cs" />
+    <Compile Include="DroitAcquis\Parametre\ObtenirDroitsAquisProfessionnelsEntre.cs" />
+    <Compile Include="DroitAcquis\Parametre\ObtenirDroitsAquisProfessionnelsSorti.cs" />
+    <Compile Include="EngagementPratique\Entite\EngagementPratique.cs" />
+    <Compile Include="EngagementPratique\Entite\Historique.cs" />
+    <Compile Include="EngagementPratique\Entite\Periode.cs" />
+    <Compile Include="EngagementPratique\Entite\InformationTerritoire.cs" />
+    <Compile Include="EngagementPratique\Parametre\ObtenirEngagementPratiqueEntre.cs" />
+    <Compile Include="EngagementPratique\Parametre\ObtenirEngagementPratiqueSorti.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="LieuGeographique\Entite\LieuGeographique.cs" />
+    <Compile Include="LieuGeographique\Entite\Regroupement.cs" />
+    <Compile Include="LieuGeographique\Entite\TerritoirePermis.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirInformationTerritoireCLSCEntre.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirInformationTerritoireCLSCSortie.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirInformationTerritoireRLSEntre.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirInformationTerritoireRLSSorti.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirNomTerritoireEntre.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirNomTerritoireSorti.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirRegroupementsLgeoRssEntre.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirRegroupementsLgeoRssSorti.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirTerritoiresPermisEntre.cs" />
+    <Compile Include="LieuGeographique\Parametre\ObtenirTerritoiresPermisSorti.cs" />
+    <Compile Include="PeriodePratique\Parametre\ObtenirPeriodePratiqueProfessionnelEntre.cs" />
+    <Compile Include="PeriodePratique\Parametre\ObtenirPeriodePratiqueProfessionnelSorti.cs" />
+    <Compile Include="Pratique\Entite\JoursFactAvis.cs" />
+    <Compile Include="Pratique\Entite\CalculRPPR.cs" />
+    <Compile Include="Pratique\Entite\EngagementProf.cs" />
+    <Compile Include="Pratique\Entite\JoursFactDroitsAcquis.cs" />
+    <Compile Include="Pratique\Entite\JoursFactDroitsAcquisDepassement.cs" />
+    <Compile Include="Pratique\Entite\JoursFactures.cs" />
+    <Compile Include="Pratique\Entite\JoursFactRSS.cs" />
+    <Compile Include="Pratique\Entite\JoursFactTerritoire.cs" />
+    <Compile Include="Pratique\Entite\Message.cs" />
+    <Compile Include="Pratique\Entite\RespectEngagementProfs.cs" />
+    <Compile Include="Pratique\Entite\PratiqueRegion.cs" />
+    <Compile Include="Pratique\Entite\PratiqueTerritoire.cs" />
+    <Compile Include="Pratique\Entite\SommaireProf.cs" />
+    <Compile Include="Pratique\Parametre\CalculerNbrJrFactProfsEntre.cs" />
+    <Compile Include="Pratique\Parametre\CalculerNbrJrFactProfsSorti.cs" />
+    <Compile Include="Pratique\Parametre\ObtenirJoursFactPratiRegionEntre.cs" />
+    <Compile Include="Pratique\Parametre\ObtenirJoursFactPratiRegionSorti.cs" />
+    <Compile Include="Pratique\Parametre\ObtenirJoursFactPratiTerriEntre.cs" />
+    <Compile Include="Pratique\Parametre\ObtenirJoursFactPratiTerriSorti.cs" />
+    <Compile Include="Professionnel\Entite\AdmissibiliteFacturer.cs" />
+    <Compile Include="Professionnel\Entite\EngagementPeriode.cs" />
+    <Compile Include="Professionnel\Entite\InfoPersonnelleslDisp.cs" />
+    <Compile Include="Professionnel\Entite\NomPrenomDispSorti.cs" />
+    <Compile Include="Professionnel\Entite\NumeroEtClasseDisp.cs" />
+    <Compile Include="Professionnel\Entite\Professionnel.cs" />
+    <Compile Include="Professionnel\Entite\ProfessionnelNumEntente.cs" />
+    <Compile Include="Professionnel\Entite\NomPrenomDispEntre.cs" />
+    <Compile Include="Professionnel\Entite\Professionnels.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirInfoPerslDispEntre.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirInfoPerslDispSorti.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirNomPrenomListeDispensateursEntree.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirDispensateursSelonEntenteEntre.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirDispensateurIndividuEntre.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirDispensateurIndividuSorti.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirDispensateursIndividusSorti.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirNomPrenomListeDispensateursSorti.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirVuePeriodeEngagementEntre.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirVuePeriodeEngagementSorti.cs" />
+    <Compile Include="Professionnel\Parametre\VerifierAdmissibiliteProfessionnelFacturerEntre.cs" />
+    <Compile Include="Professionnel\Parametre\ObtenirDispensateursSelonEntenteSorti.cs" />
+    <Compile Include="Professionnel\Parametre\VerifierAdmissibiliteProfessionnelFacturerSorti.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapport\Entite\ILigneRapport.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportAbsncAvisConf.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportAvisConfActifsParTerritoire.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportAvisConfTermines.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportDerogPratiExclu.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportNonRespAvisConf.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportExerNonAutoRPPR.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportNouvMedSansAvisConf.cs" />
+    <Compile Include="Rapport\Entite\LigneRapportRepartInterRegionPrati.cs" />
+    <Compile Include="Rapport\Parametre\IParamObtnrRapp.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappAbsncAvisConf.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappAvisConfActifsParTerritoire.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappAvisConfTermines.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappDerogPratiExclu.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnRapportWebSorti.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnRapportFichierSorti.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappNonRespAvisConf.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappExerNonAutoRPPR.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappNouvMedSansAvisConf.cs" />
+    <Compile Include="Rapport\Parametre\ParamObtnrRappRepartInterRegionPrati.cs" />
+    <Compile Include="Reduction\Entite\Reduction.cs" />
+    <Compile Include="Reduction\Parametre\ObtenirReductionsProfessionnelEntre.cs" />
+    <Compile Include="Reduction\Parametre\ObtenirReductionsProfessionnelSorti.cs" />
+    <Compile Include="Securite\Entite\ContexteRegleAcces.cs" />
+    <Compile Include="Securite\Parametre\RechercherContexteRegleAccesEntre.cs" />
+    <Compile Include="Securite\Parametre\RechercherContexteRegleAccesSorti.cs" />
+    <Compile Include="Recherche\Entite\Critere.cs" />
+    <Compile Include="Recherche\Entite\Resultat.cs" />
+    <None Include="packages.config" />
+    <None Include="RAMQ.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
